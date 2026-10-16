@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PROGRESS TEST - Dual Bank Soal (PT 38 & PT 35)</title>
+  <title>CBT Progress Test - Dual Bank Soal (PT 38 & PT 35)</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts: Plus Jakarta Sans -->
@@ -80,7 +80,7 @@
             </div>
             <div>
               <div class="flex items-center gap-2">
-                <h1 class="text-lg font-bold tracking-tight leading-none">PROGRESS TEST</h1>
+                <h1 class="text-lg font-bold tracking-tight leading-none">Progress Test</h1>
                 <span id="activeSetHeaderBadge" class="bg-sky-400/20 text-sky-200 border border-sky-300/30 text-[11px] font-bold px-2 py-0.5 rounded-md">
                   PT 38
                 </span>
@@ -122,6 +122,14 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
             </svg>
             <span>Statistik Topik</span>
+          </button>
+
+          <!-- Button: Sync Antar Device -->
+          <button onclick="toggleSyncModal()" class="bg-sky-600 hover:bg-sky-500 transition text-xs font-semibold px-3 py-2 rounded-lg border border-sky-300/30 flex items-center gap-1.5 shadow-sm">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+            </svg>
+            <span>Sync Device</span>
           </button>
 
           <!-- Button: Reset Progres -->
@@ -446,6 +454,69 @@
         </button>
         <button onclick="closeResetModal()" class="w-full px-4 py-2 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition mt-1">
           Batal
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: SYNC PROGRES ANTAR DEVICE -->
+  <div id="syncModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-xl border border-slate-200 max-w-lg w-full p-6 animate-fade-in">
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-2.5">
+          <div class="bg-medical-50 text-medical-600 p-2 rounded-lg border border-medical-100">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-slate-900">Sinkronisasi Antar Perangkat</h3>
+            <p class="text-xs text-slate-500">Pindahkan progres latihan tanpa login akun</p>
+          </div>
+        </div>
+        <button onclick="toggleSyncModal()" class="text-slate-400 hover:text-slate-600 p-1">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Bagian 1: Export / Salin Kode -->
+      <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-4">
+        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
+          1. Salin Kode dari Perangkat Ini (Export)
+        </label>
+        <p class="text-xs text-slate-500 mb-2.5">
+          Klik tombol di bawah untuk menyalin kode progres, lalu kirimkan ke WhatsApp/Telegram/Notes Anda.
+        </p>
+        <div class="flex gap-2">
+          <input id="exportCodeInput" type="text" readonly class="w-full bg-white border border-slate-300 text-slate-600 text-xs font-mono rounded-lg px-3 py-2 focus:outline-none select-all" value="" />
+          <button onclick="copySyncCode()" id="copySyncBtn" class="shrink-0 bg-medical-600 hover:bg-medical-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition shadow-xs">
+            Salin Kode
+          </button>
+        </div>
+      </div>
+
+      <!-- Bagian 2: Import / Tempel Kode -->
+      <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-5">
+        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
+          2. Muat Kode dari Perangkat Lain (Import)
+        </label>
+        <p class="text-xs text-slate-500 mb-2.5">
+          Tempel (Paste) kode progres dari perangkat lain di bawah ini untuk memulihkan seluruh jawaban Anda. Progres di perangkat ini akan diganti.
+        </p>
+        <div class="flex gap-2">
+          <input id="importCodeInput" type="text" placeholder="Tempel kode progres di sini..." class="w-full bg-white border border-slate-300 text-slate-800 text-xs font-mono rounded-lg px-3 py-2 focus:ring-2 focus:ring-medical-500 focus:outline-none" />
+          <button onclick="applySyncCode()" class="shrink-0 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition shadow-xs">
+            Muat Progres
+          </button>
+        </div>
+        <p id="syncStatusMsg" class="text-xs font-semibold mt-2 hidden"></p>
+      </div>
+
+      <div class="flex justify-end">
+        <button onclick="toggleSyncModal()" class="px-4 py-2 rounded-lg text-xs font-semibold bg-slate-200 hover:bg-slate-300 text-slate-700 transition">
+          Tutup
         </button>
       </div>
     </div>
@@ -1327,10 +1398,129 @@
       updateStatsUI();
     }
 
+    // ==========================================
+    // FITUR SYNC KODE PROGRES (COMPACT BASE64)
+    // ==========================================
+    function generateCompactSyncCode() {
+      const payload = { s1: {}, b1: [], s2: {}, b2: [] };
+
+      ['set1', 'set2'].forEach((setKey, idx) => {
+        const targetAns = idx === 0 ? payload.s1 : payload.s2;
+        const targetBm = idx === 0 ? payload.b1 : payload.b2;
+        const setObj = appState.sets[setKey] || { answers: {}, bookmarks: {} };
+
+        Object.entries(setObj.answers || {}).forEach(([qId, ansObj]) => {
+          if (ansObj && typeof ansObj.selected === 'number') {
+            targetAns[qId] = ansObj.selected; // Hanya simpan indeks opsi (0-4)
+          }
+        });
+
+        Object.keys(setObj.bookmarks || {}).forEach(qId => {
+          if (setObj.bookmarks[qId]) targetBm.push(Number(qId));
+        });
+      });
+
+      return 'PT-' + btoa(JSON.stringify(payload));
+    }
+
+    function toggleSyncModal() {
+      const modal = document.getElementById('syncModal');
+      const statusMsg = document.getElementById('syncStatusMsg');
+      if (modal.classList.contains('hidden')) {
+        document.getElementById('exportCodeInput').value = generateCompactSyncCode();
+        document.getElementById('importCodeInput').value = '';
+        statusMsg.classList.add('hidden');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      } else {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    function copySyncCode() {
+      const input = document.getElementById('exportCodeInput');
+      const btn = document.getElementById('copySyncBtn');
+      input.select();
+      input.setSelectionRange(0, input.value.length);
+
+      const done = () => {
+        const originalText = 'Salin Kode';
+        btn.textContent = 'Tersalin!';
+        btn.classList.replace('bg-medical-600', 'bg-emerald-600');
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.classList.replace('bg-emerald-600', 'bg-medical-600');
+        }, 2000);
+      };
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(input.value).then(done).catch(() => {
+          try { document.execCommand('copy'); done(); } catch (e) {}
+        });
+      } else {
+        try { document.execCommand('copy'); done(); } catch (e) {}
+      }
+    }
+
+    function applySyncCode() {
+      const rawCode = document.getElementById('importCodeInput').value.trim();
+      const statusMsg = document.getElementById('syncStatusMsg');
+      statusMsg.classList.remove('hidden', 'text-emerald-600', 'text-rose-600');
+
+      if (!rawCode) {
+        statusMsg.textContent = 'Masukkan kode progres terlebih dahulu.';
+        statusMsg.classList.add('text-rose-600');
+        return;
+      }
+
+      try {
+        const cleanBase64 = rawCode.startsWith('PT-') ? rawCode.slice(3) : rawCode;
+        const parsed = JSON.parse(atob(cleanBase64));
+
+        const reconstructSet = (compactAns, compactBm, bankArray) => {
+          const answers = {};
+          const bookmarks = {};
+          const keyMap = new Map(bankArray.map(q => [String(q.id), q.answer]));
+
+          Object.entries(compactAns || {}).forEach(([qId, selectedIdx]) => {
+            const correctAns = keyMap.get(String(qId));
+            answers[qId] = {
+              selected: Number(selectedIdx),
+              isCorrect: Number(selectedIdx) === correctAns,
+              timestamp: Date.now()
+            };
+          });
+
+          (compactBm || []).forEach(qId => {
+            bookmarks[qId] = true;
+          });
+
+          return { answers, bookmarks };
+        };
+
+        appState.sets.set1 = reconstructSet(parsed.s1, parsed.b1, bankSet1);
+        appState.sets.set2 = reconstructSet(parsed.s2, parsed.b2, bankSet2);
+
+        saveState();
+        renderCurrentQuestion();
+        renderQuestionGrid();
+        updateStatsUI();
+        document.getElementById('exportCodeInput').value = generateCompactSyncCode();
+
+        statusMsg.textContent = 'Berhasil! Progres dari perangkat lain telah dimuat.';
+        statusMsg.classList.add('text-emerald-600');
+      } catch (err) {
+        statusMsg.textContent = 'Kode tidak valid atau rusak. Pastikan seluruh teks kode tersalin utuh.';
+        statusMsg.classList.add('text-rose-600');
+      }
+    }
+
     // Navigasi Keyboard (A-E untuk memilih opsi, Panah Kiri/Kanan untuk pindah soal)
     document.addEventListener('keydown', (e) => {
       if (!document.getElementById('topicModal').classList.contains('hidden')) return;
       if (!document.getElementById('resetModal').classList.contains('hidden')) return;
+      if (!document.getElementById('syncModal').classList.contains('hidden')) return;
       if (['INPUT', 'SELECT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
 
       if (e.key === 'ArrowRight') {
