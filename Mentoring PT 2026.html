@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PROGRESS TEST - Dual Bank Soal (PT 38 & PT 35)</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            medical: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+              800: '#0c4a6e',
+              900: '#082f49',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #f1f5f9;
+      color: #0f172a;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 8px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 8px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.25s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-medical-500 selection:text-white">
+
+  <!-- TOP NAVBAR (CBT HEADER) -->
+  <header class="bg-medical-800 text-white shadow-md sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        
+        <!-- Brand & Title -->
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="bg-white/10 p-2 rounded-lg border border-white/20">
+              <svg class="w-6 h-6 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+              </svg>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <h1 class="text-lg font-bold tracking-tight leading-none">PROGRESS TEST</h1>
+                <span id="activeSetHeaderBadge" class="bg-sky-400/20 text-sky-200 border border-sky-300/30 text-[11px] font-bold px-2 py-0.5 rounded-md">
+                  PT 38
+                </span>
+              </div>
+              <p class="text-xs text-sky-200 mt-0.5">Mode Belajar & Evaluasi Mandiri SKDI</p>
+            </div>
+          </div>
+
+          <!-- Mobile Stats Badge -->
+          <button onclick="toggleTopicModal()" class="md:hidden bg-medical-700 hover:bg-medical-600 text-xs font-medium px-3 py-1.5 rounded-lg border border-white/15 flex items-center gap-1.5">
+            <span id="mobileAccuracyBadge">0%</span> Akurasi
+          </button>
+        </div>
+
+        <!-- Global Progress Summary & Controls -->
+        <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+          
+          <!-- Quick Stats Pill -->
+          <div class="hidden sm:flex items-center bg-medical-900/60 border border-white/10 rounded-lg px-3 py-1.5 text-xs gap-4">
+            <div>
+              <span class="text-sky-200">Dikerjakan:</span>
+              <span id="statAnswered" class="font-bold text-white ml-1">0/0</span>
+            </div>
+            <div class="h-3 w-px bg-white/20"></div>
+            <div>
+              <span class="text-sky-200">Benar:</span>
+              <span id="statCorrect" class="font-bold text-emerald-400 ml-1">0</span>
+            </div>
+            <div class="h-3 w-px bg-white/20"></div>
+            <div>
+              <span class="text-sky-200">Akurasi Paket:</span>
+              <span id="statAccuracy" class="font-bold text-amber-300 ml-1">0%</span>
+            </div>
+          </div>
+
+          <!-- Button: Rekap Akurasi Per Topik -->
+          <button onclick="toggleTopicModal()" class="bg-medical-700 hover:bg-medical-600 transition text-xs font-semibold px-3 py-2 rounded-lg border border-white/15 flex items-center gap-1.5 shadow-sm">
+            <svg class="w-4 h-4 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            <span>Statistik Topik</span>
+          </button>
+
+          <!-- Button: Reset Progres -->
+          <button onclick="confirmResetProgress()" class="bg-rose-600/90 hover:bg-rose-600 transition text-xs font-semibold px-3 py-2 rounded-lg border border-rose-400/30 flex items-center gap-1.5 shadow-sm">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+            </svg>
+            <span>Reset Progres</span>
+          </button>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SUB-TOOLBAR: PILIH PAKET SOAL, FILTER TOPIK & SHUFFLE -->
+    <div class="bg-white border-b border-slate-200 text-slate-700">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+        
+        <!-- Left Group: Set Selector + Topic Filter -->
+        <div class="flex flex-col sm:flex-row sm:items-center gap-2.5 flex-1">
+          
+          <!-- Segmented Control: Pilih Paket Soal -->
+          <div class="inline-flex bg-slate-100 p-1 rounded-lg border border-slate-300 shrink-0">
+            <button id="setBtn-set1" onclick="handleSetChange('set1')" class="px-3 py-1 rounded-md text-xs font-bold transition">
+              Paket 1 (PT 38)
+            </button>
+            <button id="setBtn-set2" onclick="handleSetChange('set2')" class="px-3 py-1 rounded-md text-xs font-bold transition">
+              Paket 2 (PT 35)
+            </button>
+            <button id="setBtn-all" onclick="handleSetChange('all')" class="px-3 py-1 rounded-md text-xs font-bold transition">
+              Gabungan (240)
+            </button>
+          </div>
+
+          <div class="hidden sm:block h-5 w-px bg-slate-300"></div>
+
+          <!-- Filter Topik Dropdown -->
+          <div class="flex items-center gap-2 flex-1 max-w-md">
+            <label for="topicFilter" class="text-xs font-bold uppercase tracking-wider text-slate-500 whitespace-nowrap">
+              Topik:
+            </label>
+            <select id="topicFilter" onchange="handleTopicChange(this.value)" class="w-full bg-slate-50 border border-slate-300 text-slate-800 text-xs sm:text-sm rounded-lg focus:ring-2 focus:ring-medical-500 focus:border-medical-500 block px-3 py-1.5 font-medium transition">
+              <option value="ALL">Semua Topik</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- Right Controls: Shuffle & Font Size -->
+        <div class="flex items-center justify-between sm:justify-end gap-2 sm:gap-3">
+          
+          <!-- Shuffle Toggle Button -->
+          <button id="shuffleBtn" onclick="toggleShuffle()" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold border transition bg-slate-100 text-slate-700 border-slate-300 hover:bg-slate-200">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+            <span id="shuffleText">Mode Acak: Nonaktif</span>
+          </button>
+
+          <!-- Font Size Controls -->
+          <div class="flex items-center bg-slate-100 rounded-lg p-0.5 border border-slate-300">
+            <button onclick="setFontSize('sm')" class="px-2 py-1 text-xs font-bold rounded hover:bg-white transition" title="Kecilkan Teks">A-</button>
+            <button onclick="setFontSize('base')" class="px-2 py-1 text-xs font-bold rounded hover:bg-white transition" title="Ukuran Normal">A</button>
+            <button onclick="setFontSize('lg')" class="px-2 py-1 text-xs font-bold rounded hover:bg-white transition" title="Besarkan Teks">A+</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN WORKSPACE -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    
+    <!-- Alert Banner if data is missing -->
+    <div id="errorBanner" class="hidden bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-xl shadow-sm mb-6">
+      <div class="flex items-start gap-3">
+        <svg class="w-6 h-6 text-amber-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+        </svg>
+        <div>
+          <h3 id="errorBannerTitle" class="text-sm font-bold text-amber-900">Peringatan Data Soal</h3>
+          <p id="errorBannerText" class="text-xs text-amber-800 mt-1 leading-relaxed">
+            Pastikan file <strong>questions.js</strong> (`const questions = [...]`) dan <strong>questions2.js</strong> (`const questions2 = [...]`) berada di folder yang sama dengan <strong>index.html</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="quizContainer" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+      
+      <!-- LEFT/MAIN COLUMN: QUESTION & RATIONALE (8 Cols) -->
+      <div class="lg:col-span-8 flex flex-col gap-4">
+        
+        <!-- Question Card -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+          
+          <!-- Card Header -->
+          <div class="bg-slate-50 px-5 py-3.5 border-b border-slate-200 flex flex-wrap items-center justify-between gap-2">
+            <div class="flex flex-wrap items-center gap-2">
+              <span id="questionCounter" class="bg-medical-700 text-white text-xs font-bold px-2.5 py-1 rounded-md">
+                SOAL 1 / 120
+              </span>
+              <span id="questionSetBadge" class="text-xs font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-0.5 rounded">
+                PT 38 • #1
+              </span>
+              <span id="questionTopicBadge" class="text-xs font-semibold text-medical-700 bg-medical-50 border border-medical-100 px-2.5 py-0.5 rounded-full">
+                Topik SKDI
+              </span>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <!-- Ulangi Soal Ini Button (appears when answered) -->
+              <button id="retryQuestionBtn" onclick="retryCurrentQuestion()" class="hidden text-xs font-semibold text-slate-600 hover:text-medical-600 bg-white hover:bg-slate-100 border border-slate-300 px-2.5 py-1 rounded-md transition flex items-center gap-1">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+                <span>Ulangi Soal</span>
+              </button>
+
+              <!-- Bookmark / Ragu-ragu Button -->
+              <button id="bookmarkBtn" onclick="toggleBookmark()" class="text-xs font-semibold px-2.5 py-1 rounded-md border transition flex items-center gap-1.5 bg-white text-slate-600 border-slate-300 hover:bg-amber-50">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+                </svg>
+                <span id="bookmarkText">Ragu-ragu</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Question Body -->
+          <div class="p-5 sm:p-6">
+            <div id="questionText" class="text-slate-800 leading-relaxed font-normal mb-6 whitespace-pre-line text-base">
+              Memuat soal...
+            </div>
+
+            <!-- Options Container -->
+            <div id="optionsContainer" class="space-y-2.5">
+              <!-- Options injected via JS -->
+            </div>
+          </div>
+
+          <!-- Rationale / Pembahasan Box (Hidden until answered) -->
+          <div id="rationaleContainer" class="hidden border-t border-slate-200 bg-slate-50/70 p-5 sm:p-6 animate-fade-in">
+            <div id="feedbackBanner" class="flex items-center gap-2.5 px-4 py-2.5 rounded-lg mb-4 text-sm font-bold">
+              <!-- Feedback status injected via JS -->
+            </div>
+
+            <div class="bg-white border border-slate-200 rounded-xl p-4 sm:p-5 shadow-sm">
+              <div class="flex items-center gap-2 text-medical-700 font-bold text-sm mb-2">
+                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+                <span>Pembahasan Klinis (Rationale)</span>
+              </div>
+              
+              <div id="rationaleText" class="text-slate-700 text-sm sm:text-base leading-relaxed whitespace-pre-line">
+                <!-- Rationale text -->
+              </div>
+
+              <!-- Footer Pembahasan: Conditional *AI generated answers (Hanya tampil di PT 38) -->
+              <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+                <span id="aiDisclaimer" class="italic">*AI generated answers</span>
+                <span id="correctKeyIndicator" class="font-semibold text-slate-500 ml-auto"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Footer: Prev / Next Navigation -->
+          <div class="bg-slate-50 px-5 py-3.5 border-t border-slate-200 flex items-center justify-between">
+            <button id="prevBtn" onclick="prevQuestion()" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 disabled:opacity-40 disabled:pointer-events-none transition shadow-sm">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+              <span>Sebelumnya</span>
+            </button>
+
+            <span class="hidden sm:inline text-xs text-slate-400 font-medium">
+              Pintasan: Tekan <strong>A-E</strong> untuk menjawab, <strong>&larr;/&rarr;</strong> untuk navigasi
+            </span>
+
+            <button id="nextBtn" onclick="nextQuestion()" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold bg-medical-600 text-white hover:bg-medical-700 disabled:opacity-40 disabled:pointer-events-none transition shadow-sm">
+              <span>Selanjutnya</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN: CBT NAVIGATION GRID & TOPIC PROGRESS (4 Cols) -->
+      <div class="lg:col-span-4 flex flex-col gap-6">
+        
+        <!-- Panel 1: Navigasi Nomor Soal -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+          <div class="bg-slate-50 px-4 py-3 border-b border-slate-200 flex items-center justify-between">
+            <h2 class="text-sm font-bold text-slate-800 flex items-center gap-2">
+              <svg class="w-4 h-4 text-medical-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+              </svg>
+              <span>Navigasi Nomor Soal</span>
+            </h2>
+            <span id="filteredCountLabel" class="text-xs font-semibold text-slate-500">120 Soal</span>
+          </div>
+
+          <!-- Legend -->
+          <div class="px-4 py-2.5 bg-slate-50/50 border-b border-slate-100 flex flex-wrap items-center gap-3 text-[11px] font-medium text-slate-600">
+            <div class="flex items-center gap-1.5">
+              <span class="w-3 h-3 rounded bg-emerald-500 inline-block"></span> Benar
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="w-3 h-3 rounded bg-rose-500 inline-block"></span> Salah
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="w-3 h-3 rounded bg-amber-400 inline-block"></span> Ragu
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="w-3 h-3 rounded bg-slate-200 border border-slate-300 inline-block"></span> Belum
+            </div>
+          </div>
+
+          <!-- Number Buttons Grid -->
+          <div class="p-4 max-h-72 overflow-y-auto custom-scrollbar">
+            <div id="questionGrid" class="grid grid-cols-5 sm:grid-cols-8 lg:grid-cols-5 xl:grid-cols-6 gap-2">
+              <!-- Buttons generated via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2: Ringkasan Akurasi Per Topik (Sidebar View) -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+          <div class="bg-slate-50 px-4 py-3 border-b border-slate-200 flex items-center justify-between">
+            <h2 class="text-sm font-bold text-slate-800 flex items-center gap-2">
+              <svg class="w-4 h-4 text-medical-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+              </svg>
+              <span>Capaian Per Sistem SKDI</span>
+            </h2>
+            <span class="text-[11px] text-slate-400">Klik topik untuk filter</span>
+          </div>
+
+          <div id="sidebarTopicStats" class="p-4 space-y-3 max-h-96 overflow-y-auto custom-scrollbar">
+            <!-- Topic progress bars generated via JS -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- MODAL: STATISTIK LENGKAP PER TOPIK -->
+  <div id="topicModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-xl border border-slate-200 max-w-3xl w-full max-h-[85vh] flex flex-col overflow-hidden animate-fade-in">
+      <div class="px-6 py-4 bg-medical-800 text-white flex items-center justify-between">
+        <div>
+          <h3 id="modalTitle" class="text-base font-bold">Rapor Akurasi Per Sistem Organ (SKDI)</h3>
+          <p class="text-xs text-sky-200">Evaluasi kekuatan dan kelemahan topik PT Anda</p>
+        </div>
+        <button onclick="toggleTopicModal()" class="text-white/80 hover:text-white p-1 rounded-lg hover:bg-white/10">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="p-6 overflow-y-auto custom-scrollbar space-y-4">
+        <!-- Summary Cards inside Modal -->
+        <div class="grid grid-cols-3 gap-3 mb-2">
+          <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 text-center">
+            <div class="text-xs text-slate-500 font-medium">Total Dijawab</div>
+            <div id="modalStatAnswered" class="text-xl font-bold text-slate-800 mt-1">0 / 0</div>
+          </div>
+          <div class="bg-emerald-50 p-3.5 rounded-xl border border-emerald-200 text-center">
+            <div class="text-xs text-emerald-700 font-medium">Jawaban Benar</div>
+            <div id="modalStatCorrect" class="text-xl font-bold text-emerald-700 mt-1">0</div>
+          </div>
+          <div class="bg-amber-50 p-3.5 rounded-xl border border-amber-200 text-center">
+            <div class="text-xs text-amber-700 font-medium">Akurasi Paket</div>
+            <div id="modalStatAccuracy" class="text-xl font-bold text-amber-700 mt-1">0%</div>
+          </div>
+        </div>
+
+        <!-- Detailed Table/List -->
+        <div id="modalTopicList" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <div class="px-6 py-3.5 bg-slate-50 border-t border-slate-200 flex justify-end">
+        <button onclick="toggleTopicModal()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold rounded-lg transition">
+          Tutup Rapor
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: KONFIRMASI RESET PROGRES -->
+  <div id="resetModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-xl border border-slate-200 max-w-md w-full p-6 animate-fade-in">
+      <div class="flex items-center gap-3 text-rose-600 mb-3">
+        <div class="bg-rose-100 p-2.5 rounded-full">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-slate-900">Reset Progres Latihan?</h3>
+      </div>
+      <p class="text-sm text-slate-600 leading-relaxed mb-5">
+        Pilih cakupan progres yang ingin dihapus. Progres pada paket soal yang tidak di-reset akan tetap tersimpan dengan aman di browser Anda.
+      </p>
+      <div class="flex flex-col gap-2.5">
+        <button id="resetActiveSetBtn" onclick="executeResetProgress('active')" class="w-full px-4 py-2.5 rounded-lg text-xs font-bold bg-amber-500 hover:bg-amber-600 text-slate-950 transition shadow-xs">
+          Reset Paket yang Sedang Aktif Saja
+        </button>
+        <button onclick="executeResetProgress('all')" class="w-full px-4 py-2.5 rounded-lg text-xs font-bold bg-rose-600 hover:bg-rose-700 text-white transition shadow-xs">
+          Reset Seluruh Paket (PT 38 & PT 35)
+        </button>
+        <button onclick="closeResetModal()" class="w-full px-4 py-2 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition mt-1">
+          Batal
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXTERNAL DATA SOURCES (DUAL SET) -->
+  <script src="questions.js"></script>
+  <script src="questions2.js"></script>
+
+  <!-- APPLICATION LOGIC -->
+  <script>
+    const LEGACY_STORAGE_KEY = 'ukmppd_cbt_study_progress_v1';
+    const STORAGE_KEY = 'ukmppd_cbt_dual_progress_v2';
+
+    // Daftar Standar 15 Topik SKDI
+    const SKDI_TOPICS = [
+      "Kardiologi & Vaskular",
+      "Respirasi & Pulmonologi",
+      "Gastroenterohepatologi",
+      "Nefrologi & Urologi",
+      "Neurologi",
+      "Psikiatri",
+      "Obstetri & Ginekologi",
+      "Pediatri / Anak",
+      "Endokrin & Metabolik",
+      "Dermatovenerologi",
+      "Mata (Oftalmologi)",
+      "THT-KL",
+      "Muskuloskeletal & Bedah",
+      "Infeksi Tropis & Imunologi",
+      "Forensik, Medikolegal & IKM"
+    ];
+
+    // Koleksi Soal Terstandarisasi
+    let bankSet1 = [];
+    let bankSet2 = [];
+    let allQuestions = [];
+    let currentSetPool = [];
+    let activeQuestions = [];
+    let currentIndex = 0;
+
+    // State Aplikasi dengan Namespacing per Set
+    let appState = {
+      activeSet: 'set1', // 'set1' | 'set2' | 'all'
+      selectedTopic: 'ALL',
+      isShuffled: false,
+      shuffledUids: [],
+      fontSize: 'base',
+      sets: {
+        set1: { answers: {}, bookmarks: {} },
+        set2: { answers: {}, bookmarks: {} }
+      }
+    };
+
+    // Helper: Bersihkan tag sitasi jika ada di teks soal/opsi/pembahasan
+    function cleanText(str) {
+      if (typeof str !== 'string') return '';
+      return str.replace(/\[cite:[^\]]*\]/gi, '').trim();
+    }
+	
+	// Helper: Ubah paragraf pembahasan panjang menjadi poin-poin terstruktur secara otomatis
+    function formatRationaleHTML(rawStr) {
+      const cleaned = cleanText(rawStr);
+      if (!cleaned) return '';
+
+      // Pisahkan bagian penjelasan utama dengan bagian "Analisis opsi lain:" / "Sebagai perbandingan:"
+      const splitRegex = /(Analisis\s+(?:opsi|pilihan|strategi|mekanisme)[^:]*:|Sebagai\s+perbandingan\s*:?)/i;
+      const parts = cleaned.split(splitRegex);
+
+      const mainPart = parts[0] ? parts[0].trim() : '';
+      const subHeader = parts[1] ? parts[1].trim() : '';
+      const subPart = parts.slice(2).join(' ').trim();
+
+      // Fungsi pemecah kalimat yang aman terhadap angka desimal (misal 1,3 atau 38,2) dan singkatan umum
+      const splitIntoBullets = (text) => {
+        if (!text) return [];
+        const protectedText = text
+          .replace(/\b(dr|sp|ny|tn|nn|no|lig|m|n|a|v|s|c|var|hlm|vol|bab)\./gi, '$1{{DOT}}')
+          .replace(/(\d)\.(\d)/g, '$1{{DOT}}$2');
+
+        // Jika teks mengandung penomoran (1), (2), (3) atau titik koma (;), pecah menjadi poin tersendiri
+        let segments = protectedText
+          .replace(/\s*\((\d+)\)\s*/g, '{{SPLIT}}($1) ')
+          .split(/(?:\.\s+|;\s+|\n+|{{SPLIT}})/);
+
+        return segments
+          .map(s => s.replace(/{{DOT}}/g, '.').trim())
+          .filter(s => s.length > 0)
+          .map(s => {
+            const withPeriod = /[.!?]$/.test(s) ? s : s + '.';
+            // Tebalkan sub-label di awal kalimat jika ada titik dua (misal "Jadwal: ...")
+            return withPeriod.replace(/^(\(\d+\)\s*[^:]{2,35}:|[^:]{2,35}:)(\s)/, '<strong class="text-slate-900 font-semibold">$1</strong>$2');
+          });
+      };
+
+      const mainBullets = splitIntoBullets(mainPart);
+      const subBullets = splitIntoBullets(subPart);
+
+      let html = '<ul class="space-y-2 list-none">';
+      mainBullets.forEach(item => {
+        html += `
+          <li class="flex items-start gap-2.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-medical-600 shrink-0 mt-2"></span>
+            <span class="flex-1">${item}</span>
+          </li>`;
+      });
+      html += '</ul>';
+
+      // Jika ada bagian "Analisis opsi lain" atau "Sebagai perbandingan", tampilkan dalam sub-box rapi
+      if (subHeader && subBullets.length > 0) {
+        html += `
+          <div class="mt-3.5 pt-3 border-t border-slate-200/80">
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">${subHeader}</div>
+            <ul class="space-y-1.5 list-none pl-1">
+              ${subBullets.map(sub => `
+                <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-600">
+                  <span class="text-slate-400 font-bold shrink-0">&bull;</span>
+                  <span class="flex-1">${sub}</span>
+                </li>
+              `).join('')}
+            </ul>
+          </div>`;
+      }
+
+      return html;
+    }
+
+    // Ambil dan normalisasi data dari questions.js & questions2.js
+    function resolveAllQuestionBanks() {
+      const rawSet1 = (typeof questions !== 'undefined' && Array.isArray(questions)) ? questions :
+                      (typeof window.questions !== 'undefined' && Array.isArray(window.questions)) ? window.questions : [];
+      
+      const rawSet2 = (typeof questions2 !== 'undefined' && Array.isArray(questions2)) ? questions2 :
+                      (typeof window.questions2 !== 'undefined' && Array.isArray(window.questions2)) ? window.questions2 : [];
+
+      bankSet1 = rawSet1.map(q => ({
+        ...q,
+        _set: 'set1',
+        _setLabel: 'PT 38',
+        _uid: `set1_${q.id}`
+      }));
+
+      bankSet2 = rawSet2.map(q => ({
+        ...q,
+        _set: 'set2',
+        _setLabel: 'PT 35',
+        _uid: `set2_${q.id}`
+      }));
+
+      allQuestions = [...bankSet1, ...bankSet2];
+    }
+
+    // Load State & Migrasi Otomatis dari localStorage versi pertama
+    function loadState() {
+      try {
+        const savedV2 = localStorage.getItem(STORAGE_KEY);
+        if (savedV2) {
+          const parsed = JSON.parse(savedV2);
+          appState = {
+            ...appState,
+            ...parsed,
+            sets: {
+              set1: { answers: {}, bookmarks: {}, ...(parsed.sets?.set1 || {}) },
+              set2: { answers: {}, bookmarks: {}, ...(parsed.sets?.set2 || {}) }
+            }
+          };
+          return;
+        }
+
+        // Jika belum ada v2, cek apakah ada data lama di v1 untuk dimigrasikan ke set1
+        const savedLegacy = localStorage.getItem(LEGACY_STORAGE_KEY);
+        if (savedLegacy) {
+          const legacyParsed = JSON.parse(savedLegacy);
+          appState.sets.set1.answers = legacyParsed.answers || {};
+          appState.sets.set1.bookmarks = legacyParsed.bookmarks || {};
+          appState.fontSize = legacyParsed.fontSize || 'base';
+          saveState();
+        }
+      } catch (e) {
+        console.error('Gagal membaca localStorage:', e);
+      }
+    }
+
+    // Simpan State ke localStorage
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(appState));
+      } catch (e) {
+        console.error('Gagal menyimpan ke localStorage:', e);
+      }
+    }
+
+    // Helper Akses Jawaban & Bookmark Berdasarkan Soal
+    function getAnswerForQuestion(q) {
+      return appState.sets[q._set]?.answers[q.id];
+    }
+
+    function setAnswerForQuestion(q, answerObj) {
+      if (!appState.sets[q._set]) appState.sets[q._set] = { answers: {}, bookmarks: {} };
+      appState.sets[q._set].answers[q.id] = answerObj;
+    }
+
+    function deleteAnswerForQuestion(q) {
+      if (appState.sets[q._set]?.answers) {
+        delete appState.sets[q._set].answers[q.id];
+      }
+    }
+
+    function getBookmarkForQuestion(q) {
+      return !!appState.sets[q._set]?.bookmarks[q.id];
+    }
+
+    function toggleBookmarkForQuestion(q) {
+      if (!appState.sets[q._set]) appState.sets[q._set] = { answers: {}, bookmarks: {} };
+      if (appState.sets[q._set].bookmarks[q.id]) {
+        delete appState.sets[q._set].bookmarks[q.id];
+      } else {
+        appState.sets[q._set].bookmarks[q.id] = true;
+      }
+    }
+
+    // Algoritma Fisher-Yates Shuffle
+    function shuffleArray(array) {
+      const copy = [...array];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    // Inisialisasi Aplikasi
+    function initApp() {
+      resolveAllQuestionBanks();
+
+      const banner = document.getElementById('errorBanner');
+      const bannerTitle = document.getElementById('errorBannerTitle');
+      const bannerText = document.getElementById('errorBannerText');
+
+      if (allQuestions.length === 0) {
+        banner.classList.remove('hidden');
+        bannerTitle.textContent = 'Data Soal Tidak Ditemukan (questions.js & questions2.js)';
+        document.getElementById('quizContainer').classList.add('opacity-40', 'pointer-events-none');
+        return;
+      }
+
+      loadState();
+
+      // Jika salah satu file belum ada, tampilkan info ringan & arahkan ke set yang tersedia
+      if (bankSet1.length === 0 && bankSet2.length > 0) {
+        banner.classList.remove('hidden');
+        bannerTitle.textContent = 'File questions.js (Paket 1) belum terdeteksi';
+        bannerText.textContent = 'Saat ini aplikasi menampilkan Paket 2 (PT 35). Pastikan file questions.js berada di folder yang sama jika ingin membuka Paket 1.';
+        appState.activeSet = 'set2';
+      } else if (bankSet2.length === 0 && bankSet1.length > 0) {
+        banner.classList.remove('hidden');
+        bannerTitle.textContent = 'File questions2.js (Paket 2 - PT 35) belum terdeteksi';
+        bannerText.textContent = 'Saat ini aplikasi menampilkan Paket 1 (PT 38). Simpan array soal PT 35 ke dalam file questions2.js di folder yang sama untuk mengaktifkan Paket 2.';
+        appState.activeSet = 'set1';
+      }
+
+      updateSetButtonsCounts();
+      applyFontSize(appState.fontSize);
+      updateShuffleButtonUI();
+      rebuildPoolAndRender(false);
+    }
+
+    // Update Label Jumlah Soal pada Tombol Paket
+    function updateSetButtonsCounts() {
+      document.getElementById('setBtn-set1').textContent = `Paket 1: PT 38 (${bankSet1.length})`;
+      document.getElementById('setBtn-set2').textContent = `Paket 2: PT 35 (${bankSet2.length})`;
+      document.getElementById('setBtn-all').textContent = `Gabungan (${allQuestions.length})`;
+    }
+
+    // Dapatkan Pool Soal Berdasarkan Paket yang Dipilih
+    function getPoolByActiveSet() {
+      if (appState.activeSet === 'set1') return bankSet1;
+      if (appState.activeSet === 'set2') return bankSet2;
+      return allQuestions;
+    }
+
+    // Update Tampilan Tombol Pemilih Paket & Header Badge
+    function updateSetSelectorUI() {
+      const sets = ['set1', 'set2', 'all'];
+      sets.forEach(s => {
+        const btn = document.getElementById(`setBtn-${s}`);
+        if (!btn) return;
+        if (appState.activeSet === s) {
+          btn.className = 'px-3 py-1 rounded-md text-xs font-bold transition bg-medical-700 text-white shadow-xs';
+        } else {
+          btn.className = 'px-3 py-1 rounded-md text-xs font-bold transition text-slate-600 hover:text-slate-900 hover:bg-white/60';
+        }
+      });
+
+      const headerBadge = document.getElementById('activeSetHeaderBadge');
+      const modalTitle = document.getElementById('modalTitle');
+      const resetActiveBtn = document.getElementById('resetActiveSetBtn');
+
+      if (appState.activeSet === 'set1') {
+        headerBadge.textContent = 'Paket 1 • PT 38';
+        modalTitle.textContent = 'Rapor Akurasi SKDI — Paket 1 (PT 38)';
+        resetActiveBtn.textContent = 'Reset Progres Paket 1 (PT 38) Saja';
+        resetActiveBtn.classList.remove('hidden');
+      } else if (appState.activeSet === 'set2') {
+        headerBadge.textContent = 'Paket 2 • PT 35';
+        modalTitle.textContent = 'Rapor Akurasi SKDI — Paket 2 (PT 35)';
+        resetActiveBtn.textContent = 'Reset Progres Paket 2 (PT 35) Saja';
+        resetActiveBtn.classList.remove('hidden');
+      } else {
+        headerBadge.textContent = 'Mode Gabungan (PT 38 + PT 35)';
+        modalTitle.textContent = 'Rapor Akurasi SKDI — Gabungan Seluruh Paket';
+        resetActiveBtn.classList.add('hidden');
+      }
+    }
+
+    // Bangun Ulang Pool, Dropdown Topik, dan Render Soal
+    function rebuildPoolAndRender(reshuffle = false) {
+      currentSetPool = getPoolByActiveSet();
+      updateSetSelectorUI();
+      populateTopicDropdown();
+      applyFilterAndOrder(reshuffle);
+      updateStatsUI();
+    }
+
+    // Handler Ganti Paket Soal (Set 1 / Set 2 / All)
+    function handleSetChange(newSet) {
+      if (newSet === 'set1' && bankSet1.length === 0) {
+        alert('Data Paket 1 (questions.js) tidak ditemukan atau kosong.');
+        return;
+      }
+      if (newSet === 'set2' && bankSet2.length === 0) {
+        alert('Data Paket 2 (questions2.js) tidak ditemukan atau kosong.');
+        return;
+      }
+
+      appState.activeSet = newSet;
+      appState.shuffledUids = [];
+      saveState();
+      rebuildPoolAndRender(true);
+    }
+
+    // Isi Dropdown Filter Topik Sesuai Paket Aktif
+    function populateTopicDropdown() {
+      const select = document.getElementById('topicFilter');
+      select.innerHTML = `<option value="ALL">Semua Topik (${currentSetPool.length} Soal)</option>`;
+
+      const existingTopics = [...new Set(currentSetPool.map(q => cleanText(q.topic)))];
+      const allTopics = [...new Set([...SKDI_TOPICS, ...existingTopics])];
+
+      allTopics.forEach(topic => {
+        const count = currentSetPool.filter(q => cleanText(q.topic) === topic).length;
+        if (count > 0) {
+          const option = document.createElement('option');
+          option.value = topic;
+          option.textContent = `${topic} (${count} Soal)`;
+          select.appendChild(option);
+        }
+      });
+
+      // Pastikan topik yang dipilih masih ada di paket ini
+      const validTopic = currentSetPool.some(q => cleanText(q.topic) === appState.selectedTopic);
+      if (!validTopic) {
+        appState.selectedTopic = 'ALL';
+      }
+      select.value = appState.selectedTopic || 'ALL';
+    }
+
+    // Terapkan Filter Topik & Mode Acak
+    function applyFilterAndOrder(reshuffle = false) {
+      let filtered = currentSetPool;
+      if (appState.selectedTopic !== 'ALL') {
+        filtered = currentSetPool.filter(q => cleanText(q.topic) === appState.selectedTopic);
+      }
+
+      if (filtered.length === 0) {
+        appState.selectedTopic = 'ALL';
+        document.getElementById('topicFilter').value = 'ALL';
+        filtered = currentSetPool;
+      }
+
+      if (appState.isShuffled) {
+        if (reshuffle || !appState.shuffledUids || appState.shuffledUids.length !== filtered.length) {
+          const shuffled = shuffleArray(filtered);
+          appState.shuffledUids = shuffled.map(q => q._uid);
+          saveState();
+        }
+        const uidMap = new Map(filtered.map(q => [q._uid, q]));
+        activeQuestions = appState.shuffledUids.map(uid => uidMap.get(uid)).filter(Boolean);
+        if (activeQuestions.length !== filtered.length) {
+          activeQuestions = shuffleArray(filtered);
+          appState.shuffledUids = activeQuestions.map(q => q._uid);
+          saveState();
+        }
+      } else {
+        activeQuestions = [...filtered];
+      }
+
+      currentIndex = 0;
+      document.getElementById('filteredCountLabel').textContent = `${activeQuestions.length} Soal`;
+      renderCurrentQuestion();
+      renderQuestionGrid();
+    }
+
+    // Handler Ganti Topik
+    function handleTopicChange(topic) {
+      appState.selectedTopic = topic;
+      appState.shuffledUids = [];
+      saveState();
+      applyFilterAndOrder(true);
+    }
+
+    // Handler Toggle Shuffle
+    function toggleShuffle() {
+      appState.isShuffled = !appState.isShuffled;
+      updateShuffleButtonUI();
+      applyFilterAndOrder(true);
+      saveState();
+    }
+
+    function updateShuffleButtonUI() {
+      const btn = document.getElementById('shuffleBtn');
+      const txt = document.getElementById('shuffleText');
+      if (appState.isShuffled) {
+        btn.className = 'flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold border transition bg-medical-50 text-medical-700 border-medical-300 shadow-xs';
+        txt.textContent = 'Mode Acak: Aktif';
+      } else {
+        btn.className = 'flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold border transition bg-slate-100 text-slate-700 border-slate-300 hover:bg-slate-200';
+        txt.textContent = 'Mode Acak: Nonaktif';
+      }
+    }
+
+    // Render Soal Aktif
+    function renderCurrentQuestion() {
+      if (activeQuestions.length === 0) return;
+
+      const q = activeQuestions[currentIndex];
+      const userAnswer = getAnswerForQuestion(q);
+      const isBookmarked = getBookmarkForQuestion(q);
+
+      // Header Info
+      document.getElementById('questionCounter').textContent = `SOAL ${currentIndex + 1} / ${activeQuestions.length}`;
+      
+      const setBadge = document.getElementById('questionSetBadge');
+      setBadge.textContent = `${q._setLabel} • #${q.id}`;
+      if (q._set === 'set1') {
+        setBadge.className = 'text-xs font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-0.5 rounded';
+      } else {
+        setBadge.className = 'text-xs font-bold text-teal-700 bg-teal-50 border border-teal-200 px-2 py-0.5 rounded';
+      }
+
+      document.getElementById('questionTopicBadge').textContent = cleanText(q.topic);
+      document.getElementById('questionText').textContent = cleanText(q.question);
+
+      // Bookmark UI
+      const bookmarkBtn = document.getElementById('bookmarkBtn');
+      const bookmarkText = document.getElementById('bookmarkText');
+      if (isBookmarked) {
+        bookmarkBtn.className = 'text-xs font-semibold px-2.5 py-1 rounded-md border transition flex items-center gap-1.5 bg-amber-400 text-slate-900 border-amber-500 shadow-xs';
+        bookmarkText.textContent = 'Ditandai Ragu';
+      } else {
+        bookmarkBtn.className = 'text-xs font-semibold px-2.5 py-1 rounded-md border transition flex items-center gap-1.5 bg-white text-slate-600 border-slate-300 hover:bg-amber-50';
+        bookmarkText.textContent = 'Ragu-ragu';
+      }
+
+      // Tombol Ulangi Soal
+      const retryBtn = document.getElementById('retryQuestionBtn');
+      if (userAnswer !== undefined) {
+        retryBtn.classList.remove('hidden');
+      } else {
+        retryBtn.classList.add('hidden');
+      }
+
+      // Render Pilihan Ganda
+      const optionsContainer = document.getElementById('optionsContainer');
+      optionsContainer.innerHTML = '';
+
+      const letters = ['A', 'B', 'C', 'D', 'E'];
+
+      q.options.forEach((optText, idx) => {
+        const cleanedOpt = cleanText(optText).replace(/^[A-E]\.\s*/i, '');
+        const btn = document.createElement('button');
+        btn.type = 'button';
+
+        let baseClasses = 'w-full text-left p-3.5 sm:p-4 rounded-xl border transition-all flex items-start gap-3.5 group ';
+        let badgeClasses = 'w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 transition ';
+        let statusIconHTML = '';
+
+        if (userAnswer === undefined) {
+          baseClasses += 'bg-white hover:bg-medical-50/60 border-slate-200 hover:border-medical-400 text-slate-800 shadow-2xs cursor-pointer';
+          badgeClasses += 'bg-slate-100 text-slate-700 group-hover:bg-medical-600 group-hover:text-white border border-slate-300 group-hover:border-medical-600';
+          btn.onclick = () => selectAnswer(idx);
+        } else {
+          btn.disabled = true;
+          const isSelected = userAnswer.selected === idx;
+          const isCorrectOption = q.answer === idx;
+
+          if (isCorrectOption) {
+            baseClasses += 'bg-emerald-50 border-emerald-500 text-emerald-950 ring-1 ring-emerald-500 font-medium';
+            badgeClasses += 'bg-emerald-600 text-white';
+            statusIconHTML = `
+              <span class="ml-auto shrink-0 text-xs font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md flex items-center gap-1">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                ${isSelected ? 'Jawaban Anda Benar' : 'Kunci Jawaban'}
+              </span>`;
+          } else if (isSelected && !isCorrectOption) {
+            baseClasses += 'bg-rose-50 border-rose-500 text-rose-950 ring-1 ring-rose-500 font-medium';
+            badgeClasses += 'bg-rose-600 text-white';
+            statusIconHTML = `
+              <span class="ml-auto shrink-0 text-xs font-bold text-rose-700 bg-rose-100 px-2 py-0.5 rounded-md flex items-center gap-1">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                Jawaban Anda
+              </span>`;
+          } else {
+            baseClasses += 'bg-white/60 border-slate-200 text-slate-400 opacity-75';
+            badgeClasses += 'bg-slate-100 text-slate-400 border border-slate-200';
+          }
+        }
+
+        btn.className = baseClasses;
+        btn.innerHTML = `
+          <span class="${badgeClasses}">${letters[idx]}</span>
+          <span class="flex-1 text-sm sm:text-base leading-relaxed">${cleanedOpt}</span>
+          ${statusIconHTML}
+        `;
+        optionsContainer.appendChild(btn);
+      });
+
+      // Render Kotak Pembahasan (Rationale)
+      const rationaleContainer = document.getElementById('rationaleContainer');
+      const feedbackBanner = document.getElementById('feedbackBanner');
+      const rationaleText = document.getElementById('rationaleText');
+      const correctKeyIndicator = document.getElementById('correctKeyIndicator');
+      const aiDisclaimer = document.getElementById('aiDisclaimer');
+
+      if (userAnswer !== undefined) {
+        rationaleContainer.classList.remove('hidden');
+        rationaleText.innerHTML = formatRationaleHTML(q.rationale);
+        correctKeyIndicator.textContent = `Kunci Jawaban: ${letters[q.answer]}`;
+
+        // Tampilkan *AI generated answers HANYA untuk Paket 1 (PT 38)
+        if (q._set === 'set1') {
+          aiDisclaimer.classList.remove('hidden');
+        } else {
+          aiDisclaimer.classList.add('hidden');
+        }
+
+        if (userAnswer.isCorrect) {
+          feedbackBanner.className = 'flex items-center gap-2.5 px-4 py-2.5 rounded-lg mb-4 text-sm font-bold bg-emerald-100 text-emerald-800 border border-emerald-300';
+          feedbackBanner.innerHTML = `
+            <svg class="w-5 h-5 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Tepat Sekali! Jawaban Anda sesuai dengan kunci pembahasan.</span>
+          `;
+        } else {
+          feedbackBanner.className = 'flex items-center gap-2.5 px-4 py-2.5 rounded-lg mb-4 text-sm font-bold bg-rose-100 text-rose-800 border border-rose-300';
+          feedbackBanner.innerHTML = `
+            <svg class="w-5 h-5 text-rose-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Kurang Tepat. Jawaban yang benar adalah pilihan ${letters[q.answer]}.</span>
+          `;
+        }
+      } else {
+        rationaleContainer.classList.add('hidden');
+      }
+
+      // Update Prev / Next Buttons
+      document.getElementById('prevBtn').disabled = currentIndex === 0;
+      document.getElementById('nextBtn').disabled = currentIndex === activeQuestions.length - 1;
+
+      updateGridHighlight();
+    }
+
+    // Pilih Jawaban pada Soal Aktif
+    function selectAnswer(selectedIndex) {
+      const q = activeQuestions[currentIndex];
+      if (!q) return;
+
+      const isCorrect = selectedIndex === q.answer;
+      setAnswerForQuestion(q, {
+        selected: selectedIndex,
+        isCorrect: isCorrect,
+        timestamp: Date.now()
+      });
+
+      saveState();
+      renderCurrentQuestion();
+      renderQuestionGrid();
+      updateStatsUI();
+    }
+
+    // Ulangi Soal Saat Ini
+    function retryCurrentQuestion() {
+      const q = activeQuestions[currentIndex];
+      if (!q) return;
+      deleteAnswerForQuestion(q);
+      saveState();
+      renderCurrentQuestion();
+      renderQuestionGrid();
+      updateStatsUI();
+    }
+
+    // Tandai Ragu-ragu (Bookmark)
+    function toggleBookmark() {
+      const q = activeQuestions[currentIndex];
+      if (!q) return;
+      toggleBookmarkForQuestion(q);
+      saveState();
+      renderCurrentQuestion();
+      renderQuestionGrid();
+    }
+
+    // Navigasi Soal
+    function prevQuestion() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderCurrentQuestion();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function nextQuestion() {
+      if (currentIndex < activeQuestions.length - 1) {
+        currentIndex++;
+        renderCurrentQuestion();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function jumpToQuestion(index) {
+      if (index >= 0 && index < activeQuestions.length) {
+        currentIndex = index;
+        renderCurrentQuestion();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    // Render Grid Nomor Soal
+    function renderQuestionGrid() {
+      const grid = document.getElementById('questionGrid');
+      grid.innerHTML = '';
+
+      activeQuestions.forEach((q, idx) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.id = `grid-btn-${idx}`;
+        btn.onclick = () => jumpToQuestion(idx);
+        btn.title = `${q._setLabel} - Soal #${q.id}`;
+
+        const ans = getAnswerForQuestion(q);
+        const isBookmarked = getBookmarkForQuestion(q);
+
+        let classes = 'h-9 rounded-lg text-xs font-bold transition flex items-center justify-center relative border ';
+
+        if (ans !== undefined) {
+          if (ans.isCorrect) {
+            classes += 'bg-emerald-500 text-white border-emerald-600 hover:bg-emerald-600';
+          } else {
+            classes += 'bg-rose-500 text-white border-rose-600 hover:bg-rose-600';
+          }
+        } else if (isBookmarked) {
+          classes += 'bg-amber-400 text-slate-900 border-amber-500 hover:bg-amber-500';
+        } else {
+          classes += 'bg-slate-100 text-slate-700 border-slate-300 hover:bg-slate-200';
+        }
+
+        btn.className = classes;
+        btn.textContent = idx + 1;
+
+        if (ans !== undefined && isBookmarked) {
+          const dot = document.createElement('span');
+          dot.className = 'w-2 h-2 rounded-full bg-amber-300 ring-1 ring-slate-900 absolute -top-0.5 -right-0.5';
+          btn.appendChild(dot);
+        }
+
+        grid.appendChild(btn);
+      });
+
+      updateGridHighlight();
+    }
+
+    // Highlight Nomor Soal yang Sedang Dibuka
+    function updateGridHighlight() {
+      activeQuestions.forEach((_, idx) => {
+        const btn = document.getElementById(`grid-btn-${idx}`);
+        if (!btn) return;
+        if (idx === currentIndex) {
+          btn.classList.add('ring-2', 'ring-medical-600', 'ring-offset-2');
+        } else {
+          btn.classList.remove('ring-2', 'ring-medical-600', 'ring-offset-2');
+        }
+      });
+    }
+
+    // Update Seluruh Statistik (Sesuai Paket yang Sedang Aktif)
+    function updateStatsUI() {
+      const totalQuestions = currentSetPool.length;
+      let totalAnswered = 0;
+      let totalCorrect = 0;
+
+      currentSetPool.forEach(q => {
+        const ans = getAnswerForQuestion(q);
+        if (ans !== undefined) {
+          totalAnswered++;
+          if (ans.isCorrect) totalCorrect++;
+        }
+      });
+
+      const totalAccuracy = totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 100) : 0;
+
+      // Top Bar & Mobile Badges
+      document.getElementById('statAnswered').textContent = `${totalAnswered}/${totalQuestions}`;
+      document.getElementById('statCorrect').textContent = totalCorrect;
+      document.getElementById('statAccuracy').textContent = `${totalAccuracy}%`;
+      document.getElementById('mobileAccuracyBadge').textContent = `${totalAccuracy}%`;
+
+      // Modal Summary
+      document.getElementById('modalStatAnswered').textContent = `${totalAnswered} / ${totalQuestions}`;
+      document.getElementById('modalStatCorrect').textContent = totalCorrect;
+      document.getElementById('modalStatAccuracy').textContent = `${totalAccuracy}%`;
+
+      // Hitung Statistik Per Topik dalam Paket Aktif
+      const existingTopics = [...new Set(currentSetPool.map(q => cleanText(q.topic)))];
+      const allTopics = [...new Set([...SKDI_TOPICS, ...existingTopics])];
+
+      const sidebarContainer = document.getElementById('sidebarTopicStats');
+      const modalContainer = document.getElementById('modalTopicList');
+      sidebarContainer.innerHTML = '';
+      modalContainer.innerHTML = '';
+
+      allTopics.forEach(topic => {
+        const topicQuestions = currentSetPool.filter(q => cleanText(q.topic) === topic);
+        const totalInTopic = topicQuestions.length;
+        if (totalInTopic === 0) return;
+
+        let answeredInTopic = 0;
+        let correctInTopic = 0;
+
+        topicQuestions.forEach(q => {
+          const ans = getAnswerForQuestion(q);
+          if (ans !== undefined) {
+            answeredInTopic++;
+            if (ans.isCorrect) correctInTopic++;
+          }
+        });
+
+        const accuracy = answeredInTopic > 0 ? Math.round((correctInTopic / answeredInTopic) * 100) : 0;
+        const completion = Math.round((answeredInTopic / totalInTopic) * 100);
+
+        let barColor = 'bg-medical-500';
+        let badgeColor = 'text-slate-600 bg-slate-100';
+        if (answeredInTopic > 0) {
+          if (accuracy >= 75) {
+            barColor = 'bg-emerald-500';
+            badgeColor = 'text-emerald-700 bg-emerald-50 border border-emerald-200';
+          } else if (accuracy >= 50) {
+            barColor = 'bg-amber-500';
+            badgeColor = 'text-amber-700 bg-amber-50 border border-amber-200';
+          } else {
+            barColor = 'bg-rose-500';
+            badgeColor = 'text-rose-700 bg-rose-50 border border-rose-200';
+          }
+        }
+
+        // Item untuk Sidebar
+        const isCurrentFilter = appState.selectedTopic === topic;
+        const sidebarItem = document.createElement('div');
+        sidebarItem.onclick = () => {
+          const newTopic = appState.selectedTopic === topic ? 'ALL' : topic;
+          document.getElementById('topicFilter').value = newTopic;
+          handleTopicChange(newTopic);
+        };
+        sidebarItem.className = `p-2.5 rounded-lg border transition cursor-pointer ${
+          isCurrentFilter ? 'bg-medical-50/80 border-medical-400 ring-1 ring-medical-400' : 'bg-slate-50/60 hover:bg-slate-100 border-slate-200'
+        }`;
+        sidebarItem.innerHTML = `
+          <div class="flex items-center justify-between text-xs mb-1.5">
+            <span class="font-bold text-slate-800 truncate pr-2">${topic}</span>
+            <span class="font-bold px-1.5 py-0.5 rounded text-[11px] shrink-0 ${badgeColor}">
+              ${answeredInTopic > 0 ? `${accuracy}%` : '-'}
+            </span>
+          </div>
+          <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden mb-1">
+            <div class="${barColor} h-full transition-all duration-300" style="width: ${completion}%"></div>
+          </div>
+          <div class="flex justify-between text-[11px] text-slate-500">
+            <span>Dikerjakan: ${answeredInTopic}/${totalInTopic}</span>
+            <span>Benar: ${correctInTopic}</span>
+          </div>
+        `;
+        sidebarContainer.appendChild(sidebarItem);
+
+        // Item untuk Modal Rapor
+        const modalItem = document.createElement('div');
+        modalItem.className = 'p-3.5 rounded-xl border border-slate-200 bg-white shadow-2xs flex flex-col justify-between';
+        modalItem.innerHTML = `
+          <div>
+            <div class="flex items-start justify-between gap-2 mb-2">
+              <h4 class="text-xs font-bold text-slate-800">${topic}</h4>
+              <span class="text-xs font-bold px-2 py-0.5 rounded-md shrink-0 ${badgeColor}">
+                Akurasi: ${answeredInTopic > 0 ? `${accuracy}%` : 'Belum ada'}
+              </span>
+            </div>
+            <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden mb-2">
+              <div class="${barColor} h-full transition-all duration-300" style="width: ${completion}%"></div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between text-xs text-slate-500 pt-1 border-t border-slate-100">
+            <span>Progres: <strong>${answeredInTopic}/${totalInTopic}</strong> soal</span>
+            <span>Benar: <strong class="text-emerald-600">${correctInTopic}</strong> | Salah: <strong class="text-rose-600">${answeredInTopic - correctInTopic}</strong></span>
+          </div>
+        `;
+        modalContainer.appendChild(modalItem);
+      });
+    }
+
+    // Pengaturan Ukuran Font
+    function setFontSize(size) {
+      appState.fontSize = size;
+      applyFontSize(size);
+      saveState();
+    }
+
+    function applyFontSize(size) {
+      const qText = document.getElementById('questionText');
+      qText.classList.remove('text-sm', 'text-base', 'text-lg');
+      if (size === 'sm') qText.classList.add('text-sm');
+      else if (size === 'lg') qText.classList.add('text-lg');
+      else qText.classList.add('text-base');
+    }
+
+    // Modal Statistik Topik
+    function toggleTopicModal() {
+      const modal = document.getElementById('topicModal');
+      if (modal.classList.contains('hidden')) {
+        updateStatsUI();
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      } else {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    // Modal Reset Progres
+    function confirmResetProgress() {
+      const modal = document.getElementById('resetModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeResetModal() {
+      const modal = document.getElementById('resetModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function executeResetProgress(scope) {
+      if (scope === 'active' && (appState.activeSet === 'set1' || appState.activeSet === 'set2')) {
+        appState.sets[appState.activeSet] = { answers: {}, bookmarks: {} };
+        if (appState.activeSet === 'set1') {
+          localStorage.removeItem(LEGACY_STORAGE_KEY);
+        }
+      } else {
+        appState.sets.set1 = { answers: {}, bookmarks: {} };
+        appState.sets.set2 = { answers: {}, bookmarks: {} };
+        localStorage.removeItem(LEGACY_STORAGE_KEY);
+      }
+
+      saveState();
+      closeResetModal();
+      renderCurrentQuestion();
+      renderQuestionGrid();
+      updateStatsUI();
+    }
+
+    // Navigasi Keyboard (A-E untuk memilih opsi, Panah Kiri/Kanan untuk pindah soal)
+    document.addEventListener('keydown', (e) => {
+      if (!document.getElementById('topicModal').classList.contains('hidden')) return;
+      if (!document.getElementById('resetModal').classList.contains('hidden')) return;
+      if (['INPUT', 'SELECT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+
+      if (e.key === 'ArrowRight') {
+        nextQuestion();
+      } else if (e.key === 'ArrowLeft') {
+        prevQuestion();
+      } else {
+        const keyMap = { 'a': 0, 'b': 1, 'c': 2, 'd': 3, 'e': 4, '1': 0, '2': 1, '3': 2, '4': 3, '5': 4 };
+        const idx = keyMap[e.key.toLowerCase()];
+        if (idx !== undefined && activeQuestions[currentIndex]) {
+          const currentQ = activeQuestions[currentIndex];
+          if (getAnswerForQuestion(currentQ) === undefined && idx < currentQ.options.length) {
+            selectAnswer(idx);
+          }
+        }
+      }
+    });
+
+    // Jalankan saat DOM selesai dimuat
+    window.addEventListener('DOMContentLoaded', initApp);
+  </script>
+</body>
+</html>
