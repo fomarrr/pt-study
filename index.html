@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CBT Progress Test - Dual Bank Soal (PT 38 & PT 35)</title>
+  <title>CBT Progress Test - PT 35, PT 37 &amp; PT 38</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts: Plus Jakarta Sans -->
@@ -65,8 +65,53 @@
 </head>
 <body class="min-h-screen flex flex-col antialiased selection:bg-medical-500 selection:text-white">
 
+  <!-- START PAGE (HALAMAN AWAL) -->
+  <section id="startPage" class="flex-1 w-full">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+
+      <div class="text-center mb-8 sm:mb-10">
+        <div class="inline-flex bg-medical-800 p-3.5 rounded-2xl shadow-md mb-4">
+          <svg class="w-8 h-8 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+          </svg>
+        </div>
+        <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Progress Test</h1>
+        <p class="text-sm text-slate-500 mt-1.5">Mode Belajar &amp; Evaluasi Mandiri SKDI</p>
+        <p class="text-sm text-slate-600 mt-5">Pilih paket soal yang ingin Anda kerjakan:</p>
+      </div>
+
+      <!-- Kartu paket (diisi via JS) -->
+      <div id="startSetCards" class="grid grid-cols-1 sm:grid-cols-3 gap-4"></div>
+
+      <!-- Kartu gabungan (diisi via JS) -->
+      <div id="startAllCard" class="mt-4"></div>
+
+      <div id="startMissingNote" class="hidden mt-4 text-xs text-amber-800 bg-amber-50 border border-amber-300 rounded-lg px-4 py-3 leading-relaxed"></div>
+
+      <!-- Aksi tambahan -->
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-2.5">
+        <button onclick="toggleSyncModal()" class="bg-sky-600 hover:bg-sky-500 transition text-white text-xs font-semibold px-4 py-2 rounded-lg flex items-center gap-1.5 shadow-sm">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+          </svg>
+          <span>Sync Device</span>
+        </button>
+        <button onclick="confirmResetProgress()" class="bg-white hover:bg-rose-50 transition text-rose-700 text-xs font-semibold px-4 py-2 rounded-lg border border-rose-300 flex items-center gap-1.5 shadow-sm">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+          </svg>
+          <span>Reset Progres</span>
+        </button>
+      </div>
+
+      <p class="text-center text-[11px] text-slate-400 mt-6">
+        Progres tersimpan otomatis di browser perangkat ini. Gunakan <strong>Sync Device</strong> untuk memindahkannya ke perangkat lain.
+      </p>
+    </div>
+  </section>
+
   <!-- TOP NAVBAR (CBT HEADER) -->
-  <header class="bg-medical-800 text-white shadow-md sticky top-0 z-30">
+  <header id="appHeader" class="hidden bg-medical-800 text-white shadow-md sticky top-0 z-30">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
         
@@ -82,7 +127,7 @@
               <div class="flex items-center gap-2">
                 <h1 class="text-lg font-bold tracking-tight leading-none">Progress Test</h1>
                 <span id="activeSetHeaderBadge" class="bg-sky-400/20 text-sky-200 border border-sky-300/30 text-[11px] font-bold px-2 py-0.5 rounded-md">
-                  PT 38
+                  PT 35
                 </span>
               </div>
               <p class="text-xs text-sky-200 mt-0.5">Mode Belajar & Evaluasi Mandiri SKDI</p>
@@ -115,6 +160,14 @@
               <span id="statAccuracy" class="font-bold text-amber-300 ml-1">0%</span>
             </div>
           </div>
+
+          <!-- Button: Kembali ke Halaman Awal -->
+          <button onclick="showStartPage()" class="bg-medical-700 hover:bg-medical-600 transition text-xs font-semibold px-3 py-2 rounded-lg border border-white/15 flex items-center gap-1.5 shadow-sm">
+            <svg class="w-4 h-4 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3v-6h6v6h3a1 1 0 001-1V10" />
+            </svg>
+            <span>Beranda</span>
+          </button>
 
           <!-- Button: Rekap Akurasi Per Topik -->
           <button onclick="toggleTopicModal()" class="bg-medical-700 hover:bg-medical-600 transition text-xs font-semibold px-3 py-2 rounded-lg border border-white/15 flex items-center gap-1.5 shadow-sm">
@@ -151,17 +204,17 @@
         <!-- Left Group: Set Selector + Topic Filter -->
         <div class="flex flex-col sm:flex-row sm:items-center gap-2.5 flex-1">
           
-          <!-- Segmented Control: Pilih Paket Soal -->
-          <div class="inline-flex bg-slate-100 p-1 rounded-lg border border-slate-300 shrink-0">
-            <button id="setBtn-set1" onclick="handleSetChange('set1')" class="px-3 py-1 rounded-md text-xs font-bold transition">
-              Paket 1 (PT 38)
-            </button>
-            <button id="setBtn-set2" onclick="handleSetChange('set2')" class="px-3 py-1 rounded-md text-xs font-bold transition">
-              Paket 2 (PT 35)
-            </button>
-            <button id="setBtn-all" onclick="handleSetChange('all')" class="px-3 py-1 rounded-md text-xs font-bold transition">
-              Gabungan (240)
-            </button>
+          <!-- Dropdown: Pilih Paket Soal -->
+          <div class="flex items-center gap-2 shrink-0">
+            <label for="setSelect" class="text-xs font-bold uppercase tracking-wider text-slate-500 whitespace-nowrap">
+              Paket:
+            </label>
+            <select id="setSelect" onchange="handleSetChange(this.value)" class="bg-slate-50 border border-slate-300 text-slate-800 text-xs sm:text-sm rounded-lg focus:ring-2 focus:ring-medical-500 focus:border-medical-500 block px-3 py-1.5 font-bold transition w-full sm:w-auto">
+              <option value="set2">PT 35</option>
+              <option value="set3">PT 37</option>
+              <option value="set1">PT 38</option>
+              <option value="all">Gabungan</option>
+            </select>
           </div>
 
           <div class="hidden sm:block h-5 w-px bg-slate-300"></div>
@@ -202,7 +255,7 @@
   </header>
 
   <!-- MAIN WORKSPACE -->
-  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <main id="appMain" class="hidden flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
     
     <!-- Alert Banner if data is missing -->
     <div id="errorBanner" class="hidden bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-xl shadow-sm mb-6">
@@ -213,7 +266,7 @@
         <div>
           <h3 id="errorBannerTitle" class="text-sm font-bold text-amber-900">Peringatan Data Soal</h3>
           <p id="errorBannerText" class="text-xs text-amber-800 mt-1 leading-relaxed">
-            Pastikan file <strong>questions.js</strong> (`const questions = [...]`) dan <strong>questions2.js</strong> (`const questions2 = [...]`) berada di folder yang sama dengan <strong>index.html</strong>.
+            Pastikan file <strong>questions.js</strong>, <strong>questions2.js</strong>, dan <strong>questions3.js</strong> berada di folder yang sama dengan <strong>index.html</strong>.
           </p>
         </div>
       </div>
@@ -450,7 +503,7 @@
           Reset Paket yang Sedang Aktif Saja
         </button>
         <button onclick="executeResetProgress('all')" class="w-full px-4 py-2.5 rounded-lg text-xs font-bold bg-rose-600 hover:bg-rose-700 text-white transition shadow-xs">
-          Reset Seluruh Paket (PT 38 & PT 35)
+          Reset Seluruh Paket (PT 35, PT 37 &amp; PT 38)
         </button>
         <button onclick="closeResetModal()" class="w-full px-4 py-2 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition mt-1">
           Batal
@@ -503,7 +556,7 @@
           2. Muat Kode dari Perangkat Lain (Import)
         </label>
         <p class="text-xs text-slate-500 mb-2.5">
-          Tempel (Paste) kode progres dari perangkat lain di bawah ini untuk memulihkan seluruh jawaban Anda. Progres di perangkat ini akan diganti.
+          Tempel (Paste) kode progres dari perangkat lain di bawah ini untuk memulihkan jawaban Anda. Progres paket yang ada di dalam kode akan menggantikan progres di perangkat ini.
         </p>
         <div class="flex gap-2">
           <input id="importCodeInput" type="text" placeholder="Tempel kode progres di sini..." class="w-full bg-white border border-slate-300 text-slate-800 text-xs font-mono rounded-lg px-3 py-2 focus:ring-2 focus:ring-medical-500 focus:outline-none" />
@@ -522,9 +575,10 @@
     </div>
   </div>
 
-  <!-- EXTERNAL DATA SOURCES (DUAL SET) -->
+  <!-- EXTERNAL DATA SOURCES (PT 38, PT 35, PT 37) -->
   <script src="questions.js"></script>
   <script src="questions2.js"></script>
+  <script src="questions3.js"></script>
 
   <!-- APPLICATION LOGIC -->
   <script>
@@ -550,9 +604,18 @@
       "Forensik, Medikolegal & IKM"
     ];
 
+    // Konfigurasi Paket Soal (urutan = urutan tampil di dropdown: PT 35, PT 37, PT 38)
+    // Catatan: key 'set1' = PT 38 dan 'set2' = PT 35 dipertahankan agar progres lama tetap terbaca.
+    const PT_SETS = [
+      { key: 'set2', label: 'PT 35', file: 'questions2.js', varName: 'questions2', badge: 'text-teal-700 bg-teal-50 border border-teal-200' },
+      { key: 'set3', label: 'PT 37', file: 'questions3.js', varName: 'questions3', badge: 'text-fuchsia-700 bg-fuchsia-50 border border-fuchsia-200' },
+      { key: 'set1', label: 'PT 38', file: 'questions.js',  varName: 'questions',  badge: 'text-indigo-700 bg-indigo-50 border border-indigo-200' }
+    ];
+    const SET_KEYS = ['set1', 'set2', 'set3']; // urutan tetap untuk penyimpanan & kode sync (s1/s2/s3)
+    const getSetConfig = (key) => PT_SETS.find(s => s.key === key);
+
     // Koleksi Soal Terstandarisasi
-    let bankSet1 = [];
-    let bankSet2 = [];
+    let banks = { set1: [], set2: [], set3: [] };
     let allQuestions = [];
     let currentSetPool = [];
     let activeQuestions = [];
@@ -560,14 +623,15 @@
 
     // State Aplikasi dengan Namespacing per Set
     let appState = {
-      activeSet: 'set1', // 'set1' | 'set2' | 'all'
+      activeSet: 'set2', // 'set1' | 'set2' | 'set3' | 'all'
       selectedTopic: 'ALL',
       isShuffled: false,
       shuffledUids: [],
       fontSize: 'base',
       sets: {
         set1: { answers: {}, bookmarks: {} },
-        set2: { answers: {}, bookmarks: {} }
+        set2: { answers: {}, bookmarks: {} },
+        set3: { answers: {}, bookmarks: {} }
       }
     };
 
@@ -644,29 +708,30 @@
       return html;
     }
 
-    // Ambil dan normalisasi data dari questions.js & questions2.js
+    // Ambil dan normalisasi data dari questions.js, questions2.js & questions3.js
     function resolveAllQuestionBanks() {
-      const rawSet1 = (typeof questions !== 'undefined' && Array.isArray(questions)) ? questions :
-                      (typeof window.questions !== 'undefined' && Array.isArray(window.questions)) ? window.questions : [];
-      
-      const rawSet2 = (typeof questions2 !== 'undefined' && Array.isArray(questions2)) ? questions2 :
-                      (typeof window.questions2 !== 'undefined' && Array.isArray(window.questions2)) ? window.questions2 : [];
+      // Baca langsung dari variabel global hasil questions*.js (aman jika file tidak ada)
+      const rawBySet = {
+        set1: (typeof questions !== 'undefined' && Array.isArray(questions)) ? questions :
+              (Array.isArray(window.questions) ? window.questions : []),
+        set2: (typeof questions2 !== 'undefined' && Array.isArray(questions2)) ? questions2 :
+              (Array.isArray(window.questions2) ? window.questions2 : []),
+        set3: (typeof questions3 !== 'undefined' && Array.isArray(questions3)) ? questions3 :
+              (Array.isArray(window.questions3) ? window.questions3 : [])
+      };
+      const readRaw = (key) => rawBySet[key];
 
-      bankSet1 = rawSet1.map(q => ({
-        ...q,
-        _set: 'set1',
-        _setLabel: 'PT 38',
-        _uid: `set1_${q.id}`
-      }));
+      PT_SETS.forEach(cfg => {
+        banks[cfg.key] = readRaw(cfg.key).map(q => ({
+          ...q,
+          _set: cfg.key,
+          _setLabel: cfg.label,
+          _uid: `${cfg.key}_${q.id}`
+        }));
+      });
 
-      bankSet2 = rawSet2.map(q => ({
-        ...q,
-        _set: 'set2',
-        _setLabel: 'PT 35',
-        _uid: `set2_${q.id}`
-      }));
-
-      allQuestions = [...bankSet1, ...bankSet2];
+      // Urutan gabungan mengikuti urutan dropdown: PT 35, PT 37, PT 38
+      allQuestions = PT_SETS.flatMap(cfg => banks[cfg.key]);
     }
 
     // Load State & Migrasi Otomatis dari localStorage versi pertama
@@ -680,9 +745,11 @@
             ...parsed,
             sets: {
               set1: { answers: {}, bookmarks: {}, ...(parsed.sets?.set1 || {}) },
-              set2: { answers: {}, bookmarks: {}, ...(parsed.sets?.set2 || {}) }
+              set2: { answers: {}, bookmarks: {}, ...(parsed.sets?.set2 || {}) },
+              set3: { answers: {}, bookmarks: {}, ...(parsed.sets?.set3 || {}) }
             }
           };
+          if (![...SET_KEYS, 'all'].includes(appState.activeSet)) appState.activeSet = 'set2';
           return;
         }
 
@@ -757,76 +824,183 @@
       const bannerText = document.getElementById('errorBannerText');
 
       if (allQuestions.length === 0) {
+        // Tidak ada data sama sekali: tampilkan workspace dengan banner peringatan
         banner.classList.remove('hidden');
-        bannerTitle.textContent = 'Data Soal Tidak Ditemukan (questions.js & questions2.js)';
+        bannerTitle.textContent = 'Data Soal Tidak Ditemukan (questions.js, questions2.js & questions3.js)';
         document.getElementById('quizContainer').classList.add('opacity-40', 'pointer-events-none');
+        showQuizView();
         return;
       }
 
       loadState();
 
-      // Jika salah satu file belum ada, tampilkan info ringan & arahkan ke set yang tersedia
-      if (bankSet1.length === 0 && bankSet2.length > 0) {
+      // Jika ada file yang belum terdeteksi, tampilkan info ringan & arahkan ke paket yang tersedia
+      const missing = PT_SETS.filter(cfg => banks[cfg.key].length === 0);
+      if (missing.length > 0) {
         banner.classList.remove('hidden');
-        bannerTitle.textContent = 'File questions.js (Paket 1) belum terdeteksi';
-        bannerText.textContent = 'Saat ini aplikasi menampilkan Paket 2 (PT 35). Pastikan file questions.js berada di folder yang sama jika ingin membuka Paket 1.';
-        appState.activeSet = 'set2';
-      } else if (bankSet2.length === 0 && bankSet1.length > 0) {
-        banner.classList.remove('hidden');
-        bannerTitle.textContent = 'File questions2.js (Paket 2 - PT 35) belum terdeteksi';
-        bannerText.textContent = 'Saat ini aplikasi menampilkan Paket 1 (PT 38). Simpan array soal PT 35 ke dalam file questions2.js di folder yang sama untuk mengaktifkan Paket 2.';
-        appState.activeSet = 'set1';
+        bannerTitle.textContent = 'Sebagian file soal belum terdeteksi';
+        bannerText.textContent = 'File berikut belum ditemukan atau kosong: ' +
+          missing.map(cfg => `${cfg.file} (${cfg.label})`).join(', ') +
+          '. Pastikan file tersebut berada di folder yang sama dengan index.html.';
       }
 
-      updateSetButtonsCounts();
+      // Pastikan paket aktif tersedia
+      if (appState.activeSet !== 'all' && banks[appState.activeSet] && banks[appState.activeSet].length === 0) {
+        const firstAvailable = PT_SETS.find(cfg => banks[cfg.key].length > 0);
+        appState.activeSet = firstAvailable ? firstAvailable.key : 'all';
+      }
+
+      updateSetSelectorOptions();
       applyFontSize(appState.fontSize);
       updateShuffleButtonUI();
       rebuildPoolAndRender(false);
+
+      // Tampilkan halaman awal terlebih dahulu (bukan langsung ke soal)
+      showStartPage();
     }
 
-    // Update Label Jumlah Soal pada Tombol Paket
-    function updateSetButtonsCounts() {
-      document.getElementById('setBtn-set1').textContent = `Paket 1: PT 38 (${bankSet1.length})`;
-      document.getElementById('setBtn-set2').textContent = `Paket 2: PT 35 (${bankSet2.length})`;
-      document.getElementById('setBtn-all').textContent = `Gabungan (${allQuestions.length})`;
+    // Isi label & status dropdown paket (jumlah soal; nonaktifkan paket yang datanya tidak ada)
+    function updateSetSelectorOptions() {
+      const select = document.getElementById('setSelect');
+      select.innerHTML = '';
+      PT_SETS.forEach(cfg => {
+        const count = banks[cfg.key].length;
+        const opt = document.createElement('option');
+        opt.value = cfg.key;
+        opt.textContent = count > 0 ? `${cfg.label} (${count} Soal)` : `${cfg.label} (file tidak ditemukan)`;
+        opt.disabled = count === 0;
+        select.appendChild(opt);
+      });
+      const optAll = document.createElement('option');
+      optAll.value = 'all';
+      optAll.textContent = `Gabungan Semua (${allQuestions.length} Soal)`;
+      select.appendChild(optAll);
+      select.value = appState.activeSet;
+    }
+
+    // ===== START PAGE =====
+    function getSetProgress(key) {
+      const bank = banks[key] || [];
+      const answers = appState.sets[key]?.answers || {};
+      let answered = 0;
+      let correct = 0;
+      bank.forEach(q => {
+        const a = answers[q.id];
+        if (a !== undefined) {
+          answered++;
+          if (a.isCorrect) correct++;
+        }
+      });
+      const accuracy = answered > 0 ? Math.round((correct / answered) * 100) : 0;
+      return { total: bank.length, answered, correct, accuracy };
+    }
+
+    function renderStartPage() {
+      const cardsEl = document.getElementById('startSetCards');
+      const allEl = document.getElementById('startAllCard');
+      const noteEl = document.getElementById('startMissingNote');
+
+      const cardHTML = (key, label, sub, prog, disabled, extraClasses) => {
+        const pct = prog.total > 0 ? Math.round((prog.answered / prog.total) * 100) : 0;
+        const isActive = appState.activeSet === key && prog.answered > 0;
+        const cta = prog.answered > 0 ? 'Lanjutkan' : 'Mulai';
+        return `
+          <button type="button" ${disabled ? 'disabled' : `onclick="startFromCard('${key}')"`}
+            class="group text-left bg-white rounded-2xl border ${isActive && !disabled ? 'border-medical-500 ring-1 ring-medical-500' : 'border-slate-200'} shadow-sm p-5 transition ${disabled ? 'opacity-50 cursor-not-allowed' : 'hover:shadow-md hover:border-medical-500'} ${extraClasses || ''}">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <div class="text-xl font-bold text-slate-900">${label}</div>
+                <div class="text-xs text-slate-500 mt-0.5">${sub}</div>
+              </div>
+              ${isActive && !disabled ? '<span class="text-[10px] font-bold uppercase tracking-wider text-medical-700 bg-medical-50 border border-medical-100 px-2 py-0.5 rounded-full">Terakhir</span>' : ''}
+            </div>
+            ${disabled ? `
+              <p class="text-xs text-amber-700 mt-4">File soal tidak ditemukan.</p>
+            ` : `
+              <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden mt-4">
+                <div class="bg-medical-500 h-full" style="width: ${pct}%"></div>
+              </div>
+              <div class="flex justify-between text-[11px] text-slate-500 mt-1.5">
+                <span>Dikerjakan: <strong>${prog.answered}/${prog.total}</strong></span>
+                <span>Akurasi: <strong>${prog.answered > 0 ? prog.accuracy + '%' : '-'}</strong></span>
+              </div>
+              <div class="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-white bg-medical-600 group-hover:bg-medical-700 px-3.5 py-1.5 rounded-lg transition">
+                <span>${cta}</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" /></svg>
+              </div>
+            `}
+          </button>`;
+      };
+
+      cardsEl.innerHTML = PT_SETS.map(cfg => {
+        const prog = getSetProgress(cfg.key);
+        return cardHTML(cfg.key, cfg.label, `${prog.total} soal`, prog, prog.total === 0, '');
+      }).join('');
+
+      // Kartu Gabungan
+      const totals = PT_SETS.reduce((acc, cfg) => {
+        const p = getSetProgress(cfg.key);
+        acc.total += p.total; acc.answered += p.answered; acc.correct += p.correct;
+        return acc;
+      }, { total: 0, answered: 0, correct: 0 });
+      totals.accuracy = totals.answered > 0 ? Math.round((totals.correct / totals.answered) * 100) : 0;
+      allEl.innerHTML = cardHTML('all', 'Gabungan Semua Paket', `PT 35 + PT 37 + PT 38 • ${totals.total} soal`, totals, totals.total === 0, 'w-full');
+
+      // Catatan jika ada file yang belum terdeteksi
+      const missing = PT_SETS.filter(cfg => banks[cfg.key].length === 0);
+      if (missing.length > 0) {
+        noteEl.classList.remove('hidden');
+        noteEl.textContent = 'File belum terdeteksi: ' + missing.map(cfg => `${cfg.file} (${cfg.label})`).join(', ') + '.';
+      } else {
+        noteEl.classList.add('hidden');
+      }
+    }
+
+    function showStartPage() {
+      renderStartPage();
+      document.getElementById('appHeader').classList.add('hidden');
+      document.getElementById('appMain').classList.add('hidden');
+      document.getElementById('startPage').classList.remove('hidden');
+      window.scrollTo(0, 0);
+    }
+
+    function showQuizView() {
+      document.getElementById('startPage').classList.add('hidden');
+      document.getElementById('appHeader').classList.remove('hidden');
+      document.getElementById('appMain').classList.remove('hidden');
+      window.scrollTo(0, 0);
+    }
+
+    function startFromCard(key) {
+      if (key !== appState.activeSet) {
+        if (!handleSetChange(key)) return;
+      }
+      showQuizView();
     }
 
     // Dapatkan Pool Soal Berdasarkan Paket yang Dipilih
     function getPoolByActiveSet() {
-      if (appState.activeSet === 'set1') return bankSet1;
-      if (appState.activeSet === 'set2') return bankSet2;
+      if (banks[appState.activeSet]) return banks[appState.activeSet];
       return allQuestions;
     }
 
-    // Update Tampilan Tombol Pemilih Paket & Header Badge
+    // Update Tampilan Dropdown Paket & Header Badge
     function updateSetSelectorUI() {
-      const sets = ['set1', 'set2', 'all'];
-      sets.forEach(s => {
-        const btn = document.getElementById(`setBtn-${s}`);
-        if (!btn) return;
-        if (appState.activeSet === s) {
-          btn.className = 'px-3 py-1 rounded-md text-xs font-bold transition bg-medical-700 text-white shadow-xs';
-        } else {
-          btn.className = 'px-3 py-1 rounded-md text-xs font-bold transition text-slate-600 hover:text-slate-900 hover:bg-white/60';
-        }
-      });
+      const select = document.getElementById('setSelect');
+      if (select) select.value = appState.activeSet;
 
       const headerBadge = document.getElementById('activeSetHeaderBadge');
       const modalTitle = document.getElementById('modalTitle');
       const resetActiveBtn = document.getElementById('resetActiveSetBtn');
 
-      if (appState.activeSet === 'set1') {
-        headerBadge.textContent = 'Paket 1 • PT 38';
-        modalTitle.textContent = 'Rapor Akurasi SKDI — Paket 1 (PT 38)';
-        resetActiveBtn.textContent = 'Reset Progres Paket 1 (PT 38) Saja';
-        resetActiveBtn.classList.remove('hidden');
-      } else if (appState.activeSet === 'set2') {
-        headerBadge.textContent = 'Paket 2 • PT 35';
-        modalTitle.textContent = 'Rapor Akurasi SKDI — Paket 2 (PT 35)';
-        resetActiveBtn.textContent = 'Reset Progres Paket 2 (PT 35) Saja';
+      const cfg = getSetConfig(appState.activeSet);
+      if (cfg) {
+        headerBadge.textContent = cfg.label;
+        modalTitle.textContent = `Rapor Akurasi SKDI — ${cfg.label}`;
+        resetActiveBtn.textContent = `Reset Progres ${cfg.label} Saja`;
         resetActiveBtn.classList.remove('hidden');
       } else {
-        headerBadge.textContent = 'Mode Gabungan (PT 38 + PT 35)';
+        headerBadge.textContent = 'Gabungan (PT 35 + PT 37 + PT 38)';
         modalTitle.textContent = 'Rapor Akurasi SKDI — Gabungan Seluruh Paket';
         resetActiveBtn.classList.add('hidden');
       }
@@ -841,21 +1015,26 @@
       updateStatsUI();
     }
 
-    // Handler Ganti Paket Soal (Set 1 / Set 2 / All)
+    // Handler Ganti Paket Soal. Mengembalikan true jika berhasil.
     function handleSetChange(newSet) {
-      if (newSet === 'set1' && bankSet1.length === 0) {
-        alert('Data Paket 1 (questions.js) tidak ditemukan atau kosong.');
-        return;
+      const select = document.getElementById('setSelect');
+      const cfg = getSetConfig(newSet);
+      if (cfg && banks[newSet].length === 0) {
+        alert(`Data ${cfg.label} (${cfg.file}) tidak ditemukan atau kosong.`);
+        if (select) select.value = appState.activeSet;
+        return false;
       }
-      if (newSet === 'set2' && bankSet2.length === 0) {
-        alert('Data Paket 2 (questions2.js) tidak ditemukan atau kosong.');
-        return;
+      if (!cfg && newSet !== 'all') {
+        if (select) select.value = appState.activeSet;
+        return false;
       }
 
       appState.activeSet = newSet;
       appState.shuffledUids = [];
       saveState();
       rebuildPoolAndRender(true);
+      if (select) select.blur();
+      return true;
     }
 
     // Isi Dropdown Filter Topik Sesuai Paket Aktif
@@ -961,11 +1140,8 @@
       
       const setBadge = document.getElementById('questionSetBadge');
       setBadge.textContent = `${q._setLabel} • #${q.id}`;
-      if (q._set === 'set1') {
-        setBadge.className = 'text-xs font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-0.5 rounded';
-      } else {
-        setBadge.className = 'text-xs font-bold text-teal-700 bg-teal-50 border border-teal-200 px-2 py-0.5 rounded';
-      }
+      const setCfg = getSetConfig(q._set);
+      setBadge.className = 'text-xs font-bold px-2 py-0.5 rounded ' + (setCfg ? setCfg.badge : 'text-slate-700 bg-slate-50 border border-slate-200');
 
       document.getElementById('questionTopicBadge').textContent = cleanText(q.topic);
       document.getElementById('questionText').textContent = cleanText(q.question);
@@ -1380,14 +1556,13 @@
     }
 
     function executeResetProgress(scope) {
-      if (scope === 'active' && (appState.activeSet === 'set1' || appState.activeSet === 'set2')) {
+      if (scope === 'active' && SET_KEYS.includes(appState.activeSet)) {
         appState.sets[appState.activeSet] = { answers: {}, bookmarks: {} };
         if (appState.activeSet === 'set1') {
           localStorage.removeItem(LEGACY_STORAGE_KEY);
         }
       } else {
-        appState.sets.set1 = { answers: {}, bookmarks: {} };
-        appState.sets.set2 = { answers: {}, bookmarks: {} };
+        SET_KEYS.forEach(k => { appState.sets[k] = { answers: {}, bookmarks: {} }; });
         localStorage.removeItem(LEGACY_STORAGE_KEY);
       }
 
@@ -1396,28 +1571,35 @@
       renderCurrentQuestion();
       renderQuestionGrid();
       updateStatsUI();
+      if (!document.getElementById('startPage').classList.contains('hidden')) renderStartPage();
     }
 
     // ==========================================
     // FITUR SYNC KODE PROGRES (COMPACT BASE64)
     // ==========================================
     function generateCompactSyncCode() {
-      const payload = { s1: {}, b1: [], s2: {}, b2: [] };
+      // Format: { s1, b1, s2, b2, s3, b3 } -> s = jawaban {idSoal: indeksOpsi}, b = daftar id bookmark
+      // s1/b1 = PT 38, s2/b2 = PT 35, s3/b3 = PT 37
+      const payload = {};
 
-      ['set1', 'set2'].forEach((setKey, idx) => {
-        const targetAns = idx === 0 ? payload.s1 : payload.s2;
-        const targetBm = idx === 0 ? payload.b1 : payload.b2;
+      SET_KEYS.forEach((setKey, idx) => {
+        const n = idx + 1; // set1 -> 1, set2 -> 2, set3 -> 3
+        const ansTarget = {};
+        const bmTarget = [];
         const setObj = appState.sets[setKey] || { answers: {}, bookmarks: {} };
 
         Object.entries(setObj.answers || {}).forEach(([qId, ansObj]) => {
           if (ansObj && typeof ansObj.selected === 'number') {
-            targetAns[qId] = ansObj.selected; // Hanya simpan indeks opsi (0-4)
+            ansTarget[qId] = ansObj.selected; // Hanya simpan indeks opsi (0-4)
           }
         });
 
         Object.keys(setObj.bookmarks || {}).forEach(qId => {
-          if (setObj.bookmarks[qId]) targetBm.push(Number(qId));
+          if (setObj.bookmarks[qId]) bmTarget.push(Number(qId));
         });
+
+        payload['s' + n] = ansTarget;
+        payload['b' + n] = bmTarget;
       });
 
       return 'PT-' + btoa(JSON.stringify(payload));
@@ -1478,6 +1660,8 @@
         const cleanBase64 = rawCode.startsWith('PT-') ? rawCode.slice(3) : rawCode;
         const parsed = JSON.parse(atob(cleanBase64));
 
+        if (!parsed || typeof parsed !== 'object') throw new Error('format');
+
         const reconstructSet = (compactAns, compactBm, bankArray) => {
           const answers = {};
           const bookmarks = {};
@@ -1485,9 +1669,11 @@
 
           Object.entries(compactAns || {}).forEach(([qId, selectedIdx]) => {
             const correctAns = keyMap.get(String(qId));
+            const sel = Number(selectedIdx);
+            if (correctAns === undefined || !Number.isInteger(sel) || sel < 0 || sel > 4) return; // lewati id yang tidak dikenal
             answers[qId] = {
-              selected: Number(selectedIdx),
-              isCorrect: Number(selectedIdx) === correctAns,
+              selected: sel,
+              isCorrect: sel === correctAns,
               timestamp: Date.now()
             };
           });
@@ -1499,8 +1685,18 @@
           return { answers, bookmarks };
         };
 
-        appState.sets.set1 = reconstructSet(parsed.s1, parsed.b1, bankSet1);
-        appState.sets.set2 = reconstructSet(parsed.s2, parsed.b2, bankSet2);
+        let appliedCount = 0;
+        SET_KEYS.forEach((setKey, idx) => {
+          const n = idx + 1;
+          const hasData = parsed['s' + n] !== undefined || parsed['b' + n] !== undefined;
+          // Kode lama (sebelum PT 37) tidak memuat s3/b3 -> progres PT 37 di perangkat ini dibiarkan.
+          // Jika file soal paket belum termuat, progres paket tersebut juga dibiarkan.
+          if (!hasData || banks[setKey].length === 0) return;
+          appState.sets[setKey] = reconstructSet(parsed['s' + n], parsed['b' + n], banks[setKey]);
+          appliedCount++;
+        });
+
+        if (appliedCount === 0) throw new Error('kosong');
 
         saveState();
         renderCurrentQuestion();
@@ -1521,6 +1717,7 @@
       if (!document.getElementById('topicModal').classList.contains('hidden')) return;
       if (!document.getElementById('resetModal').classList.contains('hidden')) return;
       if (!document.getElementById('syncModal').classList.contains('hidden')) return;
+      if (!document.getElementById('startPage').classList.contains('hidden')) return;
       if (['INPUT', 'SELECT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
 
       if (e.key === 'ArrowRight') {
