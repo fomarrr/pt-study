@@ -220,7 +220,7 @@ const questions4 = [
       "D. Anti Difteri Serum (ADS)",
       "E. -"
     ],
-    "answer": 0,
+    "answer": 3,
     "rationale": "Berdasarkan Buku Pedoman Pencegahan dan Pengendalian Difteri Kemenkes RI (2017), tatalaksana kasus difteri harus segera dimulai dengan pemberian Anti Difteri Serum (ADS) dan antibiotik tanpa perlu menunggu konfirmasi hasil kultur usap tenggorok. (1) Anti Difteri Serum (ADS) diberikan secepat mungkin setelah dilakukan uji kepekaan kulit (skin test / tes hipersensitivitas) untuk menetralisir toksin bebas di sirkulasi sebelum terikat ke jaringan. (2) Antibiotik lini pertama untuk mengeradikasi bakteri Corynebacterium diphtheriae adalah Penisilin Prokain IM 25.000–50.000 U/kgBB/hari (maksimal 1,5 juta U) selama 14 hari, atau Eritromisin oral/injeksi dengan dosis 40 mg/kgBB/hari (maksimal 2 gram/hari) terbagi setiap 6 jam selama 14 hari (pilih Eritromisin jika yang ditanyakan adalah jenis antibiotiknya, atau ADS jika yang ditanyakan adalah terapi spesifik penetralisir toksin)."
   },
   {
