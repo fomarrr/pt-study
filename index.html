@@ -80,6 +80,7 @@
     html.dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #3a4a67; }
     html.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #55657f; }
     html.dark .ring-offset-2 { --tw-ring-offset-color: #162032; }
+    .exam-knob { background: #fff; transform: translateX(2px); transition: transform .15s ease; }
     .theme-icon-sun { display: none; }
     html.dark .theme-icon-sun { display: inline; }
     html.dark .theme-icon-moon { display: none; }
@@ -88,6 +89,7 @@
     html.dark .bg-emerald-50 { background-color: rgba(16,185,129,0.1) !important; }
     html.dark .bg-fuchsia-50 { background-color: rgba(232,121,249,0.1) !important; }
     html.dark .bg-indigo-50 { background-color: rgba(129,140,248,0.1) !important; }
+    html.dark .bg-medical-100 { background-color: rgba(56,189,248,0.18) !important; }
     html.dark .bg-medical-50 { background-color: rgba(56,189,248,0.1) !important; }
     html.dark .bg-medical-50\/80 { background-color: rgba(56,189,248,0.08) !important; }
     html.dark .bg-orange-50 { background-color: rgba(251,146,60,0.1) !important; }
@@ -165,13 +167,14 @@
     html.dark .hover\:bg-white:hover { background-color: #2c3b57 !important; }
     html.dark .group:hover .group-hover\:text-white { color: #ffffff !important; }
     html.dark .hover\:text-medical-600:hover { color: #7dd3fc !important; }
+    html.dark .hover\:text-medical-700:hover { color: #7dd3fc !important; }
     html.dark .hover\:text-slate-600:hover { color: #b0bccf !important; }
     html.dark .hover\:text-white:hover { color: #ffffff !important; }
     html.dark .focus\:border-medical-500:focus { border-color: #0284c7 !important; }
     html.dark .group:hover .group-hover\:border-medical-600 { border-color: #0369a1 !important; }
     html.dark .hover\:border-medical-500:hover { border-color: #0284c7 !important; }
     /* Elemen berlatar kuning (ragu-ragu) tetap memakai teks gelap agar terbaca */
-    html.dark .bg-amber-400 { color: #0f172a !important; }
+    html.dark .bg-amber-400, html.dark .bg-amber-500 { color: #0f172a !important; }
   </style>
 </head>
 <body class="min-h-screen flex flex-col antialiased selection:bg-medical-500 selection:text-white">
@@ -201,6 +204,19 @@
         <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Progress Test</h1>
         <p class="text-sm text-slate-500 mt-1.5">Mode Belajar &amp; Evaluasi Mandiri SKDI</p>
         <p class="text-sm text-slate-600 mt-5">Pilih paket soal yang ingin Anda kerjakan:</p>
+      </div>
+
+      <!-- Toggle Mode Ujian -->
+      <div class="max-w-xl mx-auto mb-6">
+        <div class="bg-white border border-slate-200 rounded-xl px-4 py-3 shadow-sm flex items-center justify-between gap-4">
+          <div>
+            <div class="text-sm font-bold text-slate-800">Mode Ujian</div>
+            <div class="text-xs text-slate-500 mt-0.5 leading-snug">Sembunyikan kunci jawaban, pembahasan, dan nilai sampai Anda selesai. Bisa diubah kapan saja.</div>
+          </div>
+          <button id="startExamToggle" type="button" role="switch" aria-checked="false" aria-label="Mode Ujian" onclick="toggleExamMode()" class="relative shrink-0 inline-flex h-6 w-11 items-center rounded-full bg-slate-300 transition-colors">
+            <span id="startExamKnob" class="exam-knob inline-block h-5 w-5 rounded-full shadow"></span>
+          </button>
+        </div>
       </div>
 
       <!-- Kartu paket (diisi via JS) -->
@@ -234,37 +250,37 @@
   </section>
 
   <!-- TOP NAVBAR (CBT HEADER) -->
-  <header id="appHeader" class="hidden bg-medical-800 text-white shadow-md sticky top-0 z-30">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+  <header id="appHeader" class="hidden bg-medical-800 text-white shadow-md md:sticky md:top-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 md:py-3">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-3">
         
         <!-- Brand & Title -->
         <div class="flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <div class="bg-white/10 p-2 rounded-lg border border-white/20">
-              <svg class="w-6 h-6 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="flex items-center gap-2.5 sm:gap-3">
+            <div class="bg-white/10 p-1.5 sm:p-2 rounded-lg border border-white/20">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
               </svg>
             </div>
             <div>
               <div class="flex items-center gap-2">
-                <h1 class="text-lg font-bold tracking-tight leading-none">Progress Test</h1>
+                <h1 class="text-base sm:text-lg font-bold tracking-tight leading-none">Progress Test</h1>
                 <span id="activeSetHeaderBadge" class="bg-sky-400/20 text-sky-200 border border-sky-300/30 text-[11px] font-bold px-2 py-0.5 rounded-md">
                   PT 35
                 </span>
               </div>
-              <p class="text-xs text-sky-200 mt-0.5">Mode Belajar & Evaluasi Mandiri SKDI</p>
+              <p class="hidden sm:block text-xs text-sky-200 mt-0.5">Mode Belajar & Evaluasi Mandiri SKDI</p>
             </div>
           </div>
 
           <!-- Mobile Stats Badge -->
           <button onclick="toggleTopicModal()" class="md:hidden bg-medical-700 hover:bg-medical-600 text-xs font-medium px-3 py-1.5 rounded-lg border border-white/15 flex items-center gap-1.5">
-            <span id="mobileAccuracyBadge">0%</span> Akurasi
+            <span id="mobileAccuracyBadge">0%</span> <span id="mobileAccuracyLabel">Akurasi</span>
           </button>
         </div>
 
         <!-- Global Progress Summary & Controls -->
-        <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+        <div class="flex flex-wrap items-center gap-1.5 sm:gap-3">
           
           <!-- Quick Stats Pill -->
           <div class="hidden sm:flex items-center bg-medical-900/60 border border-white/10 rounded-lg px-3 py-1.5 text-xs gap-4">
@@ -285,46 +301,46 @@
           </div>
 
           <!-- Button: Kembali ke Halaman Awal -->
-          <button onclick="showStartPage()" class="bg-medical-700 hover:bg-medical-600 transition text-xs font-semibold px-3 py-2 rounded-lg border border-white/15 flex items-center gap-1.5 shadow-sm">
+          <button onclick="showStartPage()" title="Beranda" aria-label="Beranda" class="bg-medical-700 hover:bg-medical-600 transition text-xs font-semibold px-2.5 sm:px-3 py-2 rounded-lg border border-white/15 flex items-center gap-1.5 shadow-sm">
             <svg class="w-4 h-4 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3v-6h6v6h3a1 1 0 001-1V10" />
             </svg>
-            <span>Beranda</span>
+            <span class="hidden sm:inline">Beranda</span>
           </button>
 
           <!-- Button: Rekap Akurasi Per Topik -->
-          <button onclick="toggleTopicModal()" class="bg-medical-700 hover:bg-medical-600 transition text-xs font-semibold px-3 py-2 rounded-lg border border-white/15 flex items-center gap-1.5 shadow-sm">
+          <button onclick="toggleTopicModal()" title="Statistik Topik" aria-label="Statistik Topik" class="bg-medical-700 hover:bg-medical-600 transition text-xs font-semibold px-2.5 sm:px-3 py-2 rounded-lg border border-white/15 flex items-center gap-1.5 shadow-sm">
             <svg class="w-4 h-4 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
             </svg>
-            <span>Statistik Topik</span>
+            <span class="hidden sm:inline">Statistik Topik</span>
           </button>
 
           <!-- Button: Sync Antar Device -->
-          <button onclick="toggleSyncModal()" class="bg-sky-600 hover:bg-sky-500 transition text-xs font-semibold px-3 py-2 rounded-lg border border-sky-300/30 flex items-center gap-1.5 shadow-sm">
+          <button onclick="toggleSyncModal()" title="Sync Device" aria-label="Sync Device" class="bg-sky-600 hover:bg-sky-500 transition text-xs font-semibold px-2.5 sm:px-3 py-2 rounded-lg border border-sky-300/30 flex items-center gap-1.5 shadow-sm">
             <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
             </svg>
-            <span>Sync Device</span>
+            <span class="hidden sm:inline">Sync Device</span>
           </button>
 
           <!-- Button: Dark Mode -->
-          <button onclick="toggleTheme()" class="bg-medical-700 hover:bg-medical-600 transition text-xs font-semibold px-3 py-2 rounded-lg border border-white/15 flex items-center gap-1.5 shadow-sm" title="Ganti tema terang/gelap">
+          <button onclick="toggleTheme()" class="bg-medical-700 hover:bg-medical-600 transition text-xs font-semibold px-2.5 sm:px-3 py-2 rounded-lg border border-white/15 flex items-center gap-1.5 shadow-sm" title="Ganti tema terang/gelap" aria-label="Ganti tema terang/gelap">
             <svg class="w-4 h-4 theme-icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
             </svg>
             <svg class="w-4 h-4 theme-icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
             </svg>
-            <span class="theme-toggle-label">Mode Gelap</span>
+            <span class="theme-toggle-label hidden sm:inline">Mode Gelap</span>
           </button>
 
           <!-- Button: Reset Progres -->
-          <button onclick="confirmResetProgress()" class="bg-rose-600/90 hover:bg-rose-600 transition text-xs font-semibold px-3 py-2 rounded-lg border border-rose-400/30 flex items-center gap-1.5 shadow-sm">
+          <button onclick="confirmResetProgress()" title="Reset Progres" aria-label="Reset Progres" class="bg-rose-600/90 hover:bg-rose-600 transition text-xs font-semibold px-2.5 sm:px-3 py-2 rounded-lg border border-rose-400/30 flex items-center gap-1.5 shadow-sm">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
             </svg>
-            <span>Reset Progres</span>
+            <span class="hidden sm:inline">Reset Progres</span>
           </button>
 
         </div>
@@ -333,17 +349,17 @@
 
     <!-- SUB-TOOLBAR: PILIH PAKET SOAL, FILTER TOPIK & SHUFFLE -->
     <div class="bg-white border-b border-slate-200 text-slate-700">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-2.5 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-2 sm:gap-3">
         
         <!-- Left Group: Set Selector + Topic Filter -->
-        <div class="flex flex-col sm:flex-row sm:items-center gap-2.5 flex-1">
+        <div class="grid grid-cols-2 gap-2 sm:flex sm:flex-row sm:items-center sm:gap-2.5 flex-1">
           
           <!-- Dropdown: Pilih Paket Soal -->
-          <div class="flex items-center gap-2 shrink-0">
-            <label for="setSelect" class="text-xs font-bold uppercase tracking-wider text-slate-500 whitespace-nowrap">
+          <div class="flex items-center gap-2 sm:shrink-0 min-w-0">
+            <label for="setSelect" class="hidden sm:block text-xs font-bold uppercase tracking-wider text-slate-500 whitespace-nowrap">
               Paket:
             </label>
-            <select id="setSelect" onchange="handleSetChange(this.value)" class="bg-slate-50 border border-slate-300 text-slate-800 text-xs sm:text-sm rounded-lg focus:ring-2 focus:ring-medical-500 focus:border-medical-500 block px-3 py-1.5 font-bold transition w-full sm:w-auto">
+            <select id="setSelect" aria-label="Pilih paket soal" onchange="handleSetChange(this.value)" class="bg-slate-50 border border-slate-300 text-slate-800 text-xs sm:text-sm rounded-lg focus:ring-2 focus:ring-medical-500 focus:border-medical-500 block px-3 py-1.5 font-bold transition w-full sm:w-auto">
               <option value="set2">PT 35</option>
               <option value="set4">PT 36</option>
               <option value="set3">PT 37</option>
@@ -355,11 +371,11 @@
           <div class="hidden sm:block h-5 w-px bg-slate-300"></div>
 
           <!-- Filter Topik Dropdown -->
-          <div class="flex items-center gap-2 flex-1 max-w-md">
-            <label for="topicFilter" class="text-xs font-bold uppercase tracking-wider text-slate-500 whitespace-nowrap">
+          <div class="flex items-center gap-2 flex-1 max-w-md min-w-0">
+            <label for="topicFilter" class="hidden sm:block text-xs font-bold uppercase tracking-wider text-slate-500 whitespace-nowrap">
               Topik:
             </label>
-            <select id="topicFilter" onchange="handleTopicChange(this.value)" class="w-full bg-slate-50 border border-slate-300 text-slate-800 text-xs sm:text-sm rounded-lg focus:ring-2 focus:ring-medical-500 focus:border-medical-500 block px-3 py-1.5 font-medium transition">
+            <select id="topicFilter" aria-label="Filter topik" onchange="handleTopicChange(this.value)" class="w-full bg-slate-50 border border-slate-300 text-slate-800 text-xs sm:text-sm rounded-lg focus:ring-2 focus:ring-medical-500 focus:border-medical-500 block px-3 py-1.5 font-medium transition">
               <option value="ALL">Semua Topik</option>
             </select>
           </div>
@@ -367,14 +383,24 @@
         </div>
 
         <!-- Right Controls: Shuffle & Font Size -->
-        <div class="flex items-center justify-between sm:justify-end gap-2 sm:gap-3">
+        <div class="flex items-center justify-between sm:justify-end gap-1.5 sm:gap-3">
           
           <!-- Shuffle Toggle Button -->
-          <button id="shuffleBtn" onclick="toggleShuffle()" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold border transition bg-slate-100 text-slate-700 border-slate-300 hover:bg-slate-200">
+          <button id="shuffleBtn" onclick="toggleShuffle()" class="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold border transition bg-slate-100 text-slate-700 border-slate-300 hover:bg-slate-200">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
             </svg>
-            <span id="shuffleText">Mode Acak: Nonaktif</span>
+            <span id="shuffleTextShort" class="sm:hidden">Acak: Off</span>
+            <span class="hidden sm:inline">Mode Acak: <span id="shuffleText">Nonaktif</span></span>
+          </button>
+
+          <!-- Exam Mode Toggle Button -->
+          <button id="examBtn" onclick="toggleExamMode()" title="Mode Ujian: sembunyikan kunci jawaban, pembahasan &amp; nilai" class="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold border transition bg-slate-100 text-slate-700 border-slate-300 hover:bg-slate-200">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+            </svg>
+            <span id="examTextShort" class="sm:hidden">Ujian: Off</span>
+            <span class="hidden sm:inline">Mode Ujian: <span id="examText">Nonaktif</span></span>
           </button>
 
           <!-- Font Size Controls -->
@@ -412,6 +438,19 @@
       <!-- LEFT/MAIN COLUMN: QUESTION & RATIONALE (8 Cols) -->
       <div class="lg:col-span-8 flex flex-col gap-4">
         
+        <!-- Banner Mode Ujian -->
+        <div id="examBanner" class="hidden bg-amber-50 border border-amber-300 rounded-xl px-4 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5">
+          <div class="flex items-start gap-2.5 text-xs sm:text-sm text-amber-900 leading-relaxed">
+            <svg class="w-5 h-5 text-amber-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+            </svg>
+            <span><strong>Mode Ujian aktif.</strong> Kunci jawaban, pembahasan, dan nilai disembunyikan. Anda masih bisa mengganti jawaban kapan saja.</span>
+          </div>
+          <button onclick="setExamMode(false)" class="shrink-0 bg-amber-500 hover:bg-amber-600 text-slate-950 text-xs font-bold px-3.5 py-2 rounded-lg transition shadow-xs">
+            Selesai &amp; Lihat Hasil
+          </button>
+        </div>
+
         <!-- Question Card -->
         <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
           
@@ -435,7 +474,7 @@
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
-                <span>Ulangi Soal</span>
+                <span id="retryBtnText">Ulangi Soal</span>
               </button>
 
               <!-- Bookmark / Ragu-ragu Button -->
@@ -483,6 +522,13 @@
                 <span id="aiDisclaimer" class="italic">*AI generated answers</span>
                 <span id="correctKeyIndicator" class="font-semibold text-slate-500 ml-auto"></span>
               </div>
+
+              <!-- Link Komentar / Koreksi (Google Docs) -->
+              <div class="mt-2.5 pt-2.5 border-t border-slate-100 text-xs text-slate-500 leading-relaxed">
+                Apakah salah atau ada komentar?
+                <a id="feedbackLink" href="https://docs.google.com/document/d/1lyOb0-lq-Je1t9OXosrmLYFBDrePmzctXHmHF-eHd8Q/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="font-semibold text-medical-600 hover:text-medical-700 underline underline-offset-2">Klik Link ini</a>
+                <span id="feedbackRef" class="block text-[11px] text-slate-400 mt-0.5"></span>
+              </div>
             </div>
           </div>
 
@@ -528,11 +574,14 @@
 
           <!-- Legend -->
           <div class="px-4 py-2.5 bg-slate-50/50 border-b border-slate-100 flex flex-wrap items-center gap-3 text-[11px] font-medium text-slate-600">
-            <div class="flex items-center gap-1.5">
+            <div id="legendCorrect" class="flex items-center gap-1.5">
               <span class="w-3 h-3 rounded bg-emerald-500 inline-block"></span> Benar
             </div>
-            <div class="flex items-center gap-1.5">
+            <div id="legendWrong" class="flex items-center gap-1.5">
               <span class="w-3 h-3 rounded bg-rose-500 inline-block"></span> Salah
+            </div>
+            <div id="legendAnswered" class="hidden flex items-center gap-1.5">
+              <span class="w-3 h-3 rounded bg-medical-600 inline-block"></span> Terjawab
             </div>
             <div class="flex items-center gap-1.5">
               <span class="w-3 h-3 rounded bg-amber-400 inline-block"></span> Ragu
@@ -589,6 +638,9 @@
       </div>
 
       <div class="p-6 overflow-y-auto custom-scrollbar space-y-4">
+        <div id="examModalNotice" class="hidden bg-amber-50 border border-amber-300 text-amber-900 text-xs leading-relaxed rounded-xl px-4 py-3">
+          <strong>Mode Ujian aktif.</strong> Nilai dan akurasi disembunyikan. Matikan Mode Ujian untuk melihat hasil.
+        </div>
         <!-- Summary Cards inside Modal -->
         <div class="grid grid-cols-3 gap-3 mb-2">
           <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 text-center">
@@ -768,6 +820,7 @@
       isShuffled: false,
       shuffledUids: [],
       fontSize: 'base',
+      examMode: false, // true = sembunyikan kunci jawaban, pembahasan & nilai
       sets: {
         set1: { answers: {}, bookmarks: {} },
         set2: { answers: {}, bookmarks: {} },
@@ -894,6 +947,7 @@
             }
           };
           if (![...SET_KEYS, 'all'].includes(appState.activeSet)) appState.activeSet = 'set2';
+          appState.examMode = !!appState.examMode;
           return;
         }
 
@@ -973,6 +1027,57 @@
       updateThemeLabels();
     }
 
+    // ===== MODE UJIAN (toggle) =====
+    // Aktif: kunci jawaban, pembahasan, dan nilai disembunyikan; jawaban boleh diganti.
+    // Nonaktif: perilaku normal (jawaban terkunci + pembahasan tampil). Jawaban yang sudah
+    // dipilih saat Mode Ujian langsung dinilai & dibuka pembahasannya begitu mode dimatikan.
+    function isExamMode() {
+      return !!appState.examMode;
+    }
+
+    function toggleExamMode() {
+      setExamMode(!appState.examMode);
+    }
+
+    function setExamMode(on) {
+      appState.examMode = !!on;
+      saveState();
+      updateExamUI();
+      renderCurrentQuestion();
+      renderQuestionGrid();
+      updateStatsUI();
+      if (!document.getElementById('startPage').classList.contains('hidden')) renderStartPage();
+    }
+
+    function updateExamUI() {
+      const on = isExamMode();
+
+      const btn = document.getElementById('examBtn');
+      if (btn) {
+        const base = 'flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold border transition ';
+        btn.className = base + (on
+          ? 'bg-amber-50 text-amber-800 border-amber-300 shadow-xs'
+          : 'bg-slate-100 text-slate-700 border-slate-300 hover:bg-slate-200');
+        btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+        document.getElementById('examText').textContent = on ? 'Aktif' : 'Nonaktif';
+        document.getElementById('examTextShort').textContent = on ? 'Ujian: On' : 'Ujian: Off';
+      }
+
+      document.getElementById('examBanner').classList.toggle('hidden', !on);
+      document.getElementById('legendCorrect').classList.toggle('hidden', on);
+      document.getElementById('legendWrong').classList.toggle('hidden', on);
+      document.getElementById('legendAnswered').classList.toggle('hidden', !on);
+
+      const track = document.getElementById('startExamToggle');
+      const knob = document.getElementById('startExamKnob');
+      if (track && knob) {
+        track.setAttribute('aria-checked', on ? 'true' : 'false');
+        track.classList.toggle('bg-medical-600', on);
+        track.classList.toggle('bg-slate-300', !on);
+        knob.style.transform = on ? 'translateX(22px)' : 'translateX(2px)';
+      }
+    }
+
     // Inisialisasi Aplikasi
     function initApp() {
       updateThemeLabels();
@@ -1010,6 +1115,7 @@
       }
 
       updateSetSelectorOptions();
+      updateExamUI();
       applyFontSize(appState.fontSize);
       updateShuffleButtonUI();
       rebuildPoolAndRender(false);
@@ -1082,7 +1188,7 @@
               </div>
               <div class="flex justify-between text-[11px] text-slate-500 mt-1.5">
                 <span>Dikerjakan: <strong>${prog.answered}/${prog.total}</strong></span>
-                <span>Akurasi: <strong>${prog.answered > 0 ? prog.accuracy + '%' : '-'}</strong></span>
+                <span>Akurasi: <strong>${isExamMode() ? 'Tersembunyi' : (prog.answered > 0 ? prog.accuracy + '%' : '-')}</strong></span>
               </div>
               <div class="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-white bg-medical-600 group-hover:bg-medical-700 px-3.5 py-1.5 rounded-lg transition">
                 <span>${cta}</span>
@@ -1278,13 +1384,17 @@
     function updateShuffleButtonUI() {
       const btn = document.getElementById('shuffleBtn');
       const txt = document.getElementById('shuffleText');
+      const short = document.getElementById('shuffleTextShort');
       if (appState.isShuffled) {
-        btn.className = 'flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold border transition bg-medical-50 text-medical-700 border-medical-300 shadow-xs';
-        txt.textContent = 'Mode Acak: Aktif';
+        btn.className = 'flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold border transition bg-medical-50 text-medical-700 border-medical-300 shadow-xs';
+        txt.textContent = 'Aktif';
+        short.textContent = 'Acak: On';
       } else {
-        btn.className = 'flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold border transition bg-slate-100 text-slate-700 border-slate-300 hover:bg-slate-200';
-        txt.textContent = 'Mode Acak: Nonaktif';
+        btn.className = 'flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold border transition bg-slate-100 text-slate-700 border-slate-300 hover:bg-slate-200';
+        txt.textContent = 'Nonaktif';
+        short.textContent = 'Acak: Off';
       }
+      btn.setAttribute('aria-pressed', appState.isShuffled ? 'true' : 'false');
     }
 
     // Render Soal Aktif
@@ -1294,6 +1404,7 @@
       const q = activeQuestions[currentIndex];
       const userAnswer = getAnswerForQuestion(q);
       const isBookmarked = getBookmarkForQuestion(q);
+      const examOn = isExamMode();
 
       // Header Info
       document.getElementById('questionCounter').textContent = `SOAL ${currentIndex + 1} / ${activeQuestions.length}`;
@@ -1319,6 +1430,7 @@
 
       // Tombol Ulangi Soal
       const retryBtn = document.getElementById('retryQuestionBtn');
+      document.getElementById('retryBtnText').textContent = examOn ? 'Hapus Jawaban' : 'Ulangi Soal';
       if (userAnswer !== undefined) {
         retryBtn.classList.remove('hidden');
       } else {
@@ -1340,9 +1452,18 @@
         let badgeClasses = 'w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 transition ';
         let statusIconHTML = '';
 
-        if (userAnswer === undefined) {
-          baseClasses += 'bg-white hover:bg-medical-50/60 border-slate-200 hover:border-medical-400 text-slate-800 shadow-2xs cursor-pointer';
-          badgeClasses += 'bg-slate-100 text-slate-700 group-hover:bg-medical-600 group-hover:text-white border border-slate-300 group-hover:border-medical-600';
+        const examSelected = examOn && userAnswer !== undefined && userAnswer.selected === idx;
+
+        if (userAnswer === undefined || examOn) {
+          if (examSelected) {
+            // Mode Ujian: tandai pilihan tanpa membuka kunci jawaban
+            baseClasses += 'bg-medical-50 border-medical-500 text-slate-900 ring-1 ring-medical-500 font-medium cursor-pointer';
+            badgeClasses += 'bg-medical-600 text-white border border-medical-600';
+            statusIconHTML = '<span class="ml-auto shrink-0 text-xs font-bold text-medical-700 bg-medical-100 px-2 py-0.5 rounded-md">Jawaban Anda</span>';
+          } else {
+            baseClasses += 'bg-white hover:bg-medical-50/60 border-slate-200 hover:border-medical-400 text-slate-800 shadow-2xs cursor-pointer';
+            badgeClasses += 'bg-slate-100 text-slate-700 group-hover:bg-medical-600 group-hover:text-white border border-slate-300 group-hover:border-medical-600';
+          }
           btn.onclick = () => selectAnswer(idx);
         } else {
           btn.disabled = true;
@@ -1391,10 +1512,11 @@
       const correctKeyIndicator = document.getElementById('correctKeyIndicator');
       const aiDisclaimer = document.getElementById('aiDisclaimer');
 
-      if (userAnswer !== undefined) {
+      if (userAnswer !== undefined && !examOn) {
         rationaleContainer.classList.remove('hidden');
         rationaleText.innerHTML = formatRationaleHTML(q.rationale);
         correctKeyIndicator.textContent = `Kunci Jawaban: ${letters[q.answer]}`;
+        document.getElementById('feedbackRef').textContent = `Sebutkan nomor soal saat berkomentar: ${q._setLabel} • #${q.id}`;
 
         // Tampilkan *AI generated answers HANYA untuk Paket 1 (PT 38)
         if (q._set === 'set1') {
@@ -1435,6 +1557,8 @@
     function selectAnswer(selectedIndex) {
       const q = activeQuestions[currentIndex];
       if (!q) return;
+      // Di luar Mode Ujian, soal yang sudah dijawab terkunci (gunakan "Ulangi Soal" untuk mengulang)
+      if (!isExamMode() && getAnswerForQuestion(q) !== undefined) return;
 
       const isCorrect = selectedIndex === q.answer;
       setAnswerForQuestion(q, {
@@ -1512,7 +1636,10 @@
 
         let classes = 'h-9 rounded-lg text-xs font-bold transition flex items-center justify-center relative border ';
 
-        if (ans !== undefined) {
+        if (ans !== undefined && isExamMode()) {
+          // Mode Ujian: hanya tandai "terjawab", tanpa benar/salah
+          classes += 'bg-medical-600 text-white border-medical-700 hover:bg-medical-700';
+        } else if (ans !== undefined) {
           if (ans.isCorrect) {
             classes += 'bg-emerald-500 text-white border-emerald-600 hover:bg-emerald-600';
           } else {
@@ -1554,6 +1681,7 @@
 
     // Update Seluruh Statistik (Sesuai Paket yang Sedang Aktif)
     function updateStatsUI() {
+      const examOn = isExamMode();
       const totalQuestions = currentSetPool.length;
       let totalAnswered = 0;
       let totalCorrect = 0;
@@ -1570,14 +1698,16 @@
 
       // Top Bar & Mobile Badges
       document.getElementById('statAnswered').textContent = `${totalAnswered}/${totalQuestions}`;
-      document.getElementById('statCorrect').textContent = totalCorrect;
-      document.getElementById('statAccuracy').textContent = `${totalAccuracy}%`;
-      document.getElementById('mobileAccuracyBadge').textContent = `${totalAccuracy}%`;
+      document.getElementById('statCorrect').textContent = examOn ? '—' : totalCorrect;
+      document.getElementById('statAccuracy').textContent = examOn ? '—' : `${totalAccuracy}%`;
+      document.getElementById('mobileAccuracyBadge').textContent = examOn ? `${totalAnswered}/${totalQuestions}` : `${totalAccuracy}%`;
+      document.getElementById('mobileAccuracyLabel').textContent = examOn ? 'Dikerjakan' : 'Akurasi';
 
       // Modal Summary
       document.getElementById('modalStatAnswered').textContent = `${totalAnswered} / ${totalQuestions}`;
-      document.getElementById('modalStatCorrect').textContent = totalCorrect;
-      document.getElementById('modalStatAccuracy').textContent = `${totalAccuracy}%`;
+      document.getElementById('modalStatCorrect').textContent = examOn ? '—' : totalCorrect;
+      document.getElementById('modalStatAccuracy').textContent = examOn ? '—' : `${totalAccuracy}%`;
+      document.getElementById('examModalNotice').classList.toggle('hidden', !examOn);
 
       // Hitung Statistik Per Topik dalam Paket Aktif
       const existingTopics = [...new Set(currentSetPool.map(q => cleanText(q.topic)))];
@@ -1622,6 +1752,12 @@
           }
         }
 
+        // Mode Ujian: sembunyikan penilaian per topik (progres tetap tampil)
+        if (examOn) {
+          barColor = 'bg-medical-500';
+          badgeColor = 'text-slate-600 bg-slate-100';
+        }
+
         // Item untuk Sidebar
         const isCurrentFilter = appState.selectedTopic === topic;
         const sidebarItem = document.createElement('div');
@@ -1637,7 +1773,7 @@
           <div class="flex items-center justify-between text-xs mb-1.5">
             <span class="font-bold text-slate-800 truncate pr-2">${topic}</span>
             <span class="font-bold px-1.5 py-0.5 rounded text-[11px] shrink-0 ${badgeColor}">
-              ${answeredInTopic > 0 ? `${accuracy}%` : '-'}
+              ${examOn ? '-' : (answeredInTopic > 0 ? `${accuracy}%` : '-')}
             </span>
           </div>
           <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden mb-1">
@@ -1645,7 +1781,7 @@
           </div>
           <div class="flex justify-between text-[11px] text-slate-500">
             <span>Dikerjakan: ${answeredInTopic}/${totalInTopic}</span>
-            <span>Benar: ${correctInTopic}</span>
+            <span>${examOn ? '' : `Benar: ${correctInTopic}`}</span>
           </div>
         `;
         sidebarContainer.appendChild(sidebarItem);
@@ -1658,7 +1794,7 @@
             <div class="flex items-start justify-between gap-2 mb-2">
               <h4 class="text-xs font-bold text-slate-800">${topic}</h4>
               <span class="text-xs font-bold px-2 py-0.5 rounded-md shrink-0 ${badgeColor}">
-                Akurasi: ${answeredInTopic > 0 ? `${accuracy}%` : 'Belum ada'}
+                Akurasi: ${examOn ? 'Tersembunyi' : (answeredInTopic > 0 ? `${accuracy}%` : 'Belum ada')}
               </span>
             </div>
             <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden mb-2">
@@ -1667,7 +1803,7 @@
           </div>
           <div class="flex items-center justify-between text-xs text-slate-500 pt-1 border-t border-slate-100">
             <span>Progres: <strong>${answeredInTopic}/${totalInTopic}</strong> soal</span>
-            <span>Benar: <strong class="text-emerald-600">${correctInTopic}</strong> | Salah: <strong class="text-rose-600">${answeredInTopic - correctInTopic}</strong></span>
+            <span>${examOn ? '' : `Benar: <strong class="text-emerald-600">${correctInTopic}</strong> | Salah: <strong class="text-rose-600">${answeredInTopic - correctInTopic}</strong>`}</span>
           </div>
         `;
         modalContainer.appendChild(modalItem);
@@ -1891,7 +2027,7 @@
         const idx = keyMap[e.key.toLowerCase()];
         if (idx !== undefined && activeQuestions[currentIndex]) {
           const currentQ = activeQuestions[currentIndex];
-          if (getAnswerForQuestion(currentQ) === undefined && idx < currentQ.options.length) {
+          if ((isExamMode() || getAnswerForQuestion(currentQ) === undefined) && idx < currentQ.options.length) {
             selectAnswer(idx);
           }
         }
