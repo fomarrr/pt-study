@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Progress Test</title>
+  <title>CBT Progress Test - PT 30 s/d PT 38</title>
   <!-- Tailwind CSS CDN -->
   <!-- Terapkan tema tersimpan sebelum halaman tampil (hindari kedipan) -->
   <script>
@@ -248,7 +248,7 @@
               <p class="font-semibold">Soal-soal di sini disusun dengan bantuan AI dari file mentoring. Walaupun sudah dioptimalkan, ada kemungkinan bisa terjadi kekeliruan.</p>
               <ul class="mt-1.5 space-y-1 list-disc pl-4 marker:text-amber-500">
                 <li>Jika ada soal yang membingungkan, cek lagi file materi aslinya untuk konfirmasi!</li>
-                <li>Untuk soal atau pembahasan yang bergambar, deskripsi visualnya sudah otomatis dijabarkan di dalam teks soal agar tetap mudah dipahami (Tetap cek filenya ya kalau mau liat fotonya).</li>
+                <li>Untuk soal atau pembahasan yang bergambar, deskripsi visualnya sudah otomatis dijabarkan di dalam teks soal agar tetap mudah dipahami (Tetap cek filenya ya untuk lihat fotonya).</li>
               </ul>
             </div>
           </div>
@@ -256,7 +256,7 @@
       </div>
 
       <!-- Kartu paket (diisi via JS) -->
-      <div id="startSetCards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+      <div id="startSetCards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 
       <!-- Kartu gabungan (diisi via JS) -->
       <div id="startAllCard" class="mt-4"></div>
@@ -311,7 +311,7 @@
 
           <!-- Mobile Stats Badge -->
           <button onclick="toggleTopicModal()" class="md:hidden bg-indigo-100 hover:bg-indigo-200 text-indigo-800 transition-all duration-200 text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5">
-            <span id="mobileAccuracyBadge">0%</span> <span id="mobileAccuracyLabel">Akurasi</span>
+            <span id="mobileAccuracyBadge">0%</span> <span id="mobileAccuracyLabel">Nilai</span>
           </button>
         </div>
 
@@ -331,7 +331,7 @@
             </div>
             <div class="h-3 w-px bg-slate-300"></div>
             <div>
-              <span class="text-slate-500">Akurasi Paket:</span>
+              <span class="text-slate-500">Nilai:</span>
               <span id="statAccuracy" class="font-bold text-amber-600 ml-1">0%</span>
             </div>
           </div>
@@ -396,6 +396,8 @@
               Paket:
             </label>
             <select id="setSelect" aria-label="Pilih paket soal" onchange="handleSetChange(this.value)" class="bg-slate-100 border-none text-slate-800 text-xs sm:text-sm rounded-full focus:ring-2 focus:ring-medical-400 block px-4 py-2 font-bold transition w-full sm:w-auto">
+              <option value="set9">PT 30</option>
+              <option value="set8">PT 31</option>
               <option value="set7">PT 32</option>
               <option value="set6">PT 33</option>
               <option value="set5">PT 34</option>
@@ -466,7 +468,7 @@
         <div>
           <h3 id="errorBannerTitle" class="text-sm font-bold text-amber-900">Peringatan Data Soal</h3>
           <p id="errorBannerText" class="text-xs text-amber-800 mt-1 leading-relaxed">
-            Pastikan file <strong>questions.js</strong>, <strong>questions2.js</strong>, <strong>questions3.js</strong>, <strong>questions4.js</strong>, <strong>questions5.js</strong>, <strong>questions6.js</strong>, dan <strong>questions7.js</strong> berada di folder yang sama dengan <strong>index.html</strong>.
+            Pastikan file <strong>questions.js</strong>, <strong>questions2.js</strong>, <strong>questions3.js</strong>, <strong>questions4.js</strong>, <strong>questions5.js</strong>, <strong>questions6.js</strong>, <strong>questions7.js</strong>, <strong>questions8.js</strong>, dan <strong>questions9.js</strong> berada di folder yang sama dengan <strong>index.html</strong>.
           </p>
         </div>
       </div>
@@ -482,7 +484,7 @@
           <p class="font-semibold">Soal-soal di sini disusun dengan bantuan AI dari file mentoring. Walaupun sudah dioptimalkan, ada kemungkinan bisa terjadi kekeliruan.</p>
           <ul class="mt-1.5 space-y-1 list-disc pl-4 marker:text-amber-500">
             <li>Jika ada soal yang membingungkan, cek lagi file materi aslinya untuk konfirmasi!</li>
-            <li>Untuk soal atau pembahasan yang bergambar, deskripsi visualnya sudah otomatis dijabarkan di dalam teks soal agar tetap mudah dipahami (Tetap cek filenya ya kalau mau lebih jelas).</li>
+            <li>Untuk soal atau pembahasan yang bergambar, deskripsi visualnya sudah otomatis dijabarkan di dalam teks soal agar tetap mudah dipahami (Tetap cek filenya ya untuk lihat fotonya).</li>
           </ul>
         </div>
       </div>
@@ -707,7 +709,7 @@
             <div id="modalStatCorrect" class="text-xl font-bold text-emerald-700 mt-1">0</div>
           </div>
           <div class="bg-amber-50 p-3.5 rounded-xl border border-amber-100 text-center">
-            <div class="text-xs text-amber-700 font-medium">Akurasi Paket</div>
+            <div class="text-xs text-amber-700 font-medium">Nilai</div>
             <div id="modalStatAccuracy" class="text-xl font-bold text-amber-700 mt-1">0%</div>
           </div>
         </div>
@@ -745,7 +747,7 @@
           Reset Paket yang Sedang Aktif Saja
         </button>
         <button onclick="executeResetProgress('all')" class="w-full px-4 py-2.5 rounded-full text-xs font-bold bg-rose-500 hover:bg-rose-600 text-white transition-all hover:shadow-md active:scale-95">
-          Reset Seluruh Paket (PT 32, PT 33, PT 34, PT 35, PT 36, PT 37 &amp; PT 38)
+          Reset Seluruh Paket (PT 30 s/d PT 38)
         </button>
         <button onclick="closeResetModal()" class="w-full px-4 py-2 rounded-full text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition-all mt-1">
           Batal
@@ -817,7 +819,7 @@
     </div>
   </div>
 
-  <!-- EXTERNAL DATA SOURCES (PT 38, PT 35, PT 37, PT 36, PT 34, PT 33, PT 32) -->
+  <!-- EXTERNAL DATA SOURCES (PT 38, PT 35, PT 37, PT 36, PT 34, PT 33, PT 32, PT 31, PT 30) -->
   <script src="questions.js"></script>
   <script src="questions2.js"></script>
   <script src="questions3.js"></script>
@@ -825,6 +827,8 @@
   <script src="questions5.js"></script>
   <script src="questions6.js"></script>
   <script src="questions7.js"></script>
+  <script src="questions8.js"></script>
+  <script src="questions9.js"></script>
 
   <!-- APPLICATION LOGIC -->
   <script>
@@ -850,14 +854,19 @@
       "Forensik, Medikolegal & IKM"
     ];
 
-    // Konfigurasi Paket Soal (urutan = urutan tampil di dropdown: PT 32, PT 33, PT 34, PT 35, PT 36, PT 37, PT 38)
-    // Catatan: key 'set1' = PT 38, 'set2' = PT 35, 'set3' = PT 37, 'set4' = PT 36, 'set5' = PT 34, 'set6' = PT 33, 'set7' = PT 32.
+    // Konfigurasi Paket Soal (urutan = urutan tampil di dropdown: PT 30, PT 31, ... PT 38)
+    // Catatan: key 'set1' = PT 38, 'set2' = PT 35, 'set3' = PT 37, 'set4' = PT 36, 'set5' = PT 34, 'set6' = PT 33, 'set7' = PT 32, 'set8' = PT 31, 'set9' = PT 30.
     // Key lama (set1/set2) dipertahankan agar progres yang sudah tersimpan tetap terbaca.
     const NOTE_COACHING = 'Pembahasan dari file coaching';
+    const NOTE_PT30 = 'Dari PT30_Angga';
+    const NOTE_PT31 = 'Dari file PT 31 by sipen 17 (updated by sipen 19)';
+    const lcFirst = (t) => t.charAt(0).toLowerCase() + t.slice(1);
     const NOTE_SIPEN = 'Gabungan dari file PT32 by sipen 18 dan 19';
     const NOTE_BATCH = 'Pembahasan dari gabungan file pembahasan batch 1 &amp; 2';
     const NOTE_AI = 'AI generated answers';
     const PT_SETS = [
+      { key: 'set9', label: 'PT 30', file: 'questions9.js', note: NOTE_PT30,     badge: 'text-rose-700 bg-rose-50 border border-rose-200' },
+      { key: 'set8', label: 'PT 31', file: 'questions8.js', note: NOTE_PT31,    badge: 'text-slate-700 bg-slate-100 border border-slate-200' },
       { key: 'set7', label: 'PT 32', file: 'questions7.js', note: NOTE_SIPEN,    badge: 'text-emerald-700 bg-emerald-50 border border-emerald-200' },
       { key: 'set6', label: 'PT 33', file: 'questions6.js', note: NOTE_BATCH,    badge: 'text-amber-700 bg-amber-50 border border-amber-200' },
       { key: 'set5', label: 'PT 34', file: 'questions5.js', note: NOTE_COACHING, badge: 'text-sky-700 bg-sky-50 border border-sky-200' },
@@ -866,11 +875,11 @@
       { key: 'set3', label: 'PT 37', file: 'questions3.js', note: NOTE_COACHING, badge: 'text-fuchsia-700 bg-fuchsia-50 border border-fuchsia-200' },
       { key: 'set1', label: 'PT 38', file: 'questions.js',  note: NOTE_AI,       badge: 'text-indigo-700 bg-indigo-50 border border-indigo-200' }
     ];
-    const SET_KEYS = ['set1', 'set2', 'set3', 'set4', 'set5', 'set6', 'set7']; // urutan tetap untuk penyimpanan & kode sync (s1..s7)
+    const SET_KEYS = ['set1', 'set2', 'set3', 'set4', 'set5', 'set6', 'set7', 'set8', 'set9']; // urutan tetap untuk penyimpanan & kode sync (s1..s9)
     const getSetConfig = (key) => PT_SETS.find(s => s.key === key);
 
     // Koleksi Soal Terstandarisasi
-    let banks = { set1: [], set2: [], set3: [], set4: [], set5: [], set6: [], set7: [] };
+    let banks = { set1: [], set2: [], set3: [], set4: [], set5: [], set6: [], set7: [], set8: [], set9: [] };
     let allQuestions = [];
     let currentSetPool = [];
     let activeQuestions = [];
@@ -878,7 +887,7 @@
 
     // State Aplikasi dengan Namespacing per Set
     let appState = {
-      activeSet: 'set2', // 'set1' .. 'set7' | 'all'
+      activeSet: 'set2', // 'set1' .. 'set9' | 'all'
       selectedTopic: 'ALL',
       isShuffled: false,
       shuffledUids: [],
@@ -891,7 +900,9 @@
         set4: { answers: {}, bookmarks: {} },
         set5: { answers: {}, bookmarks: {} },
         set6: { answers: {}, bookmarks: {} },
-        set7: { answers: {}, bookmarks: {} }
+        set7: { answers: {}, bookmarks: {} },
+        set8: { answers: {}, bookmarks: {} },
+        set9: { answers: {}, bookmarks: {} }
       }
     };
 
@@ -968,7 +979,7 @@
       return html;
     }
 
-    // Ambil dan normalisasi data dari questions.js ... questions7.js
+    // Ambil dan normalisasi data dari questions.js ... questions9.js
     function resolveAllQuestionBanks() {
       // Baca langsung dari variabel global hasil questions*.js (aman jika file tidak ada)
       const rawBySet = {
@@ -985,7 +996,11 @@
         set6: (typeof questions6 !== 'undefined' && Array.isArray(questions6)) ? questions6 :
               (Array.isArray(window.questions6) ? window.questions6 : []),
         set7: (typeof questions7 !== 'undefined' && Array.isArray(questions7)) ? questions7 :
-              (Array.isArray(window.questions7) ? window.questions7 : [])
+              (Array.isArray(window.questions7) ? window.questions7 : []),
+        set8: (typeof questions8 !== 'undefined' && Array.isArray(questions8)) ? questions8 :
+              (Array.isArray(window.questions8) ? window.questions8 : []),
+        set9: (typeof questions9 !== 'undefined' && Array.isArray(questions9)) ? questions9 :
+              (Array.isArray(window.questions9) ? window.questions9 : [])
       };
       const readRaw = (key) => rawBySet[key];
 
@@ -998,7 +1013,7 @@
         }));
       });
 
-      // Urutan gabungan mengikuti urutan dropdown: PT 32, PT 33, PT 34, PT 35, PT 36, PT 37, PT 38
+      // Urutan gabungan mengikuti urutan dropdown: PT 30, PT 31, ... PT 38
       allQuestions = PT_SETS.flatMap(cfg => banks[cfg.key]);
     }
 
@@ -1018,7 +1033,9 @@
               set4: { answers: {}, bookmarks: {}, ...(parsed.sets?.set4 || {}) },
               set5: { answers: {}, bookmarks: {}, ...(parsed.sets?.set5 || {}) },
               set6: { answers: {}, bookmarks: {}, ...(parsed.sets?.set6 || {}) },
-              set7: { answers: {}, bookmarks: {}, ...(parsed.sets?.set7 || {}) }
+              set7: { answers: {}, bookmarks: {}, ...(parsed.sets?.set7 || {}) },
+              set8: { answers: {}, bookmarks: {}, ...(parsed.sets?.set8 || {}) },
+              set9: { answers: {}, bookmarks: {}, ...(parsed.sets?.set9 || {}) }
             }
           };
           if (![...SET_KEYS, 'all'].includes(appState.activeSet)) appState.activeSet = 'set2';
@@ -1165,7 +1182,7 @@
       if (allQuestions.length === 0) {
         // Tidak ada data sama sekali: tampilkan workspace dengan banner peringatan
         banner.classList.remove('hidden');
-        bannerTitle.textContent = 'Data Soal Tidak Ditemukan (questions.js ... questions7.js)';
+        bannerTitle.textContent = 'Data Soal Tidak Ditemukan (questions.js ... questions9.js)';
         document.getElementById('quizContainer').classList.add('opacity-40', 'pointer-events-none');
         showQuizView();
         return;
@@ -1263,7 +1280,7 @@
               </div>
               <div class="flex justify-between text-[11px] text-slate-500 mt-1.5">
                 <span>Dikerjakan: <strong>${prog.answered}/${prog.total}</strong></span>
-                <span>Akurasi: <strong>${isExamMode() ? 'Tersembunyi' : (prog.answered > 0 ? prog.accuracy + '%' : '-')}</strong></span>
+                <span>Nilai: <strong>${isExamMode() ? 'Tersembunyi' : (prog.answered > 0 ? prog.accuracy + '%' : '-')}</strong></span>
               </div>
               <div class="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-white bg-medical-600 group-hover:bg-medical-700 px-4 py-1.5 rounded-full transition">
                 <span>${cta}</span>
@@ -1285,7 +1302,7 @@
         return acc;
       }, { total: 0, answered: 0, correct: 0 });
       totals.accuracy = totals.answered > 0 ? Math.round((totals.correct / totals.answered) * 100) : 0;
-      allEl.innerHTML = cardHTML('all', 'Gabungan Semua Paket', `PT 32 + PT 33 + PT 34 + PT 35 + PT 36 + PT 37 + PT 38 • ${totals.total} soal`, totals, totals.total === 0, 'w-full', 'PT 32: ' + NOTE_SIPEN.toLowerCase().replace('pt32', 'PT32') + ' • PT 33: ' + NOTE_BATCH.toLowerCase() + ' • PT 34, PT 35, PT 36, PT 37: ' + NOTE_COACHING.toLowerCase() + ' • PT 38: ' + NOTE_AI);
+      allEl.innerHTML = cardHTML('all', 'Gabungan Semua Paket', `PT 30–38 • ${totals.total} soal`, totals, totals.total === 0, 'w-full', 'PT 30: ' + lcFirst(NOTE_PT30) + ' • PT 31: ' + lcFirst(NOTE_PT31) + ' • PT 32: ' + lcFirst(NOTE_SIPEN) + ' • PT 33: ' + lcFirst(NOTE_BATCH) + ' • PT 34, PT 35, PT 36, PT 37: ' + lcFirst(NOTE_COACHING) + ' • PT 38: ' + NOTE_AI);
 
       // Catatan jika ada file yang belum terdeteksi
       const missing = PT_SETS.filter(cfg => banks[cfg.key].length === 0);
@@ -1341,7 +1358,7 @@
         resetActiveBtn.textContent = `Reset Progres ${cfg.label} Saja`;
         resetActiveBtn.classList.remove('hidden');
       } else {
-        headerBadge.textContent = 'Gabungan (PT 32–38)';
+        headerBadge.textContent = 'Gabungan (PT 30–38)';
         modalTitle.textContent = 'Rapor Akurasi SKDI — Gabungan Seluruh Paket';
         resetActiveBtn.classList.add('hidden');
       }
@@ -1776,7 +1793,7 @@
       document.getElementById('statCorrect').textContent = examOn ? '—' : totalCorrect;
       document.getElementById('statAccuracy').textContent = examOn ? '—' : `${totalAccuracy}%`;
       document.getElementById('mobileAccuracyBadge').textContent = examOn ? `${totalAnswered}/${totalQuestions}` : `${totalAccuracy}%`;
-      document.getElementById('mobileAccuracyLabel').textContent = examOn ? 'Dikerjakan' : 'Akurasi';
+      document.getElementById('mobileAccuracyLabel').textContent = examOn ? 'Dikerjakan' : 'Nilai';
 
       // Modal Summary
       document.getElementById('modalStatAnswered').textContent = `${totalAnswered} / ${totalQuestions}`;
@@ -1949,12 +1966,12 @@
     // FITUR SYNC KODE PROGRES (COMPACT BASE64)
     // ==========================================
     function generateCompactSyncCode() {
-      // Format: { s1, b1, ... s7, b7 } -> s = jawaban {idSoal: indeksOpsi}, b = daftar id bookmark
-      // s1/b1 = PT 38, s2/b2 = PT 35, s3/b3 = PT 37, s4/b4 = PT 36, s5/b5 = PT 34, s6/b6 = PT 33, s7/b7 = PT 32
+      // Format: { s1, b1, ... s9, b9 } -> s = jawaban {idSoal: indeksOpsi}, b = daftar id bookmark
+      // s1/b1 = PT 38, s2/b2 = PT 35, s3/b3 = PT 37, s4/b4 = PT 36, s5/b5 = PT 34, s6/b6 = PT 33, s7/b7 = PT 32, s8/b8 = PT 31, s9/b9 = PT 30
       const payload = {};
 
       SET_KEYS.forEach((setKey, idx) => {
-        const n = idx + 1; // set1 -> 1, set2 -> 2, ... set7 -> 7
+        const n = idx + 1; // set1 -> 1, set2 -> 2, ... set9 -> 9
         const ansTarget = {};
         const bmTarget = [];
         const setObj = appState.sets[setKey] || { answers: {}, bookmarks: {} };
@@ -2060,7 +2077,7 @@
         SET_KEYS.forEach((setKey, idx) => {
           const n = idx + 1;
           const hasData = parsed['s' + n] !== undefined || parsed['b' + n] !== undefined;
-          // Kode lama (sebelum paket itu ada) tidak memuat s3..s7 -> progres paket tsb di perangkat ini dibiarkan.
+          // Kode lama (sebelum paket itu ada) tidak memuat s3..s9 -> progres paket tsb di perangkat ini dibiarkan.
           // Jika file soal paket belum termuat, progres paket tersebut juga dibiarkan.
           if (!hasData || banks[setKey].length === 0) return;
           appState.sets[setKey] = reconstructSet(parsed['s' + n], parsed['b' + n], banks[setKey]);
