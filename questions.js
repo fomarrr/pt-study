@@ -11,7 +11,7 @@ const questions = [
       "E. Artritis psoriatik"
     ],
     "answer": 1,
-    "rationale": "Serangan monoartritis akut (onset <24 jam) dengan tanda inflamasi klasik (kemerahan, bengkak, hangat, nyeri tekan) disertai riwayat podagra pada sendi MTP-1 dan temuan tofus merupakan gambaran khas gout artritis akut.[cite: 1]"
+    "rationale": "Serangan monoartritis akut (onset <24 jam) dengan tanda inflamasi klasik (kemerahan, bengkak, hangat, nyeri tekan) disertai riwayat podagra pada sendi MTP-1 dan temuan tofus merupakan gambaran khas gout artritis akut."
   },
   {
     "id": 2,
@@ -25,7 +25,7 @@ const questions = [
       "E. Menghambat sintesis protein (Inhibits protein synthesis)"
     ],
     "answer": 4,
-    "rationale": "Eksotoksin Corynebacterium diphtheriae bekerja dengan menginaktivasi elongation factor-2 (EF-2) melalui proses ADP-ribosilasi, sehingga menghambat sintesis protein seluler dan menyebabkan nekrosis jaringan (pseudomembran).[cite: 1]"
+    "rationale": "Eksotoksin Corynebacterium diphtheriae bekerja dengan menginaktivasi elongation factor-2 (EF-2) melalui proses ADP-ribosilasi, sehingga menghambat sintesis protein seluler dan menyebabkan nekrosis jaringan (pseudomembran)."
   },
   {
     "id": 3,
@@ -39,7 +39,7 @@ const questions = [
       "E. Destruksi sel darah merah, menyebabkan peningkatan kadar hemoglobin"
     ],
     "answer": 3,
-    "rationale": "Pada filariasis limfatik kronis (terutama Wuchereria bancrofti), obstruksi saluran limfe retroperitoneal meningkatkan tekanan limfatik hingga menyebabkan dilatasi dan ruptur pembuluh limfe ke dalam pelvis renalis, sehingga cairan kilus bercampur dengan urin (kiluria).[cite: 2]"
+    "rationale": "Pada filariasis limfatik kronis (terutama Wuchereria bancrofti), obstruksi saluran limfe retroperitoneal meningkatkan tekanan limfatik hingga menyebabkan dilatasi dan ruptur pembuluh limfe ke dalam pelvis renalis, sehingga cairan kilus bercampur dengan urin (kiluria)."
   },
   {
     "id": 4,
@@ -53,7 +53,7 @@ const questions = [
       "E. Posterior reversible encephalopathy syndrome (PRES)"
     ],
     "answer": 4,
-    "rationale": "Penurunan kesadaran akut disertai krisis hipertensi (TD 210/100 mmHg) tanpa tanda lateralisasi serta hasil CT scan kepala tanpa kontras yang menyingkirkan perdarahan atau infark mengarah pada ensefalopati hipertensif atau Posterior Reversible Encephalopathy Syndrome (PRES).[cite: 2]"
+    "rationale": "Penurunan kesadaran akut disertai krisis hipertensi (TD 210/100 mmHg) tanpa tanda lateralisasi serta hasil CT scan kepala tanpa kontras yang menyingkirkan perdarahan atau infark mengarah pada ensefalopati hipertensif atau Posterior Reversible Encephalopathy Syndrome (PRES)."
   },
   {
     "id": 5,
@@ -67,7 +67,7 @@ const questions = [
       "E. Meningkat karena penurunan komplians paru"
     ],
     "answer": 1,
-    "rationale": "Pada serangan asma bronkial, terjadi bronkokonstriksi, edema mukosa, dan hipersekresi mukus yang menyempitkan lumen saluran napas, sehingga meningkatkan resistensi jalan napas dan meningkatkan beban kerja pernapasan.[cite: 3]"
+    "rationale": "Pada serangan asma bronkial, terjadi bronkokonstriksi, edema mukosa, dan hipersekresi mukus yang menyempitkan lumen saluran napas, sehingga meningkatkan resistensi jalan napas dan meningkatkan beban kerja pernapasan."
   },
   {
     "id": 6,
@@ -81,7 +81,7 @@ const questions = [
       "E. Promosi kesehatan"
     ],
     "answer": 0,
-    "rationale": "Berdasarkan tahapan pencegahan Leavell dan Clark, edukasi aktivitas fisik sebagai bagian dari tatalaksana pada pasien yang telah lama menderita diabetes melitus (5 tahun) bertujuan mencegah komplikasi lebih lanjut dan membatasi kecacatan (disability limitation).[cite: 3]"
+    "rationale": "Berdasarkan tahapan pencegahan Leavell dan Clark, edukasi aktivitas fisik sebagai bagian dari tatalaksana pada pasien yang telah lama menderita diabetes melitus (5 tahun) bertujuan mencegah komplikasi lebih lanjut dan membatasi kecacatan (disability limitation)."
   },
   {
     "id": 7,
@@ -95,7 +95,7 @@ const questions = [
       "E. Vena deferensial"
     ],
     "answer": 0,
-    "rationale": "Varikokel merupakan dilatasi abnormal dan berkelok-kelok dari pleksus venosus pampiniformis di sepanjang korda spermatika yang dapat mengganggu termoregulasi testis dan menyebabkan infertilitas pria.[cite: 4]"
+    "rationale": "Varikokel merupakan dilatasi abnormal dan berkelok-kelok dari pleksus venosus pampiniformis di sepanjang korda spermatika yang dapat mengganggu termoregulasi testis dan menyebabkan infertilitas pria."
   },
   {
     "id": 8,
@@ -109,7 +109,7 @@ const questions = [
       "E. Metode kalender"
     ],
     "answer": 1,
-    "rationale": "Pemasangan Alat Kontrasepsi Dalam Rahim (AKDR/IUD) pascaplasenta (dalam 10 menit hingga 48 jam pascapersalinan) merupakan metode kontrasepsi jangka panjang (MKJP) pilihan utama untuk menjarangkan kehamilan minimal 3 tahun dan tidak mengganggu produksi ASI.[cite: 4]"
+    "rationale": "Pemasangan Alat Kontrasepsi Dalam Rahim (AKDR/IUD) pascaplasenta (dalam 10 menit hingga 48 jam pascapersalinan) merupakan metode kontrasepsi jangka panjang (MKJP) pilihan utama untuk menjarangkan kehamilan minimal 3 tahun dan tidak mengganggu produksi ASI."
   },
   {
     "id": 9,
@@ -123,7 +123,7 @@ const questions = [
       "E. Menyebabkan hipoglikemia"
     ],
     "answer": 0,
-    "rationale": "Konsumsi obat antiinflamasi nonsteroid (OAINS) atau analgesik bebas secara rutin dalam jangka panjang menghambat sintesis prostaglandin vasodilator renal, menyebabkan vasokonstriksi arteriol aferen, iskemia medula ginjal, dan memicu nefropati analgesik.[cite: 5]"
+    "rationale": "Konsumsi obat antiinflamasi nonsteroid (OAINS) atau analgesik bebas secara rutin dalam jangka panjang menghambat sintesis prostaglandin vasodilator renal, menyebabkan vasokonstriksi arteriol aferen, iskemia medula ginjal, dan memicu nefropati analgesik."
   },
   {
     "id": 10,
@@ -137,7 +137,7 @@ const questions = [
       "E. Uveitis anterior"
     ],
     "answer": 0,
-    "rationale": "Keluhan mata merah disertai penurunan visus, nyeri, sekret, dan bercak putih (infiltrat/defek epitel) pada kornea yang membesar dengan riwayat penggunaan lensa kontak saat tidur serta pemakaian tetes mata steroid merupakan gambaran khas ulkus kornea.[cite: 5]"
+    "rationale": "Keluhan mata merah disertai penurunan visus, nyeri, sekret, dan bercak putih (infiltrat/defek epitel) pada kornea yang membesar dengan riwayat penggunaan lensa kontak saat tidur serta pemakaian tetes mata steroid merupakan gambaran khas ulkus kornea."
   },
   {
     "id": 11,
@@ -151,7 +151,7 @@ const questions = [
       "E. Oksigen 6 liter/menit"
     ],
     "answer": 1,
-    "rationale": "Kejang dan penurunan kesadaran pada pasien ini dipicu oleh hipoglikemia berat (GDS 53 mg/dL dengan gejala neuroglikopenik), sehingga tatalaksana lini pertama yang paling tepat adalah koreksi glukosa segera dengan bolus intravena Dextrose 40% sebanyak 50 cc (2 flakon).[cite: 6]"
+    "rationale": "Kejang dan penurunan kesadaran pada pasien ini dipicu oleh hipoglikemia berat (GDS 53 mg/dL dengan gejala neuroglikopenik), sehingga tatalaksana lini pertama yang paling tepat adalah koreksi glukosa segera dengan bolus intravena Dextrose 40% sebanyak 50 cc (2 flakon)."
   },
   {
     "id": 12,
@@ -165,7 +165,7 @@ const questions = [
       "E. Penggunaan stoking kompresi"
     ],
     "answer": 4,
-    "rationale": "Keluhan pegal dan kram saat berdiri lama disertai varises dan hiperpigmentasi kulit tungkai merupakan manifestasi Insufisiensi Vena Kronis (Chronic Venous Insufficiency), yang memiliki terapi konservatif utama lini pertama berupa penggunaan stoking kompresi.[cite: 6, 7]"
+    "rationale": "Keluhan pegal dan kram saat berdiri lama disertai varises dan hiperpigmentasi kulit tungkai merupakan manifestasi Insufisiensi Vena Kronis (Chronic Venous Insufficiency), yang memiliki terapi konservatif utama lini pertama berupa penggunaan stoking kompresi."
   },
   {
     "id": 13,
@@ -179,7 +179,7 @@ const questions = [
       "E. Penurunan tekanan onkotik plasma"
     ],
     "answer": 4,
-    "rationale": "Pada sindrom nefrotik, proteinuria masif (+4) menyebabkan hipoalbuminemia berat (1,3 g/dL) yang menurunkan tekanan onkotik plasma intravaskular, sehingga cairan mengalami ekstravasasi ke ruang interstisial dan menimbulkan edema anasarka.[cite: 7]"
+    "rationale": "Pada sindrom nefrotik, proteinuria masif (+4) menyebabkan hipoalbuminemia berat (1,3 g/dL) yang menurunkan tekanan onkotik plasma intravaskular, sehingga cairan mengalami ekstravasasi ke ruang interstisial dan menimbulkan edema anasarka."
   },
   {
     "id": 14,
@@ -193,7 +193,7 @@ const questions = [
       "E. Bakteri Gram-negatif dari spesies Pseudomonas"
     ],
     "answer": 3,
-    "rationale": "Diare cair profus menyerupai air cucian beras (rice-water stool) disertai dehidrasi berat merupakan gambaran klasik kolera yang disebabkan oleh infeksi bakteri batang lengkung Gram-negatif dari spesies Vibrio cholerae.[cite: 7]"
+    "rationale": "Diare cair profus menyerupai air cucian beras (rice-water stool) disertai dehidrasi berat merupakan gambaran klasik kolera yang disebabkan oleh infeksi bakteri batang lengkung Gram-negatif dari spesies Vibrio cholerae."
   },
   {
     "id": 15,
@@ -207,7 +207,7 @@ const questions = [
       "E. Riwayat penyakit ulkus peptikum"
     ],
     "answer": 1,
-    "rationale": "Selekoksib merupakan penghambat selektif COX-2 yang menekan produksi prostasiklin (vasodilator dan penghambat agregasi trombosit) tanpa menghambat tromboksan A2, sehingga meningkatkan risiko trombosis kardiovaskular dan dikontraindikasikan pada pasien dengan riwayat infark miokard.[cite: 8]"
+    "rationale": "Selekoksib merupakan penghambat selektif COX-2 yang menekan produksi prostasiklin (vasodilator dan penghambat agregasi trombosit) tanpa menghambat tromboksan A2, sehingga meningkatkan risiko trombosis kardiovaskular dan dikontraindikasikan pada pasien dengan riwayat infark miokard."
   },
   {
     "id": 16,
@@ -221,7 +221,7 @@ const questions = [
       "E. (carbonated drink AND diabetes) OR (soda AND hyperglycemic)"
     ],
     "answer": 3,
-    "rationale": "Dalam penyusunan kata kunci pencarian literatur berbasis PICO, sinonim dalam satu elemen digabungkan menggunakan operator Boolean OR di dalam tanda kurung, sedangkan antar-elemen yang berbeda dihubungkan menggunakan operator AND.[cite: 8]"
+    "rationale": "Dalam penyusunan kata kunci pencarian literatur berbasis PICO, sinonim dalam satu elemen digabungkan menggunakan operator Boolean OR di dalam tanda kurung, sedangkan antar-elemen yang berbeda dihubungkan menggunakan operator AND."
   },
   {
     "id": 17,
@@ -235,7 +235,7 @@ const questions = [
       "E. Demam"
     ],
     "answer": 3,
-    "rationale": "Batuk darah (hemoptisis) pada kecurigaan tuberkulosis paru merupakan kegawatdaruratan respirasi karena berisiko tinggi menyebabkan asfiksia akibat sumbatan bekuan darah di jalan napas serta syok hipovolemik.[cite: 9]"
+    "rationale": "Batuk darah (hemoptisis) pada kecurigaan tuberkulosis paru merupakan kegawatdaruratan respirasi karena berisiko tinggi menyebabkan asfiksia akibat sumbatan bekuan darah di jalan napas serta syok hipovolemik."
   },
   {
     "id": 18,
@@ -249,7 +249,7 @@ const questions = [
       "E. Galop S4 pada auskultasi di batas sternal bawah kanan"
     ],
     "answer": 1,
-    "rationale": "Pada regurgitasi aorta berat, aliran balik darah ke ventrikel kiri saat diastol menyebabkan pelebaran tekanan nadi (wide pulse pressure) yang bermanifestasi sebagai denyut nadi yang teraba menghentak kuat lalu kolaps dengan cepat (pulsus celer / water hammer pulse).[cite: 9]"
+    "rationale": "Pada regurgitasi aorta berat, aliran balik darah ke ventrikel kiri saat diastol menyebabkan pelebaran tekanan nadi (wide pulse pressure) yang bermanifestasi sebagai denyut nadi yang teraba menghentak kuat lalu kolaps dengan cepat (pulsus celer / water hammer pulse)."
   },
   {
     "id": 19,
@@ -263,7 +263,7 @@ const questions = [
       "E. Asidosis respiratorik terkompensasi"
     ],
     "answer": 1,
-    "rationale": "Penurunan pH menjadi 7,28 (< 7,35) disertai peningkatan pCO2 menjadi 54 mmHg (> 45 mmHg) menunjukkan asidosis respiratorik, sedangkan kadar HCO3 sebesar 25 mEq/L yang masih berada dalam rentang normal (22-26 mEq/L) menandakan belum adanya kompensasi metabolik.[cite: 10]"
+    "rationale": "Penurunan pH menjadi 7,28 (< 7,35) disertai peningkatan pCO2 menjadi 54 mmHg (> 45 mmHg) menunjukkan asidosis respiratorik, sedangkan kadar HCO3 sebesar 25 mEq/L yang masih berada dalam rentang normal (22-26 mEq/L) menandakan belum adanya kompensasi metabolik."
   },
   {
     "id": 20,
@@ -277,7 +277,7 @@ const questions = [
       "E. Demam dengue (dengue fever)"
     ],
     "answer": 0,
-    "rationale": "Berdasarkan klasifikasi WHO 2009, adanya perdarahan mukosa (epistaksis), nyeri perut, hepatomegali (> 2 cm), serta peningkatan hematokrit disertai penurunan trombosit pada pasien infeksi dengue dengan hemodinamik stabil memenuhi kriteria dengue dengan tanda bahaya (dengue with warning signs).[cite: 10]"
+    "rationale": "Berdasarkan klasifikasi WHO 2009, adanya perdarahan mukosa (epistaksis), nyeri perut, hepatomegali (> 2 cm), serta peningkatan hematokrit disertai penurunan trombosit pada pasien infeksi dengue dengan hemodinamik stabil memenuhi kriteria dengue dengan tanda bahaya (dengue with warning signs)."
   },
   {
     "id": 21,
@@ -291,7 +291,7 @@ const questions = [
       "E. Gangguan waham menetap"
     ],
     "answer": 2,
-    "rationale": "Kecemasan berlebih terhadap berbagai masalah sehari-hari (free-floating anxiety) yang berlangsung selama minimal 6 bulan disertai ketegangan motorik (nyeri kepala, ketegangan otot) dan hiperaktivitas otonom (berdebar-debar) merupakan kriteria khas Gangguan Cemas Menyeluruh (GAD).[cite: 11]"
+    "rationale": "Kecemasan berlebih terhadap berbagai masalah sehari-hari (free-floating anxiety) yang berlangsung selama minimal 6 bulan disertai ketegangan motorik (nyeri kepala, ketegangan otot) dan hiperaktivitas otonom (berdebar-debar) merupakan kriteria khas Gangguan Cemas Menyeluruh (GAD)."
   },
   {
     "id": 22,
@@ -305,7 +305,7 @@ const questions = [
       "E. Pungsi lumbal"
     ],
     "answer": 2,
-    "rationale": "Pasien mengalami kejang demam sederhana (kejang umum, durasi < 15 menit, tidak berulang dalam 24 jam) dengan pemeriksaan neurologis normal dan tanpa tanda meningeal, sehingga berdasarkan konsensus IDAI tidak diperlukan pemeriksaan penunjang rutin.[cite: 11]"
+    "rationale": "Pasien mengalami kejang demam sederhana (kejang umum, durasi < 15 menit, tidak berulang dalam 24 jam) dengan pemeriksaan neurologis normal dan tanpa tanda meningeal, sehingga berdasarkan konsensus IDAI tidak diperlukan pemeriksaan penunjang rutin."
   },
   {
     "id": 23,
@@ -319,7 +319,7 @@ const questions = [
       "E. Transtentorial sentral"
     ],
     "answer": 2,
-    "rationale": "Trias penurunan kesadaran, dilatasi pupil ipsilateral (anisokor akibat kompresi nervus III), dan hemiparesis kontralateral (penurunan aktivitas ekstremitas kanan akibat kompresi pedunkulus serebri) merupakan tanda klasik herniasi unkal (transtentorial lateral).[cite: 12]"
+    "rationale": "Trias penurunan kesadaran, dilatasi pupil ipsilateral (anisokor akibat kompresi nervus III), dan hemiparesis kontralateral (penurunan aktivitas ekstremitas kanan akibat kompresi pedunkulus serebri) merupakan tanda klasik herniasi unkal (transtentorial lateral)."
   },
   {
     "id": 24,
@@ -333,7 +333,7 @@ const questions = [
       "E. Mutasi JAK2 V617F"
     ],
     "answer": 2,
-    "rationale": "Pada anemia defisiensi besi, hipoksia jaringan memicu peningkatan sekresi eritropoietin (EPO) yang turut menstimulasi reseptor megakariosit/trombopoietin karena homologi struktural maupun jalur sinyal prekursor hematopoietik, sehingga menimbulkan trombositosis reaktif.[cite: 12]"
+    "rationale": "Pada anemia defisiensi besi, hipoksia jaringan memicu peningkatan sekresi eritropoietin (EPO) yang turut menstimulasi reseptor megakariosit/trombopoietin karena homologi struktural maupun jalur sinyal prekursor hematopoietik, sehingga menimbulkan trombositosis reaktif."
   },
   {
     "id": 25,
@@ -347,7 +347,7 @@ const questions = [
       "E. Antagonis reseptor dopamin"
     ],
     "answer": 4,
-    "rationale": "Pasien mengalami gangguan psikotik akut (onset 2 minggu) dengan gejala positif berupa inkoherensi dan halusinasi auditorik akibat hiperaktivitas dopamin di jalur mesolimbik, sehingga membutuhkan obat antipsikotik yang bekerja sebagai antagonis reseptor dopamin.[cite: 13]"
+    "rationale": "Pasien mengalami gangguan psikotik akut (onset 2 minggu) dengan gejala positif berupa inkoherensi dan halusinasi auditorik akibat hiperaktivitas dopamin di jalur mesolimbik, sehingga membutuhkan obat antipsikotik yang bekerja sebagai antagonis reseptor dopamin."
   },
   {
     "id": 26,
@@ -361,7 +361,7 @@ const questions = [
       "E. Setting"
     ],
     "answer": 0,
-    "rationale": "Dalam protokol komunikasi penyampaian kabar buruk SPIKES, langkah untuk menilai apa yang sudah diketahui atau dipahami pasien mengenai kondisi medisnya adalah tahap Perception.[cite: 13]"
+    "rationale": "Dalam protokol komunikasi penyampaian kabar buruk SPIKES, langkah untuk menilai apa yang sudah diketahui atau dipahami pasien mengenai kondisi medisnya adalah tahap Perception."
   },
   {
     "id": 27,
@@ -375,7 +375,7 @@ const questions = [
       "E. Pembentukan duktus arteriosus"
     ],
     "answer": 0,
-    "rationale": "Tingginya resistensi vaskular paru selama masa intrauterin terutama disebabkan oleh vasokonstriksi pulmonal hipoksik berupa konstriksi tonik pada pembuluh darah arteriol paru janin yang belum teroksigenasi.[cite: 14]"
+    "rationale": "Tingginya resistensi vaskular paru selama masa intrauterin terutama disebabkan oleh vasokonstriksi pulmonal hipoksik berupa konstriksi tonik pada pembuluh darah arteriol paru janin yang belum teroksigenasi."
   },
   {
     "id": 28,
@@ -389,7 +389,7 @@ const questions = [
       "E. MRI"
     ],
     "answer": 1,
-    "rationale": "Hilangnya pekak hati dan tanda peritonitis generalisata pascademam tifoid mengarah pada perforasi usus (pneumoperitoneum), di mana pemeriksaan radiologi awal yang direkomendasikan untuk mendeteksi udara bebas subdiafragma adalah foto polos abdomen (plain abdominal X-ray / 3 posisi).[cite: 14]"
+    "rationale": "Hilangnya pekak hati dan tanda peritonitis generalisata pascademam tifoid mengarah pada perforasi usus (pneumoperitoneum), di mana pemeriksaan radiologi awal yang direkomendasikan untuk mendeteksi udara bebas subdiafragma adalah foto polos abdomen (plain abdominal X-ray / 3 posisi)."
   },
   {
     "id": 29,
@@ -403,7 +403,7 @@ const questions = [
       "E. Menambahkan insulin"
     ],
     "answer": 1,
-    "rationale": "Pada pasien diabetes melitus tipe 2 disertai hipertensi dan albuminuria (ACR 180 mg/g), pemberian ACE inhibitor atau ARB merupakan terapi lini pertama pilihan karena efek renoprotektifnya dalam menurunkan tekanan intraglomerulus dan menghambat progresivitas nefropati diabetik.[cite: 15]"
+    "rationale": "Pada pasien diabetes melitus tipe 2 disertai hipertensi dan albuminuria (ACR 180 mg/g), pemberian ACE inhibitor atau ARB merupakan terapi lini pertama pilihan karena efek renoprotektifnya dalam menurunkan tekanan intraglomerulus dan menghambat progresivitas nefropati diabetik."
   },
   {
     "id": 30,
@@ -417,7 +417,7 @@ const questions = [
       "E. 350 mL"
     ],
     "answer": 2,
-    "rationale": "Berdasarkan rumus kebutuhan transfusi PRC pada anak yaitu ΔHb × BB (kg) × 4, dengan Hb awal 7 g/dL dan target Hb 12 g/dL (ΔHb = 5 g/dL) serta berat badan 10 kg, maka volume total PRC yang dibutuhkan adalah 5 × 10 × 4 = 200 mL.[cite: 15, 16]"
+    "rationale": "Berdasarkan rumus kebutuhan transfusi PRC pada anak yaitu ΔHb × BB (kg) × 4, dengan Hb awal 7 g/dL dan target Hb 12 g/dL (ΔHb = 5 g/dL) serta berat badan 10 kg, maka volume total PRC yang dibutuhkan adalah 5 × 10 × 4 = 200 mL."
   },
   {
     "id": 31,
@@ -431,7 +431,7 @@ const questions = [
       "E. Cairan hipertonik"
     ],
     "answer": 1,
-    "rationale": "Pasien mengalami syok hipovolemik akibat dehidrasi berat (TD 80/55 mmHg, nadi 130x/menit) dari muntah dan diare, sehingga resusitasi cairan lini pertama harus menggunakan cairan kristaloid isotonik (seperti Ringer Laktat atau NaCl 0,9%).[cite: 16]"
+    "rationale": "Pasien mengalami syok hipovolemik akibat dehidrasi berat (TD 80/55 mmHg, nadi 130x/menit) dari muntah dan diare, sehingga resusitasi cairan lini pertama harus menggunakan cairan kristaloid isotonik (seperti Ringer Laktat atau NaCl 0,9%)."
   },
   {
     "id": 32,
@@ -445,7 +445,7 @@ const questions = [
       "E. Pemeriksaan fungsi pendengaran"
     ],
     "answer": 4,
-    "rationale": "Anak usia 12 bulan yang baru bisa mengoceh tidak spesifik (belum memanggil \"mama/papa\" secara spesifik) menunjukkan tanda bahaya (red flag) keterlambatan bicara dan bahasa, sehingga pemeriksaan penunjang pertama yang wajib dilakukan adalah evaluasi fungsi pendengaran.[cite: 16]"
+    "rationale": "Anak usia 12 bulan yang baru bisa mengoceh tidak spesifik (belum memanggil \"mama/papa\" secara spesifik) menunjukkan tanda bahaya (red flag) keterlambatan bicara dan bahasa, sehingga pemeriksaan penunjang pertama yang wajib dilakukan adalah evaluasi fungsi pendengaran."
   },
   {
     "id": 33,
@@ -459,7 +459,7 @@ const questions = [
       "E. Foramen ovale paten (Patent foramen ovale)"
     ],
     "answer": 1,
-    "rationale": "Temuan bising kontinyu (continuous/machinery-like murmur) di sela iga ke-2 garis parasternal kiri pada bayi dengan riwayat infeksi rubella maternal selama kehamilan merupakan tanda khas Duktus Arteriosus Persisten (Patent Ductus Arteriosus / PDA).[cite: 17]"
+    "rationale": "Temuan bising kontinyu (continuous/machinery-like murmur) di sela iga ke-2 garis parasternal kiri pada bayi dengan riwayat infeksi rubella maternal selama kehamilan merupakan tanda khas Duktus Arteriosus Persisten (Patent Ductus Arteriosus / PDA)."
   },
   {
     "id": 34,
@@ -473,7 +473,7 @@ const questions = [
       "E. Forniks lateral kanan vagina"
     ],
     "answer": 1,
-    "rationale": "Ekskavasio rektouterina (kavum Douglas) terletak tepat di belakang forniks posterior vagina, sehingga prosedur kuldosentesis dilakukan dengan menginsersi jarum melalui forniks posterior vagina.[cite: 17]"
+    "rationale": "Ekskavasio rektouterina (kavum Douglas) terletak tepat di belakang forniks posterior vagina, sehingga prosedur kuldosentesis dilakukan dengan menginsersi jarum melalui forniks posterior vagina."
   },
   {
     "id": 35,
@@ -487,7 +487,7 @@ const questions = [
       "E. Intervensi bedah"
     ],
     "answer": 0,
-    "rationale": "Fistula preaurikular kongenital yang mengalami infeksi berulang dan pembentukan abses memerlukan pemberian antibiotik sistemik untuk mengatasi infeksi akut serta intervensi bedah (insisi drainase abses dan eksisi traktus fistula/fistulektomi definitif) untuk mencegah kekambuhan.[cite: 18]"
+    "rationale": "Fistula preaurikular kongenital yang mengalami infeksi berulang dan pembentukan abses memerlukan pemberian antibiotik sistemik untuk mengatasi infeksi akut serta intervensi bedah (insisi drainase abses dan eksisi traktus fistula/fistulektomi definitif) untuk mencegah kekambuhan."
   },
   {
     "id": 36,
@@ -501,7 +501,7 @@ const questions = [
       "E. Defek septal ventrikel"
     ],
     "answer": 2,
-    "rationale": "Temuan bising kontinyu (continuous/machinery-like murmur) pada sela iga ke-2 garis parasternal kiri disertai riwayat infeksi rubella maternal saat kehamilan merupakan gambaran klasik Duktus Arteriosus Paten (Patent Ductus Arteriosus / PDA).[cite: 18, 19]"
+    "rationale": "Temuan bising kontinyu (continuous/machinery-like murmur) pada sela iga ke-2 garis parasternal kiri disertai riwayat infeksi rubella maternal saat kehamilan merupakan gambaran klasik Duktus Arteriosus Paten (Patent Ductus Arteriosus / PDA)."
   },
   {
     "id": 37,
@@ -515,7 +515,7 @@ const questions = [
       "E. Enterobacter"
     ],
     "answer": 1,
-    "rationale": "Keluhan disuria akut disertai nyeri tekan suprasimfisis, piuria, dan leukosit esterase positif mengarah pada sistitis akut (infeksi saluran kemih bawah), dengan etiologi bakteri tersering adalah Escherichia coli.[cite: 19]"
+    "rationale": "Keluhan disuria akut disertai nyeri tekan suprasimfisis, piuria, dan leukosit esterase positif mengarah pada sistitis akut (infeksi saluran kemih bawah), dengan etiologi bakteri tersering adalah Escherichia coli."
   },
   {
     "id": 38,
@@ -529,7 +529,7 @@ const questions = [
       "E. Tes Florence/Berberio"
     ],
     "answer": 4,
-    "rationale": "Apabila pada pemeriksaan usap vagina tidak ditemukan sel spermatozoa, pemeriksaan forensik dilanjutkan dengan mendeteksi keberadaan cairan mani (seminal fluid) menggunakan metode kimiawi yaitu tes Florence (mendeteksi kristal kolin periodida) atau tes Barberio (mendeteksi kristal spermin pikrat).[cite: 19]"
+    "rationale": "Apabila pada pemeriksaan usap vagina tidak ditemukan sel spermatozoa, pemeriksaan forensik dilanjutkan dengan mendeteksi keberadaan cairan mani (seminal fluid) menggunakan metode kimiawi yaitu tes Florence (mendeteksi kristal kolin periodida) atau tes Barberio (mendeteksi kristal spermin pikrat)."
   },
   {
     "id": 39,
@@ -543,7 +543,7 @@ const questions = [
       "E. Vena umbilikalis"
     ],
     "answer": 0,
-    "rationale": "Pada Transposition of the Great Arteries (TGA), sirkulasi sistemik dan pulmonal berjalan secara paralel sehingga kelangsungan hidup neonatus sebelum operasi korektif sangat bergantung pada pencampuran darah melalui duktus arteriosus yang tetap terbuka (paten).[cite: 20]"
+    "rationale": "Pada Transposition of the Great Arteries (TGA), sirkulasi sistemik dan pulmonal berjalan secara paralel sehingga kelangsungan hidup neonatus sebelum operasi korektif sangat bergantung pada pencampuran darah melalui duktus arteriosus yang tetap terbuka (paten)."
   },
   {
     "id": 40,
@@ -557,7 +557,7 @@ const questions = [
       "E. Tetes mata antibiotik Fluoroquinolone 4 kali sehari"
     ],
     "answer": 2,
-    "rationale": "Pasien mengalami sindrom mata kering (dry eye syndrome) derajat sedang dengan meniskus air mata < 1 mm yang belum teratasi dengan tetes air mata buatan 4 kali sehari, sehingga tatalaksana yang tepat adalah meningkatkan frekuensi serta viskositas lubrikan okular menggunakan tetes mata Sodium hyaluronate 6 kali sehari.[cite: 20]"
+    "rationale": "Pasien mengalami sindrom mata kering (dry eye syndrome) derajat sedang dengan meniskus air mata < 1 mm yang belum teratasi dengan tetes air mata buatan 4 kali sehari, sehingga tatalaksana yang tepat adalah meningkatkan frekuensi serta viskositas lubrikan okular menggunakan tetes mata Sodium hyaluronate 6 kali sehari."
   },
   {
     "id": 41,
@@ -571,7 +571,7 @@ const questions = [
       "E. Pasien dewasa yang didiagnosis COVID yang menggunakan povidone iodine"
     ],
     "answer": 3,
-    "rationale": "Dalam penyusunan PICO, komponen P (Patient/Population) harus mendefinisikan karakteristik utama penyakit pasien secara tepat tanpa mencampuradukkan komponen intervensi/pembanding dan tanpa terlalu spesifik memasukkan seluruh komorbiditas yang dapat mempersempit hasil pencarian bukti ilmiah, yaitu pasien dewasa yang didiagnosis COVID-19 berdasarkan hasil RT-PCR.[cite: 21]"
+    "rationale": "Dalam penyusunan PICO, komponen P (Patient/Population) harus mendefinisikan karakteristik utama penyakit pasien secara tepat tanpa mencampuradukkan komponen intervensi/pembanding dan tanpa terlalu spesifik memasukkan seluruh komorbiditas yang dapat mempersempit hasil pencarian bukti ilmiah, yaitu pasien dewasa yang didiagnosis COVID-19 berdasarkan hasil RT-PCR."
   },
   {
     "id": 42,
@@ -585,7 +585,7 @@ const questions = [
       "E. Waktu siaran/penyampaian yang tidak tepat (Inappropriate broadcast time)"
     ],
     "answer": 3,
-    "rationale": "Penyampaian materi ilmiah mengenai klasifikasi dan identifikasi jenis-jenis mikroba kepada sasaran siswa Taman Kanak-Kanak (TK) tidak sesuai dengan tingkat perkembangan kognitif anak karena menggunakan bahasa dan materi yang terlalu rumit/canggih (too sophisticated).[cite: 21]"
+    "rationale": "Penyampaian materi ilmiah mengenai klasifikasi dan identifikasi jenis-jenis mikroba kepada sasaran siswa Taman Kanak-Kanak (TK) tidak sesuai dengan tingkat perkembangan kognitif anak karena menggunakan bahasa dan materi yang terlalu rumit/canggih (too sophisticated)."
   },
   {
     "id": 43,
@@ -599,7 +599,7 @@ const questions = [
       "E. Candida albicans"
     ],
     "answer": 2,
-    "rationale": "Bengkak dan eritema kelopak mata disertai drainase nanah tanpa hambatan gerak bola mata maupun keterlibatan sinus paranasal menunjukkan abses palpebra / selulitis preseptal, yang paling sering disebabkan oleh infeksi bakteri Staphylococcus aureus.[cite: 22]"
+    "rationale": "Bengkak dan eritema kelopak mata disertai drainase nanah tanpa hambatan gerak bola mata maupun keterlibatan sinus paranasal menunjukkan abses palpebra / selulitis preseptal, yang paling sering disebabkan oleh infeksi bakteri Staphylococcus aureus."
   },
   {
     "id": 44,
@@ -613,7 +613,7 @@ const questions = [
       "E. Segera memberikan antibiotik spektrum luas untuk infeksi stafilokokus"
     ],
     "answer": 3,
-    "rationale": "Pasien mengalami SJS-TEN overlap / Nekrolisis Epidermal Toksik (epidermolisis 28% luas permukaan tubuh dengan tanda Nikolsky positif) yang berisiko tinggi menimbulkan syok hipovolemik dan gangguan termoregulasi akibat hilangnya sawar kulit, sehingga tindakan darurat utama sebelum merujuk adalah stabilisasi hemodinamik dengan resusitasi cairan dan pencegahan hipotermia.[cite: 22, 23]"
+    "rationale": "Pasien mengalami SJS-TEN overlap / Nekrolisis Epidermal Toksik (epidermolisis 28% luas permukaan tubuh dengan tanda Nikolsky positif) yang berisiko tinggi menimbulkan syok hipovolemik dan gangguan termoregulasi akibat hilangnya sawar kulit, sehingga tindakan darurat utama sebelum merujuk adalah stabilisasi hemodinamik dengan resusitasi cairan dan pencegahan hipotermia."
   },
   {
     "id": 45,
@@ -627,7 +627,7 @@ const questions = [
       "E. Black dots"
     ],
     "answer": 1,
-    "rationale": "Lesi kebotakan berbentuk bulat/koin (numular) berbatas tegas dengan permukaan kulit kepala yang licin tanpa skuama atau tanda radang, disertai riwayat keluhan serupa pada keluarga yang membaik spontan, merupakan gambaran klasik alopesia areata.[cite: 23]"
+    "rationale": "Lesi kebotakan berbentuk bulat/koin (numular) berbatas tegas dengan permukaan kulit kepala yang licin tanpa skuama atau tanda radang, disertai riwayat keluhan serupa pada keluarga yang membaik spontan, merupakan gambaran klasik alopesia areata."
   },
   {
     "id": 46,
@@ -641,7 +641,7 @@ const questions = [
       "E. Sistem gastrointestinal"
     ],
     "answer": 3,
-    "rationale": "Keluhan nyeri tekan dada akut disertai sesak napas memiliki kausalitas anatomis dan fisiologis langsung dengan sistem muskuloskeletal (kostokondritis/nyeri dinding dada), respirasi, kardiovaskular, dan gastrointestinal (GERD/spasme esofagus), sedangkan sistem metabolik tidak relevan sebagai penyebab langsung nyeri tekan dada akut.[cite: 23, 24]"
+    "rationale": "Keluhan nyeri tekan dada akut disertai sesak napas memiliki kausalitas anatomis dan fisiologis langsung dengan sistem muskuloskeletal (kostokondritis/nyeri dinding dada), respirasi, kardiovaskular, dan gastrointestinal (GERD/spasme esofagus), sedangkan sistem metabolik tidak relevan sebagai penyebab langsung nyeri tekan dada akut."
   },
   {
     "id": 47,
@@ -655,7 +655,7 @@ const questions = [
       "E. Schistosoma haematobium"
     ],
     "answer": 2,
-    "rationale": "Gejala kiluria (urin berwarna putih seperti susu) disertai pembesaran skrotum (hidrokel/limfedema skrotum) akibat obstruksi saluran limfe retroperitoneal dan urogenital merupakan manifestasi khas infeksi parasit Wuchereria bancrofti.[cite: 24]"
+    "rationale": "Gejala kiluria (urin berwarna putih seperti susu) disertai pembesaran skrotum (hidrokel/limfedema skrotum) akibat obstruksi saluran limfe retroperitoneal dan urogenital merupakan manifestasi khas infeksi parasit Wuchereria bancrofti."
   },
   {
     "id": 48,
@@ -669,7 +669,7 @@ const questions = [
       "E. Penempelan RNA polimerase"
     ],
     "answer": 4,
-    "rationale": "Baik sel prokariotik maupun eukariotik memulai proses transkripsi dengan penempelan enzim RNA polimerase pada regio promotor DNA, sedangkan penambahan tudung 5' (5' cap), penambahan ekor poly-A 3', dan penyambungan (splicing) hanya terjadi pada modifikasi pascatranskripsi mRNA eukariotik.[cite: 24]"
+    "rationale": "Baik sel prokariotik maupun eukariotik memulai proses transkripsi dengan penempelan enzim RNA polimerase pada regio promotor DNA, sedangkan penambahan tudung 5' (5' cap), penambahan ekor poly-A 3', dan penyambungan (splicing) hanya terjadi pada modifikasi pascatranskripsi mRNA eukariotik."
   },
   {
     "id": 49,
@@ -683,7 +683,7 @@ const questions = [
       "E. Hepatitis B"
     ],
     "answer": 3,
-    "rationale": "Berdasarkan jadwal imunisasi dasar nasional Kemenkes RI dan IDAI, bayi cukup bulan yang telah mendapatkan imunisasi sebelumnya sesuai jadwal (HB-0 saat lahir serta BCG dan Polio 1 pada usia 1 bulan) harus diberikan imunisasi DPT-HB-HiB 1 dan Polio 2 pada usia 2 bulan.[cite: 25]"
+    "rationale": "Berdasarkan jadwal imunisasi dasar nasional Kemenkes RI dan IDAI, bayi cukup bulan yang telah mendapatkan imunisasi sebelumnya sesuai jadwal (HB-0 saat lahir serta BCG dan Polio 1 pada usia 1 bulan) harus diberikan imunisasi DPT-HB-HiB 1 dan Polio 2 pada usia 2 bulan."
   },
   {
     "id": 50,
@@ -697,7 +697,7 @@ const questions = [
       "E. ARV diberikan minimal selama 2 minggu, kemudian dilanjutkan dengan terapi anti-tuberkulosis (OAT)"
     ],
     "answer": 2,
-    "rationale": "Sesuai pedoman nasional tatalaksana koinfeksi TB-HIV, pengobatan OAT dimulai terlebih dahulu untuk menekan beban mikobakteria, kemudian diikuti pemberian ARV segera setelah OAT dapat ditoleransi yaitu minimal setelah 2 minggu (dalam 2-8 minggu pertama) guna meminimalkan risiko sindrom pulih imun (IRIS).[cite: 25, 26]"
+    "rationale": "Sesuai pedoman nasional tatalaksana koinfeksi TB-HIV, pengobatan OAT dimulai terlebih dahulu untuk menekan beban mikobakteria, kemudian diikuti pemberian ARV segera setelah OAT dapat ditoleransi yaitu minimal setelah 2 minggu (dalam 2-8 minggu pertama) guna meminimalkan risiko sindrom pulih imun (IRIS)."
   },
   {
     "id": 51,
@@ -711,7 +711,7 @@ const questions = [
       "E. Ruptur perineum derajat satu"
     ],
     "answer": 0,
-    "rationale": "Robekan jalan lahir pascapersalinan yang melibatkan mukosa vagina dan otot-otot korpus perineum namun tidak mencapai sfingter ani diklasifikasikan sebagai ruptur perineum derajat dua.[cite: 26]"
+    "rationale": "Robekan jalan lahir pascapersalinan yang melibatkan mukosa vagina dan otot-otot korpus perineum namun tidak mencapai sfingter ani diklasifikasikan sebagai ruptur perineum derajat dua."
   },
   {
     "id": 52,
@@ -725,7 +725,7 @@ const questions = [
       "E. Prolaps uteri"
     ],
     "answer": 4,
-    "rationale": "Turun dan menonjolnya porsio serviks uteri melalui vagina saat pasien mengejan pada wanita lansia dengan faktor risiko multiparitas merupakan tanda diagnostik prolaps uteri.[cite: 26, 27]"
+    "rationale": "Turun dan menonjolnya porsio serviks uteri melalui vagina saat pasien mengejan pada wanita lansia dengan faktor risiko multiparitas merupakan tanda diagnostik prolaps uteri."
   },
   {
     "id": 53,
@@ -739,7 +739,7 @@ const questions = [
       "E. Uji kepekaan obat untuk obat anti-TB lini kedua"
     ],
     "answer": 0,
-    "rationale": "Pada pasien TB dengan riwayat pengobatan sebelumnya (putus berobat) yang hasil TCM-nya menunjukkan M. tuberculosis sensitif rifampisin, pemeriksaan lanjutan yang diindikasikan sesuai PNPK TB adalah uji kepekaan obat (drug susceptibility testing / LPA) terhadap OAT lini pertama untuk mendeteksi kemungkinan resistensi isoniazid.[cite: 27]"
+    "rationale": "Pada pasien TB dengan riwayat pengobatan sebelumnya (putus berobat) yang hasil TCM-nya menunjukkan M. tuberculosis sensitif rifampisin, pemeriksaan lanjutan yang diindikasikan sesuai PNPK TB adalah uji kepekaan obat (drug susceptibility testing / LPA) terhadap OAT lini pertama untuk mendeteksi kemungkinan resistensi isoniazid."
   },
   {
     "id": 54,
@@ -753,7 +753,7 @@ const questions = [
       "E. Pneumonia"
     ],
     "answer": 0,
-    "rationale": "Sesak napas saat aktivitas disertai mengi bilateral yang baru muncul pada usia 50 tahun tanpa riwayat atopi/asma sebelumnya, dengan faktor risiko perokok aktif berat (20 batang/hari), mengarah pada diagnosis Penyakit Paru Obstruktif Kronis (PPOK).[cite: 27, 28]"
+    "rationale": "Sesak napas saat aktivitas disertai mengi bilateral yang baru muncul pada usia 50 tahun tanpa riwayat atopi/asma sebelumnya, dengan faktor risiko perokok aktif berat (20 batang/hari), mengarah pada diagnosis Penyakit Paru Obstruktif Kronis (PPOK)."
   },
   {
     "id": 55,
@@ -767,7 +767,7 @@ const questions = [
       "E. Intervensi"
     ],
     "answer": 3,
-    "rationale": "Pertanyaan pasien dan keluarga mengenai potensi komplikasi serta perjalanan luaran klinis pascaoperasi berdasarkan karakteristik risiko pasien (usia lanjut, komorbiditas, dan infeksi jamur invasif) merupakan domain pertanyaan klinis Prognosis.[cite: 28]"
+    "rationale": "Pertanyaan pasien dan keluarga mengenai potensi komplikasi serta perjalanan luaran klinis pascaoperasi berdasarkan karakteristik risiko pasien (usia lanjut, komorbiditas, dan infeksi jamur invasif) merupakan domain pertanyaan klinis Prognosis."
   },
   {
     "id": 56,
@@ -781,7 +781,7 @@ const questions = [
       "E. CT scan"
     ],
     "answer": 1,
-    "rationale": "Penurunan visus mendadak pada mata tenang menyerupai tirai yang menutupi pandangan, didahului fotopsia (flashes) dan floaters pada penderita miopia tinggi merupakan trias klasik ablasio retina regmatogenosa, yang ditegakkan melalui pemeriksaan funduskopi dengan pemberian midriatikum.[cite: 28, 29]"
+    "rationale": "Penurunan visus mendadak pada mata tenang menyerupai tirai yang menutupi pandangan, didahului fotopsia (flashes) dan floaters pada penderita miopia tinggi merupakan trias klasik ablasio retina regmatogenosa, yang ditegakkan melalui pemeriksaan funduskopi dengan pemberian midriatikum."
   },
   {
     "id": 57,
@@ -795,7 +795,7 @@ const questions = [
       "E. Arteri umbilikalis"
     ],
     "answer": 0,
-    "rationale": "Pada Transposition of the Great Arteries (TGA), sirkulasi sistemik dan pulmonal terpisah secara paralel sehingga duktus arteriosus harus dipertahankan tetap terbuka (paten) agar darah teroksigenasi dari sirkulasi paru dapat bercampur ke sirkulasi sistemik hingga tindakan bedah dilakukan.[cite: 29]"
+    "rationale": "Pada Transposition of the Great Arteries (TGA), sirkulasi sistemik dan pulmonal terpisah secara paralel sehingga duktus arteriosus harus dipertahankan tetap terbuka (paten) agar darah teroksigenasi dari sirkulasi paru dapat bercampur ke sirkulasi sistemik hingga tindakan bedah dilakukan."
   },
   {
     "id": 58,
@@ -809,7 +809,7 @@ const questions = [
       "E. Koreksi kacamata"
     ],
     "answer": 3,
-    "rationale": "Pasien menderita katarak senilis imatur OD (shadow test positif) dan katarak senilis matur OS (visus 1/300, shadow test negatif) dengan TIO dan segmen posterior normal, sehingga tatalaksana definitif yang tepat untuk memulihkan tajam penglihatan adalah ekstraksi katarak dengan teknik fakoemulsifikasi.[cite: 29, 30]"
+    "rationale": "Pasien menderita katarak senilis imatur OD (shadow test positif) dan katarak senilis matur OS (visus 1/300, shadow test negatif) dengan TIO dan segmen posterior normal, sehingga tatalaksana definitif yang tepat untuk memulihkan tajam penglihatan adalah ekstraksi katarak dengan teknik fakoemulsifikasi."
   },
   {
     "id": 59,
@@ -823,7 +823,7 @@ const questions = [
       "E. Diuresis akibat aktivasi simpatis"
     ],
     "answer": 1,
-    "rationale": "Nitrogliserin bekerja melepaskan nitrit oksida (NO) yang menginduksi relaksasi otot polos pembuluh darah; efek samping yang paling sering dikeluhkan pasien adalah sakit kepala akibat vasodilatasi pembuluh darah meningeal/serebral.[cite: 30]"
+    "rationale": "Nitrogliserin bekerja melepaskan nitrit oksida (NO) yang menginduksi relaksasi otot polos pembuluh darah.\nEfek samping yang paling sering dikeluhkan pasien adalah sakit kepala akibat vasodilatasi pembuluh darah meningeal/serebral."
   },
   {
     "id": 60,
@@ -837,7 +837,7 @@ const questions = [
       "E. Gagging"
     ],
     "answer": 2,
-    "rationale": "Kematian akibat asfiksia mekanik yang disebabkan oleh sumbatan benda asing di dalam lumen saluran napas bagian dalam (laringofaring/trakeobronkial), seperti makanan utuh (buah anggur), disebut sebagai tersedak (choking).[cite: 30, 31]"
+    "rationale": "Kematian akibat asfiksia mekanik yang disebabkan oleh sumbatan benda asing di dalam lumen saluran napas bagian dalam (laringofaring/trakeobronkial), seperti makanan utuh (buah anggur), disebut sebagai tersedak (choking)."
   },
   {
     "id": 61,
@@ -851,7 +851,7 @@ const questions = [
       "E. Fosfofruktokinase-1"
     ],
     "answer": 2,
-    "rationale": "Gambaran klinis obesitas sentral, pipi tembam (moon face), striae keunguan (striae lividae), dan hipertensi mengarah pada sindrom Cushing (hiperkortisolisme); hormon kortisol meningkatkan kadar glukosa darah dengan mengaktivasi enzim-enzim glukoneogenesis di hati, termasuk enzim glukosa-6-fosfatase.[cite: 31]"
+    "rationale": "Gambaran klinis obesitas sentral, pipi tembam (moon face), striae keunguan (striae lividae), dan hipertensi mengarah pada sindrom Cushing (hiperkortisolisme).\nHormon kortisol meningkatkan kadar glukosa darah dengan mengaktivasi enzim-enzim glukoneogenesis di hati, termasuk enzim glukosa-6-fosfatase."
   },
   {
     "id": 62,
@@ -865,7 +865,7 @@ const questions = [
       "E. Otitis eksterna aurikula kiri"
     ],
     "answer": 0,
-    "rationale": "Keluarnya sekret telinga tengah secara kronis/berulang disertai perforasi membran timpani di daerah sentral (pars tensa) tanpa adanya kolesteatoma menunjukkan diagnosis Otitis Media Supuratif Kronis (OMSK) tipe aman/benigna aurikula kiri.[cite: 31, 32]"
+    "rationale": "Keluarnya sekret telinga tengah secara kronis/berulang disertai perforasi membran timpani di daerah sentral (pars tensa) tanpa adanya kolesteatoma menunjukkan diagnosis Otitis Media Supuratif Kronis (OMSK) tipe aman/benigna aurikula kiri."
   },
   {
     "id": 63,
@@ -879,7 +879,7 @@ const questions = [
       "E. Miokarditis"
     ],
     "answer": 3,
-    "rationale": "Nyeri dada hebat mendadak seperti diiris/dirobek yang menjalar ke punggung pada penderita hipertensi diikuti sinkop dan tanda perdarahan internal masif (pucat pada konjungtiva dan bantalan kuku) merupakan manifestasi klasik ruptur dan diseksi aorta akut.[cite: 32]"
+    "rationale": "Nyeri dada hebat mendadak seperti diiris/dirobek yang menjalar ke punggung pada penderita hipertensi diikuti sinkop dan tanda perdarahan internal masif (pucat pada konjungtiva dan bantalan kuku) merupakan manifestasi klasik ruptur dan diseksi aorta akut."
   },
   {
     "id": 64,
@@ -893,7 +893,7 @@ const questions = [
       "E. Pasien lansia dengan komorbiditas multiple"
     ],
     "answer": 3,
-    "rationale": "Dalam struktur PICO pada skenario tersebut, komponen P (Patient/Population) yang paling tepat merepresentasikan populasi klinis dan masalah utama pasien sebelum intervensi dan luaran terjadi adalah pasien lansia dengan rinosinusitis jamur.[cite: 32, 33]"
+    "rationale": "Dalam struktur PICO pada skenario tersebut, komponen P (Patient/Population) yang paling tepat merepresentasikan populasi klinis dan masalah utama pasien sebelum intervensi dan luaran terjadi adalah pasien lansia dengan rinosinusitis jamur."
   },
   {
     "id": 65,
@@ -907,7 +907,7 @@ const questions = [
       "E. Filariasis Timori"
     ],
     "answer": 3,
-    "rationale": "Keterlibatan pembuluh limfe traktus urogenital yang menyebabkan hidrokel/pembesaran skrotum dan kiluria (urin putih seperti susu) merupakan tanda khas infeksi Wuchereria bancrofti (Filariasis Bancrofti), berbeda dengan spesies Brugia yang umumnya hanya mengenai ekstremitas di bawah lutut/siku.[cite: 33]"
+    "rationale": "Keterlibatan pembuluh limfe traktus urogenital yang menyebabkan hidrokel/pembesaran skrotum dan kiluria (urin putih seperti susu) merupakan tanda khas infeksi Wuchereria bancrofti (Filariasis Bancrofti), berbeda dengan spesies Brugia yang umumnya hanya mengenai ekstremitas di bawah lutut/siku."
   },
   {
     "id": 66,
@@ -921,7 +921,7 @@ const questions = [
       "E. Reaksi stres akut"
     ],
     "answer": 1,
-    "rationale": "Perubahan kesadaran, disorientasi, halusinasi visual, serta gangguan pemusatan perhatian dan konsentrasi yang muncul secara akut dan berfluktuasi pada pasien dengan infeksi sistemik akut (pneumonia) merupakan kriteria diagnostik delirium.[cite: 33, 34]"
+    "rationale": "Perubahan kesadaran, disorientasi, halusinasi visual, serta gangguan pemusatan perhatian dan konsentrasi yang muncul secara akut dan berfluktuasi pada pasien dengan infeksi sistemik akut (pneumonia) merupakan kriteria diagnostik delirium."
   },
   {
     "id": 67,
@@ -935,7 +935,7 @@ const questions = [
       "E. Hiperkalsemia"
     ],
     "answer": 1,
-    "rationale": "Analisis gas darah menunjukkan asidosis metabolik terkompensasi sebagian akibat komplikasi akut diabetes melitus (ketoasidosis diabetikum); kondisi asidemia ekstraseluler dan defisiensi insulin memicu perpindahan ion kalium dari intrasel ke ekstrasel (transcellular shift) sehingga menyebabkan hiperkalemia.[cite: 34]"
+    "rationale": "Analisis gas darah menunjukkan asidosis metabolik terkompensasi sebagian akibat komplikasi akut diabetes melitus (ketoasidosis diabetikum).\nKondisi asidemia ekstraseluler dan defisiensi insulin memicu perpindahan ion kalium dari intrasel ke ekstrasel (transcellular shift) sehingga menyebabkan hiperkalemia."
   },
   {
     "id": 68,
@@ -949,7 +949,7 @@ const questions = [
       "E. Anemia makrositik hiperkromik"
     ],
     "answer": 0,
-    "rationale": "Infestasi cacing tambang kronis pada petani yang tidak memakai alas kaki (ditandai eosinofilia dan gejala saluran cerna) menyebabkan kehilangan darah okulta kronis dan defisiensi besi (saturasi transferin 15%), yang memberikan gambaran morfologi eritrosit berupa anemia mikrositik hipokromik.[cite: 35]"
+    "rationale": "Infestasi cacing tambang kronis pada petani yang tidak memakai alas kaki (ditandai eosinofilia dan gejala saluran cerna) menyebabkan kehilangan darah okulta kronis dan defisiensi besi (saturasi transferin 15%), yang memberikan gambaran morfologi eritrosit berupa anemia mikrositik hipokromik."
   },
   {
     "id": 69,
@@ -963,7 +963,7 @@ const questions = [
       "E. Abortus inkomplit"
     ],
     "answer": 4,
-    "rationale": "Perdarahan pervaginam pada usia kehamilan kurang dari 20 minggu yang disertai keluarnya sebagian jaringan hasil konsepsi, ostium uteri terbuka, dan temuan sisa jaringan intrauterin pada USG menegakkan diagnosis abortus inkomplit.[cite: 35]"
+    "rationale": "Perdarahan pervaginam pada usia kehamilan kurang dari 20 minggu yang disertai keluarnya sebagian jaringan hasil konsepsi, ostium uteri terbuka, dan temuan sisa jaringan intrauterin pada USG menegakkan diagnosis abortus inkomplit."
   },
   {
     "id": 70,
@@ -977,7 +977,7 @@ const questions = [
       "E. Edema dan hiperemia konka inferior, dengan sekret hidung purulen"
     ],
     "answer": 2,
-    "rationale": "Riwayat atopi terhadap debu dan udara dingin sejak SMP dengan gejala bersin berulang setiap pagi merupakan manifestasi rinitis alergi yang secara klasik menunjukkan temuan rinoskopi anterior berupa hipertrofi/edema konka inferior berwarna pucat atau kebiruan (livid) disertai sekret hidung serosa.[cite: 36]"
+    "rationale": "Riwayat atopi terhadap debu dan udara dingin sejak SMP dengan gejala bersin berulang setiap pagi merupakan manifestasi rinitis alergi yang secara klasik menunjukkan temuan rinoskopi anterior berupa hipertrofi/edema konka inferior berwarna pucat atau kebiruan (livid) disertai sekret hidung serosa."
   },
   {
     "id": 71,
@@ -991,7 +991,7 @@ const questions = [
       "E. Pneumotoraks spontan kanan"
     ],
     "answer": 0,
-    "rationale": "Gerak hemitoraks kanan yang tertinggal, penurunan fremitus taktil, perkusi redup pada dada kanan, serta pendorongan mediastinum ke arah kontralateral (batas jantung kiri bergeser hingga garis aksilaris anterior) merupakan tanda fisik klasik efusi pleura kanan masif[cite: 36, 37]."
+    "rationale": "Gerak hemitoraks kanan yang tertinggal, penurunan fremitus taktil, perkusi redup pada dada kanan, serta pendorongan mediastinum ke arah kontralateral (batas jantung kiri bergeser hingga garis aksilaris anterior) merupakan tanda fisik klasik efusi pleura kanan masif."
   },
   {
     "id": 72,
@@ -1005,7 +1005,7 @@ const questions = [
       "E. Perdarahan epidural"
     ],
     "answer": 4,
-    "rationale": "Adanya fenomena lucid interval (kehilangan kesadaran sesaat pascatrauma tumpul kepala, diikuti periode sadar selama beberapa jam sebelum mengalami perburukan neurologis cepat berupa nyeri kepala hebat, kejang, dan dilatasi pupil ipsilateral akibat herniasi unkal) merupakan gambaran klasik perdarahan epidural (epidural hematoma) karena ruptur arteri meningea media[cite: 37]."
+    "rationale": "Adanya fenomena lucid interval (kehilangan kesadaran sesaat pascatrauma tumpul kepala, diikuti periode sadar selama beberapa jam sebelum mengalami perburukan neurologis cepat berupa nyeri kepala hebat, kejang, dan dilatasi pupil ipsilateral akibat herniasi unkal) merupakan gambaran klasik perdarahan epidural (epidural hematoma) karena ruptur arteri meningea media."
   },
   {
     "id": 73,
@@ -1019,7 +1019,7 @@ const questions = [
       "E. Spasme bahu"
     ],
     "answer": 2,
-    "rationale": "Hilangnya kontur membulat normal muskulus deltoideus sehingga bahu tampak menyiku/kotak (square shoulder sign / epaulette sign) disertai keterbatasan rentang gerak sendi pascatrauma merupakan tanda klinis khas dislokasi bahu (glenohumeral) anterior[cite: 37]."
+    "rationale": "Hilangnya kontur membulat normal muskulus deltoideus sehingga bahu tampak menyiku/kotak (square shoulder sign / epaulette sign) disertai keterbatasan rentang gerak sendi pascatrauma merupakan tanda klinis khas dislokasi bahu (glenohumeral) anterior."
   },
   {
     "id": 74,
@@ -1033,7 +1033,7 @@ const questions = [
       "E. Kandidiasis kutis"
     ],
     "answer": 4,
-    "rationale": "Plak eritematosa berbatas tegas dengan permukaan basah/maserasi pada area lipatan kulit (intertriginosa) yang dikelilingi oleh lesi satelit berupa papul-papul eritematosa milier pada pasien dengan faktor predisposisi obesitas dan diabetes melitus tidak terkontrol merupakan gambaran khas kandidiasis kutis intertriginosa[cite: 38]."
+    "rationale": "Plak eritematosa berbatas tegas dengan permukaan basah/maserasi pada area lipatan kulit (intertriginosa) yang dikelilingi oleh lesi satelit berupa papul-papul eritematosa milier pada pasien dengan faktor predisposisi obesitas dan diabetes melitus tidak terkontrol merupakan gambaran khas kandidiasis kutis intertriginosa."
   },
   {
     "id": 75,
@@ -1047,7 +1047,7 @@ const questions = [
       "E. Pukulan dari benda tumpul"
     ],
     "answer": 0,
-    "rationale": "Dalam bagian Kesimpulan Visum et Repertum (VeR), dokter merumuskan jenis kualifikasi kekerasan penyebab luka secara objektif, yakni akibat kekerasan tumpul (luka lecet dan memar), tanpa menyimpulkan benda spesifik atau cara kejadian seperti terpukul maupun terbentur lantai[cite: 38]."
+    "rationale": "Dalam bagian Kesimpulan Visum et Repertum (VeR), dokter merumuskan jenis kualifikasi kekerasan penyebab luka secara objektif, yakni akibat kekerasan tumpul (luka lecet dan memar), tanpa menyimpulkan benda spesifik atau cara kejadian seperti terpukul maupun terbentur lantai."
   },
   {
     "id": 76,
@@ -1061,7 +1061,7 @@ const questions = [
       "E. Kortikosteroid intranasal dan oral"
     ],
     "answer": 1,
-    "rationale": "Pasien mengalami rinosinusitis akut maksilaris (dengan kecurigaan fokus odontogenik); sesuai pedoman EPOS, tatalaksana medis awal lini pertama untuk mengurangi edema mukosa Kompleks Osteomeatal (KOM) dan memperbaiki bersihan mukosiliar adalah irigasi hidung dengan larutan salin (NaCl) dan pemberian kortikosteroid intranasal[cite: 39]."
+    "rationale": "Pasien mengalami rinosinusitis akut maksilaris (dengan kecurigaan fokus odontogenik).\nSesuai pedoman EPOS, tatalaksana medis awal lini pertama untuk mengurangi edema mukosa Kompleks Osteomeatal (KOM) dan memperbaiki bersihan mukosiliar adalah irigasi hidung dengan larutan salin (NaCl) dan pemberian kortikosteroid intranasal."
   },
   {
     "id": 77,
@@ -1075,7 +1075,7 @@ const questions = [
       "E. Obati pasangan sama seperti pasien tanpa memandang hasil serologi"
     ],
     "answer": 2,
-    "rationale": "Berdasarkan pedoman tatalaksana Infeksi Menular Seksual (IMS) pada kasus sifilis stadium primer (ulkus durum dengan VDRL dan TPHA reaktif), seluruh pasangan seksual pasien dalam 90 hari terakhir harus diberikan pengobatan presumtif seperti sifilis stadium dini meskipun hasil tes serologis pasangan masih negatif karena kemungkinan berada dalam masa inkubasi/jendela[cite: 39]."
+    "rationale": "Berdasarkan pedoman tatalaksana Infeksi Menular Seksual (IMS) pada kasus sifilis stadium primer (ulkus durum dengan VDRL dan TPHA reaktif), seluruh pasangan seksual pasien dalam 90 hari terakhir harus diberikan pengobatan presumtif seperti sifilis stadium dini meskipun hasil tes serologis pasangan masih negatif karena kemungkinan berada dalam masa inkubasi/jendela."
   },
   {
     "id": 78,
@@ -1089,7 +1089,7 @@ const questions = [
       "E. Poxvirus"
     ],
     "answer": 1,
-    "rationale": "Lesi kulit polimorfik (papul, vesikel, dan krusta yang muncul bersamaan) dengan pola penyebaran sentrifugal yang dominan di badan kemudian menyebar ke wajah, ekstremitas, dan mukosa mulut pascademam prodromal merupakan manifestasi klasik varisela (cacar air) yang disebabkan oleh Virus Varicella zoster[cite: 40]."
+    "rationale": "Lesi kulit polimorfik (papul, vesikel, dan krusta yang muncul bersamaan) dengan pola penyebaran sentrifugal yang dominan di badan kemudian menyebar ke wajah, ekstremitas, dan mukosa mulut pascademam prodromal merupakan manifestasi klasik varisela (cacar air) yang disebabkan oleh Virus Varicella zoster."
   },
   {
     "id": 79,
@@ -1103,7 +1103,7 @@ const questions = [
       "E. Sindrom Brugada"
     ],
     "answer": 1,
-    "rationale": "Nyeri dada yang dipicu oleh aktivitas fisik dan membaik dengan istirahat disertai temuan iskemia miokard terinduksi aktivitas berupa depresi segmen ST pada uji beban latih (exercise stress test) menegakkan diagnosis angina pektoris stabil[cite: 40]."
+    "rationale": "Nyeri dada yang dipicu oleh aktivitas fisik dan membaik dengan istirahat disertai temuan iskemia miokard terinduksi aktivitas berupa depresi segmen ST pada uji beban latih (exercise stress test) menegakkan diagnosis angina pektoris stabil."
   },
   {
     "id": 80,
@@ -1117,7 +1117,7 @@ const questions = [
       "E. Rinitis alergi"
     ],
     "answer": 3,
-    "rationale": "Sesak napas episodik disertai bunyi mengi (wheezing) ekspiratoar pada pemeriksaan auskultasi paru dengan riwayat serangan serupa pada masa kanak-kanak merupakan gambaran khas eksaserbasi asma bronkial[cite: 41]."
+    "rationale": "Sesak napas episodik disertai bunyi mengi (wheezing) ekspiratoar pada pemeriksaan auskultasi paru dengan riwayat serangan serupa pada masa kanak-kanak merupakan gambaran khas eksaserbasi asma bronkial."
   },
   {
     "id": 81,
@@ -1131,7 +1131,7 @@ const questions = [
       "E. Bronkodilator"
     ],
     "answer": 3,
-    "rationale": "Keluhan batuk dengan dahak kental yang sulit dikeluarkan disertai temuan ronkhi kering minimal pada auskultasi paru membutuhkan terapi mukolitik untuk memecah ikatan mukopolisakarida sputum sehingga dahak lebih encer dan mudah diekspektorasikan[cite: 41]."
+    "rationale": "Keluhan batuk dengan dahak kental yang sulit dikeluarkan disertai temuan ronkhi kering minimal pada auskultasi paru membutuhkan terapi mukolitik untuk memecah ikatan mukopolisakarida sputum sehingga dahak lebih encer dan mudah diekspektorasikan."
   },
   {
     "id": 82,
@@ -1145,7 +1145,7 @@ const questions = [
       "E. Peningkatan limfosit T sitotoksik"
     ],
     "answer": 3,
-    "rationale": "Anafilaksis merupakan reaksi hipersensitivitas tipe I (tipe cepat) yang dimediasi oleh ikatan alergen (antibiotik) dengan antibodi IgE spesifik yang telah terakumulasi pada reseptor permukaan sel mast dan basofil, sehingga memicu degranulasi histamin serta mediator vasoaktif lainnya[cite: 42]."
+    "rationale": "Anafilaksis merupakan reaksi hipersensitivitas tipe I (tipe cepat) yang dimediasi oleh ikatan alergen (antibiotik) dengan antibodi IgE spesifik yang telah terakumulasi pada reseptor permukaan sel mast dan basofil, sehingga memicu degranulasi histamin serta mediator vasoaktif lainnya."
   },
   {
     "id": 83,
@@ -1159,7 +1159,7 @@ const questions = [
       "E. Latanoprost"
     ],
     "answer": 1,
-    "rationale": "Atropin sulfat merupakan agen antikolinergik (antimuskarinik) topikal yang bekerja menghambat reseptor muskarinik M3 pada otot sfingter pupil dan otot siliaris, sehingga menghasilkan efek midriasis (pelebaran pupil) dan sikloplegia[cite: 42]."
+    "rationale": "Atropin sulfat merupakan agen antikolinergik (antimuskarinik) topikal yang bekerja menghambat reseptor muskarinik M3 pada otot sfingter pupil dan otot siliaris, sehingga menghasilkan efek midriasis (pelebaran pupil) dan sikloplegia."
   },
   {
     "id": 84,
@@ -1173,7 +1173,7 @@ const questions = [
       "E. Osteoblastoma"
     ],
     "answer": 2,
-    "rationale": "Deformitas tulang panjang berupa penekukan (bowing) progresif tanpa nyeri pada anak/remaja yang disertai gambaran radiologis patognomonik berupa lesi litik geografis di medula diafisis dengan matriks menyerupai kaca buram (ground-glass appearance) merupakan tanda khas displasia fibrosa (fibrous dysplasia)[cite: 43]."
+    "rationale": "Deformitas tulang panjang berupa penekukan (bowing) progresif tanpa nyeri pada anak/remaja yang disertai gambaran radiologis patognomonik berupa lesi litik geografis di medula diafisis dengan matriks menyerupai kaca buram (ground-glass appearance) merupakan tanda khas displasia fibrosa (fibrous dysplasia)."
   },
   {
     "id": 85,
@@ -1187,7 +1187,7 @@ const questions = [
       "E. Medula spinalis setinggi vertebra servikal"
     ],
     "answer": 4,
-    "rationale": "Tetraparesis akut dengan tanda lesi Lower Motor Neuron (LMN) berupa hiporefleksia (+1) pada kedua lengan (akibat kerusakan kornu anterior/radiks setinggi lesi) dan tanda lesi Upper Motor Neuron (UMN) berupa hiperrefleksia (+3) pada kedua tungkai (akibat gangguan traktus kortikospinalis di bawah level lesi) menunjukkan letak lesi pada medula spinalis setinggi vertebra servikal[cite: 43]."
+    "rationale": "Tetraparesis akut dengan tanda lesi Lower Motor Neuron (LMN) berupa hiporefleksia (+1) pada kedua lengan (akibat kerusakan kornu anterior/radiks setinggi lesi) dan tanda lesi Upper Motor Neuron (UMN) berupa hiperrefleksia (+3) pada kedua tungkai (akibat gangguan traktus kortikospinalis di bawah level lesi) menunjukkan letak lesi pada medula spinalis setinggi vertebra servikal."
   },
   {
     "id": 86,
@@ -1201,7 +1201,7 @@ const questions = [
       "E. Inflammatory bowel disease (IBD)"
     ],
     "answer": 4,
-    "rationale": "Diare kronis (>3 bulan) disertai BAB berdarah, nyeri perut kiri bawah, anemia, riwayat keluarga, serta manifestasi ekstraintestinal khas berupa stomatitis aftosa, artralgia, dan pyoderma gangrenosum menegakkan diagnosis kerja Inflammatory Bowel Disease (IBD)[cite: 43, 44]."
+    "rationale": "Diare kronis (>3 bulan) disertai BAB berdarah, nyeri perut kiri bawah, anemia, riwayat keluarga, serta manifestasi ekstraintestinal khas berupa stomatitis aftosa, artralgia, dan pyoderma gangrenosum menegakkan diagnosis kerja Inflammatory Bowel Disease (IBD)."
   },
   {
     "id": 87,
@@ -1215,7 +1215,7 @@ const questions = [
       "E. Orkitis kanan"
     ],
     "answer": 2,
-    "rationale": "Nyeri testis akut mendadak pada remaja disertai pembengkakan testis, perubahan sumbu testis menjadi horizontal (bell-clapper deformity), dan hilangnya refleks kremaster merupakan temuan klinis klasik torsio testis kanan yang membutuhkan detorsi segera[cite: 44]."
+    "rationale": "Nyeri testis akut mendadak pada remaja disertai pembengkakan testis, perubahan sumbu testis menjadi horizontal (bell-clapper deformity), dan hilangnya refleks kremaster merupakan temuan klinis klasik torsio testis kanan yang membutuhkan detorsi segera."
   },
   {
     "id": 88,
@@ -1229,7 +1229,7 @@ const questions = [
       "E. Peningkatan tekanan vena pulmonalis"
     ],
     "answer": 3,
-    "rationale": "Pada stenosis aorta, obstruksi aliran keluar ventrikel kiri menyebabkan hipertrofi miokard konsentrik, peningkatan tekanan akhir diastolik ventrikel kiri, dan kompresi pembuluh koroner subendokardial disertai penurunan tekanan perfusi aorta, sehingga menurunkan aliran darah ke arteri koroner dan memicu iskemia miokard[cite: 45]."
+    "rationale": "Pada stenosis aorta, obstruksi aliran keluar ventrikel kiri menyebabkan hipertrofi miokard konsentrik, peningkatan tekanan akhir diastolik ventrikel kiri, dan kompresi pembuluh koroner subendokardial disertai penurunan tekanan perfusi aorta, sehingga menurunkan aliran darah ke arteri koroner dan memicu iskemia miokard."
   },
   {
     "id": 89,
@@ -1243,7 +1243,7 @@ const questions = [
       "E. Penyakit gangguan katup vena"
     ],
     "answer": 1,
-    "rationale": "Edema dan nyeri tungkai unilateral mendadak disertai tanda Homans positif setelah imobilisasi lama (perjalanan pesawat jarak jauh) merupakan manifestasi Trombosis Vena Dalam (Deep Vein Thrombosis / DVT) yang disebabkan oleh obstruksi akut vena dalam tungkai oleh trombus[cite: 45]."
+    "rationale": "Edema dan nyeri tungkai unilateral mendadak disertai tanda Homans positif setelah imobilisasi lama (perjalanan pesawat jarak jauh) merupakan manifestasi Trombosis Vena Dalam (Deep Vein Thrombosis / DVT) yang disebabkan oleh obstruksi akut vena dalam tungkai oleh trombus."
   },
   {
     "id": 90,
@@ -1257,7 +1257,7 @@ const questions = [
       "E. Bikarbonat"
     ],
     "answer": 2,
-    "rationale": "Pasien mengalami tetanus generalisata (trismus, rigiditas dinding perut, dan spasme umum pascafraktur terbuka); terapi lini pertama untuk mengatasi kejang dan spasme otot akibat blokade neurotransmiter inhibitorik oleh tetanospasmin adalah pemberian agonis reseptor GABA-A golongan benzodiazepin (seperti diazepam)[cite: 45, 46]."
+    "rationale": "Pasien mengalami tetanus generalisata (trismus, rigiditas dinding perut, dan spasme umum pascafraktur terbuka).\nTerapi lini pertama untuk mengatasi kejang dan spasme otot akibat blokade neurotransmiter inhibitorik oleh tetanospasmin adalah pemberian agonis reseptor GABA-A golongan benzodiazepin (seperti diazepam)."
   },
   {
     "id": 91,
@@ -1271,7 +1271,7 @@ const questions = [
       "E. Penisilin G 1 juta unit"
     ],
     "answer": 3,
-    "rationale": "Keputihan berwarna putih keabu-abuan berbau amis (fishy odor) tanpa tanda inflamasi/gatal, pH vagina > 4,5 (4,9), serta ditemukannya clue cells pada pewarnaan Gram memenuhi kriteria Amsel untuk vaginosis bakterialis, yang diterapi dengan Metronidazol (2x500 mg atau 1 gram/hari)[cite: 46]."
+    "rationale": "Keputihan berwarna putih keabu-abuan berbau amis (fishy odor) tanpa tanda inflamasi/gatal, pH vagina > 4,5 (4,9), serta ditemukannya clue cells pada pewarnaan Gram memenuhi kriteria Amsel untuk vaginosis bakterialis, yang diterapi dengan Metronidazol (2x500 mg atau 1 gram/hari)."
   },
   {
     "id": 92,
@@ -1285,7 +1285,7 @@ const questions = [
       "E. Klebsiella pneumoniae"
     ],
     "answer": 3,
-    "rationale": "Endokarditis infektif jantung kanan yang melibatkan katup trikuspid (ditandai vegetasi katup dan bising pansistolik regurgitasi trikuspid) pada pengguna narkoba suntik paling sering disebabkan oleh inokulasi bakteri flora kulit Staphylococcus aureus ke dalam sirkulasi vena[cite: 46, 47]."
+    "rationale": "Endokarditis infektif jantung kanan yang melibatkan katup trikuspid (ditandai vegetasi katup dan bising pansistolik regurgitasi trikuspid) pada pengguna narkoba suntik paling sering disebabkan oleh inokulasi bakteri flora kulit Staphylococcus aureus ke dalam sirkulasi vena."
   },
   {
     "id": 93,
@@ -1299,7 +1299,7 @@ const questions = [
       "E. Demensia"
     ],
     "answer": 4,
-    "rationale": "Penurunan fungsi memori dan kognitif progresif kronis (Mini-Cog 0/5) pada kesadaran jernih yang telah mengganggu kemandirian aktivitas instrumental sehari-hari secara signifikan (IADL 0/8, seperti kesulitan mengelola keuangan dan tersesat) menegakkan diagnosis demensia[cite: 47]."
+    "rationale": "Penurunan fungsi memori dan kognitif progresif kronis (Mini-Cog 0/5) pada kesadaran jernih yang telah mengganggu kemandirian aktivitas instrumental sehari-hari secara signifikan (IADL 0/8, seperti kesulitan mengelola keuangan dan tersesat) menegakkan diagnosis demensia."
   },
   {
     "id": 94,
@@ -1313,7 +1313,7 @@ const questions = [
       "E. Adenosin"
     ],
     "answer": 1,
-    "rationale": "Pada keluhan gatal kulit (pruritus alergi), terjadi peningkatan pelepasan histamin di jaringan perifer, sementara pemberian obat antihistamin generasi pertama yang menembus sawar darah-otak akan memblokade reseptor H1 histaminergik sentral (yang normalnya mempertahankan kondisi terjaga/wakefulness) sehingga memicu efek samping kantuk[cite: 48]."
+    "rationale": "Pada keluhan gatal kulit (pruritus alergi), terjadi peningkatan pelepasan histamin di jaringan perifer, sementara pemberian obat antihistamin generasi pertama yang menembus sawar darah-otak akan memblokade reseptor H1 histaminergik sentral (yang normalnya mempertahankan kondisi terjaga/wakefulness) sehingga memicu efek samping kantuk."
   },
   {
     "id": 95,
@@ -1327,7 +1327,7 @@ const questions = [
       "E. Penyakit Parkinson"
     ],
     "answer": 4,
-    "rationale": "Ditemukannya gejala kardinal sindrom parkinsonisme yang meliputi tremor saat istirahat (resting tremor), bradikinesia (kelambatan berjalan dan berganti posisi), rigiditas, serta instabilitas postural pada pasien usia lanjut merupakan tanda khas penyakit Parkinson[cite: 48]."
+    "rationale": "Ditemukannya gejala kardinal sindrom parkinsonisme yang meliputi tremor saat istirahat (resting tremor), bradikinesia (kelambatan berjalan dan berganti posisi), rigiditas, serta instabilitas postural pada pasien usia lanjut merupakan tanda khas penyakit Parkinson."
   },
   {
     "id": 96,
@@ -1341,7 +1341,7 @@ const questions = [
       "E. Gangguan waham menetap"
     ],
     "answer": 1,
-    "rationale": "Adanya gejala psikotik yang telah berlangsung selama 3 bulan (memenuhi kriteria durasi minimal 1 bulan pada PPDGJ-III) dengan gambaran klinis yang didominasi oleh halusinasi auditorik (suara yang mengomentari perilaku pasien) dan waham kejar/persekutorik merupakan kriteria diagnostik skizofrenia paranoid[cite: 48, 49]."
+    "rationale": "Adanya gejala psikotik yang telah berlangsung selama 3 bulan (memenuhi kriteria durasi minimal 1 bulan pada PPDGJ-III) dengan gambaran klinis yang didominasi oleh halusinasi auditorik (suara yang mengomentari perilaku pasien) dan waham kejar/persekutorik merupakan kriteria diagnostik skizofrenia paranoid."
   },
   {
     "id": 97,
@@ -1355,7 +1355,7 @@ const questions = [
       "E. Hialuronidase"
     ],
     "answer": 0,
-    "rationale": "Batuk paroksismal persisten selama 2 minggu yang diikuti muntah pascabatuk (post-tussive vomiting) dan perdarahan subkonjungtiva pada anak yang belum diimunisasi merupakan gambaran khas pertusis akibat infeksi Bordetella pertussis, yang menghasilkan faktor virulensi utama berupa Toksin Pertusis (suatu eksotoksin tipe A-B yang menginaktivasi protein Gi dan meningkatkan cAMP)[cite: 49]."
+    "rationale": "Batuk paroksismal persisten selama 2 minggu yang diikuti muntah pascabatuk (post-tussive vomiting) dan perdarahan subkonjungtiva pada anak yang belum diimunisasi merupakan gambaran khas pertusis akibat infeksi Bordetella pertussis, yang menghasilkan faktor virulensi utama berupa Toksin Pertusis (suatu eksotoksin tipe A-B yang menginaktivasi protein Gi dan meningkatkan cAMP)."
   },
   {
     "id": 98,
@@ -1369,7 +1369,7 @@ const questions = [
       "E. Terapi reduktase HMG-CoA"
     ],
     "answer": 1,
-    "rationale": "Glibenklamid adalah obat hipoglikemik oral golongan sulfonilurea kerja panjang (insulin secretagogue) yang memicu sekresi insulin sel beta pankreas secara terus-menerus tanpa bergantung pada kadar glukosa darah, sehingga menjadi faktor risiko utama terjadinya hipoglikemia berat pada pasien lansia[cite: 49, 50]."
+    "rationale": "Glibenklamid adalah obat hipoglikemik oral golongan sulfonilurea kerja panjang (insulin secretagogue) yang memicu sekresi insulin sel beta pankreas secara terus-menerus tanpa bergantung pada kadar glukosa darah, sehingga menjadi faktor risiko utama terjadinya hipoglikemia berat pada pasien lansia."
   },
   {
     "id": 99,
@@ -1383,7 +1383,7 @@ const questions = [
       "E. Kompresi aorta abdominalis"
     ],
     "answer": 2,
-    "rationale": "Perdarahan pascapersalinan dini dengan uterus teraba lembek (boggy) setelah plasenta lahir lengkap dan tanpa robekan jalan lahir disebabkan oleh atonia uteri; penanganan mekanik utama untuk mengontrol perdarahan dan mempertahankan kontraksi uterus hingga/selama proses rujukan (bersama alternatif kompresi aorta abdominalis) adalah tindakan kompresi bimanual[cite: 50]."
+    "rationale": "Perdarahan pascapersalinan dini dengan uterus teraba lembek (boggy) setelah plasenta lahir lengkap dan tanpa robekan jalan lahir disebabkan oleh atonia uteri.\nPenanganan mekanik utama untuk mengontrol perdarahan dan mempertahankan kontraksi uterus hingga/selama proses rujukan (bersama alternatif kompresi aorta abdominalis) adalah tindakan kompresi bimanual."
   },
   {
     "id": 100,
@@ -1397,7 +1397,7 @@ const questions = [
       "E. Hipertensi portal"
     ],
     "answer": 4,
-    "rationale": "Temuan asites (shifting dullness positif) disertai stigmata penyakit hati kronis (spider nevi, eritema palmaris) dan hipoalbuminemia menunjukkan sirosis hepatis dekompensata, di mana mekanisme hemodinamik utama yang mengawali pembentukan cairan asites di rongga peritoneum adalah hipertensi portal[cite: 51]."
+    "rationale": "Temuan asites (shifting dullness positif) disertai stigmata penyakit hati kronis (spider nevi, eritema palmaris) dan hipoalbuminemia menunjukkan sirosis hepatis dekompensata, di mana mekanisme hemodinamik utama yang mengawali pembentukan cairan asites di rongga peritoneum adalah hipertensi portal."
   },
   {
     "id": 101,
@@ -1411,7 +1411,7 @@ const questions = [
       "E. Rinitis alergi"
     ],
     "answer": 3,
-    "rationale": "Pemakaian obat tetes hidung vasokonstriktor/dekongestan topikal secara terus-menerus dalam jangka panjang (5 bulan) menyebabkan takifilaksis dan vasodilatasi balik (rebound congestion) dengan gambaran rinoskopi berupa konka nasalis yang edema dan hiperemis, yang menegakkan diagnosis rinitis medikamentosa[cite: 51]."
+    "rationale": "Pemakaian obat tetes hidung vasokonstriktor/dekongestan topikal secara terus-menerus dalam jangka panjang (5 bulan) menyebabkan takifilaksis dan vasodilatasi balik (rebound congestion) dengan gambaran rinoskopi berupa konka nasalis yang edema dan hiperemis, yang menegakkan diagnosis rinitis medikamentosa."
   },
   {
     "id": 102,
@@ -1425,7 +1425,7 @@ const questions = [
       "E. Dilakukan berdasarkan prinsip eksisi jaringan patologis"
     ],
     "answer": 2,
-    "rationale": "Pemeriksaan Inspeksi Visual dengan Asam Asetat (IVA) bekerja berdasarkan prinsip penyerapan asam asetat 3-5% yang memicu koagulasi reversibel protein intraseluler pada sel epitel serviks displastik/patologis (yang memiliki kepadatan inti dan protein tinggi), sehingga tampak berubah warna menjadi putih (acetowhite)[cite: 51, 52]."
+    "rationale": "Pemeriksaan Inspeksi Visual dengan Asam Asetat (IVA) bekerja berdasarkan prinsip penyerapan asam asetat 3-5% yang memicu koagulasi reversibel protein intraseluler pada sel epitel serviks displastik/patologis (yang memiliki kepadatan inti dan protein tinggi), sehingga tampak berubah warna menjadi putih (acetowhite)."
   },
   {
     "id": 103,
@@ -1439,7 +1439,7 @@ const questions = [
       "E. Budaya (Culture)"
     ],
     "answer": 4,
-    "rationale": "Pada komunitas adat seperti masyarakat Baduy Dalam yang sangat memegang teguh adat istiadat dan kearifan lokal, nilai-nilai tradisi setempat menjadi faktor penentu penerimaan informasi medis modern, sehingga hambatan komunikasi utama dari perspektif sasaran adalah faktor budaya (culture)[cite: 52]."
+    "rationale": "Pada komunitas adat seperti masyarakat Baduy Dalam yang sangat memegang teguh adat istiadat dan kearifan lokal, nilai-nilai tradisi setempat menjadi faktor penentu penerimaan informasi medis modern, sehingga hambatan komunikasi utama dari perspektif sasaran adalah faktor budaya (culture)."
   },
   {
     "id": 104,
@@ -1453,7 +1453,7 @@ const questions = [
       "E. Retinoid topikal dan antimikroba topikal"
     ],
     "answer": 4,
-    "rationale": "Berdasarkan klasifikasi Lehmann pada pedoman PERDOSKI, temuan 10 komedo (<20) dan 3 papul inflamasi (<15) tanpa nodul/kista (total lesi <30) termasuk akne vulgaris derajat ringan tipe papulopustular, sehingga terapi lini pertama yang tepat adalah kombinasi retinoid topikal dan antimikroba topikal tanpa antibiotik sistemik[cite: 53]."
+    "rationale": "Berdasarkan klasifikasi Lehmann pada pedoman PERDOSKI, temuan 10 komedo (<20) dan 3 papul inflamasi (<15) tanpa nodul/kista (total lesi <30) termasuk akne vulgaris derajat ringan tipe papulopustular, sehingga terapi lini pertama yang tepat adalah kombinasi retinoid topikal dan antimikroba topikal tanpa antibiotik sistemik."
   },
   {
     "id": 105,
@@ -1467,7 +1467,7 @@ const questions = [
       "E. Penurunan aktivitas PEP-karboksikinase"
     ],
     "answer": 3,
-    "rationale": "Pada diabetes melitus (trias klasik polidipsia, poliuria, polifagia disertai penurunan berat badan dan GDS 280 mg/dL), defisiensi/resistensi insulin menghilangkan hambatan pada enzim hormone-sensitive lipase di jaringan adiposa, sehingga memicu peningkatan lipolisis yang meningkatkan kadar asam lemak bebas (free fatty acids) dalam darah[cite: 53]."
+    "rationale": "Pada diabetes melitus (trias klasik polidipsia, poliuria, polifagia disertai penurunan berat badan dan GDS 280 mg/dL), defisiensi/resistensi insulin menghilangkan hambatan pada enzim hormone-sensitive lipase di jaringan adiposa, sehingga memicu peningkatan lipolisis yang meningkatkan kadar asam lemak bebas (free fatty acids) dalam darah."
   },
   {
     "id": 106,
@@ -1481,7 +1481,7 @@ const questions = [
       "E. Eksisi"
     ],
     "answer": 0,
-    "rationale": "Benjolan kistik fluktuatif dan nyeri tekan di sisi posterolateral labia yang berlangsung kronis (1 tahun) merupakan kista/abses kelenjar Bartholin; tatalaksana definitif pilihan untuk mencegah kekambuhan sekaligus mempertahankan fungsi lubrikasi kelenjar adalah prosedur marsupialisasi[cite: 53, 54]."
+    "rationale": "Benjolan kistik fluktuatif dan nyeri tekan di sisi posterolateral labia yang berlangsung kronis (1 tahun) merupakan kista/abses kelenjar Bartholin.\nTatalaksana definitif pilihan untuk mencegah kekambuhan sekaligus mempertahankan fungsi lubrikasi kelenjar adalah prosedur marsupialisasi."
   },
   {
     "id": 107,
@@ -1495,7 +1495,7 @@ const questions = [
       "E. Sistitis kronis"
     ],
     "answer": 1,
-    "rationale": "Kombinasi gejala sistemik (demam tinggi dan menggigil), nyeri pinggang dengan nyeri ketok sudut kostovertebra (CVA) kanan positif, serta hasil urinalisis yang menunjukkan piuria, leukosit esterase positif, dan nitrit positif menegakkan diagnosis pielonefritis akut[cite: 54]."
+    "rationale": "Kombinasi gejala sistemik (demam tinggi dan menggigil), nyeri pinggang dengan nyeri ketok sudut kostovertebra (CVA) kanan positif, serta hasil urinalisis yang menunjukkan piuria, leukosit esterase positif, dan nitrit positif menegakkan diagnosis pielonefritis akut."
   },
   {
     "id": 108,
@@ -1509,7 +1509,7 @@ const questions = [
       "E. Standar Pelayanan yang Ditetapkan"
     ],
     "answer": 2,
-    "rationale": "Dalam siklus jaminan mutu (Quality Assurance), identifikasi masalah dilakukan dengan mengukur kinerja/pelayanan aktual yang diberikan dan membandingkannya terhadap standar pelayanan yang telah ditetapkan untuk menilai adanya kesenjangan (gap)[cite: 54, 55]."
+    "rationale": "Dalam siklus jaminan mutu (Quality Assurance), identifikasi masalah dilakukan dengan mengukur kinerja/pelayanan aktual yang diberikan dan membandingkannya terhadap standar pelayanan yang telah ditetapkan untuk menilai adanya kesenjangan (gap)."
   },
   {
     "id": 109,
@@ -1523,7 +1523,7 @@ const questions = [
       "E. Peradangan pada sendi"
     ],
     "answer": 0,
-    "rationale": "Pasien mengalami osteoporosis pascamenopause (ditandai kifosis torakal, penipisan korteks, dan penurunan densitas tulang), yang didasari oleh defisiensi estrogen sehingga meningkatkan aktivitas osteoklas dan menyebabkan ketidakseimbangan antara resorpsi tulang yang melebihi deposisi/formasi tulang oleh osteoblas[cite: 55]."
+    "rationale": "Pasien mengalami osteoporosis pascamenopause (ditandai kifosis torakal, penipisan korteks, dan penurunan densitas tulang), yang didasari oleh defisiensi estrogen sehingga meningkatkan aktivitas osteoklas dan menyebabkan ketidakseimbangan antara resorpsi tulang yang melebihi deposisi/formasi tulang oleh osteoblas."
   },
   {
     "id": 110,
@@ -1537,7 +1537,7 @@ const questions = [
       "E. Penguatan bunyi jantung S1 pada auskultasi jantung"
     ],
     "answer": 3,
-    "rationale": "Riwayat trauma tumpul dada disertai syok dan pulsus paradoksus (penurunan tekanan darah sistolik >10 mmHg saat inspirasi, yaitu dari 90 menjadi 70 mmHg) mengarah pada tamponade jantung akut, yang secara klasik ditandai oleh Trias Beck meliputi hipotensi, suara jantung menjauh (muffled heart sounds), dan peningkatan tekanan vena jugularis (JVP)[cite: 55, 56]."
+    "rationale": "Riwayat trauma tumpul dada disertai syok dan pulsus paradoksus (penurunan tekanan darah sistolik >10 mmHg saat inspirasi, yaitu dari 90 menjadi 70 mmHg) mengarah pada tamponade jantung akut, yang secara klasik ditandai oleh Trias Beck meliputi hipotensi, suara jantung menjauh (muffled heart sounds), dan peningkatan tekanan vena jugularis (JVP)."
   },
   {
     "id": 111,
@@ -1551,7 +1551,7 @@ const questions = [
       "E. Apakah anak-anak diperbolehkan mengonsumsi minuman berkarbonasi?"
     ],
     "answer": 1,
-    "rationale": "Pertanyaan klinis latar depan (foreground question) yang baik harus spesifik dan memuat komponen PICO secara jelas, yaitu Populasi (anak), Pajanan/Intervensi (konsumsi minuman berkarbonasi), serta Luaran/Outcome (gangguan kardiovaskular saat dewasa/di masa depan)[cite: 56]."
+    "rationale": "Pertanyaan klinis latar depan (foreground question) yang baik harus spesifik dan memuat komponen PICO secara jelas, yaitu Populasi (anak), Pajanan/Intervensi (konsumsi minuman berkarbonasi), serta Luaran/Outcome (gangguan kardiovaskular saat dewasa/di masa depan)."
   },
   {
     "id": 112,
@@ -1565,7 +1565,7 @@ const questions = [
       "E. Reflektif"
     ],
     "answer": 1,
-    "rationale": "Pengambilan keputusan klinis secara cepat (intuitif/non-analitik) dengan langsung mengenali kumpulan gejala dan profil kunci pasien (nyeri perut bawah akut pada wanita usia reproduktif yang aktif secara seksual) sebagai kemungkinan KET dengan diagnosis banding apendisitis merupakan strategi penalaran klinis pengenalan pola (pattern recognition)[cite: 56, 57]."
+    "rationale": "Pengambilan keputusan klinis secara cepat (intuitif/non-analitik) dengan langsung mengenali kumpulan gejala dan profil kunci pasien (nyeri perut bawah akut pada wanita usia reproduktif yang aktif secara seksual) sebagai kemungkinan KET dengan diagnosis banding apendisitis merupakan strategi penalaran klinis pengenalan pola (pattern recognition)."
   },
   {
     "id": 113,
@@ -1579,7 +1579,7 @@ const questions = [
       "E. USG leher dengan Doppler"
     ],
     "answer": 0,
-    "rationale": "Odinofagia hebat disertai drooling, demam, pembengkakan peritonsilar fluktuatif (lunak), dan deviasi uvula ke arah kontralateral merupakan tanda khas abses peritonsil (Quinsy); baku emas penunjang konfirmasi diagnosis sekaligus tindakan terapeutik awal adalah pungsi/aspirasi jarum pada area yang paling lunak/fluktuatif untuk membuktikan adanya pus (nanah)[cite: 57]."
+    "rationale": "Odinofagia hebat disertai drooling, demam, pembengkakan peritonsilar fluktuatif (lunak), dan deviasi uvula ke arah kontralateral merupakan tanda khas abses peritonsil (Quinsy).\nBaku emas penunjang konfirmasi diagnosis sekaligus tindakan terapeutik awal adalah pungsi/aspirasi jarum pada area yang paling lunak/fluktuatif untuk membuktikan adanya pus (nanah)."
   },
   {
     "id": 114,
@@ -1593,7 +1593,7 @@ const questions = [
       "E. Toksin menyebar sepanjang serabut saraf melalui transpor aksonal anterograde cepat"
     ],
     "answer": 0,
-    "rationale": "Neurotoksin tetanospasmin yang diproduksi oleh Clostridium tetani pada luka masuk ke ujung presinaptik lower motor neuron di neuromuscular junction, kemudian ditransportasikan menuju sistem saraf pusat (kornu anterior medula spinalis dan batang otak) di sepanjang serabut saraf melalui transpor aksonal retrograd[cite: 57, 58]."
+    "rationale": "Neurotoksin tetanospasmin yang diproduksi oleh Clostridium tetani pada luka masuk ke ujung presinaptik lower motor neuron di neuromuscular junction, kemudian ditransportasikan menuju sistem saraf pusat (kornu anterior medula spinalis dan batang otak) di sepanjang serabut saraf melalui transpor aksonal retrograd."
   },
   {
     "id": 115,
@@ -1607,7 +1607,7 @@ const questions = [
       "E. Penyakit aterosklerosis"
     ],
     "answer": 3,
-    "rationale": "Ulkus iskemik pada ujung-ujung jari ekstremitas disertai penurunan pulsasi arteri distal (a. tibialis posterior dan a. dorsalis pedis) pada pria usia muda (<45 tahun) dengan riwayat perokok aktif merupakan manifestasi klasik tromboangiitis obliterans atau penyakit Buerger (Buerger's disease)[cite: 58]."
+    "rationale": "Ulkus iskemik pada ujung-ujung jari ekstremitas disertai penurunan pulsasi arteri distal (a. tibialis posterior dan a. dorsalis pedis) pada pria usia muda (<45 tahun) dengan riwayat perokok aktif merupakan manifestasi klasik tromboangiitis obliterans atau penyakit Buerger (Buerger's disease)."
   },
   {
     "id": 116,
@@ -1621,7 +1621,7 @@ const questions = [
       "E. Penyakit aterosklerosis"
     ],
     "answer": 3,
-    "rationale": "Ulkus iskemik pada jari-jari kaki disertai penurunan pulsasi arteri berukuran kecil-sedang di bagian distal (a. tibialis posterior dan a. dorsalis pedis) pada pria dewasa muda perokok aktif merupakan tanda khas tromboangiitis obliterans (Buerger's disease)[cite: 58, 59]."
+    "rationale": "Ulkus iskemik pada jari-jari kaki disertai penurunan pulsasi arteri berukuran kecil-sedang di bagian distal (a. tibialis posterior dan a. dorsalis pedis) pada pria dewasa muda perokok aktif merupakan tanda khas tromboangiitis obliterans (Buerger's disease)."
   },
   {
     "id": 117,
@@ -1635,7 +1635,7 @@ const questions = [
       "E. Fluoksetin 1x10 mg"
     ],
     "answer": 4,
-    "rationale": "Pasien mengalami episode depresif (afek depresif, anhedonia, gangguan konsentrasi, insomnia, dan penurunan nafsu makan selama 1 bulan yang mengganggu fungsi pekerjaan); terapi farmakologis lini pertama yang tepat dengan dosis terapeutik awal yang sesuai adalah antidepresan golongan SSRI, yaitu Fluoksetin 1x10-20 mg/hari[cite: 59]."
+    "rationale": "Pasien mengalami episode depresif (afek depresif, anhedonia, gangguan konsentrasi, insomnia, dan penurunan nafsu makan selama 1 bulan yang mengganggu fungsi pekerjaan).\nTerapi farmakologis lini pertama yang tepat dengan dosis terapeutik awal yang sesuai adalah antidepresan golongan SSRI, yaitu Fluoksetin 1x10-20 mg/hari."
   },
   {
     "id": 118,
@@ -1649,7 +1649,7 @@ const questions = [
       "E. Ensefalitis toksoplasma"
     ],
     "answer": 0,
-    "rationale": "Nyeri kepala hebat subakut-kronis disertai demam, tanda rangsang meningeal (kaku kuduk positif) tanpa defisit neurologis fokal, serta peningkatan tekanan pembukaan cairan serebrospinal yang signifikan pada penderita HIV yang belum mendapat ARV merupakan gambaran klasik meningoensefalitis kriptokokus (Cryptococcus neoformans)[cite: 59, 60]."
+    "rationale": "Nyeri kepala hebat subakut-kronis disertai demam, tanda rangsang meningeal (kaku kuduk positif) tanpa defisit neurologis fokal, serta peningkatan tekanan pembukaan cairan serebrospinal yang signifikan pada penderita HIV yang belum mendapat ARV merupakan gambaran klasik meningoensefalitis kriptokokus (Cryptococcus neoformans)."
   },
   {
     "id": 119,
@@ -1663,7 +1663,7 @@ const questions = [
       "E. Peningkatan CCK mengaktifkan neuron NPY hipotalamus"
     ],
     "answer": 2,
-    "rationale": "Peningkatan massa jaringan adiposa saat berat badan naik memicu peningkatan sekresi hormon leptin oleh sel adiposit, yang kemudian merangsang neuron anoreksigenik POMC (pro-opiomelanocortin) dan menghambat neuron oreksigenik NPY/AgRP di nukleus arkuatus hipotalamus sehingga menekan nafsu makan[cite: 60]."
+    "rationale": "Peningkatan massa jaringan adiposa saat berat badan naik memicu peningkatan sekresi hormon leptin oleh sel adiposit, yang kemudian merangsang neuron anoreksigenik POMC (pro-opiomelanocortin) dan menghambat neuron oreksigenik NPY/AgRP di nukleus arkuatus hipotalamus sehingga menekan nafsu makan."
   },
   {
     "id": 120,
@@ -1677,6 +1677,6 @@ const questions = [
       "E. Setelah pemeriksaan dalam (autopsi) dan toksikologi selesai dilakukan"
     ],
     "answer": 3,
-    "rationale": "Pada jenazah yang diduga merupakan korban tindak pidana dan dibawa oleh penyidik kepolisian, status jenazah berada di bawah wewenang penyidik untuk kepentingan peradilan; oleh karena itu, surat keterangan kematian baru dapat diterbitkan setelah seluruh pemeriksaan kedokteran forensik selesai dilakukan sesuai dengan permintaan resmi Visum et Repertum dari penyidik[cite: 60, 61]."
+    "rationale": "Pada jenazah yang diduga merupakan korban tindak pidana dan dibawa oleh penyidik kepolisian, status jenazah berada di bawah wewenang penyidik untuk kepentingan peradilan, oleh karena itu, surat keterangan kematian baru dapat diterbitkan setelah seluruh pemeriksaan kedokteran forensik selesai dilakukan sesuai dengan permintaan resmi Visum et Repertum dari penyidik."
   }
 ];
