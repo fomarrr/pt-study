@@ -2397,7 +2397,12 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         });
       });
       const hist = includeHistory ? new TextEncoder().encode(JSON.stringify(historyToCompact().slice(0, 10))) : new Uint8Array(0);
-      const body = new Uint8Array(1 + 4 + counts.length * 2 + Math.ceil(nibbles.length / 2) + 2 + hist.length);
+      // Status Salah/Ragu dari sesi latihan & ujian (supaya daftar "Soal Salah & Ragu" ikut pindah)
+      const carryCodes = weakCarryCodes();
+      const carryNib = [];
+      SET_KEYS.forEach(k => syncBank(k).forEach(q => carryNib.push(carryCodes.get(q._uid) || 0)));
+      const carryLen = carryNib.some(v => v) ? 1 + Math.ceil(carryNib.length / 2) : 0;
+      const body = new Uint8Array(1 + 4 + counts.length * 2 + Math.ceil(nibbles.length / 2) + 2 + hist.length + carryLen);
       let p = 0;
       body[p++] = 3;                                   // v3 = v2 + waktu pembuatan link
       const created = Math.floor(Date.now() / 1000);
@@ -2406,6 +2411,11 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       for (let i = 0; i < nibbles.length; i += 2) body[p++] = (nibbles[i] << 4) | (nibbles[i + 1] || 0);
       body[p++] = (hist.length >> 8) & 255; body[p++] = hist.length & 255;
       body.set(hist, p);
+      p += hist.length;
+      if (carryLen) {
+        body[p++] = 0x57; // penanda blok 'W' (opsional; versi lama mengabaikannya)
+        for (let i = 0; i < carryNib.length; i += 2) body[p++] = (carryNib[i] << 4) | (carryNib[i + 1] || 0);
+      }
 
       let packed = null;
       try { if (typeof CompressionStream !== 'undefined') packed = await streamBytes(body, new CompressionStream('deflate-raw')); } catch (e) { packed = null; }
@@ -2444,6 +2454,11 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       p += 2;
       let history = [];
       if (histLen) history = JSON.parse(new TextDecoder().decode(body.subarray(p, p + histLen)));
+      const carryStart = p + histLen + 1;
+      const hasCarry = body.length > p + histLen && body[p + histLen] === 0x57 && body.length >= carryStart + Math.ceil(totalNib / 2);
+      const cnib = (i) => { const byte = body[carryStart + (i >> 1)]; return (i & 1) ? (byte & 15) : (byte >> 4); };
+      const carry = hasCarry ? {} : null;
+      const carrySets = [];
 
       const sets = {}, mismatched = [];
       let offset = 0;
@@ -2459,6 +2474,10 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
           offset += n;
           return;
         }
+        if (carry) {
+          carrySets.push(k);
+          bank.forEach((q, i) => { const c = cnib(offset + i) & 7; if (c) carry[q._uid] = c; });
+        }
         const answers = {}, bookmarks = {};
         let nAns = 0, nBm = 0;
         bank.forEach((q, i) => {
@@ -2473,7 +2492,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         offset += n;
         sets[k] = { answers, bookmarks, nAns, nBm };
       });
-      return { sets, history: Array.isArray(history) ? history : [], mismatched, createdAt };
+      return { sets, history: Array.isArray(history) ? history : [], mismatched, createdAt, carry, carrySets };
     }
 
     function refreshAfterSync() {
@@ -2493,6 +2512,14 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         applied.push(k);
       });
       const historyAdded = mergeCompactHistory(dec.history);
+      if (dec.carry) {
+        // Ganti status sesi untuk paket yang ada di link; paket lain tetap. Waktu +1 ms agar mengalahkan
+        // jawaban Belajar hasil impor (bercap waktu pembuatan link), tapi kalah dari jawaban baru di perangkat ini.
+        const keep = {};
+        const old = appState.carry && appState.carry.m ? appState.carry.m : {};
+        Object.keys(old).forEach(uid => { const q = qByUid.get(uid); if (q && !dec.carrySets.includes(q._set)) keep[uid] = old[uid]; });
+        appState.carry = { t: (dec.createdAt || Date.now()) + 1, m: Object.assign(keep, dec.carry) };
+      }
       refreshAfterSync();
       if (isModalOpen('syncModal')) refreshSyncExport();
       return { applied, historyAdded };
@@ -2833,24 +2860,48 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
     const anyModalOpen = () => ['topicModal', 'resetModal', 'syncModal', 'setupModal', 'confirmModal', 'searchModal'].some(isModalOpen);
 
     // ----- Soal lemah (salah / ragu) berdasarkan hasil terbaru -----
-    function computeWeak() {
-      const latest = new Map();      // uid -> {t, wrong}
+    // Status terbaru tiap soal: dari jawaban mode Belajar (src 'a') atau dari sesi latihan/ujian (src 's').
+    function weakMaps() {
+      const latest = new Map();      // uid -> {t, wrong, src}
       const examFlag = new Map();    // uid -> {t, flag}
       const put = (map, uid, t, v) => { const c = map.get(uid); if (!c || t >= c.t) map.set(uid, Object.assign({ t }, v)); };
       allQuestions.forEach(q => {
         const a = appState.sets[q._set]?.answers[q.id];
-        if (a) put(latest, q._uid, a.timestamp || 0, { wrong: !a.isCorrect });
+        if (a) put(latest, q._uid, a.timestamp || 0, { wrong: !a.isCorrect, src: 'a' });
       });
+      // Hasil sesi yang dibawa dari perangkat lain lewat Pindah Device (rincian soalnya tidak ikut dikirim)
+      const carry = appState.carry;
+      if (carry && carry.m && typeof carry.m === 'object') {
+        const t = carry.t || 0;
+        Object.keys(carry.m).forEach(uid => {
+          const code = carry.m[uid] | 0;
+          if (!code || !qByUid.has(uid)) return;
+          if (code & 3) put(latest, uid, t, { wrong: (code & 3) === 2, src: 's' });
+          put(examFlag, uid, t, { flag: !!(code & 4) });
+        });
+      }
       appState.history.forEach(rec => {
         if (rec.type === 'study' || !Array.isArray(rec.items)) return;
         rec.items.forEach(([uid, sel, flag]) => {
           const q = qByUid.get(uid);
           if (!q) return;
           const t = rec.finishedAt || 0;
-          put(latest, uid, t, { wrong: !(sel >= 0 && sel === q.answer) });
+          put(latest, uid, t, { wrong: !(sel >= 0 && sel === q.answer), src: 's' });
           put(examFlag, uid, t, { flag: !!flag });
         });
       });
+      return { latest, examFlag };
+    }
+    // Kode 3-bit per soal untuk Pindah Device: bit0-1 = hasil sesi terbaru (1 benar, 2 salah) bila sesi yang menentukan, bit2 = ragu dari sesi
+    function weakCarryCodes() {
+      const { latest, examFlag } = weakMaps();
+      const out = new Map();
+      latest.forEach((v, uid) => { if (v.src === 's') out.set(uid, v.wrong ? 2 : 1); });
+      examFlag.forEach((v, uid) => { if (v.flag) out.set(uid, (out.get(uid) || 0) | 4); });
+      return out;
+    }
+    function computeWeak() {
+      const { latest, examFlag } = weakMaps();
       const wrong = new Set(), doubt = new Set();
       latest.forEach((v, uid) => { if (v.wrong) wrong.add(uid); });
       allQuestions.forEach(q => {
@@ -3859,7 +3910,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         title: 'Hapus semua riwayat?',
         html: 'Seluruh riwayat sesi di perangkat ini akan dihapus. Progres belajar <strong>tidak</strong> ikut terhapus.',
         okText: 'Hapus Semua', danger: true,
-        onOk: () => { appState.history = []; saveState(); renderHistory(); }
+        onOk: () => { appState.history = []; appState.carry = null; saveState(); renderHistory(); }
       });
     }
 
