@@ -121,7 +121,7 @@
       font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
       font-feature-settings: 'cv11', 'ss01', 'ss03';
       letter-spacing: -0.006em;
-      background-color: var(--bg) !important;
+      background-color: transparent !important; /* warna latar ada di <html>, supaya cahaya ambien terlihat */
       background-image: none !important;
       color: rgb(var(--n-800));
       -webkit-font-smoothing: antialiased;
@@ -1525,7 +1525,40 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         m.replaceWith(fresh);
       }
       document.documentElement.style.backgroundColor = color;
-      document.body.style.backgroundColor = color;
+    }
+
+    // Nilai ulang jawaban mode Belajar terhadap kunci jawaban terbaru.
+    // Jawaban yang dinilai saat kunci masih berbeda (file soal pernah diperbarui) dikoreksi; waktu jawab tidak diubah.
+    function regradeStudyAnswers() {
+      const changed = [];
+      PT_SETS.forEach(cfg => {
+        const st = appState.sets[cfg.key];
+        if (!st) return;
+        (banks[cfg.key] || []).forEach(q => {
+          const a = st.answers[q.id];
+          if (!a || !Number.isInteger(a.selected)) return;
+          const now = a.selected === q.answer;
+          if (a.isCorrect !== now) {
+            changed.push({ label: `${cfg.label} #${q.id}`, nowCorrect: now, uid: q._uid });
+            a.isCorrect = now;
+          }
+        });
+      });
+      if (changed.length) saveState();
+      return changed;
+    }
+    function showRegradeNotice(changed) {
+      if (!changed.length) return;
+      const toWrong = changed.filter(c => !c.nowCorrect), toRight = changed.filter(c => c.nowCorrect);
+      const list = (arr) => arr.map(c => `<a href="#" class="underline" onclick="closeConfirm();openSearchResult('${c.uid}');return false;">${c.label}</a>`).join(', ');
+      showConfirm({
+        title: 'Kunci jawaban diperbarui',
+        html: `Kunci jawaban beberapa soal yang sudah Anda kerjakan telah diperbarui, sehingga nilainya dihitung ulang.` +
+          (toWrong.length ? `<p class="mt-2">Sekarang <strong>salah</strong>: ${list(toWrong)}</p>` : '') +
+          (toRight.length ? `<p class="mt-2">Sekarang <strong>benar</strong>: ${list(toRight)}</p>` : '') +
+          `<p class="mt-2 text-xs text-slate-500">Jika Anda memakai Pindah Device, buat link baru agar perangkat lain ikut diperbarui.</p>`,
+        cancelText: 'Mengerti'
+      });
     }
 
     // Inisialisasi Aplikasi
@@ -1548,6 +1581,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
 
       loadState();
       sanitizeExtraState();
+      const regraded = regradeStudyAnswers();
       finalizeExpiredSession();
 
       // Jika ada file yang belum terdeteksi, tampilkan info ringan & arahkan ke paket yang tersedia
@@ -1573,6 +1607,9 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
 
       // Tampilkan halaman awal terlebih dahulu (bukan langsung ke soal)
       showStartPage();
+
+      // Beri tahu bila ada jawaban yang dinilai ulang (kecuali sedang membuka link Pindah Device)
+      if (!/[#&]sync=/.test(location.hash)) showRegradeNotice(regraded);
 
       // Dibuka dari link/QR sync perangkat lain
       handleIncomingSyncLink();
@@ -2483,7 +2520,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
           const m = {};
           let any = false;
           bank.forEach((q, i) => {
-            let c = cnib(offset + i) & 7;
+            let c = cnib(offset + i) & (carryFmt === 'X' ? 15 : 7);
             if (carryFmt === 'W') c = ((c & 3) ? 1 : 0) | ((c & 3) === 2 ? 2 : 0) | (c & 4);
             if (c) { m[q._uid] = c; any = true; }
           });
@@ -2911,6 +2948,8 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         (banks[e.set] || []).forEach(q => {
           const code = e.m[q._uid] | 0;
           if (!code && !e.full) return;
+          // bit3: di perangkat asal status ini berasal dari jawaban Belajar -> jawaban yang sama (sudah diimpor) di sini yang menilai
+          if ((code & 8) && appState.sets[e.set]?.answers[q.id]) { put(examFlag, q._uid, e.t, { flag: !!(code & 4) }); return; }
           put(latest, q._uid, e.t, (code & 1) ? { wrong: !!(code & 2), src: 's' } : { wrong: false, src: 'n' });
           put(examFlag, q._uid, e.t, { flag: !!(code & 4) });
         });
@@ -2949,7 +2988,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
     function weakCarryCodes() {
       const { latest, examFlag } = weakMaps();
       const out = new Map();
-      latest.forEach((v, uid) => { if (v.src !== 'n') out.set(uid, 1 | (v.wrong ? 2 : 0)); });
+      latest.forEach((v, uid) => { if (v.src !== 'n') out.set(uid, 1 | (v.wrong ? 2 : 0) | (v.src === 'a' ? 8 : 0)); });
       examFlag.forEach((v, uid) => { if (v.flag) out.set(uid, (out.get(uid) || 0) | 4); });
       return out;
     }
