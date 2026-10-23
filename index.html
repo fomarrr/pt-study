@@ -4,6 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CBT Progress Test - PT 30 s/d PT 38</title>
+  <!-- PWA: bisa dipasang ke Layar Utama & dibuka offline -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#3b66d0" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Progress Test" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png" />
   <!-- Tailwind CSS CDN -->
   <!-- Terapkan tema tersimpan sebelum halaman tampil (hindari kedipan) -->
   <script>
@@ -194,6 +203,11 @@
     /* Elemen berlatar kuning (ragu-ragu) tetap memakai teks gelap agar terbaca */
     html.dark .bg-amber-400, html.dark .bg-amber-500 { color: #0f172a !important; }
 
+    /* ===== Cari soal ===== */
+    .search-hit { background: #fde68a; color: inherit; border-radius: 3px; padding: 0 1px; }
+    html.dark .search-hit { background: rgba(245,158,11,0.38); }
+    #searchInput::-webkit-search-cancel-button { cursor: pointer; }
+
     /* ===== Ujian: cincin nilai, timer ===== */
     .score-ring { --ring-track: #e2e8f0; --ring-inner: #ffffff;
       width: 9.5rem; height: 9.5rem; border-radius: 9999px;
@@ -240,6 +254,18 @@
         </div>
         <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Progress Test</h1>
         <p class="text-sm text-slate-500 mt-1.5">Mode Belajar &amp; Evaluasi Mandiri SKDI</p>
+      </div>
+
+      <!-- Peringatan penyimpanan / pasang aplikasi (diisi via JS) -->
+      <div id="installBanner" class="hidden max-w-5xl mx-auto mb-4"></div>
+
+      <!-- Cari soal -->
+      <div class="max-w-5xl mx-auto mb-5">
+        <button type="button" id="startSearchBtn" onclick="openSearch()" class="w-full flex items-center gap-3 bg-white border border-slate-200/60 surface-soft rounded-full px-5 py-3 text-left text-sm text-slate-500 hover:shadow-md transition-all">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" /></svg>
+          <span class="flex-1 truncate">Cari soal di semua paket… (mis. preeklampsia)</span>
+          <kbd class="hidden sm:inline text-[10px] font-semibold text-slate-400 border border-slate-200 rounded px-1.5 py-0.5">/</kbd>
+        </button>
       </div>
 
       <!-- Sesi berjalan / hasil sesi yang habis waktu (diisi via JS) -->
@@ -398,6 +424,12 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3v-6h6v6h3a1 1 0 001-1V10" />
             </svg>
             <span>Beranda</span>
+          </button>
+
+          <!-- Button: Cari Soal -->
+          <button onclick="openSearch()" title="Cari Soal (/)" aria-label="Cari Soal" class="bg-slate-100 hover:bg-slate-200 text-slate-700 transition-all duration-200 hover:shadow-md active:scale-95 text-[11px] sm:text-xs font-semibold px-3 py-1.5 sm:py-2 rounded-full flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" /></svg>
+            <span>Cari</span>
           </button>
 
           <!-- Button: Rekap Akurasi Per Topik -->
@@ -923,6 +955,52 @@
     </div>
   </div>
 
+  <!-- MODAL: CARI SOAL -->
+  <div id="searchModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden items-start justify-center p-3 sm:p-4 sm:pt-16">
+    <div class="bg-white rounded-2xl shadow-xl border border-slate-100 max-w-2xl w-full max-h-[92vh] sm:max-h-[80vh] flex flex-col overflow-hidden animate-fade-in" role="dialog" aria-modal="true" aria-label="Cari soal">
+      <div class="p-4 border-b border-slate-100 space-y-3">
+        <div class="flex items-center gap-2">
+          <div class="flex-1 flex items-center gap-2 bg-slate-100 rounded-full px-4 py-2.5">
+            <svg class="w-4 h-4 text-slate-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" /></svg>
+            <input id="searchInput" type="search" enterkeyhint="search" autocomplete="off" placeholder="Cari kata kunci, mis. preeklampsia" oninput="onSearchInput()" onkeydown="if(event.key==='Enter'){event.preventDefault();openFirstSearchResult();}" class="flex-1 min-w-0 bg-transparent border-none outline-none focus:ring-0 p-0 text-sm text-slate-800" />
+          </div>
+          <button type="button" onclick="closeSearch()" aria-label="Tutup" class="shrink-0 text-slate-500 hover:text-slate-800 p-2 rounded-full hover:bg-slate-200/60 transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+          </button>
+        </div>
+        <div class="flex flex-wrap items-center gap-3 text-xs">
+          <select id="searchScope" onchange="runSearch()" aria-label="Paket yang dicari" class="bg-slate-100 border-none text-slate-700 text-xs rounded-full pl-3 pr-8 py-1.5 font-semibold focus:ring-2 focus:ring-medical-400"></select>
+          <label class="flex items-center gap-1.5 text-slate-600 cursor-pointer select-none">
+            <input type="checkbox" id="searchInRationale" onchange="runSearch()" class="w-3.5 h-3.5 accent-sky-600" />
+            Cari juga di pembahasan
+          </label>
+        </div>
+      </div>
+      <div id="searchSummary" class="px-4 py-2 text-[11px] text-slate-500 border-b border-slate-100">Ketik minimal 2 huruf. Beberapa kata = semua kata harus ada.</div>
+      <div id="searchResults" class="flex-1 overflow-y-auto custom-scrollbar p-3 space-y-2"></div>
+      <div id="searchFooter" class="hidden px-4 py-3 border-t border-slate-100 bg-slate-50/70 flex items-center justify-between gap-2">
+        <span id="searchFooterText" class="text-xs text-slate-500"></span>
+        <button type="button" onclick="practiceSearchResults()" class="shrink-0 bg-medical-600 hover:bg-medical-700 text-white text-xs font-bold px-4 py-2 rounded-full transition-all hover:shadow-md active:scale-95">Latih Semua Hasil</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: PANDUAN PASANG APLIKASI -->
+  <div id="installModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-xl border border-slate-100 max-w-md w-full max-h-[92vh] overflow-y-auto custom-scrollbar p-6 animate-fade-in" role="dialog" aria-modal="true" aria-labelledby="installTitle">
+      <div class="flex items-start justify-between gap-3 mb-3">
+        <h3 id="installTitle" class="text-lg font-bold text-slate-900">Pasang ke Layar Utama</h3>
+        <button type="button" onclick="closeInstallGuide()" aria-label="Tutup" class="text-slate-400 hover:text-slate-600 p-1">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+      </div>
+      <div id="installBody" class="text-sm text-slate-700 leading-relaxed"></div>
+      <div class="flex justify-end mt-5">
+        <button type="button" onclick="closeInstallGuide()" class="px-5 py-2 rounded-full text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition-all active:scale-95">Tutup</button>
+      </div>
+    </div>
+  </div>
+
   <!-- MODAL: SYNC PROGRES ANTAR DEVICE (QR / LINK) -->
   <div id="syncModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
     <div class="bg-white rounded-2xl shadow-xl border border-slate-100 max-w-lg w-full max-h-[92vh] overflow-y-auto custom-scrollbar p-6 animate-fade-in">
@@ -1370,6 +1448,9 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
 
       // Dibuka dari link/QR sync perangkat lain
       handleIncomingSyncLink();
+
+      // PWA: service worker, penyimpanan persisten, banner pasang
+      initPWA();
     }
 
     // Isi label & status dropdown paket (jumlah soal; nonaktifkan paket yang datanya tidak ada)
@@ -2189,9 +2270,11 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         });
       });
       const hist = includeHistory ? new TextEncoder().encode(JSON.stringify(historyToCompact().slice(0, 10))) : new Uint8Array(0);
-      const body = new Uint8Array(1 + counts.length * 2 + Math.ceil(nibbles.length / 2) + 2 + hist.length);
+      const body = new Uint8Array(1 + 4 + counts.length * 2 + Math.ceil(nibbles.length / 2) + 2 + hist.length);
       let p = 0;
-      body[p++] = 2;
+      body[p++] = 3;                                   // v3 = v2 + waktu pembuatan link
+      const created = Math.floor(Date.now() / 1000);
+      body[p++] = (created >>> 24) & 255; body[p++] = (created >>> 16) & 255; body[p++] = (created >>> 8) & 255; body[p++] = created & 255;
       counts.forEach(c => { body[p++] = (c >> 8) & 255; body[p++] = c & 255; });
       for (let i = 0; i < nibbles.length; i += 2) body[p++] = (nibbles[i] << 4) | (nibbles[i + 1] || 0);
       body[p++] = (hist.length >> 8) & 255; body[p++] = hist.length & 255;
@@ -2215,8 +2298,15 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         if (typeof DecompressionStream === 'undefined') throw new Error('browser');
         body = await streamBytes(body, new DecompressionStream('deflate-raw'));
       } else if (raw[0] !== 0) throw new Error('format');
-      if (body[0] !== 2) throw new Error('versi');
+      if (body[0] !== 2 && body[0] !== 3) throw new Error('versi');
       let p = 1;
+      let createdAt = 0;
+      if (body[0] === 3) {
+        createdAt = ((body[1] << 24) >>> 0) + (body[2] << 16) + (body[3] << 8) + body[4];
+        createdAt *= 1000;
+        p = 5;
+      }
+      const stamp = createdAt || Date.now();
       const counts = SET_KEYS.map(() => { const c = (body[p] << 8) | body[p + 1]; p += 2; return c; });
       const totalNib = counts.reduce((a, b) => a + b, 0);
       const nibStart = p;
@@ -2248,7 +2338,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
           const v = nib(offset + i);
           const sel = (v & 7) - 1;
           if (sel >= 0 && sel <= 4) {
-            answers[q.id] = { selected: sel, isCorrect: sel === q.answer, timestamp: Date.now() };
+            answers[q.id] = { selected: sel, isCorrect: sel === q.answer, timestamp: stamp };
             nAns++;
           }
           if (v & 8) { bookmarks[q.id] = true; nBm++; }
@@ -2256,7 +2346,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         offset += n;
         sets[k] = { answers, bookmarks, nAns, nBm };
       });
-      return { sets, history: Array.isArray(history) ? history : [], mismatched };
+      return { sets, history: Array.isArray(history) ? history : [], mismatched, createdAt };
     }
 
     function refreshAfterSync() {
@@ -2281,11 +2371,29 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       return { applied, historyAdded };
     }
 
+    function relTime(ms) {
+      const d = Math.max(0, Date.now() - ms) / 1000;
+      if (d < 60) return 'baru saja';
+      if (d < 3600) return `${Math.floor(d / 60)} menit lalu`;
+      if (d < 86400) return `${Math.floor(d / 3600)} jam lalu`;
+      return `${Math.floor(d / 86400)} hari lalu`;
+    }
+    function localSetLatest(k) {
+      let t = 0;
+      Object.values(appState.sets[k]?.answers || {}).forEach(a => { if (a && a.timestamp > t) t = a.timestamp; });
+      return t;
+    }
+
     function confirmDecodedSync(dec, onDone) {
+      const created = dec.createdAt || 0;
+      const newer = [];
       const rows = PT_SETS.filter(c => dec.sets[c.key] && (dec.sets[c.key].nAns || dec.sets[c.key].nBm)).map(c => {
         const d = dec.sets[c.key];
         const local = Object.keys(appState.sets[c.key]?.answers || {}).length;
-        return `<li><strong>${c.label}</strong>: ${d.nAns} dijawab${d.nBm ? `, ${d.nBm} ragu` : ''} <span class="text-slate-400">(di perangkat ini: ${local} dijawab)</span></li>`;
+        const latest = localSetLatest(c.key);
+        const isNewer = created > 0 && latest > created + 60000;   // ada jawaban di sini setelah link dibuat
+        if (isNewer) newer.push({ label: c.label, latest });
+        return `<li><strong>${c.label}</strong>: ${d.nAns} dijawab${d.nBm ? `, ${d.nBm} ragu` : ''} <span class="text-slate-400">(di perangkat ini: ${local} dijawab)</span>${isNewer ? ' <span class="text-[10px] font-bold text-rose-700 bg-rose-100 px-1.5 py-0.5 rounded-full whitespace-nowrap">lebih baru di sini</span>' : ''}</li>`;
       });
       const histN = dec.history.length;
       const warn = dec.mismatched.length
@@ -2294,13 +2402,22 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         showConfirm({ title: 'Tidak ada progres', html: 'Link/kode ini tidak berisi progres yang bisa dimuat.' + warn, cancelText: 'Tutup' });
         return;
       }
+      const createdLine = created ? `<p class="text-xs text-slate-500 mb-2">Link dibuat <strong>${relTime(created)}</strong> (${fmtDate(created)}).</p>` : '';
+      const staleWarn = newer.length ? `
+        <div class="mt-3 rounded-xl px-3.5 py-3 text-xs leading-relaxed" style="background:#be123c;color:#ffffff" role="alert">
+          <p class="font-bold mb-1">Link ini lebih lama dari progres di perangkat ini.</p>
+          Link dibuat ${relTime(created)}, sedangkan ${newer.map(n => n.label).join(', ')} di perangkat ini terakhir dikerjakan ${relTime(Math.max(...newer.map(n => n.latest)))}.
+          Memuat link ini akan <strong>menimpa progres yang lebih baru</strong>. Sebaiknya buat link baru dari perangkat yang progresnya paling baru.
+        </div>` : '';
       showConfirm({
-        title: 'Muat progres dari perangkat lain?',
-        html: (rows.length ? `<ul class="space-y-1 mb-3 list-disc pl-5 marker:text-slate-400">${rows.join('')}</ul>
+        title: newer.length ? 'Link ini sudah basi' : 'Muat progres dari perangkat lain?',
+        html: createdLine + (rows.length ? `<ul class="space-y-1 mb-3 list-disc pl-5 marker:text-slate-400">${rows.join('')}</ul>
             Progres paket di atas pada perangkat ini akan <strong>diganti</strong>. Paket lain tidak berubah.
-            <p class="mt-2 text-xs text-slate-500">Isi link ini adalah progres saat link dibuat. Jika nanti ingin pindah lagi, buat link baru dari perangkat yang progresnya paling baru.</p>` : '') +
-          (histN ? `<p class="mt-2">${histN} ringkasan riwayat sesi akan ditambahkan.</p>` : '') + warn,
-        okText: 'Ya, muat progres',
+            ${newer.length ? '' : '<p class="mt-2 text-xs text-slate-500">Isi link ini adalah progres saat link dibuat. Jika nanti ingin pindah lagi, buat link baru dari perangkat yang progresnya paling baru.</p>'}` : '') +
+          (histN ? `<p class="mt-2">${histN} ringkasan riwayat sesi akan ditambahkan.</p>` : '') + warn + staleWarn,
+        okText: newer.length ? 'Tetap muat (timpa progres baru)' : 'Ya, muat progres',
+        danger: newer.length > 0,
+        cancelText: newer.length ? 'Batal (disarankan)' : 'Batal',
         onOk: () => {
           const r = applyDecodedSync(dec);
           if (onDone) onDone(r);
@@ -2487,10 +2604,11 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
     const PASS_MARK = 70;          // Target nilai lulus
     const HISTORY_LIMIT = 60;      // Jumlah riwayat yang disimpan di perangkat
     const LETTERS = ['A', 'B', 'C', 'D', 'E'];
-    const TYPE_LABEL = { exam: 'Ujian', remedial: 'Latihan Ulang', study: 'Belajar' };
+    const TYPE_LABEL = { exam: 'Ujian', remedial: 'Latihan Ulang', custom: 'Latihan', study: 'Belajar' };
     const TYPE_BADGE = {
       exam: 'bg-sky-100 text-sky-800',
       remedial: 'bg-amber-100 text-amber-800',
+      custom: 'bg-indigo-100 text-indigo-800',
       study: 'bg-emerald-100 text-emerald-800'
     };
     const VIEW_IDS = ['startPage', 'appHeader', 'appMain', 'sessionView', 'resultView', 'historyView'];
@@ -2585,7 +2703,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       m.classList.add('hidden'); m.classList.remove('flex');
     }
     const isModalOpen = (id) => !document.getElementById(id).classList.contains('hidden');
-    const anyModalOpen = () => ['topicModal', 'resetModal', 'syncModal', 'setupModal', 'confirmModal'].some(isModalOpen);
+    const anyModalOpen = () => ['topicModal', 'resetModal', 'syncModal', 'setupModal', 'confirmModal', 'searchModal', 'installModal'].some(isModalOpen);
 
     // ----- Soal lemah (salah / ragu) berdasarkan hasil terbaru -----
     function computeWeak() {
@@ -3546,7 +3664,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       const all = appState.history;
       const list = historyFilter === 'all' ? all : all.filter(r => r.type === historyFilter);
       const count = (t) => t === 'all' ? all.length : all.filter(r => r.type === t).length;
-      const chips = [['all', 'Semua'], ['exam', 'Ujian'], ['remedial', 'Latihan Ulang'], ['study', 'Belajar']]
+      const chips = [['all', 'Semua'], ['exam', 'Ujian'], ['remedial', 'Latihan Ulang'], ['custom', 'Latihan'], ['study', 'Belajar']]
         .map(([k, l]) => `<button type="button" onclick="setHistoryFilter('${k}')" aria-pressed="${historyFilter === k}" class="text-xs font-semibold px-3.5 py-1.5 rounded-full transition-all ${historyFilter === k ? 'bg-medical-600 text-white shadow-sm' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">${l} (${count(k)})</button>`).join('');
 
       // Tren nilai: hanya Ujian & Latihan Ulang (nilai dihitung dari seluruh soal)
@@ -3649,6 +3767,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       }
       banner.innerHTML = html;
       banner.classList.toggle('hidden', !html);
+      if (typeof renderInstallBanner === 'function') renderInstallBanner();
     }
 
     // ===== RINGKASAN RIWAYAT UNTUK SYNC =====
@@ -3686,15 +3805,342 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       if (!document.hidden && getSess() && !document.getElementById('sessionView').classList.contains('hidden')) tickSession();
     });
 
+
+    // ==========================================================
+    // PWA: PASANG KE LAYAR UTAMA + PERINGATAN PENYIMPANAN
+    // ==========================================================
+    let deferredInstallPrompt = null;
+    const UA = navigator.userAgent || '';
+    const isIOSDevice = /iPad|iPhone|iPod/.test(UA) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    const isMacSafari = !isIOSDevice && /Macintosh/.test(UA) && /Safari\//.test(UA) && !/(Chrome|Chromium|CriOS|Edg|OPR|Firefox|FxiOS)\//.test(UA);
+    const isAppleStorageRisk = isIOSDevice || isMacSafari;   // batas 7 hari penyimpanan (WebKit/Safari)
+    const isIOSSafari = isIOSDevice && !/(CriOS|FxiOS|EdgiOS|OPiOS)/.test(UA);
+    const isAndroid = /Android/i.test(UA);
+
+    function isStandaloneApp() {
+      try {
+        return window.matchMedia('(display-mode: standalone)').matches || window.matchMedia('(display-mode: fullscreen)').matches || navigator.standalone === true;
+      } catch (e) { return false; }
+    }
+    function installDismissed() { try { return sessionStorage.getItem('pt_install_dismissed') === '1'; } catch (e) { return false; } }
+    function dismissInstallBanner() {
+      try { sessionStorage.setItem('pt_install_dismissed', '1'); } catch (e) {}
+      renderInstallBanner();
+    }
+    function hasAnyProgress() {
+      return SET_KEYS.some(k => Object.keys(appState.sets[k]?.answers || {}).length || Object.keys(appState.sets[k]?.bookmarks || {}).length) || appState.history.length > 0;
+    }
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredInstallPrompt = e;
+      renderInstallBanner();
+    });
+    window.addEventListener('appinstalled', () => {
+      deferredInstallPrompt = null;
+      closeInstallGuide();
+      renderInstallBanner();
+    });
+
+    const WARN_SVG = '<svg class="w-5 h-5 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>';
+
+    function renderInstallBanner() {
+      const el = document.getElementById('installBanner');
+      if (!el) return;
+      let html = '';
+      if (isStandaloneApp()) {
+        if (isAppleStorageRisk && !hasAnyProgress()) {
+          html = `<div class="bg-sky-50 border border-sky-200 rounded-2xl px-4 py-3.5 flex flex-col sm:flex-row sm:items-center gap-3">
+            <div class="text-sm text-sky-900 leading-snug flex-1"><strong>Baru memasang aplikasi?</strong> Progres dari Safari tidak ikut otomatis karena aplikasi di Layar Utama punya penyimpanan sendiri. Di Safari buka <strong>Pindah Device → Salin Link</strong>, lalu di sini buka Pindah Device dan tempel link di kolom paling bawah.</div>
+            <button type="button" onclick="toggleSyncModal()" class="shrink-0 bg-medical-600 hover:bg-medical-700 text-white text-xs font-bold px-4 py-2 rounded-full transition-all active:scale-95">Buka Pindah Device</button>
+          </div>`;
+        } else {
+          html = `<div class="flex justify-center"><span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+            Berjalan sebagai aplikasi terpasang • bisa dibuka offline</span></div>`;
+        }
+      } else if (location.protocol !== 'file:' && !installDismissed()) {
+        const msg = isAppleStorageRisk
+          ? `<strong>Progres bisa hilang dalam 7 hari.</strong> Safari/iPhone/iPad otomatis menghapus data situs yang tidak dibuka selama 7 hari (batasan browser, bukan aplikasi ini). Pasang ke Layar Utama agar progres tetap aman dan bisa dibuka offline.`
+          : `<strong>Amankan progres Anda.</strong> Data situs bisa terhapus saat browser membersihkan penyimpanan. Pasang sebagai aplikasi agar progres lebih aman dan bisa dibuka offline.`;
+        html = `<div class="rounded-2xl px-4 py-3.5 flex flex-col sm:flex-row sm:items-center gap-3 shadow-sm" style="background:#be123c;color:#ffffff" role="alert">
+            <div class="flex items-start gap-2.5 flex-1 text-sm leading-snug">${WARN_SVG}<div>${msg}</div></div>
+            <div class="flex items-center gap-2 shrink-0 self-end sm:self-auto">
+              <button type="button" onclick="dismissInstallBanner()" class="text-xs font-semibold px-3 py-2 rounded-full" style="color:#ffe4e6">Nanti</button>
+              <button type="button" id="installBtn" onclick="openInstallGuide()" class="text-xs font-bold px-4 py-2 rounded-full shadow-sm active:scale-95 transition-transform" style="background:#ffffff;color:#be123c">${isAppleStorageRisk ? 'Pasang ke Layar Utama' : 'Pasang Aplikasi'}</button>
+            </div>
+          </div>`;
+      }
+      el.innerHTML = html;
+      el.classList.toggle('hidden', !html);
+    }
+
+    function copyText(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text);
+      return new Promise((resolve, reject) => {
+        const ta = document.createElement('textarea');
+        ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy') ? resolve() : reject(); } catch (e) { reject(e); }
+        ta.remove();
+      });
+    }
+
+    async function copyProgressLinkForInstall(btn) {
+      try {
+        const link = syncBaseUrl() + '#sync=' + await buildSyncCode(true);
+        await copyText(link);
+        btn.textContent = 'Link tersalin!';
+      } catch (e) {
+        btn.textContent = 'Gagal menyalin, pakai Pindah Device';
+      }
+      setTimeout(() => { btn.textContent = 'Salin Link Progres'; }, 2500);
+    }
+
+    async function openInstallGuide() {
+      // Chrome/Edge/Android: tampilkan dialog pasang bawaan browser
+      if (deferredInstallPrompt && !isAppleStorageRisk) {
+        const p = deferredInstallPrompt;
+        deferredInstallPrompt = null;
+        try { p.prompt(); await p.userChoice; } catch (e) {}
+        renderInstallBanner();
+        return;
+      }
+      const step = (n, t) => `<li class="flex items-start gap-3"><span class="shrink-0 w-6 h-6 rounded-full bg-medical-600 text-white text-xs font-bold flex items-center justify-center">${n}</span><span class="pt-0.5">${t}</span></li>`;
+      const shareIcon = '<svg class="inline w-4 h-4 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v12m0-12l-4 4m4-4l4 4M5 13v6a2 2 0 002 2h10a2 2 0 002-2v-6" /></svg>';
+      const migrate = `
+        <div class="mt-4 bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 text-xs text-amber-900 leading-relaxed">
+          <p class="font-semibold mb-1">Penting setelah dipasang</p>
+          <p>Aplikasi di Layar Utama punya penyimpanan sendiri, terpisah dari ${(isIOSSafari || isMacSafari) ? 'Safari' : 'browser'}. Bawa progres Anda:</p>
+          <ol class="list-decimal pl-4 mt-1 space-y-0.5">
+            <li>Tekan <strong>Salin Link Progres</strong> di bawah.</li>
+            <li>Buka aplikasi Progress Test dari Layar Utama.</li>
+            <li>Buka <strong>Pindah Device</strong>, tempel link di kolom paling bawah, lalu tekan <strong>Muat</strong>.</li>
+          </ol>
+          <button type="button" onclick="copyProgressLinkForInstall(this)" class="mt-2.5 w-full bg-amber-500 hover:bg-amber-600 text-slate-950 text-xs font-bold px-4 py-2 rounded-full transition-all active:scale-95">Salin Link Progres</button>
+        </div>`;
+      let body;
+      if (isIOSDevice) {
+        body = `<ol class="space-y-2.5">
+            ${step(1, isIOSSafari ? `Tekan tombol <strong>Bagikan</strong> ${shareIcon} di Safari (bawah layar di iPhone, atas di iPad).` : `Tekan tombol <strong>Bagikan</strong> ${shareIcon} di browser ini. Jika tidak ada, buka halaman ini di <strong>Safari</strong>.`)}
+            ${step(2, 'Gulir lalu pilih <strong>Tambahkan ke Layar Utama</strong> (Add to Home Screen).')}
+            ${step(3, 'Tekan <strong>Tambah</strong>. Ikon Progress Test muncul di Layar Utama.')}
+          </ol>${migrate}`;
+      } else if (isMacSafari) {
+        body = `<ol class="space-y-2.5">
+            ${step(1, 'Di Safari, buka menu <strong>File</strong> (Arsip).')}
+            ${step(2, 'Pilih <strong>Add to Dock</strong> / <strong>Tambahkan ke Dock</strong> (Safari 17 ke atas).')}
+            ${step(3, 'Buka Progress Test dari Dock.')}
+          </ol>${migrate}`;
+      } else if (isAndroid) {
+        body = `<ol class="space-y-2.5">
+            ${step(1, 'Tekan menu <strong>⋮</strong> di pojok kanan atas browser.')}
+            ${step(2, 'Pilih <strong>Instal aplikasi</strong> atau <strong>Tambahkan ke layar utama</strong>.')}
+            ${step(3, 'Konfirmasi. Progres Anda di browser ini ikut terbawa otomatis.')}
+          </ol>`;
+      } else {
+        body = `<p>Gunakan <strong>Chrome</strong> atau <strong>Edge</strong>: klik ikon pasang di ujung kanan kolom alamat, atau menu <strong>⋮ → Instal Progress Test</strong>. Progres di browser yang sama ikut terbawa otomatis.</p>
+          <p class="mt-2 text-xs text-slate-500">Browser ini belum menyediakan tombol pasang otomatis. Jika tidak bisa dipasang, gunakan Pindah Device secara berkala sebagai cadangan.</p>`;
+      }
+      document.getElementById('installTitle').textContent = isMacSafari ? 'Pasang ke Dock' : (isIOSDevice ? 'Pasang ke Layar Utama' : 'Pasang Aplikasi');
+      document.getElementById('installBody').innerHTML = body;
+      const m = document.getElementById('installModal');
+      m.classList.remove('hidden'); m.classList.add('flex');
+    }
+    function closeInstallGuide() {
+      const m = document.getElementById('installModal');
+      if (!m) return;
+      m.classList.add('hidden'); m.classList.remove('flex');
+    }
+
+    function initPWA() {
+      if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
+        navigator.serviceWorker.register('sw.js').catch(() => {});
+      }
+      if (isStandaloneApp() && navigator.storage && navigator.storage.persist) {
+        navigator.storage.persisted().then(p => { if (!p) navigator.storage.persist().catch(() => {}); }).catch(() => {});
+      }
+      renderInstallBanner();
+    }
+
+    // ==========================================================
+    // CARI SOAL (semua paket)
+    // ==========================================================
+    let _searchTimer = null;
+    let searchMatches = [];
+    let searchQueryRaw = '';
+    const SEARCH_RENDER_LIMIT = 100;
+    // Normalisasi pencarian: huruf kecil, tanpa diakritik, dan penyamaan variasi ejaan umum
+    // (preeklampsia ~ preeklamsia ~ pre-eclampsia, oedema ~ edema, anaemia ~ anemia, haemoglobin ~ hemoglobin)
+    const normText = (s) => String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/-/g, '').replace(/ph/g, 'f').replace(/th/g, 't').replace(/ae/g, 'e').replace(/oe/g, 'e')
+      .replace(/mps/g, 'ms').replace(/c/g, 'k').replace(/q/g, 'k').replace(/y/g, 'i').replace(/\s+/g, ' ');
+
+    function ensureSearchIndex() {
+      allQuestions.forEach(q => {
+        if (q._sq !== undefined) return;
+        q._sq = normText(cleanText(q.question));
+        q._so = normText(q.options.map(o => cleanText(o)).join(' | '));
+        q._sr = normText(cleanText(q.rationale));
+      });
+    }
+
+    function openSearch() {
+      ensureSearchIndex();
+      const sel = document.getElementById('searchScope');
+      if (!sel.options.length) {
+        sel.innerHTML = `<option value="all">Semua paket (${allQuestions.length})</option>` +
+          PT_SETS.filter(c => banks[c.key].length).map(c => `<option value="${c.key}">${c.label} (${banks[c.key].length})</option>`).join('');
+      }
+      const m = document.getElementById('searchModal');
+      m.classList.remove('hidden'); m.classList.add('flex');
+      const input = document.getElementById('searchInput');
+      setTimeout(() => { input.focus(); input.select(); }, 30);
+      if (input.value.trim()) runSearch();
+    }
+    function closeSearch() {
+      const m = document.getElementById('searchModal');
+      m.classList.add('hidden'); m.classList.remove('flex');
+      if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+    }
+    function onSearchInput() {
+      clearTimeout(_searchTimer);
+      _searchTimer = setTimeout(runSearch, 120);
+    }
+
+    function highlightHTML(text, terms) {
+      if (!terms.length) return escapeHTML(text);
+      const nterms = terms.map(normText).filter(Boolean);
+      // Tandai kata yang (setelah normalisasi ejaan) mengandung salah satu kata kunci
+      return text.split(/([\p{L}\p{N}-]+)/u).map((part, i) => {
+        if (i % 2 === 0) return escapeHTML(part);
+        const n = normText(part);
+        return nterms.some(t => n.includes(t)) ? `<mark class="search-hit">${escapeHTML(part)}</mark>` : escapeHTML(part);
+      }).join('');
+    }
+    function makeSnippet(text, terms, width) {
+      const t = cleanText(text).replace(/\s+/g, ' ');
+      const nterms = terms.map(normText).filter(Boolean);
+      let idx = -1;
+      const wre = /[\p{L}\p{N}-]+/gu;
+      let m;
+      while ((m = wre.exec(t))) { const n = normText(m[0]); if (nterms.some(x => n.includes(x))) { idx = m.index; break; } }
+      if (idx < 0) idx = 0;
+      const start = Math.max(0, idx - 60);
+      const end = Math.min(t.length, start + (width || 240));
+      return (start > 0 ? '…' : '') + highlightHTML(t.slice(start, end), terms) + (end < t.length ? '…' : '');
+    }
+
+    function runSearch() {
+      ensureSearchIndex();
+      const raw = document.getElementById('searchInput').value.trim();
+      const scope = document.getElementById('searchScope').value || 'all';
+      const withR = document.getElementById('searchInRationale').checked;
+      const summary = document.getElementById('searchSummary');
+      const list = document.getElementById('searchResults');
+      const footer = document.getElementById('searchFooter');
+      searchQueryRaw = raw;
+      if (raw.length < 2) {
+        searchMatches = [];
+        summary.textContent = 'Ketik minimal 2 huruf. Beberapa kata = semua kata harus ada.';
+        list.innerHTML = '';
+        footer.classList.add('hidden');
+        return;
+      }
+      const terms = [...new Set(normText(raw).split(' ').filter(Boolean))];
+      const pool = scope === 'all' ? allQuestions : (banks[scope] || []);
+      const res = [];
+      pool.forEach((q, order) => {
+        const inQ = terms.every(t => q._sq.includes(t));
+        const inQO = inQ || terms.every(t => q._sq.includes(t) || q._so.includes(t));
+        const inAll = inQO || (withR && terms.every(t => q._sq.includes(t) || q._so.includes(t) || q._sr.includes(t)));
+        if (!inAll) return;
+        res.push({ q, rank: inQ ? 0 : (inQO ? 1 : 2), order });
+      });
+      res.sort((a, b) => a.rank - b.rank || a.order - b.order);
+      searchMatches = res;
+
+      const displayTerms = raw.toLowerCase().split(/\s+/).filter(Boolean);
+      summary.textContent = res.length
+        ? `${res.length} soal ditemukan${res.length > SEARCH_RENDER_LIMIT ? ` • menampilkan ${SEARCH_RENDER_LIMIT} teratas` : ''}${withR ? ' • termasuk pembahasan' : ''}.`
+        : `Tidak ada soal yang cocok dengan "${raw}".${withR ? '' : ' Coba centang "Cari juga di pembahasan".'}`;
+      list.innerHTML = res.slice(0, SEARCH_RENDER_LIMIT).map(({ q, rank }) => {
+        const cfg = getSetConfig(q._set);
+        const a = getAnswerForQuestion(q);
+        const status = a ? (a.isCorrect
+          ? '<span class="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">Benar</span>'
+          : '<span class="text-[10px] font-bold text-rose-700 bg-rose-100 px-2 py-0.5 rounded-full">Salah</span>') : '';
+        const flag = getBookmarkForQuestion(q) ? '<span class="text-[10px] font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full">Ragu</span>' : '';
+        let where = '', snip;
+        if (rank === 2 && !displayTerms.some(t => normText(q.question).includes(normText(t)))) {
+          where = '<span class="text-[10px] font-bold uppercase tracking-wide text-slate-400 mr-1">Pembahasan:</span>';
+          snip = makeSnippet(q.rationale, displayTerms);
+        } else if (rank === 1 && !displayTerms.some(t => q._sq.includes(normText(t)))) {
+          where = '<span class="text-[10px] font-bold uppercase tracking-wide text-slate-400 mr-1">Opsi:</span>';
+          snip = makeSnippet(q.options.map(o => cleanText(o)).join(' • '), displayTerms);
+        } else {
+          snip = makeSnippet(q.question, displayTerms);
+        }
+        return `<button type="button" onclick="openSearchResult('${q._uid}')" class="w-full text-left bg-white hover:bg-slate-50 border border-slate-200/60 rounded-xl px-4 py-3 transition">
+            <div class="flex items-center gap-2 mb-1.5 min-w-0">
+              <span class="shrink-0 text-[11px] font-bold px-2 py-0.5 rounded-full ${cfg ? cfg.badge : ''}">${escapeHTML(q._setLabel)} • #${q.id}</span>
+              <span class="flex-1 min-w-0 text-[11px] text-slate-400 truncate">${escapeHTML(cleanText(q.topic))}</span>
+              ${status}${flag}
+            </div>
+            <div class="text-sm text-slate-700 leading-relaxed">${where}${snip}</div>
+          </button>`;
+      }).join('');
+      document.getElementById('searchFooterText').textContent = res.length ? `${res.length} soal` : '';
+      footer.classList.toggle('hidden', res.length === 0);
+      footer.classList.toggle('flex', res.length > 0);
+    }
+
+    function openFirstSearchResult() {
+      if (searchMatches.length) openSearchResult(searchMatches[0].q._uid);
+    }
+
+    function openSearchResult(uid) {
+      const q = qByUid.get(uid);
+      if (!q) return;
+      closeSearch();
+      if (appState.activeSet !== q._set && appState.activeSet !== 'all') {
+        if (!handleSetChange(q._set)) return;
+      }
+      if (appState.selectedTopic !== 'ALL' && appState.selectedTopic !== cleanText(q.topic)) {
+        appState.selectedTopic = 'ALL';
+        document.getElementById('topicFilter').value = 'ALL';
+        saveState();
+        applyFilterAndOrder(false);
+      }
+      let idx = activeQuestions.findIndex(x => x._uid === uid);
+      if (idx < 0) { handleSetChange(q._set); idx = activeQuestions.findIndex(x => x._uid === uid); }
+      showQuizView();
+      if (idx >= 0) jumpToQuestion(idx);
+    }
+
+    function practiceSearchResults() {
+      if (!searchMatches.length) return;
+      const uids = searchMatches.map(r => r.q._uid);
+      const title = `Latihan Pencarian • "${searchQueryRaw.length > 40 ? searchQueryRaw.slice(0, 40) + '…' : searchQueryRaw}"`;
+      closeSearch();
+      beginSession({ type: 'custom', title, uids, durationSec: 0 });
+    }
+
     // Navigasi Keyboard (A-E untuk memilih opsi, Panah Kiri/Kanan untuk pindah soal)
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         if (isModalOpen('confirmModal')) { document.getElementById('confirmCancelBtn').click(); return; }
         if (isModalOpen('setupModal')) { closeSetup(); return; }
+        if (isModalOpen('searchModal')) { closeSearch(); return; }
+        if (isModalOpen('installModal')) { closeInstallGuide(); return; }
       }
       if (e.ctrlKey || e.metaKey || e.altKey) return;
       if (anyModalOpen()) return;
       if (['INPUT', 'SELECT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+      // "/" membuka pencarian dari beranda atau mode belajar
+      if (e.key === '/' && (!document.getElementById('startPage').classList.contains('hidden') || !document.getElementById('appMain').classList.contains('hidden'))) {
+        e.preventDefault(); openSearch(); return;
+      }
       const keyMap = { 'a': 0, 'b': 1, 'c': 2, 'd': 3, 'e': 4, '1': 0, '2': 1, '3': 2, '4': 3, '5': 4 };
 
       // Layar sesi ujian/latihan
