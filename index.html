@@ -325,7 +325,7 @@
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
           </svg>
-          <span>Sync Device</span>
+          <span>Pindah Device</span>
         </button>
         <button onclick="confirmResetProgress()" class="bg-rose-100 hover:bg-rose-200 text-rose-700 transition-all hover:shadow-md text-xs font-semibold px-4 py-2 rounded-full flex items-center gap-1.5 active:scale-95">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -336,7 +336,7 @@
       </div>
 
       <p class="text-center text-[11px] text-slate-400 mt-6">
-        Progres tersimpan otomatis di browser perangkat ini. Gunakan <strong>Sync Device</strong> untuk memindahkannya ke perangkat lain.
+        Progres tersimpan otomatis di browser perangkat ini. Gunakan <strong>Pindah Device</strong> untuk memindahkannya ke perangkat lain.
       </p>
     </div>
   </section>
@@ -408,12 +408,12 @@
             <span>Statistik Topik</span>
           </button>
 
-          <!-- Button: Sync Antar Device -->
-          <button onclick="toggleSyncModal()" title="Sync Device" aria-label="Sync Device" class="bg-emerald-100 hover:bg-emerald-200 text-emerald-800 transition-all duration-200 hover:shadow-md active:scale-95 text-[11px] sm:text-xs font-semibold px-3 py-1.5 sm:py-2 rounded-full flex items-center gap-1.5">
+          <!-- Button: Pindah Device -->
+          <button onclick="toggleSyncModal()" title="Pindah Device" aria-label="Pindah Device" class="bg-emerald-100 hover:bg-emerald-200 text-emerald-800 transition-all duration-200 hover:shadow-md active:scale-95 text-[11px] sm:text-xs font-semibold px-3 py-1.5 sm:py-2 rounded-full flex items-center gap-1.5">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
             </svg>
-            <span>Sync Device</span>
+            <span>Pindah Device</span>
           </button>
 
           <!-- Button: Dark Mode -->
@@ -934,8 +934,8 @@
             </svg>
           </div>
           <div>
-            <h3 class="text-base font-bold text-slate-900">Sinkronisasi Antar Perangkat</h3>
-            <p class="text-xs text-slate-500">Pindahkan progres latihan tanpa login akun</p>
+            <h3 class="text-base font-bold text-slate-900">Pindah Device</h3>
+            <p class="text-xs text-slate-500">Pindahkan progres ke perangkat lain tanpa login akun</p>
           </div>
         </div>
         <button onclick="toggleSyncModal()" aria-label="Tutup" class="text-slate-400 hover:text-slate-600 p-1">
@@ -948,7 +948,7 @@
       <!-- Bagian 1: Kirim lewat QR / link -->
       <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 mb-3">
         <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
-          1. Kirim Progres dari Perangkat Ini
+          1. Buat Link dari Perangkat Ini
         </label>
         <p class="text-xs text-slate-500 mb-3 leading-relaxed">
           Scan QR ini dengan kamera HP, atau bagikan link-nya ke WhatsApp/Telegram Anda sendiri lalu buka di perangkat lain.
@@ -975,7 +975,17 @@
 
       <!-- Bagian 2: Terima -->
       <div class="bg-sky-50 border border-sky-200 rounded-xl px-4 py-3 mb-4 text-xs text-sky-900 leading-relaxed">
-        <strong>2. Di perangkat lain:</strong> buka link atau scan QR tersebut. Halaman Progress Test akan terbuka dan menanyakan konfirmasi sebelum memuat progres. Hanya paket yang berisi progres di link yang diganti; paket lain tidak berubah.
+        <strong>2. Di perangkat tujuan:</strong> buka link atau scan QR tersebut. Halaman Progress Test akan terbuka dan menanyakan konfirmasi sebelum memuat progres. Hanya paket yang berisi progres di link yang diganti; paket lain tidak berubah.
+      </div>
+
+      <!-- Catatan: bukan sinkronisasi otomatis -->
+      <div class="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 mb-4 text-xs text-amber-900 leading-relaxed">
+        <p class="font-semibold mb-1">Link ini sekali pakai, bukan sinkron otomatis.</p>
+        <ul class="space-y-1 list-disc pl-4 marker:text-amber-500">
+          <li>Link/QR hanya berisi progres <strong>saat link dibuat</strong>. Soal yang dikerjakan setelahnya tidak ikut terbawa.</li>
+          <li>Kedua perangkat tidak saling terhubung. Mengerjakan soal di satu perangkat tidak mengubah perangkat lainnya.</li>
+          <li>Mau pindah lagi (misalnya dari HP kembali ke laptop)? Buka <strong>Pindah Device</strong> di perangkat yang progresnya paling baru, lalu <strong>buat link/QR baru</strong>. Jangan pakai link lama.</li>
+        </ul>
       </div>
 
       <!-- Bagian 3: Kode sync lama -->
@@ -984,7 +994,7 @@
           Punya kode sync lama?
         </label>
         <p class="text-xs text-slate-500 mb-2.5 leading-relaxed">
-          Kolom ini untuk <strong>kode sync versi lama</strong> (teks panjang yang diawali "PT-") jika masih ada. Link sync baru juga bisa ditempel di sini.
+          Kolom ini untuk <strong>kode sync versi lama</strong> (teks panjang yang diawali "PT-") jika masih ada. Link Pindah Device juga bisa ditempel di sini.
         </p>
         <div class="flex gap-2">
           <input id="importCodeInput" type="text" placeholder="Tempel kode lama di sini..." class="w-full bg-white border border-slate-200 text-slate-800 text-xs font-mono rounded-full px-4 py-2 focus:ring-2 focus:ring-medical-400 focus:outline-none" />
@@ -2287,7 +2297,8 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       showConfirm({
         title: 'Muat progres dari perangkat lain?',
         html: (rows.length ? `<ul class="space-y-1 mb-3 list-disc pl-5 marker:text-slate-400">${rows.join('')}</ul>
-            Progres paket di atas pada perangkat ini akan <strong>diganti</strong>. Paket lain tidak berubah.` : '') +
+            Progres paket di atas pada perangkat ini akan <strong>diganti</strong>. Paket lain tidak berubah.
+            <p class="mt-2 text-xs text-slate-500">Isi link ini adalah progres saat link dibuat. Jika nanti ingin pindah lagi, buat link baru dari perangkat yang progresnya paling baru.</p>` : '') +
           (histN ? `<p class="mt-2">${histN} ringkasan riwayat sesi akan ditambahkan.</p>` : '') + warn,
         okText: 'Ya, muat progres',
         onOk: () => {
@@ -2313,9 +2324,9 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         confirmDecodedSync(dec);
       } catch (err) {
         showConfirm({
-          title: 'Link sync tidak bisa dibaca',
+          title: 'Link Pindah Device tidak bisa dibaca',
           html: err && err.message === 'browser'
-            ? 'Browser ini terlalu lama untuk membaca link sync. Perbarui browser, lalu buka link lagi.'
+            ? 'Browser ini terlalu lama untuk membaca link Pindah Device. Perbarui browser, lalu buka link lagi.'
             : 'Link tidak lengkap atau rusak. Pastikan seluruh link tersalin, atau scan ulang QR-nya.',
           cancelText: 'Tutup'
         });
@@ -2344,7 +2355,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
           qr.make();
           box.innerHTML = qr.createSvgTag({ cellSize: 4, margin: 2, scalable: true });
           const svg = box.querySelector('svg');
-          if (svg) { svg.setAttribute('width', '100%'); svg.setAttribute('height', '100%'); svg.setAttribute('role', 'img'); svg.setAttribute('aria-label', 'QR code link sync'); }
+          if (svg) { svg.setAttribute('width', '100%'); svg.setAttribute('height', '100%'); svg.setAttribute('role', 'img'); svg.setAttribute('aria-label', 'QR code link Pindah Device'); }
           qrOk = true;
         }
       } catch (e) { qrOk = false; }
@@ -2404,7 +2415,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
             statusMsg.classList.add(ok ? 'text-emerald-600' : 'text-rose-600');
           });
         }).catch(() => {
-          statusMsg.textContent = 'Link sync tidak valid atau terpotong. Pastikan seluruh link tersalin.';
+          statusMsg.textContent = 'Link Pindah Device tidak valid atau terpotong. Pastikan seluruh link tersalin.';
           statusMsg.classList.add('text-rose-600');
         });
         return;
@@ -3424,7 +3435,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       const rec = currentRecord;
       const list = document.getElementById('reviewList');
       if (!rec.items) {
-        list.innerHTML = `<div class="bg-slate-50 border border-slate-200/60 rounded-xl px-4 py-4 text-xs text-slate-500 leading-relaxed">Detail soal tidak tersedia untuk sesi ini karena ringkasan dimuat dari perangkat lain lewat Sync. Rincian per soal hanya tersimpan di perangkat tempat sesi dikerjakan.</div>`;
+        list.innerHTML = `<div class="bg-slate-50 border border-slate-200/60 rounded-xl px-4 py-4 text-xs text-slate-500 leading-relaxed">Detail soal tidak tersedia untuk sesi ini karena ringkasan dimuat dari perangkat lain lewat Pindah Device. Rincian per soal hanya tersimpan di perangkat tempat sesi dikerjakan.</div>`;
         return;
       }
       const items = reviewFilteredItems();
