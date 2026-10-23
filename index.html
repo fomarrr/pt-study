@@ -4,15 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CBT Progress Test - PT 30 s/d PT 38</title>
-  <!-- PWA: bisa dipasang ke Layar Utama & dibuka offline -->
-  <link rel="manifest" href="manifest.webmanifest" />
-  <meta name="theme-color" content="#3b66d0" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <meta name="apple-mobile-web-app-title" content="Progress Test" />
-  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png" />
   <!-- Tailwind CSS CDN -->
   <!-- Terapkan tema tersimpan sebelum halaman tampil (hindari kedipan) -->
   <script>
@@ -256,9 +247,6 @@
         <p class="text-sm text-slate-500 mt-1.5">Mode Belajar &amp; Evaluasi Mandiri SKDI</p>
       </div>
 
-      <!-- Peringatan penyimpanan / pasang aplikasi (diisi via JS) -->
-      <div id="installBanner" class="hidden max-w-5xl mx-auto mb-4"></div>
-
       <!-- Cari soal -->
       <div class="max-w-5xl mx-auto mb-5">
         <button type="button" id="startSearchBtn" onclick="openSearch()" class="w-full flex items-center gap-3 bg-white border border-slate-200/60 surface-soft rounded-full px-5 py-3 text-left text-sm text-slate-500 hover:shadow-md transition-all">
@@ -364,6 +352,19 @@
       <p class="text-center text-[11px] text-slate-400 mt-6">
         Progres tersimpan otomatis di browser perangkat ini. Gunakan <strong>Pindah Device</strong> untuk memindahkannya ke perangkat lain.
       </p>
+
+      <!-- Peringatan batas penyimpanan Safari / iPhone / iPad -->
+      <div id="safariStorageWarning" class="max-w-3xl mx-auto mt-4 bg-rose-50 border border-rose-300 rounded-xl px-4 py-3 text-xs text-rose-900 leading-relaxed" role="note">
+        <div class="flex items-start gap-2.5">
+          <svg class="w-4 h-4 text-rose-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+          <div>
+            <p class="font-bold">Pengguna iPhone, iPad, dan Safari di Mac: progres bisa terhapus otomatis.</p>
+            <p class="mt-0.5">Safari menghapus data situs yang tidak dibuka selama <strong>7 hari</strong> (batasan browser, bukan aplikasi ini). Di iPhone/iPad ini berlaku untuk semua browser. Buka situs ini minimal seminggu sekali, dan simpan cadangan lewat <strong>Pindah Device → Salin Link</strong> (kirim ke chat Anda sendiri).</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -985,22 +986,6 @@
     </div>
   </div>
 
-  <!-- MODAL: PANDUAN PASANG APLIKASI -->
-  <div id="installModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
-    <div class="bg-white rounded-2xl shadow-xl border border-slate-100 max-w-md w-full max-h-[92vh] overflow-y-auto custom-scrollbar p-6 animate-fade-in" role="dialog" aria-modal="true" aria-labelledby="installTitle">
-      <div class="flex items-start justify-between gap-3 mb-3">
-        <h3 id="installTitle" class="text-lg font-bold text-slate-900">Pasang ke Layar Utama</h3>
-        <button type="button" onclick="closeInstallGuide()" aria-label="Tutup" class="text-slate-400 hover:text-slate-600 p-1">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-        </button>
-      </div>
-      <div id="installBody" class="text-sm text-slate-700 leading-relaxed"></div>
-      <div class="flex justify-end mt-5">
-        <button type="button" onclick="closeInstallGuide()" class="px-5 py-2 rounded-full text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition-all active:scale-95">Tutup</button>
-      </div>
-    </div>
-  </div>
-
   <!-- MODAL: SYNC PROGRES ANTAR DEVICE (QR / LINK) -->
   <div id="syncModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
     <div class="bg-white rounded-2xl shadow-xl border border-slate-100 max-w-lg w-full max-h-[92vh] overflow-y-auto custom-scrollbar p-6 animate-fade-in">
@@ -1449,8 +1434,8 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       // Dibuka dari link/QR sync perangkat lain
       handleIncomingSyncLink();
 
-      // PWA: service worker, penyimpanan persisten, banner pasang
-      initPWA();
+      // Versi lama sempat memakai service worker (PWA) -> lepaskan agar selalu memuat file terbaru
+      removeLegacyServiceWorker();
     }
 
     // Isi label & status dropdown paket (jumlah soal; nonaktifkan paket yang datanya tidak ada)
@@ -2703,7 +2688,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       m.classList.add('hidden'); m.classList.remove('flex');
     }
     const isModalOpen = (id) => !document.getElementById(id).classList.contains('hidden');
-    const anyModalOpen = () => ['topicModal', 'resetModal', 'syncModal', 'setupModal', 'confirmModal', 'searchModal', 'installModal'].some(isModalOpen);
+    const anyModalOpen = () => ['topicModal', 'resetModal', 'syncModal', 'setupModal', 'confirmModal', 'searchModal'].some(isModalOpen);
 
     // ----- Soal lemah (salah / ragu) berdasarkan hasil terbaru -----
     function computeWeak() {
@@ -3767,7 +3752,6 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       }
       banner.innerHTML = html;
       banner.classList.toggle('hidden', !html);
-      if (typeof renderInstallBanner === 'function') renderInstallBanner();
     }
 
     // ===== RINGKASAN RIWAYAT UNTUK SYNC =====
@@ -3807,160 +3791,18 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
 
 
     // ==========================================================
-    // PWA: PASANG KE LAYAR UTAMA + PERINGATAN PENYIMPANAN
+    // Pembersihan: versi sebelumnya sempat mendaftarkan service worker (PWA).
+    // Lepaskan & hapus cache-nya agar halaman selalu memuat file terbaru.
     // ==========================================================
-    let deferredInstallPrompt = null;
-    const UA = navigator.userAgent || '';
-    const isIOSDevice = /iPad|iPhone|iPod/.test(UA) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-    const isMacSafari = !isIOSDevice && /Macintosh/.test(UA) && /Safari\//.test(UA) && !/(Chrome|Chromium|CriOS|Edg|OPR|Firefox|FxiOS)\//.test(UA);
-    const isAppleStorageRisk = isIOSDevice || isMacSafari;   // batas 7 hari penyimpanan (WebKit/Safari)
-    const isIOSSafari = isIOSDevice && !/(CriOS|FxiOS|EdgiOS|OPiOS)/.test(UA);
-    const isAndroid = /Android/i.test(UA);
-
-    function isStandaloneApp() {
+    function removeLegacyServiceWorker() {
       try {
-        return window.matchMedia('(display-mode: standalone)').matches || window.matchMedia('(display-mode: fullscreen)').matches || navigator.standalone === true;
-      } catch (e) { return false; }
-    }
-    function installDismissed() { try { return sessionStorage.getItem('pt_install_dismissed') === '1'; } catch (e) { return false; } }
-    function dismissInstallBanner() {
-      try { sessionStorage.setItem('pt_install_dismissed', '1'); } catch (e) {}
-      renderInstallBanner();
-    }
-    function hasAnyProgress() {
-      return SET_KEYS.some(k => Object.keys(appState.sets[k]?.answers || {}).length || Object.keys(appState.sets[k]?.bookmarks || {}).length) || appState.history.length > 0;
-    }
-
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredInstallPrompt = e;
-      renderInstallBanner();
-    });
-    window.addEventListener('appinstalled', () => {
-      deferredInstallPrompt = null;
-      closeInstallGuide();
-      renderInstallBanner();
-    });
-
-    const WARN_SVG = '<svg class="w-5 h-5 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>';
-
-    function renderInstallBanner() {
-      const el = document.getElementById('installBanner');
-      if (!el) return;
-      let html = '';
-      if (isStandaloneApp()) {
-        if (isAppleStorageRisk && !hasAnyProgress()) {
-          html = `<div class="bg-sky-50 border border-sky-200 rounded-2xl px-4 py-3.5 flex flex-col sm:flex-row sm:items-center gap-3">
-            <div class="text-sm text-sky-900 leading-snug flex-1"><strong>Baru memasang aplikasi?</strong> Progres dari Safari tidak ikut otomatis karena aplikasi di Layar Utama punya penyimpanan sendiri. Di Safari buka <strong>Pindah Device → Salin Link</strong>, lalu di sini buka Pindah Device dan tempel link di kolom paling bawah.</div>
-            <button type="button" onclick="toggleSyncModal()" class="shrink-0 bg-medical-600 hover:bg-medical-700 text-white text-xs font-bold px-4 py-2 rounded-full transition-all active:scale-95">Buka Pindah Device</button>
-          </div>`;
-        } else {
-          html = `<div class="flex justify-center"><span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
-            Berjalan sebagai aplikasi terpasang • bisa dibuka offline</span></div>`;
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister())).catch(() => {});
         }
-      } else if (location.protocol !== 'file:' && !installDismissed()) {
-        const msg = isAppleStorageRisk
-          ? `<strong>Progres bisa hilang dalam 7 hari.</strong> Safari/iPhone/iPad otomatis menghapus data situs yang tidak dibuka selama 7 hari (batasan browser, bukan aplikasi ini). Pasang ke Layar Utama agar progres tetap aman dan bisa dibuka offline.`
-          : `<strong>Amankan progres Anda.</strong> Data situs bisa terhapus saat browser membersihkan penyimpanan. Pasang sebagai aplikasi agar progres lebih aman dan bisa dibuka offline.`;
-        html = `<div class="rounded-2xl px-4 py-3.5 flex flex-col sm:flex-row sm:items-center gap-3 shadow-sm" style="background:#be123c;color:#ffffff" role="alert">
-            <div class="flex items-start gap-2.5 flex-1 text-sm leading-snug">${WARN_SVG}<div>${msg}</div></div>
-            <div class="flex items-center gap-2 shrink-0 self-end sm:self-auto">
-              <button type="button" onclick="dismissInstallBanner()" class="text-xs font-semibold px-3 py-2 rounded-full" style="color:#ffe4e6">Nanti</button>
-              <button type="button" id="installBtn" onclick="openInstallGuide()" class="text-xs font-bold px-4 py-2 rounded-full shadow-sm active:scale-95 transition-transform" style="background:#ffffff;color:#be123c">${isAppleStorageRisk ? 'Pasang ke Layar Utama' : 'Pasang Aplikasi'}</button>
-            </div>
-          </div>`;
-      }
-      el.innerHTML = html;
-      el.classList.toggle('hidden', !html);
-    }
-
-    function copyText(text) {
-      if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text);
-      return new Promise((resolve, reject) => {
-        const ta = document.createElement('textarea');
-        ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
-        document.body.appendChild(ta); ta.select();
-        try { document.execCommand('copy') ? resolve() : reject(); } catch (e) { reject(e); }
-        ta.remove();
-      });
-    }
-
-    async function copyProgressLinkForInstall(btn) {
-      try {
-        const link = syncBaseUrl() + '#sync=' + await buildSyncCode(true);
-        await copyText(link);
-        btn.textContent = 'Link tersalin!';
-      } catch (e) {
-        btn.textContent = 'Gagal menyalin, pakai Pindah Device';
-      }
-      setTimeout(() => { btn.textContent = 'Salin Link Progres'; }, 2500);
-    }
-
-    async function openInstallGuide() {
-      // Chrome/Edge/Android: tampilkan dialog pasang bawaan browser
-      if (deferredInstallPrompt && !isAppleStorageRisk) {
-        const p = deferredInstallPrompt;
-        deferredInstallPrompt = null;
-        try { p.prompt(); await p.userChoice; } catch (e) {}
-        renderInstallBanner();
-        return;
-      }
-      const step = (n, t) => `<li class="flex items-start gap-3"><span class="shrink-0 w-6 h-6 rounded-full bg-medical-600 text-white text-xs font-bold flex items-center justify-center">${n}</span><span class="pt-0.5">${t}</span></li>`;
-      const shareIcon = '<svg class="inline w-4 h-4 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v12m0-12l-4 4m4-4l4 4M5 13v6a2 2 0 002 2h10a2 2 0 002-2v-6" /></svg>';
-      const migrate = `
-        <div class="mt-4 bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 text-xs text-amber-900 leading-relaxed">
-          <p class="font-semibold mb-1">Penting setelah dipasang</p>
-          <p>Aplikasi di Layar Utama punya penyimpanan sendiri, terpisah dari ${(isIOSSafari || isMacSafari) ? 'Safari' : 'browser'}. Bawa progres Anda:</p>
-          <ol class="list-decimal pl-4 mt-1 space-y-0.5">
-            <li>Tekan <strong>Salin Link Progres</strong> di bawah.</li>
-            <li>Buka aplikasi Progress Test dari Layar Utama.</li>
-            <li>Buka <strong>Pindah Device</strong>, tempel link di kolom paling bawah, lalu tekan <strong>Muat</strong>.</li>
-          </ol>
-          <button type="button" onclick="copyProgressLinkForInstall(this)" class="mt-2.5 w-full bg-amber-500 hover:bg-amber-600 text-slate-950 text-xs font-bold px-4 py-2 rounded-full transition-all active:scale-95">Salin Link Progres</button>
-        </div>`;
-      let body;
-      if (isIOSDevice) {
-        body = `<ol class="space-y-2.5">
-            ${step(1, isIOSSafari ? `Tekan tombol <strong>Bagikan</strong> ${shareIcon} di Safari (bawah layar di iPhone, atas di iPad).` : `Tekan tombol <strong>Bagikan</strong> ${shareIcon} di browser ini. Jika tidak ada, buka halaman ini di <strong>Safari</strong>.`)}
-            ${step(2, 'Gulir lalu pilih <strong>Tambahkan ke Layar Utama</strong> (Add to Home Screen).')}
-            ${step(3, 'Tekan <strong>Tambah</strong>. Ikon Progress Test muncul di Layar Utama.')}
-          </ol>${migrate}`;
-      } else if (isMacSafari) {
-        body = `<ol class="space-y-2.5">
-            ${step(1, 'Di Safari, buka menu <strong>File</strong> (Arsip).')}
-            ${step(2, 'Pilih <strong>Add to Dock</strong> / <strong>Tambahkan ke Dock</strong> (Safari 17 ke atas).')}
-            ${step(3, 'Buka Progress Test dari Dock.')}
-          </ol>${migrate}`;
-      } else if (isAndroid) {
-        body = `<ol class="space-y-2.5">
-            ${step(1, 'Tekan menu <strong>⋮</strong> di pojok kanan atas browser.')}
-            ${step(2, 'Pilih <strong>Instal aplikasi</strong> atau <strong>Tambahkan ke layar utama</strong>.')}
-            ${step(3, 'Konfirmasi. Progres Anda di browser ini ikut terbawa otomatis.')}
-          </ol>`;
-      } else {
-        body = `<p>Gunakan <strong>Chrome</strong> atau <strong>Edge</strong>: klik ikon pasang di ujung kanan kolom alamat, atau menu <strong>⋮ → Instal Progress Test</strong>. Progres di browser yang sama ikut terbawa otomatis.</p>
-          <p class="mt-2 text-xs text-slate-500">Browser ini belum menyediakan tombol pasang otomatis. Jika tidak bisa dipasang, gunakan Pindah Device secara berkala sebagai cadangan.</p>`;
-      }
-      document.getElementById('installTitle').textContent = isMacSafari ? 'Pasang ke Dock' : (isIOSDevice ? 'Pasang ke Layar Utama' : 'Pasang Aplikasi');
-      document.getElementById('installBody').innerHTML = body;
-      const m = document.getElementById('installModal');
-      m.classList.remove('hidden'); m.classList.add('flex');
-    }
-    function closeInstallGuide() {
-      const m = document.getElementById('installModal');
-      if (!m) return;
-      m.classList.add('hidden'); m.classList.remove('flex');
-    }
-
-    function initPWA() {
-      if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
-        navigator.serviceWorker.register('sw.js').catch(() => {});
-      }
-      if (isStandaloneApp() && navigator.storage && navigator.storage.persist) {
-        navigator.storage.persisted().then(p => { if (!p) navigator.storage.persist().catch(() => {}); }).catch(() => {});
-      }
-      renderInstallBanner();
+        if (window.caches && caches.keys) {
+          caches.keys().then(keys => keys.filter(k => k.startsWith('pt-cache-')).forEach(k => caches.delete(k))).catch(() => {});
+        }
+      } catch (e) {}
     }
 
     // ==========================================================
@@ -4132,7 +3974,6 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         if (isModalOpen('confirmModal')) { document.getElementById('confirmCancelBtn').click(); return; }
         if (isModalOpen('setupModal')) { closeSetup(); return; }
         if (isModalOpen('searchModal')) { closeSearch(); return; }
-        if (isModalOpen('installModal')) { closeInstallGuide(); return; }
       }
       if (e.ctrlKey || e.metaKey || e.altKey) return;
       if (anyModalOpen()) return;
