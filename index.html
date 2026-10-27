@@ -207,9 +207,16 @@
     }
     .animate-fade-in { animation: fadeIn 0.18s cubic-bezier(.2,.7,.2,1) forwards; }
     @media (prefers-reduced-motion: reduce) { .animate-fade-in { animation: none; } * { transition-duration: 0s !important; } }
-    .theme-icon-sun { display: none; }
-    html.dark .theme-icon-sun { display: inline; }
-    html.dark .theme-icon-moon { display: none; }
+    .theme-icon-sun { display: none !important; }
+    html.dark .theme-icon-sun { display: inline-block !important; }
+    html.dark .theme-icon-moon { display: none !important; }
+
+    /* Tombol Pindah Device: merah agar fitur ini mudah disadari */
+    .btn-sync-red { background: #e5484d !important; color: #fff !important; box-shadow: 0 1px 2px rgba(229,72,77,.35); }
+    .btn-sync-red:hover { background: #d13a40 !important; }
+    html.dark button.btn-sync-red.bg-slate-100 { background-color: #e5484d !important; color: #fff !important; box-shadow: 0 1px 2px rgba(229,72,77,.35); }
+    html.dark button.btn-sync-red.bg-slate-100:hover { background-color: #f0555a !important; }
+    .btn-sync-red .ph-icon { opacity: 1 !important; }
 
     /* ===== Cari soal ===== */
     .search-hit { background: rgb(var(--y-300) / .55); color: inherit; border-radius: 3px; padding: 0 1px; }
@@ -303,7 +310,7 @@
 
     /* Judul beranda: teks gradasi seperti hero Raycast */
     #startPage h1 {
-      font-size: clamp(2rem, 4.6vw, 3.25rem); line-height: 1.08; font-weight: 600; letter-spacing: -0.02em;
+      font-size: clamp(2rem, 4.6vw, 3.25rem); line-height: 1.2; padding-bottom: .1em; margin-bottom: -.1em; font-weight: 600; letter-spacing: -0.02em;
       background: linear-gradient(180deg, rgb(var(--n-900)) 20%, rgb(var(--n-500)) 120%);
       -webkit-background-clip: text; background-clip: text; color: transparent !important;
     }
@@ -516,7 +523,7 @@
 
       <!-- Aksi tambahan -->
       <div class="mt-8 flex flex-wrap items-center justify-center gap-2.5">
-        <button onclick="toggleSyncModal()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 transition-all hover:shadow-md text-xs font-semibold px-4 py-2 rounded-full flex items-center gap-1.5 active:scale-95">
+        <button onclick="toggleSyncModal()" class="btn-sync-red bg-slate-100 hover:bg-slate-200 text-slate-700 transition-all hover:shadow-md text-xs font-semibold px-4 py-2 rounded-full flex items-center gap-1.5 active:scale-95">
           <svg class="w-4 h-4 ph-icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M213.66,181.66l-32,32a8,8,0,0,1-11.32-11.32L188.69,184H48a8,8,0,0,1,0-16H188.69l-18.35-18.34a8,8,0,0,1,11.32-11.32l32,32A8,8,0,0,1,213.66,181.66Zm-139.32-64a8,8,0,0,0,11.32-11.32L67.31,88H208a8,8,0,0,0,0-16H67.31L85.66,53.66A8,8,0,0,0,74.34,42.34l-32,32a8,8,0,0,0,0,11.32Z"/></svg>
           <span>Pindah Device</span>
         </button>
@@ -608,7 +615,7 @@
           </button>
 
           <!-- Button: Pindah Device -->
-          <button onclick="toggleSyncModal()" title="Pindah Device" aria-label="Pindah Device" class="bg-slate-100 hover:bg-slate-200 text-slate-700 transition-all duration-200 hover:shadow-md active:scale-95 text-[11px] sm:text-xs font-semibold px-3 py-1.5 sm:py-2 rounded-full flex items-center gap-1.5">
+          <button onclick="toggleSyncModal()" title="Pindah Device" aria-label="Pindah Device" class="btn-sync-red bg-slate-100 hover:bg-slate-200 text-slate-700 transition-all duration-200 hover:shadow-md active:scale-95 text-[11px] sm:text-xs font-semibold px-3 py-1.5 sm:py-2 rounded-full flex items-center gap-1.5">
             <svg class="w-4 h-4 ph-icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M213.66,181.66l-32,32a8,8,0,0,1-11.32-11.32L188.69,184H48a8,8,0,0,1,0-16H188.69l-18.35-18.34a8,8,0,0,1,11.32-11.32l32,32A8,8,0,0,1,213.66,181.66Zm-139.32-64a8,8,0,0,0,11.32-11.32L67.31,88H208a8,8,0,0,0,0-16H67.31L85.66,53.66A8,8,0,0,0,74.34,42.34l-32,32a8,8,0,0,0,0,11.32Z"/></svg>
             <span>Pindah Device</span>
           </button>
@@ -1255,7 +1262,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
     const lcFirst = (t) => t.charAt(0).toLowerCase() + t.slice(1);
     const NOTE_SIPEN = 'Gabungan dari file PT32 by sipen 18 dan 19';
     const NOTE_BATCH = 'Pembahasan dari gabungan file pembahasan batch 1 &amp; 2';
-    const NOTE_AI = 'AI generated answers';
+    const NOTE_AI = 'Kunci &amp; pembahasan gabungan dari PT 30–37, disusun dengan AI';
     const PT_SETS = [
       { key: 'set9', label: 'PT 30', file: 'questions9.js', note: NOTE_PT30,     badge: 'text-slate-700 bg-slate-100 border border-slate-200' },
       { key: 'set8', label: 'PT 31', file: 'questions8.js', note: NOTE_PT31,    badge: 'text-slate-700 bg-slate-100 border border-slate-200' },
