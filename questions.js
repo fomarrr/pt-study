@@ -5,7 +5,7 @@ const questions = [
     "question": "Seorang pria berusia 58 tahun datang dengan keluhan nyeri pada lutut kiri sejak 12 jam sebelum masuk rumah sakit. Lutut tampak merah dan bengkak. Sekitar 1 tahun yang lalu, pasien mengalami keluhan serupa pada ibu jari kaki kanan. Pemeriksaan fisik: pasien tampak obesitas, compos mentis, tekanan darah 160/90 mmHg, frekuensi nadi 98x/menit, frekuensi napas 20x/menit, tidak demam, VAS 6. Lutut kiri tampak kemerahan, bengkak, hangat, nyeri tekan, dan rentang gerak menurun. Ditemukan tofus pada sendi MTP1 kanan. Apakah diagnosis yang paling mungkin pada kasus ini?",
     "options": [
       "A. Osteoartritis",
-      "B. Gout artritis akut (Acute gout arthritis)",
+      "B. Gout artritis akut",
       "C. Artritis reumatoid",
       "D. Artritis reaktif",
       "E. Artritis psoriatik"
@@ -22,7 +22,7 @@ const questions = [
       "B. Menghambat transmiter inhibitorik pada sel saraf",
       "C. Bertindak sebagai superantigen",
       "D. Meningkatkan cAMP",
-      "E. Menghambat sintesis protein (Inhibits protein synthesis)"
+      "E. Menghambat sintesis protein"
     ],
     "answer": 4,
     "rationale": "Anak 6 tahun dengan demam, nyeri tenggorokan, pseudomembran faring yang mudah berdarah, dan hapusan tenggorok positif Corynebacterium diphtheriae menunjukkan difteri. Toksin difteri adalah eksotoksin tipe A-B yang bekerja dengan menghambat sintesis protein (opsi E).\nMekanismenya (pembahasan PT 32): (1) fragmen B berikatan dengan reseptor HB-EGF pada membran sel inang. (2) toksin masuk ke endosom melalui endositosis yang diperantarai reseptor. (3) asidifikasi endosom membuat fragmen A berpindah ke sitosol. (4) fragmen A memindahkan ADP-ribosa dari NAD+ ke residu diphthamide pada eukaryotic elongation factor-2 (eEF-2) sehingga EF-2 tidak aktif secara ireversibel, sintesis protein berhenti, dan sel mengalami nekrosis (membentuk pseudomembran).\nAnalisis opsi lain (pembahasan PT 36): (1) menghambat penyinyalan pada sel saraf (opsi A) adalah toksin botulinum yang memblok asetilkolin dan menyebabkan paralisis flasid. (2) menghambat transmiter inhibitorik (opsi B) adalah tetanospasmin Clostridium tetani (GABA dan glisin) dengan paralisis spastik. (3) superantigen (opsi C) adalah TSST-1 Staphylococcus aureus dan eksotoksin pirogenik Streptococcus pyogenes. (4) peningkatan cAMP (opsi D) adalah toksin kolera, toksin LT ETEC, dan toksin pertusis.\nCatatan lintas paket: soal yang sama muncul di PT 32 #102, PT 35 #62, dan PT 36 #24. Isi pilihan sama, hanya urutan hurufnya berbeda, dan ketiganya sepakat bahwa jawabannya adalah penghambatan sintesis protein.\nSumber kunci: PT 32 #102, PT 35 #62, PT 36 #24 (soal sama, kunci sama)."
@@ -61,7 +61,7 @@ const questions = [
     "question": "Seorang anak perempuan berusia 12 tahun dibawa ke UGD oleh ibunya karena mengalami sesak napas sejak 1 jam yang lalu. Napasnya berbunyi mengi (wheezing). Setelah dilakukan pemeriksaan, dokter mendiagnosisnya dengan asma bronkial. Bagaimana beban kerja pernapasan (workload of breathing) pada pasien ini?",
     "options": [
       "A. Meningkat karena peningkatan kebutuhan ventilasi",
-      "B. Meningkat karena peningkatan resistensi jalan napas (Increased due to increased airway resistance)",
+      "B. Meningkat karena peningkatan resistensi jalan napas",
       "C. Menurun karena peningkatan resistensi jalan napas",
       "D. Meningkat karena penurunan elastisitas paru",
       "E. Meningkat karena penurunan komplians paru"
@@ -74,7 +74,7 @@ const questions = [
     "topic": "Forensik, Medikolegal & IKM",
     "question": "Salah satu rekomendasi GERMAS adalah melakukan aktivitas fisik minimal 30 menit per hari. Anda adalah seorang dokter di puskesmas dan menasihati seorang pasien yang telah menderita diabetes selama 5 tahun untuk melakukan aktivitas fisik secara teratur. Rekomendasi ini sesuai dengan tingkat pencegahan yang mana?",
     "options": [
-      "A. Pembatasan kecacatan (Disability limitation)",
+      "A. Pembatasan kecacatan",
       "B. Rehabilitasi",
       "C. Diagnosis dini dan pengobatan segera",
       "D. Perlindungan khusus",
@@ -88,7 +88,7 @@ const questions = [
     "topic": "Nefrologi & Urologi",
     "question": "Pasangan suami istri datang ke rumah sakit dengan keluhan belum memiliki anak setelah lima tahun menikah. Setelah dilakukan pemeriksaan genitalia eksterna, tes Valsalva, dan USG, ditemukan adanya pelebaran pembuluh darah vena yang berjalan di sepanjang korda spermatika. Pembuluh darah manakah yang abnormal pada kasus ini?",
     "options": [
-      "A. Vena pampiniformis (Pampiniform plexus/vein)",
+      "A. Vena pampiniformis",
       "B. Arteri testikularis",
       "C. Arteri deferensial",
       "D. Vena testikularis",
@@ -103,8 +103,8 @@ const questions = [
     "question": "Ny. D, 25 tahun, baru saja melahirkan anak pertamanya secara pervaginam 10 menit yang lalu, bayi perempuan sehat dengan berat 3000 gram dan menangis kuat. Pasien sangat ingin menjarangkan kehamilan berikutnya minimal 3 tahun. Dari rekam medis, tidak ada riwayat penyakit berat dan pasien tidak sedang mengonsumsi obat-obatan. Apakah pilihan metode kontrasepsi terbaik untuk pasien ini?",
     "options": [
       "A. Kontrasepsi suntik 3 bulan",
-      "B. Pemasangan AKDR/IUD (IUD insertion)",
-      "C. Metode kontrasepsi mantap/pembatas (Barrier method)",
+      "B. Pemasangan AKDR/IUD",
+      "C. Metode kontrasepsi mantap/pembatas",
       "D. Pil kontrasepsi kombinasi",
       "E. Metode kalender"
     ],
@@ -116,7 +116,7 @@ const questions = [
     "topic": "Nefrologi & Urologi",
     "question": "Pasien Anda melaporkan bahwa ia sering mengonsumsi obat pereda nyeri bebas (OTC) setiap kali mengalami nyeri sendi. Efek samping apa yang dapat terjadi jika obat-obatan ini diminum secara teratur dalam jangka panjang?",
     "options": [
-      "A. Memicu nefropati (Trigger nephropathy)",
+      "A. Memicu nefropati",
       "B. Memicu neuropati",
       "C. Menurunkan sistem kekebalan tubuh",
       "D. Menyebabkan hipotensi",
@@ -130,7 +130,7 @@ const questions = [
     "topic": "Mata (Oftalmologi)",
     "question": "Seorang wanita berusia 19 tahun datang dengan keluhan mata kanan merah dan kabur sejak 1 minggu yang lalu. Keluhan disertai nyeri, berair, sensasi benda asing, dan kotoran pada mata kanan. Lima hari yang lalu, pasien berobat ke dokter umum dan diberi tetes mata Xitrol 2 kali sehari pada mata kanan, namun tidak ada perbaikan. Pasien juga mengeluhkan adanya bercak putih pada mata kanan yang terasa semakin membesar dalam 3 hari terakhir. Pasien menggunakan lensa kontak pada kedua mata karena riwayat miopia (-3.00 pada kedua mata). Lensa kontak sering digunakan hingga pasien tertidur. Sejak pasien merasa lesi putih di mata kanan membesar, lensa kontak tidak lagi digunakan. Apakah diagnosis yang paling mungkin pada pasien ini?",
     "options": [
-      "A. Ulkus kornea (Corneal ulcer)",
+      "A. Ulkus kornea",
       "B. Glaukoma akut",
       "C. Konjungtivitis",
       "D. Ruptur kornea",
@@ -145,7 +145,7 @@ const questions = [
     "question": "Seorang wanita berusia 55 tahun dibawa ke UGD dengan riwayat kejang berulang dalam 3 jam terakhir. Menurut saksi, keempat ekstremitas pasien menjadi kaku, diikuti gerakan menghentak selama 1-2 menit, dan setelah itu pasien tidak sadarkan diri. Di UGD: pemeriksaan fisik menunjukkan tekanan darah 130/85 mmHg, frekuensi nadi 90x/menit, frekuensi napas 20x/menit, suhu 36.9°C saturasi oksigen 99% pada udara ruangan, Glasgow Coma Scale E2M5V2, pupil 3 mm/3 mm dan reaktif bilateral, tidak ada tanda lateralisasi. Pemeriksaan gula darah sewaktu (bedside) menunjukkan 53 mg/dL Pasien kemudian mengalami kejang tonik-klonik umum lagi dengan deskripsi yang sama, dimulai sejak 5 menit yang lalu. Apakah langkah selanjutnya yang paling tepat untuk pasien ini?",
     "options": [
       "A. CT scan kepala dengan kontras",
-      "B. Bolus intravena Dextrose 40% 50 cc (Intravenous bolus of 40% dextrose 50 cc)",
+      "B. Bolus intravena Dextrose 40% 50 cc",
       "C. Midazolam intramuskular 10 mg",
       "D. Intubasi endotrakeal",
       "E. Oksigen 6 liter/menit"
@@ -231,7 +231,7 @@ const questions = [
       "A. Batuk berdahak",
       "B. Keringat malam",
       "C. Batuk dan menggigil",
-      "D. Batuk darah (coughing up blood / hemoptisis)",
+      "D. Batuk darah",
       "E. Demam"
     ],
     "answer": 3,
@@ -245,7 +245,7 @@ const questions = [
       "A. Perbedaan tekanan darah antara lengan kanan dan kiri > 20 mmHg",
       "B. Pulsus celer / water hammer pulse pada palpasi arteri femoralis",
       "C. Tekanan darah diastolik > 100 mmHg",
-      "D. Bising awal diastolik (early diastolic murmur) dengan titik intensitas maksimal di garis midklavikula kiri",
+      "D. Bising awal diastolik dengan titik intensitas maksimal di garis midklavikula kiri",
       "E. Galop S4 pada auskultasi di batas sternal bawah kanan"
     ],
     "answer": 1,
@@ -270,11 +270,11 @@ const questions = [
     "topic": "Pediatri / Anak",
     "question": "Seorang anak perempuan berusia 5 tahun dengan berat badan 20 kg datang dengan keluhan utama demam sejak 4 hari yang lalu; saat ini demam sudah mulai turun, namun pagi ini terdapat sedikit mimisan (epistaksis). Pemeriksaan fisik menunjukkan tanda vital stabil, petekie pada lengan, nyeri perut kanan atas, dan hati teraba 3 cm di bawah tepi kosta. Pasien telah berobat ke klinik dan dirujuk ke rumah sakit dengan membawa hasil laboratorium: Hb 14,8 g/dL, Hct 46 vol%, leukosit 2100/μL, trombosit 65.000/μL. Apakah diagnosis yang paling mungkin pada kasus ini?",
     "options": [
-      "A. Dengue dengan tanda bahaya (dengue with warning signs)",
+      "A. Dengue dengan tanda bahaya",
       "B. Probable dengue",
-      "C. Dengue tanpa tanda bahaya (dengue without warning signs)",
-      "D. Dengue berat (severe dengue)",
-      "E. Demam dengue (dengue fever)"
+      "C. Dengue tanpa tanda bahaya",
+      "D. Dengue berat",
+      "E. Demam dengue"
     ],
     "answer": 0,
     "rationale": "Anak 5 tahun dengan demam 4 hari yang mulai turun, epistaksis, petekie, nyeri perut kanan atas, hepatomegali 3 cm di bawah tepi kosta, serta laboratorium leukopenia (2.100/μL), trombositopenia (65.000/μL), dan hemokonsentrasi (Hb 14,8 g/dL, Ht 46%) menunjukkan dengue dengan tanda bahaya (opsi A). Tanda vital masih stabil sehingga belum masuk dengue berat.\nDasar klasifikasi (WHO 2009 dan PNPK dengue anak Kemenkes 2021, pembahasan PT 36 #21): dengue tanpa tanda bahaya, dengue dengan tanda bahaya, dan dengue berat. Tanda bahaya yang ditemukan pada pasien ini: nyeri perut dan nyeri tekan perut kanan atas, perdarahan mukosa (epistaksis), pembesaran hepar >2 cm, serta peningkatan hematokrit bersamaan dengan penurunan cepat trombosit. Fase kritis dimulai saat demam turun (defervesens), sehingga pasien harus dirawat dan dipantau ketat.\nAnalisis opsi lain: (1) dengue tanpa tanda bahaya (opsi C) dan demam dengue (opsi E) tidak memiliki tanda bahaya di atas. (2) probable dengue (opsi B) adalah kategori awal berdasarkan demam disertai gejala tertentu tanpa tanda bahaya yang jelas. (3) dengue berat (opsi D) memerlukan kebocoran plasma berat/syok, perdarahan berat, atau gangguan organ berat, sedangkan di sini tanda vital stabil.\nCatatan lintas paket: PT 36 #21 memilih dengue dengan tanda bahaya. Pada PT 31 #34 (kasus yang hampir sama), ketikan awal slide sempat menulis dengue tanpa warning signs, tetapi koreksi tulisan tangan di slide (\"nyeri perut +, hepatomegali, mucosal bleeding, Ht naik, trombosit turun, warning sign!\") dan poster WHO yang menyertainya menetapkan dengue dengan warning signs (setara DBD derajat II pada klasifikasi WHO 1997).\nSumber kunci: PT 36 #21 dan PT 31 #34 (kasus sama, kunci sama setelah koreksi)."
@@ -286,7 +286,7 @@ const questions = [
     "options": [
       "A. Gangguan somatisasi",
       "B. Gangguan panik",
-      "C. Gangguan cemas menyeluruh (generalized anxiety disorder)",
+      "C. Gangguan cemas menyeluruh",
       "D. Gangguan penyesuaian dengan mood cemas",
       "E. Gangguan waham menetap"
     ],
@@ -329,7 +329,7 @@ const questions = [
       "A. Infeksi kronis",
       "B. Stimulasi trombopoietin kronis",
       "C. Stimulasi eritropoietin",
-      "D. Pergeseran akumulasi jaringan (tissue pooling shift)",
+      "D. Pergeseran akumulasi jaringan",
       "E. Mutasi JAK2 V617F"
     ],
     "answer": 2,
@@ -383,7 +383,7 @@ const questions = [
     "question": "Seorang pria berusia 35 tahun dibawa oleh istrinya ke IGD dengan nyeri perut disertai muntah sejak 1 hari yang lalu. Tiga minggu sebelumnya, pasien mengalami demam hilang timbul yang membaik setelah minum parasetamol. Keluhan disertai penurunan nafsu makan, sedangkan buang air besar dan buang air kecil dalam batas normal. Pada pemeriksaan fisik, keadaan umum lemah, lidah kotor, dan perut menunjukkan tanda-tanda peritonitis generalisata. Pekat hati menghilang. Pemeriksaan colok dubur menunjukkan ampula rekti kolaps. Pemeriksaan radiologi apa yang direkomendasikan untuk kasus ini?",
     "options": [
       "A. CT scan abdomen",
-      "B. Foto polos abdomen (plain abdominal X-ray)",
+      "B. Foto polos abdomen",
       "C. Ultrasonografi (USG)",
       "D. BNO",
       "E. MRI"
@@ -399,7 +399,7 @@ const questions = [
       "A. Menambahkan allopurinol",
       "B. Mengganti amlodipin dengan ACE inhibitor atau ARB",
       "C. Menambahkan statin",
-      "D. Menambahkan diuretik kuat (loop diuretic)",
+      "D. Menambahkan diuretik kuat",
       "E. Menambahkan insulin"
     ],
     "answer": 1,
@@ -452,11 +452,11 @@ const questions = [
     "topic": "Kardiologi & Vaskular",
     "question": "Seorang bayi laki-laki berusia 2 bulan dibawa ke klinik setelah dirujuk oleh dokter umum karena terdengar bising jantung (murmur) saat kunjungan imunisasi. Ibu bayi memiliki riwayat ruam kulit selama kehamilan dan belum pernah menerima vaksin MMR. Pemeriksaan fisik menunjukkan bising kontinyu (continuous murmur) di ruang sela iga kedua parasternal kiri. Jenis kelainan apa yang terdapat pada pasien ini?",
     "options": [
-      "A. Defek septal ventrikel (Ventricular septal defect)",
-      "B. Duktus arteriosus persisten (Persistent ductus arteriosus)",
-      "C. Defek septal atrium (Atrial septal defect)",
+      "A. Defek septal ventrikel",
+      "B. Duktus arteriosus persisten",
+      "C. Defek septal atrium",
       "D. Fistula koroner",
-      "E. Foramen ovale paten (Patent foramen ovale)"
+      "E. Foramen ovale paten"
     ],
     "answer": 1,
     "rationale": "Bayi 2 bulan dengan bising kontinyu (continuous/machinery murmur) di sela iga kedua parasternal kiri menunjukkan duktus arteriosus persisten / patent ductus arteriosus (PDA, opsi B). Pada fonokardiogram, PDA digambarkan sebagai bising kontinyu sepanjang sistol dan diastol (ringkasan di PT 30 #117). Riwayat ruam kulit pada ibu saat hamil dan ibu belum pernah mendapat vaksin MMR mengarah pada infeksi rubella kongenital; kelainan jantung bawaan yang khas pada sindrom rubella kongenital adalah PDA, bagian dari trias Gregg bersama katarak kongenital dan tuli sensorineural (pembahasan PT 34 #62).\nAnalisis opsi lain: (1) defek septum ventrikel (opsi A) menimbulkan bising holosistolik di sela iga 3-4 batas sternal kiri. (2) defek septum atrium (opsi C) menimbulkan bising ejeksi sistolik di area pulmonal dengan bunyi jantung kedua terpisah menetap, bukan bising kontinyu. (3) foramen ovale paten (opsi E) umumnya tanpa bising. (4) fistula koroner (opsi D) dapat menimbulkan bising kontinyu tetapi jarang dan tidak berkaitan dengan rubella kongenital.\nCatatan: kasus yang sama muncul dua kali pada PT 38 (#33 dan #36) dengan pertanyaan setara (jenis kelainan dan diagnosis).\nSumber kunci: tidak ada soal yang sama di PT 30-37; konsep dari PT 34 #62 dan PT 30 #117."
@@ -496,7 +496,7 @@ const questions = [
     "options": [
       "A. Fistula koroner",
       "B. Foramen ovale paten",
-      "C. Duktus arteriosus paten (Patent ductus arteriosus)",
+      "C. Duktus arteriosus paten",
       "D. Defek septal atrium",
       "E. Defek septal ventrikel"
     ],
@@ -578,11 +578,11 @@ const questions = [
     "topic": "Forensik, Medikolegal & IKM",
     "question": "Sebuah kelompok pemuda di Kota A mengadakan kegiatan pengabdian masyarakat berupa lokakarya teknik mencuci tangan yang benar di TK Permata. Acara berlangsung pada hari Kamis pukul 09.00 yang diikuti oleh 25 siswa. Kelompok tersebut menyampaikan materi tentang manfaat cuci tangan, penjelasan jenis-jenis mikroba, dan cara mengidentifikasinya. Pada sesi diskusi tidak ada siswa TK yang bertanya, dan usai lokakarya siswa pulang seperti biasa. Apakah yang mungkin menjadi hambatan komunikasi pada kasus di atas?",
     "options": [
-      "A. Praktik yang tidak sesuai (Inappropriate practice)",
-      "B. Norma yang tidak sesuai (Inappropriate norms)",
-      "C. Kurangnya pengetahuan (Lack of knowledge)",
-      "D. Bahasa yang digunakan terlalu rumit/canggih (too sophisticated)",
-      "E. Waktu siaran/penyampaian yang tidak tepat (Inappropriate broadcast time)"
+      "A. Praktik yang tidak sesuai",
+      "B. Norma yang tidak sesuai",
+      "C. Kurangnya pengetahuan",
+      "D. Bahasa yang digunakan terlalu rumit/canggih",
+      "E. Waktu siaran/penyampaian yang tidak tepat"
     ],
     "answer": 3,
     "rationale": "Kelompok pemuda menyampaikan materi tentang jenis-jenis mikroba dan cara mengidentifikasinya kepada 25 siswa TK, tidak ada siswa yang bertanya, dan setelah acara tidak ada perubahan perilaku. Anak TK belum mampu memahami istilah ilmiah seperti mikroba dan identifikasi, sehingga hambatan komunikasi yang paling mungkin adalah bahasa/materi yang digunakan terlalu rumit atau canggih (too sophisticated, opsi D). Untuk anak usia dini, pesan seharusnya sederhana, konkret, dan disampaikan lewat demonstrasi, lagu, atau permainan.\nAnalisis opsi lain: (1) praktik yang tidak sesuai (opsi A) dan norma yang tidak sesuai (opsi B) menyangkut kebiasaan atau nilai sosial di masyarakat, yang tidak digambarkan di soal. (2) kurangnya pengetahuan (opsi C) adalah kondisi sasaran, bukan hambatan dalam cara penyampaian. (3) waktu penyampaian tidak tepat (opsi E) kurang sesuai karena pukul 09.00 hari Kamis adalah jam sekolah yang wajar.\nCatatan: tidak ada soal padanan di PT 30-37 (pencarian kata kunci: komunikasi, cuci tangan, TK); kunci ditentukan dari teori hambatan komunikasi kesehatan (keyakinan sedang).\nSumber kunci: tidak ada soal padanan di PT 30-37; ditentukan dari teori."
@@ -665,7 +665,7 @@ const questions = [
       "A. Penambahan ekor Poly A pada ujung 3'",
       "B. Restriksi",
       "C. Splicing",
-      "D. Penambahan tudung (cap) pada ujung 5'",
+      "D. Penambahan tudung pada ujung 5'",
       "E. Penempelan RNA polimerase"
     ],
     "answer": 4,
@@ -760,7 +760,7 @@ const questions = [
     "topic": "Forensik, Medikolegal & IKM",
     "question": "Seorang pasien laki-laki berusia 65 tahun datang dengan keluhan pilek, hidung tersumbat, dan sakit kepala. Keluhan ini bersifat hilang timbul selama sebulan terakhir. Evaluasi mengonfirmasi bahwa pasien menderita rinosinusitis yang disebabkan oleh infeksi jamur Aspergillus sp. Berdasarkan pilihan pengobatan yang ada, Anda merekomendasikan pembedahan untuk mengatasi kondisi ini, yang diketahui memiliki tingkat kesembuhan lebih baik daripada alternatif regimen antijamur jangka panjang. Pasien dan keluarga menyetujui pembedahan, namun mereka menanyakan potensi komplikasi, mengingat faktor usia pasien yang sudah lanjut, beberapa kondisi medis yang menyertai, dan jenis jamur invasif tersebut. Pertanyaan klinis yang tepat berdasarkan skenario di atas adalah:",
     "options": [
-      "A. Etiologi/Bahaya (Etiology/Harm)",
+      "A. Etiologi/Bahaya",
       "B. Diagnosis",
       "C. Prevalensi",
       "D. Prognosis",
@@ -832,7 +832,7 @@ const questions = [
     "options": [
       "A. Smothering",
       "B. Suffocation",
-      "C. Tersedak (Choking)",
+      "C. Tersedak",
       "D. Strangulation",
       "E. Gagging"
     ],
@@ -972,8 +972,8 @@ const questions = [
     "options": [
       "A. Sekret purulen di meatus medius dengan polip di rongga hidung kanan",
       "B. Deviasi septum bilateral",
-      "C. Hipertrofi dan konka inferior pucat (livid), dengan sekret hidung serosa",
-      "D. Atrofi konka inferior dengan warna kebiruan (livid)",
+      "C. Hipertrofi dan konka inferior pucat, dengan sekret hidung serosa",
+      "D. Atrofi konka inferior dengan warna kebiruan",
       "E. Edema dan hiperemia konka inferior, dengan sekret hidung purulen"
     ],
     "answer": 2,
@@ -1040,10 +1040,10 @@ const questions = [
     "topic": "Forensik, Medikolegal & IKM",
     "question": "Seorang pria berusia sekitar 50 tahun ditemukan meninggal di dalam kamar dalam posisi telungkup di lantai, di samping tempat tidur. Pada pemeriksaan fisik ditemukan luka lecet pada dahi, dikelilingi memar berwarna kebiruan kemerahan. Apakah penyebab luka pada dahi yang harus dituliskan pada bagian kesimpulan visum et repertum?",
     "options": [
-      "A. Kekerasan tumpul (Impact by a blunt object)",
+      "A. Kekerasan tumpul",
       "B. Benturan kepala pada tepi tempat tidur",
       "C. Benturan kepala pada lantai",
-      "D. Trauma tumpul (Blunt force trauma)",
+      "D. Trauma tumpul",
       "E. Pukulan dari benda tumpul"
     ],
     "answer": 0,
@@ -1082,7 +1082,7 @@ const questions = [
     "topic": "Pediatri / Anak",
     "question": "Seorang anak laki-laki berusia 4 tahun datang ke Puskesmas dengan vesikel yang muncul 2 hari yang lalu setelah demam dan ruam kulit selama 3 hari. Pada pemeriksaan fisik, pasien demam. Papul, vesikel, dan krusta ditemukan terutama di badan, serta di wajah, ekstremitas, mukosa bukal, dan faring. Apakah etiologi penyakit pada kasus di atas?",
     "options": [
-      "A. Virus Campak (Measles virus)",
+      "A. Virus Campak",
       "B. Virus Varicella zoster",
       "C. Virus Herpes simplex tipe 1",
       "D. Virus Herpes simplex tipe 2",
@@ -1167,8 +1167,8 @@ const questions = [
     "question": "Seorang anak laki-laki berusia 14 tahun mengeluhkan tulang kering (shin) kanannya menjadi semakin bengkok selama 2 tahun terakhir. Pasien masih bisa berjalan, namun pincang karena bentuk kakinya berbeda. Tidak ada keluhan benjolan di ekstremitas lain, tidak nyeri, tidak ada penurunan berat badan, atau demam. Pemeriksaan fisik menunjukkan penekukan (bowing) pada tibia kanan, dan foto Rontgen menunjukkan lesi litik geografis di diafisis tibia disertai gambaran ground-glass. Apakah diagnosis yang paling mungkin pada kasus ini?",
     "options": [
       "A. Osteokondroma",
-      "B. Eksostosis tulang (Bony exostosis)",
-      "C. Displasia fibrosa (Fibrous dysplasia)",
+      "B. Eksostosis tulang",
+      "C. Displasia fibrosa",
       "D. Osteoid osteoma",
       "E. Osteoblastoma"
     ],
@@ -1180,7 +1180,7 @@ const questions = [
     "topic": "Neurologi",
     "question": "Seorang pria berusia 50 tahun mengalami kelemahan sejak 2 jam terakhir. Pemeriksaan fisik menunjukkan kekuatan motorik 4 pada kedua tangan dan 3 pada kedua kaki. Refleks fisiologis adalah +1 pada kedua lengan dan +3 pada kedua kaki. Di manakah kemungkinan letak lesi pada kasus ini?",
     "options": [
-      "A. Saraf tepi (peripheral nerves)",
+      "A. Saraf tepi",
       "B. Medula spinalis setinggi vertebra lumbosakral",
       "C. Lobus frontalis parasagital",
       "D. Neuromuscular junction",
@@ -1237,7 +1237,7 @@ const questions = [
     "question": "Seorang wanita berusia 50 tahun datang ke poliklinik rawat jalan dengan bengkak dan nyeri mendadak pada tungkai kanan sejak 5 jam yang lalu. Ia pernah merasakan keluhan serupa sebelumnya. Pasien baru saja kembali dari perjalanan dari Eropa menggunakan pesawat. Pemeriksaan fisik menunjukkan tanda-tanda vital dalam batas normal, dan pemeriksaan lokal tungkai bawah kanan menunjukkan edema serta tanda Homans positif. Bagaimanakah patofisiologi yang mendasari gejala pada pasien ini?",
     "options": [
       "A. Obstruksi pembuluh darah arteri tungkai",
-      "B. Obstruksi akut vena dalam tungkai (deep vein)",
+      "B. Obstruksi akut vena dalam tungkai",
       "C. Infeksi jaringan di bawah kulit tungkai (selulitis)",
       "D. Infeksi pembuluh darah vena tepi tungkai (tromboflebitis)",
       "E. Penyakit gangguan katup vena"
@@ -1295,7 +1295,7 @@ const questions = [
       "A. Pseudodemensia",
       "B. Depresi",
       "C. Delirium",
-      "D. Gangguan Kognitif Ringan (Mild Cognitive Impairment / MCI)",
+      "D. Gangguan Kognitif Ringan (MCI)",
       "E. Demensia"
     ],
     "answer": 4,
@@ -1336,7 +1336,7 @@ const questions = [
     "options": [
       "A. Skizofrenia katatonik",
       "B. Skizofrenia paranoid",
-      "C. Skizofrenia hebefrenik (terorganisasi)",
+      "C. Skizofrenia hebefrenik",
       "D. Gangguan psikotik akut",
       "E. Gangguan waham menetap"
     ],
@@ -1432,11 +1432,11 @@ const questions = [
     "topic": "Forensik, Medikolegal & IKM",
     "question": "Badan Eksekutif Mahasiswa gabungan fakultas di Rumpun Ilmu Kesehatan Universitas Indonesia (RIK UI) akan menyelenggarakan kegiatan pengabdian masyarakat untuk masyarakat Baduy Dalam. Sebagai penanggung jawab kegiatan, Anda sedang menyiapkan rencana intervensi kesehatan. Sudah menjadi rahasia umum bahwa masyarakat Baduy Dalam dikenal sangat memegang teguh adat istiadat dan kearifan lokal. Pada pertengahan September 2022, berbagai media nasional melaporkan adanya enam kematian akibat tuberkulosis pada masyarakat Baduy Dalam. Anda kemudian memutuskan untuk memberikan edukasi mengenai tuberkulosis. Dari perspektif pasien/klien, hambatan komunikasi apa yang paling mungkin terjadi saat melakukan intervensi kesehatan pada masyarakat Baduy Dalam?",
     "options": [
-      "A. Tingkat pengetahuan (Knowledge level)",
-      "B. Pendidikan (Education)",
-      "C. Bahasa (Language)",
-      "D. Usia (Age)",
-      "E. Budaya (Culture)"
+      "A. Tingkat pengetahuan",
+      "B. Pendidikan",
+      "C. Bahasa",
+      "D. Usia",
+      "E. Budaya"
     ],
     "answer": 4,
     "rationale": "Masyarakat Baduy Dalam dikenal sangat memegang teguh adat istiadat dan kearifan lokal. Dalam komunikasi kesehatan dari perspektif penerima pesan (klien), hambatan paling mungkin adalah budaya (culture, opsi E): keyakinan, norma, dan tradisi setempat memengaruhi penerimaan pesan tentang tuberkulosis, misalnya persepsi sakit, preferensi pengobatan tradisional, dan penolakan terhadap pendekatan medis modern. Pendekatan yang tepat adalah melibatkan tokoh adat dan menghormati kearifan lokal.\nAnalisis opsi lain: (1) tingkat pengetahuan (opsi A), pendidikan (opsi B), dan usia (opsi D) adalah karakteristik individu yang tidak digambarkan di soal. (2) bahasa (opsi C) adalah hambatan potensial, tetapi soal menekankan adat istiadat dan kearifan lokal, bukan perbedaan bahasa.\nCatatan: tidak ada soal padanan di PT 30-37 (pencarian kata kunci: Baduy, hambatan komunikasi, budaya); kunci ditentukan dari teori komunikasi kesehatan.\nSumber kunci: tidak ada soal padanan di PT 30-37; ditentukan dari teori."
@@ -1463,7 +1463,7 @@ const questions = [
       "A. Peningkatan lipogenesis",
       "B. Penurunan aktivitas piruvat karboksilase",
       "C. Penurunan glukoneogenesis",
-      "D. Peningkatan asam lemak bebas (free fatty acids)",
+      "D. Peningkatan asam lemak bebas",
       "E. Penurunan aktivitas PEP-karboksikinase"
     ],
     "answer": 3,
@@ -1477,7 +1477,7 @@ const questions = [
       "A. Marsupialisasi",
       "B. Insisi dan drainase",
       "C. Insisi",
-      "D. Kateter Word (Word catheter)",
+      "D. Kateter Word",
       "E. Eksisi"
     ],
     "answer": 0,
@@ -1502,10 +1502,10 @@ const questions = [
     "topic": "Forensik, Medikolegal & IKM",
     "question": "Puskesmas Z sedang menyelenggarakan pelayanan jaminan mutu (quality assurance). Tim jaminan mutu sedang menilai pelayanan imunisasi dan vaksinasi yang diberikan oleh puskesmas. Bagaimana tim menilai dan menentukan apakah ada masalah pada pelayanan imunisasi dan vaksinasi?",
     "options": [
-      "A. Laporan Pasien (Patient Reports)",
+      "A. Laporan Pasien",
       "B. Laporan Tahunan Puskesmas",
       "C. Membandingkan Standar dengan Pelayanan yang Diberikan",
-      "D. Alur Pelayanan (Service Flow)",
+      "D. Alur Pelayanan",
       "E. Standar Pelayanan yang Ditetapkan"
     ],
     "answer": 2,
@@ -1559,7 +1559,7 @@ const questions = [
     "question": "Nn. R, seorang wanita berusia 35 tahun, datang ke IGD dengan nyeri perut bawah sejak 1 hari yang lalu. Tiga hari sebelumnya, Nn. R mengalami demam ringan dan rasa tidak nyaman di perut. Nn. R telah mengonsumsi obat lambung untuk meredakan rasa tidak nyaman di perutnya, namun keluhannya tidak membaik. Nn. R belum menikah, namun sudah aktif secara seksual. Dokter jaga IGD dengan cepat mempertimbangkan kemungkinan kehamilan ektopik terganggu (KET) dengan apendisitis sebagai diagnosis banding sebelum merencanakan pemeriksaan lebih lanjut. Strategi penalaran klinis apa yang diterapkan oleh dokter tersebut?",
     "options": [
       "A. Probabilistik",
-      "B. Pengenalan pola (Pattern recognition)",
+      "B. Pengenalan pola",
       "C. Deterministik",
       "D. Kausal",
       "E. Reflektif"
@@ -1575,7 +1575,7 @@ const questions = [
       "A. Aspirasi nanah dari area yang paling lunak",
       "B. CT scan dengan kontras",
       "C. MRI dengan kontras",
-      "D. Foto Rontgen leher jaringan lunak (lateral soft tissue neck X-ray AP/lateral)",
+      "D. Foto Rontgen leher jaringan lunak",
       "E. USG leher dengan Doppler"
     ],
     "answer": 0,
@@ -1587,7 +1587,7 @@ const questions = [
     "question": "Seorang pria berusia 35 tahun dibawa oleh keluarganya ke IGD rumah sakit karena kejang berulang di seluruh tubuh. Pada pemeriksaan fisik, pasien tampak sadar namun kejang saat dirangsang. Terdapat kekakuan pada leher dan perut. Beberapa hari sebelumnya, jempol kaki/tangan kanan pasien tertusuk paku berkarat. Dokter mendiagnosisnya menderita tetanus. Bagaimana toksin tetanus menyebar pada kasus di atas?",
     "options": [
       "A. Toksin menyebar sepanjang serabut saraf melalui transpor aksonal retrograde",
-      "B. Toksin menyebar secara hematogen (melalui pembuluh darah)",
+      "B. Toksin menyebar secara hematogen",
       "C. Toksin menyebar sepanjang serabut saraf melalui transpor aksonal anterograde lambat",
       "D. Toksin menyebar melalui saluran limfatik",
       "E. Toksin menyebar sepanjang serabut saraf melalui transpor aksonal anterograde cepat"
@@ -1603,7 +1603,7 @@ const questions = [
       "A. Penyakit Raynaud",
       "B. Penyakit tromboflebitis tungkai",
       "C. Penyakit emboli arteri tungkai",
-      "D. Penyakit Buerger (Buerger's disease)",
+      "D. Penyakit Buerger",
       "E. Penyakit aterosklerosis"
     ],
     "answer": 3,
@@ -1617,7 +1617,7 @@ const questions = [
       "A. Penyakit Raynaud",
       "B. Penyakit tromboflebitis tungkai",
       "C. Penyakit emboli arteri tungkai",
-      "D. Penyakit Buerger (Buerger's disease)",
+      "D. Penyakit Buerger",
       "E. Penyakit aterosklerosis"
     ],
     "answer": 3,
