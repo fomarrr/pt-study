@@ -1124,6 +1124,46 @@
     </div>
   </div>
 
+  <!-- MODAL TERSEMBUNYI: SYNC PRIBADI (dibuka lewat pencarian "syncdevice") -->
+  <div id="psyncModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-xl border border-slate-100 max-w-lg w-full max-h-[92vh] overflow-y-auto custom-scrollbar p-6 animate-fade-in" role="dialog" aria-modal="true" aria-label="Sync Pribadi">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-base font-bold text-slate-900">Sync Pribadi</h3>
+        <button onclick="closePsyncModal()" aria-label="Tutup" class="text-slate-400 hover:text-slate-600 p-1">
+          <svg class="w-5 h-5 ph-icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg>
+        </button>
+      </div>
+            <div id="psyncBox" class="p-4 rounded-xl border border-slate-200 mb-4">
+        <div class="flex items-center justify-between gap-3 mb-1">
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-700">Sync Pribadi (opsional)</label>
+          <span id="psyncStatus" class="text-xs font-semibold text-slate-500">Belum diaktifkan</span>
+        </div>
+        <div id="psyncOff">
+          <p class="text-xs text-slate-500 mb-2.5 leading-relaxed">Khusus pemilik Worker Cloudflare. Setelah diaktifkan, progres otomatis tersinkron antar perangkat. Pengguna lain tidak perlu mengisi ini dan tetap bisa memakai link/QR di atas.</p>
+          <div class="space-y-2">
+            <input id="psyncUrl" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Alamat Worker (https://...workers.dev)" class="w-full bg-white border border-slate-200 text-slate-800 text-xs font-mono rounded-full px-4 py-2 focus:ring-2 focus:ring-medical-400 focus:outline-none" />
+            <input id="psyncToken" type="password" autocomplete="off" spellcheck="false" placeholder="Token" class="w-full bg-white border border-slate-200 text-slate-800 text-xs font-mono rounded-full px-4 py-2 focus:ring-2 focus:ring-medical-400 focus:outline-none" />
+            <button type="button" onclick="psyncActivate()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold px-4 py-2.5 rounded-full transition-all hover:shadow-md active:scale-95">Aktifkan</button>
+          </div>
+          <p id="psyncMsg" class="text-xs font-semibold mt-2 hidden"></p>
+        </div>
+        <div id="psyncOn" class="hidden">
+          <p class="text-xs text-slate-500 mb-2.5 leading-relaxed">Progres otomatis disinkronkan saat aplikasi dibuka, setelah Anda menjawab, dan saat berpindah tab. Data digabung per soal; jawaban yang lebih baru menang.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <button type="button" onclick="psyncSyncNow()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold px-4 py-2.5 rounded-full transition-all active:scale-95">Sinkronkan sekarang</button>
+            <button type="button" onclick="psyncCopySetup()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold px-4 py-2.5 rounded-full transition-all active:scale-95"><span id="psyncCopyText">Salin link setup perangkat lain</span></button>
+          </div>
+          <p class="text-[11px] text-slate-400 leading-snug mt-2">Link setup berisi token Anda. Jangan dibagikan ke orang lain.</p>
+          <button type="button" onclick="psyncDisable()" class="mt-2 text-[11px] font-semibold text-rose-600 hover:underline">Matikan di perangkat ini</button>
+        </div>
+      </div>
+
+      <div class="flex justify-end">
+        <button onclick="closePsyncModal()" class="px-5 py-2 rounded-full text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition-all active:scale-95">Tutup</button>
+      </div>
+    </div>
+  </div>
+
   <!-- MODAL: SYNC PROGRES ANTAR DEVICE (QR / LINK) -->
   <div id="syncModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
     <div class="bg-white rounded-2xl shadow-xl border border-slate-100 max-w-lg w-full max-h-[92vh] overflow-y-auto custom-scrollbar p-6 animate-fade-in">
@@ -1464,6 +1504,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       } catch (e) {
         console.error('Gagal menyimpan ke localStorage:', e);
       }
+      if (typeof psyncNoteChange === 'function') psyncNoteChange();
     }
 
     // Helper Akses Jawaban & Bookmark Berdasarkan Soal
@@ -1488,6 +1529,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
 
     function toggleBookmarkForQuestion(q) {
       if (!appState.sets[q._set]) appState.sets[q._set] = { answers: {}, bookmarks: {} };
+      appState.bmT = appState.bmT || {}; appState.bmT[q._set] = Date.now();
       if (appState.sets[q._set].bookmarks[q.id]) {
         delete appState.sets[q._set].bookmarks[q.id];
       } else {
@@ -1620,6 +1662,8 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
 
       // Dibuka dari link/QR sync perangkat lain
       handleIncomingSyncLink();
+      psyncInit();
+      psyncHandleSetupLink();
 
       // Versi lama sempat memakai service worker (PWA) -> lepaskan agar selalu memuat file terbaru
       removeLegacyServiceWorker();
@@ -2340,6 +2384,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         SET_KEYS.forEach(k => { appState.sets[k] = { answers: {}, bookmarks: {} }; });
         localStorage.removeItem(LEGACY_STORAGE_KEY);
       }
+      psyncMarkReset(scope === 'active' && SET_KEYS.includes(appState.activeSet) ? [appState.activeSet] : SET_KEYS);
 
       saveState();
       closeResetModal();
@@ -2581,6 +2626,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         });
         appState.carry = { v: 2, bySet };
       }
+      psyncMarkReset(applied);
       refreshAfterSync();
       const localWeak = weakTotal();
       const weakNote = dec.senderWeak >= 0 && dec.senderWeak !== localWeak
@@ -2682,7 +2728,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         });
       }
     }
-    window.addEventListener('hashchange', () => { if (/[#&]sync=/.test(location.hash) && allQuestions.length) handleIncomingSyncLink(); });
+    window.addEventListener('hashchange', () => { if (/[#&]sync=/.test(location.hash) && allQuestions.length) handleIncomingSyncLink(); if (/[#&]psync=/.test(location.hash) && allQuestions.length) psyncHandleSetupLink(); });
 
     function syncBaseUrl() { return location.href.split('#')[0]; }
 
@@ -2936,7 +2982,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       m.classList.add('hidden'); m.classList.remove('flex');
     }
     const isModalOpen = (id) => !document.getElementById(id).classList.contains('hidden');
-    const anyModalOpen = () => ['topicModal', 'resetModal', 'syncModal', 'setupModal', 'confirmModal', 'searchModal'].some(isModalOpen);
+    const anyModalOpen = () => ['topicModal', 'resetModal', 'syncModal', 'setupModal', 'confirmModal', 'searchModal', 'psyncModal'].some(isModalOpen);
 
     // ----- Soal lemah (salah / ragu) berdasarkan hasil terbaru -----
     // Status terbaru tiap soal: dari jawaban mode Belajar (src 'a') atau dari sesi latihan/ujian (src 's').
@@ -4002,7 +4048,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         title: 'Hapus sesi ini?',
         html: `<strong>${escapeHTML(rec.title)}</strong> (${fmtDate(rec.finishedAt)}) akan dihapus dari riwayat.`,
         okText: 'Hapus', danger: true,
-        onOk: () => { appState.history = appState.history.filter(r => r.id !== id); saveState(); renderHistory(); }
+        onOk: () => { appState.history = appState.history.filter(r => r.id !== id); appState.histDel = (appState.histDel || []).concat(id).slice(-300); saveState(); renderHistory(); }
       });
     }
     function confirmClearHistory() {
@@ -4010,7 +4056,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         title: 'Hapus semua riwayat?',
         html: 'Seluruh riwayat sesi di perangkat ini akan dihapus. Progres belajar <strong>tidak</strong> ikut terhapus.',
         okText: 'Hapus Semua', danger: true,
-        onOk: () => { appState.history = []; appState.carry = null; saveState(); renderHistory(); }
+        onOk: () => { appState.history = []; appState.carry = null; appState.histClearedAt = Date.now(); saveState(); renderHistory(); }
       });
     }
 
@@ -4045,6 +4091,305 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       }
       banner.innerHTML = html;
       banner.classList.toggle('hidden', !html);
+    }
+
+    // ==========================================================
+    // SYNC PRIBADI (opsional): Cloudflare Worker + KV, hanya aktif bila perangkat punya URL + token.
+    // Pindah Device lewat link/QR tidak berubah dan tetap berjalan tanpa ini.
+    // Dokumen yang disimpan: jawaban per soal (waktu terbaru menang), Ragu per paket, riwayat sesi (gabungan).
+    // ==========================================================
+    const PSYNC_LS = 'pt_psync_v1';
+    const PSYNC_PATH = '/pt';
+    let psyncCfg = null;            // { url, token, sig, last }
+    let psyncApplying = false;
+    let psyncBusy = false;
+    let psyncAgain = false;
+    let psyncTimer = null;
+    let psyncStatus = { kind: 'off', text: 'Belum diaktifkan' };
+
+    function psyncLoadCfg() {
+      try {
+        const c = JSON.parse(localStorage.getItem(PSYNC_LS) || 'null');
+        psyncCfg = c && c.url && c.token ? c : null;
+      } catch (e) { psyncCfg = null; }
+      if (psyncCfg) psyncStatus = { kind: 'idle', text: 'Aktif' };
+    }
+    function psyncSaveCfg() {
+      try { if (psyncCfg) localStorage.setItem(PSYNC_LS, JSON.stringify(psyncCfg)); else localStorage.removeItem(PSYNC_LS); } catch (e) {}
+    }
+    function psyncSetStatus(kind, text) {
+      psyncStatus = { kind, text };
+      if (psyncCfg && kind === 'ok') { psyncCfg.last = Date.now(); psyncSaveCfg(); }
+      psyncRenderUI();
+    }
+    function psyncNormUrl(u) {
+      u = String(u || '').trim().replace(/\/+$/, '');
+      if (!/^https?:\/\//i.test(u)) u = 'https://' + u;
+      u = u.replace(/\/pt$/i, '');
+      return u;
+    }
+
+    function psyncCanon(v) {
+      if (Array.isArray(v)) return '[' + v.map(psyncCanon).join(',') + ']';
+      if (v && typeof v === 'object') return '{' + Object.keys(v).sort().map(k => JSON.stringify(k) + ':' + psyncCanon(v[k])).join(',') + '}';
+      return JSON.stringify(v === undefined ? null : v);
+    }
+
+    function psyncBuildDoc() {
+      const sets = {};
+      SET_KEYS.forEach(k => {
+        const st = appState.sets[k] || { answers: {}, bookmarks: {} };
+        const a = {};
+        Object.keys(st.answers || {}).forEach(id => {
+          const x = st.answers[id];
+          if (x && Number.isInteger(x.selected)) a[id] = { selected: x.selected, isCorrect: !!x.isCorrect, timestamp: Number(x.timestamp) || 0 };
+        });
+        const b = Object.keys(st.bookmarks || {}).filter(id => st.bookmarks[id]);
+        sets[k] = { a, b, r: (appState.resetAt && appState.resetAt[k]) || 0, bt: (appState.bmT && appState.bmT[k]) || 0 };
+      });
+      return {
+        v: 1, t: Date.now(), sets,
+        hist: appState.history || [],
+        hc: appState.histClearedAt || 0,
+        hd: appState.histDel || [],
+        carry: appState.carry || null
+      };
+    }
+
+    // Gabungkan dua dokumen. Murni (tanpa efek samping) supaya mudah diuji.
+    function psyncMerge(L, R) {
+      if (!R) return L;
+      if (!L) return R;
+      const out = { v: 1, t: Math.max(L.t || 0, R.t || 0), sets: {} };
+      SET_KEYS.forEach(k => {
+        const l = (L.sets && L.sets[k]) || { a: {}, b: [], r: 0, bt: 0 };
+        const r = (R.sets && R.sets[k]) || { a: {}, b: [], r: 0, bt: 0 };
+        const RS = Math.max(l.r || 0, r.r || 0);       // reset / impor terakhir
+        const a = {};
+        const ids = new Set([...Object.keys(l.a || {}), ...Object.keys(r.a || {})]);
+        ids.forEach(id => {
+          const x = l.a && l.a[id], y = r.a && r.a[id];
+          const okX = x && ((l.r || 0) === RS || x.timestamp >= RS);
+          const okY = y && ((r.r || 0) === RS || y.timestamp >= RS);
+          if (okX && okY) a[id] = (y.timestamp > x.timestamp) ? y : x;
+          else if (okX) a[id] = x;
+          else if (okY) a[id] = y;
+        });
+        let b;
+        if ((l.bt || 0) > (r.bt || 0)) b = l.b || [];
+        else if ((r.bt || 0) > (l.bt || 0)) b = r.b || [];
+        else b = Array.from(new Set([...(l.b || []), ...(r.b || [])]));
+        out.sets[k] = { a, b: b.slice().sort(), r: RS, bt: Math.max(l.bt || 0, r.bt || 0) };
+      });
+      // riwayat: gabungan menurut id; tidak memunculkan lagi yang sudah dihapus
+      out.hc = Math.max(L.hc || 0, R.hc || 0);
+      out.hd = Array.from(new Set([...(L.hd || []), ...(R.hd || [])])).slice(-300);
+      const del = new Set(out.hd);
+      const seen = new Map();
+      [...(L.hist || []), ...(R.hist || [])].forEach(h => {
+        if (!h || !h.id || typeof h.finishedAt !== 'number') return;
+        if (del.has(h.id) || h.finishedAt < out.hc) return;
+        if (!seen.has(h.id)) seen.set(h.id, h);
+      });
+      out.hist = Array.from(seen.values()).sort((x, y) => y.finishedAt - x.finishedAt).slice(0, HISTORY_LIMIT);
+      // status Salah/Ragu hasil Pindah Device: per paket, yang waktunya terbaru
+      const lc = L.carry && L.carry.bySet, rc = R.carry && R.carry.bySet;
+      if (lc && rc) {
+        const by = {};
+        new Set([...Object.keys(lc), ...Object.keys(rc)]).forEach(k => {
+          const x = lc[k], y = rc[k];
+          by[k] = !x ? y : !y ? x : ((y.t || 0) > (x.t || 0) ? y : x);
+        });
+        out.carry = { v: 2, bySet: by };
+      } else out.carry = lc ? L.carry : (rc ? R.carry : null);
+      return out;
+    }
+
+    function psyncApplyDoc(doc) {
+      psyncApplying = true;
+      try {
+        appState.resetAt = appState.resetAt || {};
+        appState.bmT = appState.bmT || {};
+        SET_KEYS.forEach(k => {
+          const d = doc.sets && doc.sets[k];
+          if (!d) return;
+          const answers = {};
+          Object.keys(d.a || {}).forEach(id => { answers[id] = { selected: d.a[id].selected, isCorrect: !!d.a[id].isCorrect, timestamp: d.a[id].timestamp }; });
+          const bookmarks = {};
+          (d.b || []).forEach(id => { bookmarks[id] = true; });
+          appState.sets[k] = { answers, bookmarks };
+          appState.resetAt[k] = d.r || 0;
+          appState.bmT[k] = d.bt || 0;
+        });
+        appState.history = Array.isArray(doc.hist) ? doc.hist : [];
+        appState.histClearedAt = doc.hc || 0;
+        appState.histDel = Array.isArray(doc.hd) ? doc.hd : [];
+        appState.carry = doc.carry || null;
+        refreshAfterSync();
+      } finally { psyncApplying = false; }
+    }
+
+    async function psyncGzip(str) {
+      const u8 = new TextEncoder().encode(str);
+      if (typeof CompressionStream === 'undefined') return { body: u8, enc: 'none' };
+      return { body: await streamBytes(u8, new CompressionStream('gzip')), enc: 'gzip' };
+    }
+    async function psyncGunzip(buf, enc) {
+      let u8 = new Uint8Array(buf);
+      if (enc === 'gzip') u8 = await streamBytes(u8, new DecompressionStream('gzip'));
+      return new TextDecoder().decode(u8);
+    }
+    async function psyncFetch(method, body, enc, keepalive) {
+      const ctl = new AbortController();
+      const to = setTimeout(() => ctl.abort(), 20000);
+      try {
+        const headers = { Authorization: 'Bearer ' + psyncCfg.token };
+        if (method === 'PUT') { headers['Content-Type'] = 'application/octet-stream'; headers['X-Enc'] = enc; }
+        return await fetch(psyncCfg.url + PSYNC_PATH, { method, headers, body, signal: ctl.signal, cache: 'no-store', keepalive: !!keepalive && body && body.byteLength < 60000 });
+      } finally { clearTimeout(to); }
+    }
+
+    // Satu putaran: ambil -> gabungkan -> terapkan -> kirim bila ada yang berubah
+    async function psyncRun(reason) {
+      if (!psyncCfg) return;
+      if (psyncBusy) { psyncAgain = true; return; }
+      if (appState.session && !document.getElementById('sessionView').classList.contains('hidden')) {
+        psyncSetStatus('wait', 'Ditunda sampai sesi selesai'); return;   // jangan ubah jawaban saat ujian berjalan
+      }
+      psyncBusy = true;
+      psyncSetStatus('busy', 'Menyinkronkan...');
+      try {
+        const r = await psyncFetch('GET');
+        if (r.status === 401) throw Object.assign(new Error('Token salah.'), { fatal: true });
+        if (r.status === 404) throw Object.assign(new Error('Worker belum diperbarui (path /pt tidak dikenal).'), { fatal: true });
+        if (r.status !== 200 && r.status !== 204) throw new Error('Server membalas ' + r.status);
+        let remote = null;
+        if (r.status === 200) {
+          const text = await psyncGunzip(await r.arrayBuffer(), r.headers.get('X-Enc') || 'none');
+          remote = JSON.parse(text);
+          if (!remote || remote.v !== 1) throw new Error('Format data di server tidak dikenali.');
+        }
+        const local = psyncBuildDoc();
+        const merged = psyncMerge(local, remote);
+        const strip = d => { const c = Object.assign({}, d); delete c.t; return psyncCanon(c); };
+        const mSig = strip(merged);
+        if (mSig !== strip(local)) psyncApplyDoc(merged);
+        if (!remote || mSig !== strip(remote)) {
+          const { body, enc } = await psyncGzip(JSON.stringify(merged));
+          const p = await psyncFetch('PUT', body, enc, reason === 'hide');
+          if (!p.ok) throw new Error(p.status === 503 ? 'Batas harian KV tercapai, coba lagi besok.' : 'Gagal menyimpan (' + p.status + ').');
+        }
+        psyncCfg.sig = mSig;
+        psyncSetStatus('ok', 'Tersinkron ' + new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' }));
+      } catch (e) {
+        const msg = e && e.name === 'AbortError' ? 'Server tidak merespons.' : (e && e.fatal ? e.message : (navigator.onLine === false ? 'Sedang offline.' : ((e && e.message) || 'Gagal.')));
+        psyncSetStatus('err', msg);
+      } finally {
+        psyncBusy = false;
+        if (psyncAgain) { psyncAgain = false; psyncSchedule(1500); }
+      }
+    }
+    function psyncSchedule(ms) {
+      if (!psyncCfg) return;
+      clearTimeout(psyncTimer);
+      psyncTimer = setTimeout(() => psyncRun('change'), ms == null ? 5000 : ms);
+    }
+    function psyncNoteChange() { if (psyncCfg && !psyncApplying) psyncSchedule(); }
+
+    function psyncMarkReset(keys) {   // dipanggil saat reset progres / muat dari Pindah Device
+      const now = Date.now();
+      appState.resetAt = appState.resetAt || {}; appState.bmT = appState.bmT || {};
+      keys.forEach(k => { appState.resetAt[k] = now; appState.bmT[k] = now; });
+    }
+
+    // ---- UI di dalam modal Pindah Device ----
+    function psyncRenderUI() {
+      const box = document.getElementById('psyncBox');
+      if (!box) return;
+      const on = !!psyncCfg;
+      document.getElementById('psyncOff').classList.toggle('hidden', on);
+      document.getElementById('psyncOn').classList.toggle('hidden', !on);
+      const st = document.getElementById('psyncStatus');
+      if (st) {
+        const cls = { ok: 'text-emerald-600', err: 'text-rose-600', busy: 'text-slate-500', wait: 'text-amber-600', idle: 'text-slate-500', off: 'text-slate-500' }[psyncStatus.kind] || 'text-slate-500';
+        st.className = 'text-xs font-semibold ' + cls;
+        st.textContent = psyncStatus.text;
+      }
+      const msg = document.getElementById('psyncMsg');
+      if (msg && on) msg.classList.add('hidden');
+    }
+    async function psyncActivate() {
+      const url = psyncNormUrl(document.getElementById('psyncUrl').value);
+      const token = document.getElementById('psyncToken').value.trim();
+      const msg = document.getElementById('psyncMsg');
+      msg.classList.remove('hidden');
+      if (!document.getElementById('psyncUrl').value.trim() || token.length < 16) {
+        msg.className = 'text-xs font-semibold mt-2 text-rose-600';
+        msg.textContent = 'Isi alamat Worker dan token (minimal 16 karakter).';
+        return;
+      }
+      psyncCfg = { url, token, sig: '', last: 0 };
+      psyncSaveCfg();
+      msg.className = 'text-xs font-semibold mt-2 text-slate-500';
+      msg.textContent = 'Mencoba terhubung...';
+      await psyncRun('activate');
+      if (psyncStatus.kind === 'err') {
+        const m = psyncStatus.text;
+        psyncCfg = null; psyncSaveCfg();
+        psyncStatus = { kind: 'off', text: 'Belum diaktifkan' };
+        psyncRenderUI();
+        msg.classList.remove('hidden');
+        msg.className = 'text-xs font-semibold mt-2 text-rose-600';
+        msg.textContent = 'Gagal: ' + m;
+      } else {
+        document.getElementById('psyncToken').value = '';
+        psyncRenderUI();
+      }
+    }
+    function psyncSyncNow() { psyncRun('manual'); }
+    function psyncDisable() {
+      showConfirm({
+        title: 'Matikan sync pribadi?',
+        html: 'Perangkat ini tidak akan lagi terhubung ke Worker. Progres di perangkat ini dan di server <strong>tidak dihapus</strong>.',
+        okText: 'Matikan', danger: true,
+        onOk: () => { clearTimeout(psyncTimer); psyncCfg = null; psyncSaveCfg(); psyncStatus = { kind: 'off', text: 'Belum diaktifkan' }; psyncRenderUI(); }
+      });
+    }
+    function psyncSetupLink() {
+      if (!psyncCfg) return '';
+      return syncBaseUrl() + '#psync=' + encodeURIComponent(psyncCfg.url + '|' + psyncCfg.token);
+    }
+    function psyncCopySetup() {
+      const link = psyncSetupLink();
+      const done = () => { const b = document.getElementById('psyncCopyText'); if (b) { b.textContent = 'Tersalin'; setTimeout(() => { b.textContent = 'Salin link setup perangkat lain'; }, 1800); } };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(link).then(done).catch(() => prompt('Salin link ini:', link));
+      else prompt('Salin link ini:', link);
+    }
+    // Link setup: #psync=URL|TOKEN
+    function psyncHandleSetupLink() {
+      const m = location.hash.match(/[#&]psync=([^&]+)/);
+      if (!m) return false;
+      try { history.replaceState(null, '', location.pathname + location.search); } catch (e) { location.hash = ''; }
+      let u = '', t = '';
+      try { const raw = decodeURIComponent(m[1]); const i = raw.lastIndexOf('|'); u = raw.slice(0, i); t = raw.slice(i + 1); } catch (e) {}
+      if (!u || t.length < 16) { showConfirm({ title: 'Link setup tidak valid', html: 'Link sync pribadi rusak atau tidak lengkap.', cancelText: 'Tutup' }); return true; }
+      showConfirm({
+        title: 'Aktifkan sync pribadi di perangkat ini?',
+        html: 'Progres perangkat ini akan <strong>digabung</strong> dengan progres di server Anda (jawaban yang lebih baru menang). Tidak ada yang dihapus.',
+        okText: 'Aktifkan', cancelText: 'Batal',
+        onOk: () => { psyncCfg = { url: psyncNormUrl(u), token: t, sig: '', last: 0 }; psyncSaveCfg(); psyncRenderUI(); psyncRun('activate'); }
+      });
+      return true;
+    }
+    function psyncInit() {
+      psyncLoadCfg();
+      psyncRenderUI();
+      if (psyncCfg) psyncRun('start');
+      document.addEventListener('visibilitychange', () => {
+        if (!psyncCfg) return;
+        if (document.hidden) { clearTimeout(psyncTimer); psyncRun('hide'); } else psyncRun('show');
+      });
+      window.addEventListener('online', () => psyncRun('online'));
     }
 
     // ===== RINGKASAN RIWAYAT UNTUK SYNC =====
@@ -4175,6 +4520,13 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       const list = document.getElementById('searchResults');
       const footer = document.getElementById('searchFooter');
       searchQueryRaw = raw;
+      if (raw.toLowerCase() === 'syncdevice') {   // pintu masuk tersembunyi ke Sync Pribadi
+        searchMatches = [];
+        summary.textContent = 'Menu tersembunyi.';
+        list.innerHTML = `<button type="button" onclick="openPsyncModal()" class="w-full text-left bg-white hover:bg-slate-50 border border-slate-200/60 rounded-xl px-4 py-3 transition"><div class="text-sm font-bold text-slate-800">Sync Pribadi</div><div class="text-xs text-slate-500 mt-0.5">Sinkronkan progres otomatis lewat Worker Cloudflare Anda.</div></button>`;
+        footer.classList.add('hidden'); footer.classList.remove('flex');
+        return;
+      }
       if (raw.length < 2) {
         searchMatches = [];
         summary.textContent = 'Ketik minimal 2 huruf. Beberapa kata = semua kata harus ada.';
@@ -4230,7 +4582,18 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       footer.classList.toggle('flex', res.length > 0);
     }
 
+    function openPsyncModal() {
+      closeSearch();
+      const m = document.getElementById('psyncModal');
+      m.classList.remove('hidden'); m.classList.add('flex');
+      psyncRenderUI();
+    }
+    function closePsyncModal() {
+      const m = document.getElementById('psyncModal');
+      m.classList.add('hidden'); m.classList.remove('flex');
+    }
     function openFirstSearchResult() {
+      if (document.getElementById('searchInput').value.trim().toLowerCase() === 'syncdevice') { openPsyncModal(); return; }
       if (searchMatches.length) openSearchResult(searchMatches[0].q._uid);
     }
 
@@ -4267,6 +4630,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         if (isModalOpen('confirmModal')) { document.getElementById('confirmCancelBtn').click(); return; }
         if (isModalOpen('setupModal')) { closeSetup(); return; }
         if (isModalOpen('searchModal')) { closeSearch(); return; }
+        if (isModalOpen('psyncModal')) { closePsyncModal(); return; }
       }
       if (e.ctrlKey || e.metaKey || e.altKey) return;
       if (anyModalOpen()) return;
