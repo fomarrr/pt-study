@@ -53,7 +53,7 @@ const questions3 = [
       "E. Toxin menjalar retrograde"
     ],
     "answer": 4,
-    "rationale": "Toksin tetanus (tetanospasmin) masuk melalui ujung saraf motorik di neuromuscular junction, kemudian dibawa di dalam vesikel pembawa (Tet-NT carriers) menyusuri akson neuron motorik secara mundur (transpor aksonal retrograd) menuju badan sel di sistem saraf pusat dan interneuron inhibitorik untuk menghambat pelepasan neurotransmiter inhibitorik (eksositosis GABA/glisin)."
+    "rationale": "Toksin tetanus (tetanospasmin) masuk melalui ujung saraf motorik di neuromuscular junction, kemudian dibawa di dalam vesikel pembawa (Tet-NT carriers) menyusuri akson neuron motorik secara mundur (transpor aksonal retrograd) menuju badan sel di sistem saraf pusat dan interneuron inhibitorik untuk menghambat pelepasan neurotransmiter inhibitorik (eksositosis GABA/glisin).\nAnalisis opsi lain:\n(1) Rapid anterograde salah; toksin tetanus masuk ke saraf lalu bergerak menuju badan sel, bukan menjauhi badan sel.\n(2) Slow anterograde salah; bukan jalur toksin menuju sistem saraf pusat.\n(3) Hematogen salah; penyebaran lewat darah dapat membawa toksin ke berbagai ujung saraf, tetapi transpor ke sistem saraf pusat berlangsung melalui akson.\n(4) Limfatik salah; jalur limfe dapat ikut menyebarkan toksin, tetapi bukan mekanisme utama yang ditanyakan."
   },
   {
     "id": 5,
@@ -67,7 +67,7 @@ const questions3 = [
       "E. Adanya kontraksi tonik pembuluh darah pulmonal"
     ],
     "answer": 4,
-    "rationale": "Selama masa intrauterin, paru-paru janin dipenuhi oleh cairan (pilihan C pada sitasi soal sebelumnya) yang menyebabkan tekanan dan resistensi vaskular paru menjadi tinggi.\nSebagai respons fisiologis utamanya, terjadi vasokonstriksi/kontraksi tonik pada pembuluh darah arteriol pulmonal sehingga darah dialihkan (shunting) menuju sirkulasi sistemik ke seluruh tubuh selain paru-paru."
+    "rationale": "Selama masa intrauterin, paru-paru janin dipenuhi oleh cairan (pilihan C pada sitasi soal sebelumnya) yang menyebabkan tekanan dan resistensi vaskular paru menjadi tinggi.\nSebagai respons fisiologis utamanya, terjadi vasokonstriksi/kontraksi tonik pada pembuluh darah arteriol pulmonal sehingga darah dialihkan (shunting) menuju sirkulasi sistemik ke seluruh tubuh selain paru-paru.\nAnalisis opsi lain:\n(1) Alveoli yang kolaps salah; berkontribusi pada resistensi paru janin, tetapi kunci file memilih kontraksi tonik pembuluh darah pulmonal sebagai faktor dasar yang mempertahankan resistensi tinggi.\n(2) Terbentuknya foramen ovale salah; merupakan jalur pintas akibat resistensi paru yang tinggi, bukan penyebabnya.\n(3) Adanya cairan yang memenuhi paru salah menurut kunci file ini, tetapi menjadi kunci pada PT 35; cairan di paru memang menjadi bagian dari keadaan janin, sehingga kunci berbeda antar-paket (lihat catatan lintas paket).\n(4) Terbentuknya duktus arteriosus salah; juga jalur pintas akibat resistensi paru yang tinggi, bukan penyebabnya.\nCatatan lintas paket: Konflik kunci: soal yang sama di PT 38 (no. 27) berkunci adanya kontraksi tonik pembuluh darah pulmonal (sama dengan paket ini), tetapi di PT 35 (no. 109) berkunci adanya cairan yang memenuhi paru."
   },
   {
     "id": 6,
@@ -95,7 +95,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 0,
-    "rationale": "Keluhan nyeri dada mendadak disertai bising ejeksi sistolik pada batas sternum kanan atas (area auskultasi katup aorta), peningkatan JVP (akibat penekanan vena kava superior), dan gambaran pelebaran/penggembungan segmen aorta asendens menegakkan diagnosis Aneurisma Aorta Asendens (Ascending aorta aneurysm)."
+    "rationale": "Keluhan nyeri dada mendadak disertai bising ejeksi sistolik pada batas sternum kanan atas (area auskultasi katup aorta), peningkatan JVP (akibat penekanan vena kava superior), dan gambaran pelebaran/penggembungan segmen aorta asendens menegakkan diagnosis Aneurisma Aorta Asendens (Ascending aorta aneurysm).\nAnalisis opsi lain:\n(1) Stenosis katup mitral salah; bising diastolik di apeks dengan tanda gagal jantung kiri, bukan bising ejeksi sistolik di batas sternum kanan atas.\n(2) Infark miokard salah; nyeri dada dengan perubahan EKG dan enzim jantung, tanpa pelebaran aorta asendens pada pencitraan.\n(3) Efusi perikardium salah; bunyi jantung menjauh dan siluet jantung membesar, bukan pelebaran aorta asendens."
   },
   {
     "id": 8,
@@ -109,7 +109,7 @@ const questions3 = [
       "E. Observasi"
     ],
     "answer": 3,
-    "rationale": "Pasien mengalami Sindrom Koroner Akut (NSTEMI / Wellens syndrome) dengan nyeri dada sejak 12 jam SMRS disertai peningkatan marka enzim jantung.\nSebelum dilakukan tindakan definitif kateterisasi jantung (PCI), tatalaksana medikamentosa awal yang harus segera diberikan meliputi terapi antiplatelet (aspirin), antikoagulan dengan Heparin, serta nitrat dan beta-blocker (bila pasien tidak hipotensi)."
+    "rationale": "Pasien mengalami Sindrom Koroner Akut (NSTEMI / Wellens syndrome) dengan nyeri dada sejak 12 jam SMRS disertai peningkatan marka enzim jantung.\nSebelum dilakukan tindakan definitif kateterisasi jantung (PCI), tatalaksana medikamentosa awal yang harus segera diberikan meliputi terapi antiplatelet (aspirin), antikoagulan dengan Heparin, serta nitrat dan beta-blocker (bila pasien tidak hipotensi).\nAnalisis opsi lain:\n(1) PCI segera salah; pasien tanpa instabilitas hemodinamik dan tanpa elevasi ST yang mengharuskan reperfusi emergensi, sehingga strategi invasif dilakukan setelah terapi medikamentosa awal dan stratifikasi risiko.\n(2) NSAID salah; tidak menjadi terapi sindrom koroner akut dan dapat meningkatkan risiko kardiovaskular.\n(3) Kortikosteroid salah; tidak menjadi terapi standar sindrom koroner akut.\n(4) Observasi salah; peningkatan enzim jantung menandakan nekrosis miokard sehingga memerlukan terapi aktif."
   },
   {
     "id": 9,
@@ -123,7 +123,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 0,
-    "rationale": "Pada sindrom nefrotik, keluarnya protein secara masif melalui urin (proteinuria) menyebabkan penurunan kadar albumin serum (hipoalbuminemia), yang secara langsung mengakibatkan penurunan tekanan onkotik plasma intravaskular sehingga cairan berpindah ke ruang interstisial dan menimbulkan edema anasarka."
+    "rationale": "Pada sindrom nefrotik, keluarnya protein secara masif melalui urin (proteinuria) menyebabkan penurunan kadar albumin serum (hipoalbuminemia), yang secara langsung mengakibatkan penurunan tekanan onkotik plasma intravaskular sehingga cairan berpindah ke ruang interstisial dan menimbulkan edema anasarka.\nAnalisis opsi lain:\n(1) Peningkatan tekanan intravaskular salah; menjadi mekanisme edema pada gagal jantung atau obstruksi vena, bukan pada hipoalbuminemia.\n(2) Peningkatan permeabilitas vaskular salah; terjadi pada edema inflamasi atau alergi.\n(3) Peningkatan volume intravaskular salah; terjadi pada retensi natrium primer (misalnya glomerulonefritis akut), sedangkan pada sindrom nefrotik penyebab utamanya adalah hipoalbuminemia."
   },
   {
     "id": 10,
@@ -137,7 +137,7 @@ const questions3 = [
       "E. Rhabdomyolisis akut"
     ],
     "answer": 0,
-    "rationale": "Kelemahan keempat ekstremitas yang bersifat akut dan progresif (ascending paralysis) hingga melibatkan otot pernapasan (napas terasa berat), yang didahului oleh riwayat demam/infeksi saluran napas atau gastrointestinal sebelumnya akibat reaksi autoimun yang merusak selubung mielin saraf tepi, merupakan gambaran khas Guillain-Barré Syndrome (GBS)."
+    "rationale": "Kelemahan keempat ekstremitas yang bersifat akut dan progresif (ascending paralysis) hingga melibatkan otot pernapasan (napas terasa berat), yang didahului oleh riwayat demam/infeksi saluran napas atau gastrointestinal sebelumnya akibat reaksi autoimun yang merusak selubung mielin saraf tepi, merupakan gambaran khas Guillain-Barré Syndrome (GBS).\nAnalisis opsi lain:\n(1) Krisis kolinergik salah; disertai tanda muskarinik (hipersalivasi, miosis, bradikardia) akibat kelebihan antikolinesterase.\n(2) Krisis miastenia salah; terjadi pada pasien miastenia gravis dengan kelemahan fluktuatif tanpa gangguan sensorik.\n(3) Mielitis transversa salah; umumnya dengan batas sensorik yang jelas, gangguan sfingter, dan refleks meningkat, bukan refleks normal tanpa refleks patologis.\n(4) Rabdomiolisis akut salah; ditandai nyeri otot, mioglobinuria, dan kadar CK sangat tinggi."
   },
   {
     "id": 11,
@@ -151,7 +151,7 @@ const questions3 = [
       "E. Syok Septik"
     ],
     "answer": 1,
-    "rationale": "Pasien mengalami hipotensi berat (TD 70/48 mmHg), takikardia (110x/menit), dan tanda hipoperfusi perifer (akral dingin) yang disertai tanda gagal jantung kiri/kanan (ortopnea tidur dengan 2 bantal, PND, ronki basah halus basal paru bilateral, edema tungkai) akibat infark miokard akut anterior (elevasi segmen ST dan gelombang Q patologis di sadapan anterior), sehingga menegakkan diagnosis Syok Kardiogenik."
+    "rationale": "Pasien mengalami hipotensi berat (TD 70/48 mmHg), takikardia (110x/menit), dan tanda hipoperfusi perifer (akral dingin) yang disertai tanda gagal jantung kiri/kanan (ortopnea tidur dengan 2 bantal, PND, ronki basah halus basal paru bilateral, edema tungkai) akibat infark miokard akut anterior (elevasi segmen ST dan gelombang Q patologis di sadapan anterior), sehingga menegakkan diagnosis Syok Kardiogenik.\nPembahasan lebih lengkap (dari PT 36, no. 68):\nPasien datang dalam kondisi syok sirkulasi (tekanan darah 70/48 mmHg, takikardia 110x/menit, dan hipoperfusi jaringan perifer berupa akral dingin) yang disertai tanda kongesti gagal jantung kiri dan kanan (ortopnea tidur dengan 2 bantal, paroxysmal nocturnal dyspnea, ronki basah halus di 1/3 basal kedua paru, serta edema tungkai bilateral) akibat Infark Miokard Akut dengan Elevasi Segmen ST (STEMI) dinding anterior yang luas (ST elevasi dan gelombang Q patologis di sadapan anterior).\nKegagalan pompa ventrikel kiri primer akibat infark miokard yang menyebabkan penurunan curah jantung drastis disertai kongesti vaskular (profil hemodinamik Cold and Wet) menegakkan diagnosis Syok Kardiogenik.\nAnalisis pilihan lain (jenis syok lainnya):\nSyok hipovolemik ditandai profil Cold and Dry akibat kehilangan volume darah/cairan tanpa kongesti paru.\nSyok obstruktif disebabkan hambatan mekanik pengisian/pengosongan jantung (seperti tamponade jantung, tension pneumothorax, atau emboli paru masif), sedangkan Syok distributif (termasuk syok septik dan anafilaktik) disebabkan vasodilatasi sistemik masif yang pada fase awal ditandai akral hangat.\nCatatan lintas paket: Soal yang sama muncul di PT 32 (no. 23), PT 34 (no. 71), dan PT 36 (no. 68) dengan jawaban yang sama (syok Kardiogenik).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 36."
   },
   {
     "id": 12,
@@ -165,7 +165,7 @@ const questions3 = [
       "E. Gagal jantung dekompensasi akut"
     ],
     "answer": 4,
-    "rationale": "Pasien dengan riwayat penyakit jantung koroner yang putus obat datang dengan perburukan gejala gagal jantung akut disertai distres napas berat, desaturasi (SpO2 85%), ronki basah halus di seluruh lapangan paru, dan edema tungkai bilateral dengan tekanan darah tinggi (165/100 mmHg, bukan syok kardiogenik), sehingga diagnosis utamanya adalah Gagal Jantung Dekompensasi Akut (ADHF) yang bermanifestasi sebagai edema paru akut."
+    "rationale": "Pasien dengan riwayat penyakit jantung koroner yang putus obat datang dengan perburukan gejala gagal jantung akut disertai distres napas berat, desaturasi (SpO2 85%), ronki basah halus di seluruh lapangan paru, dan edema tungkai bilateral dengan tekanan darah tinggi (165/100 mmHg, bukan syok kardiogenik), sehingga diagnosis utamanya adalah Gagal Jantung Dekompensasi Akut (ADHF) yang bermanifestasi sebagai edema paru akut.\nPembahasan lebih lengkap (dari PT 32, no. 3):\nPasien memiliki riwayat Penyakit Jantung Koroner (serangan jantung dan pemasangan stent 3 tahun lalu, gambaran gelombang Q patologis dengan ST elevasi menetap di V1–V6 mencerminkan Old Myocardial Infarction / OMI anterior luas atau aneurisma ventrikel kiri pasca-infark) dan riwayat putus obat selama 3 bulan yang memicu perburukan akut dalam 3 jam terakhir.\nKondisi ini menegakkan diagnosis Gagal Jantung Dekompensasi Akut (Acute Decompensated Heart Failure / ADHF, opsi E, pada file kedua berada di Nomor 82).\nBerdasarkan diagram Central Illustration JACC Heart Failure pada slide pembahasan, rinciannya sebagai berikut.\n(1) Mengapa dipilih Gagal Jantung Dekompensasi Akut (opsi E) dibandingkan Edema Paru Akut (opsi B): meskipun pasien jelas mengalami manifestasi klinis Edema Paru Akut (Acute Lung Oedema / ALO, ditandai ronki basah halus di seluruh lapang paru dan desaturasi SpO2 85%), pasien juga memiliki tanda kongesti sistemik (edema tungkai bilateral) dan riwayat gagal jantung kronik yang mengalami dekompensasi akut karena putus obat, sehingga diagnosis 'Gagal jantung dekompensasi akut' (profil hemodinamik Wet and Warm) merupakan diagnosis payung yang paling komprehensif mencakup gagal jantung kiri dan kanan.\n(2) Mengapa bukan Syok Kardiogenik (opsi A): karena tekanan darah pasien masih tinggi yaitu 165/100 mmHg (tidak hipotensi/tidak syok).\n(3) Tatalaksana segera fase darurat meliputi pemberian oksigen/ventilasi non-invasif, vasodilator (nitrat) karena TD tinggi, dan diuretik loop IV (furosemid).\nCatatan lintas paket: Soal yang sama muncul di PT 32 (no. 3) dengan jawaban yang sama (gagal jantung dekompensasi akut).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 32."
   },
   {
     "id": 13,
@@ -179,7 +179,7 @@ const questions3 = [
       "E. Eosinofil sekret hidung"
     ],
     "answer": 2,
-    "rationale": "Pemeriksaan penunjang untuk menegakkan diagnosis rinitis alergi meliputi pemeriksaan darah, sekret hidung, dan tes cukit kulit (skin prick test sebagai baku emas di layanan kesehatan lanjut).\nPada fasilitas layanan kesehatan primer, pemeriksaan yang dapat dilakukan adalah pemeriksaan kadar eosinofil dan IgE total darah, serta pemeriksaan objektif hitung eosinofil dari sekret hidung."
+    "rationale": "Pemeriksaan penunjang untuk menegakkan diagnosis rinitis alergi meliputi pemeriksaan darah, sekret hidung, dan tes cukit kulit (skin prick test sebagai baku emas di layanan kesehatan lanjut).\nPada fasilitas layanan kesehatan primer, pemeriksaan yang dapat dilakukan adalah pemeriksaan kadar eosinofil dan IgE total darah, serta pemeriksaan objektif hitung eosinofil dari sekret hidung.\nAnalisis opsi lain:\n(1) CD4 sel darah salah; pemeriksaan imunodefisiensi HIV, bukan alergi.\n(2) IgE spesifik darah salah; memerlukan pemeriksaan penunjang lanjutan yang umumnya tidak tersedia di layanan primer.\n(3) IgE spesifik sekret hidung salah; bukan pemeriksaan rutin di layanan primer.\n(4) Eosinofil sekret hidung salah; dapat mendukung rinitis alergi, tetapi pilihan yang ditetapkan kunci sebagai pemeriksaan di layanan primer adalah IgE total darah."
   },
   {
     "id": 14,
@@ -193,7 +193,7 @@ const questions3 = [
       "E. Glikolisis"
     ],
     "answer": 2,
-    "rationale": "Setelah kelaparan/puasa berlangsung selama 48 jam (2 hari), cadangan glikogen hati telah habis terpakai sehingga mekanisme utama tubuh untuk menyediakan energi guna bertahan hidup beralih ke pemecahan cadangan lemak di jaringan adiposa yaitu proses Lipolisis."
+    "rationale": "Setelah kelaparan/puasa berlangsung selama 48 jam (2 hari), cadangan glikogen hati telah habis terpakai sehingga mekanisme utama tubuh untuk menyediakan energi guna bertahan hidup beralih ke pemecahan cadangan lemak di jaringan adiposa yaitu proses Lipolisis.\nAnalisis opsi lain:\n(1) Glukoneogenesis salah; berjalan dari asam amino dan gliserol, tetapi bukan mekanisme utama yang menyediakan energi pada puasa dua hari.\n(2) Glikogenolisis salah; cadangan glikogen hati habis dalam sekitar 24 jam puasa.\n(3) Hidrolisis lipid salah; istilah ini bukan nama jalur metabolik yang dimaksud, sedangkan lipolisis adalah proses pemecahan trigliserida pada jaringan lemak.\n(4) Glikolisis salah; memerlukan glukosa sebagai substrat, padahal cadangan glukosa sudah menipis."
   },
   {
     "id": 15,
@@ -207,7 +207,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 0,
-    "rationale": "Pasien mengalami kejang berulang selama 2 jam disertai penurunan kesadaran pascakejang (status epileptikus).\nDalam konteks akut lini pertama diberikan golongan benzodiazepin (diazepam), kemudian diikuti pemberian obat antiepilepsi lini kedua/rumatan, untuk bangkitan kejang umum pilihan utamanya adalah Asam Valproat, sedangkan untuk bangkitan fokal pilihan utamanya adalah Karbamazepin."
+    "rationale": "Pasien mengalami kejang berulang selama 2 jam disertai penurunan kesadaran pascakejang (status epileptikus).\nDalam konteks akut lini pertama diberikan golongan benzodiazepin (diazepam), kemudian diikuti pemberian obat antiepilepsi lini kedua/rumatan, untuk bangkitan kejang umum pilihan utamanya adalah Asam Valproat, sedangkan untuk bangkitan fokal pilihan utamanya adalah Karbamazepin.\nAnalisis opsi lain:\n(1) Karbamazepin salah; obat pilihan untuk bangkitan fokal dan tidak dipakai sebagai terapi kejang akut yang berlangsung lama."
   },
   {
     "id": 16,
@@ -235,7 +235,7 @@ const questions3 = [
       "E. Hiperpigmentasi"
     ],
     "answer": 1,
-    "rationale": "Penggunaan kortikosteroid topikal jangka panjang menimbulkan efek samping lokal pada kulit berupa penipisan epidermis dan dermis sehingga kulit tampak keriput dan tipis menyerupai kertas rokok (atrofi kulit seperti cigarette paper), striae, telangiektasis, serta hipopigmentasi (bukan hiperpigmentasi)."
+    "rationale": "Penggunaan kortikosteroid topikal jangka panjang menimbulkan efek samping lokal pada kulit berupa penipisan epidermis dan dermis sehingga kulit tampak keriput dan tipis menyerupai kertas rokok (atrofi kulit seperti cigarette paper), striae, telangiektasis, serta hipopigmentasi (bukan hiperpigmentasi).\nAnalisis opsi lain:\n(1) Insufisiensi adrenal salah; supresi aksis adrenal terutama pada steroid sistemik atau topikal potensi sangat tinggi dalam area luas, bukan efek lokal yang khas.\n(2) Hepatotoksisitas salah; bukan efek samping kortikosteroid topikal.\n(3) Nefrotoksisitas salah; bukan efek samping kortikosteroid topikal.\n(4) Hiperpigmentasi salah; efek samping yang terjadi adalah hipopigmentasi."
   },
   {
     "id": 18,
@@ -277,7 +277,7 @@ const questions3 = [
       "E. Riwayat penggunaan alkohol"
     ],
     "answer": 1,
-    "rationale": "Celecoxib merupakan OAINS penghambat selektif COX-2.\nKeunggulannya adalah lebih aman bagi mukosa lambung dibandingkan OAINS non-selektif karena tidak menghambat COX-1 (yang memproduksi PGE2 pelindung mukosa lambung).\nNamun, penghambatan selektif COX-2 endotel menurunkan produksi prostasiklin (PGI2 yang berfungsi sebagai vasodilator dan penghambat agregasi trombosit) sementara COX-1 trombosit tetap memproduksi tromboksan A2 (TXA2 yang memicu vasokonstriksi dan agregasi trombosit), sehingga meningkatkan risiko trombosis kardiovaskular dan harus dihindari pada pasien dengan riwayat infark miokard atau stroke."
+    "rationale": "Celecoxib merupakan OAINS penghambat selektif COX-2.\nKeunggulannya adalah lebih aman bagi mukosa lambung dibandingkan OAINS non-selektif karena tidak menghambat COX-1 (yang memproduksi PGE2 pelindung mukosa lambung).\nNamun, penghambatan selektif COX-2 endotel menurunkan produksi prostasiklin (PGI2 yang berfungsi sebagai vasodilator dan penghambat agregasi trombosit) sementara COX-1 trombosit tetap memproduksi tromboksan A2 (TXA2 yang memicu vasokonstriksi dan agregasi trombosit), sehingga meningkatkan risiko trombosis kardiovaskular dan harus dihindari pada pasien dengan riwayat infark miokard atau stroke.\nCatatan lintas paket: Soal yang sama muncul di PT 35 (no. 88) dan PT 38 (no. 15) dengan jawaban yang sama (riwayat infark miokard)."
   },
   {
     "id": 21,
@@ -291,7 +291,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 0,
-    "rationale": "Pasien mengalami delirium akut (gelisah, agitasi, bicara meracau) akibat ensefalopati uremikum pada gagal ginjal kronik yang tidak terkontrol.\nTatalaksana farmakologis lini pertama untuk mengatasi agitasi akut pada pasien delirium di IGD adalah pemberian antipsikotik tipikal potensi tinggi dosis rendah secara parenteral, yaitu Injeksi Haloperidol 2,5–5 mg IM."
+    "rationale": "Pasien mengalami delirium akut (gelisah, agitasi, bicara meracau) akibat ensefalopati uremikum pada gagal ginjal kronik yang tidak terkontrol.\nTatalaksana farmakologis lini pertama untuk mengatasi agitasi akut pada pasien delirium di IGD adalah pemberian antipsikotik tipikal potensi tinggi dosis rendah secara parenteral, yaitu Injeksi Haloperidol 2,5–5 mg IM.\nAnalisis opsi lain:\n(1) Haloperidol oral 5 mg salah; pasien agitatif dan sulit kooperatif sehingga jalur parenteral dosis rendah lebih cepat dan aman, dan dosis oral lebih besar kurang sesuai pada gagal ginjal.\n(2) Injeksi diazepam 20 mg salah; dosis terlalu tinggi dan benzodiazepin dapat memperberat penurunan kesadaran serta delirium pada ensefalopati uremikum.\n(3) Clobazam oral salah; golongan benzodiazepin yang tidak dipilih untuk delirium."
   },
   {
     "id": 22,
@@ -375,7 +375,7 @@ const questions3 = [
       "E. Corynebacterium diphteria"
     ],
     "answer": 0,
-    "rationale": "Batuk keras paroksismal selama 2 minggu disertai muntah pascabatuk dan petekie/perdarahan subkonjungtiva pada anak yang belum pernah divaksinasi merupakan gambaran klasik Pertusis yang disebabkan oleh Bordetella pertussis.\nAnalisis pilihan lain (bakteri lain):\nHaemophilus influenzae menyebabkan epiglotitis akut, otitis media, atau sinusitis.\nStreptococcus pyogenes menyebabkan faringitis bakterialis akut.\nStreptococcus pneumoniae menyebabkan pneumonia, sedangkan Corynebacterium diphtheriae menyebabkan difteri dengan ciri khas pseudomembran keabu-abuan dan bull neck."
+    "rationale": "Batuk keras paroksismal selama 2 minggu disertai muntah pascabatuk dan petekie/perdarahan subkonjungtiva pada anak yang belum pernah divaksinasi merupakan gambaran klasik Pertusis yang disebabkan oleh Bordetella pertussis.\nAnalisis pilihan lain (bakteri lain):\nHaemophilus influenzae menyebabkan epiglotitis akut, otitis media, atau sinusitis.\nStreptococcus pyogenes menyebabkan faringitis bakterialis akut.\nStreptococcus pneumoniae menyebabkan pneumonia, sedangkan Corynebacterium diphtheriae menyebabkan difteri dengan ciri khas pseudomembran keabu-abuan dan bull neck.\nCatatan lintas paket: Soal yang sama muncul di PT 34 (no. 32), PT 34 (no. 34), dan PT 35 (no. 65) dengan jawaban yang sama (bordetella Pertussis)."
   },
   {
     "id": 28,
@@ -389,7 +389,7 @@ const questions3 = [
       "E. Gangguan depresi"
     ],
     "answer": 3,
-    "rationale": "Munculnya defisit neurologis motorik berupa kelemahan pada kedua tungkai kaki yang dipicu oleh konflik/stresor psikologis di tempat kerja (ketidaknyamanan akibat atasan baru) dengan hasil pemeriksaan neurologis objektif yang sepenuhnya normal merupakan tanda khas Gangguan Konversi."
+    "rationale": "Munculnya defisit neurologis motorik berupa kelemahan pada kedua tungkai kaki yang dipicu oleh konflik/stresor psikologis di tempat kerja (ketidaknyamanan akibat atasan baru) dengan hasil pemeriksaan neurologis objektif yang sepenuhnya normal merupakan tanda khas Gangguan Konversi.\nAnalisis opsi lain:\n(1) Gangguan penyesuaian salah; gejala emosional atau perilaku akibat stresor tanpa defisit motorik yang menyerupai kelainan neurologis.\n(2) Gangguan cemas menyeluruh salah; kecemasan berlebihan menetap selama sedikitnya 6 bulan.\n(3) Gangguan waham menetap salah; terdapat waham yang menetap, tidak dijumpai pada kasus ini.\n(4) Gangguan depresi salah; gejala utama adalah afek depresif dan kehilangan minat, bukan kelemahan tungkai tanpa kelainan neurologis."
   },
   {
     "id": 29,
@@ -417,7 +417,7 @@ const questions3 = [
       "E. Pubarche prematur"
     ],
     "answer": 2,
-    "rationale": "Pada anak laki-laki, Pubertas Terlambat (Delayed Puberty) ditegakkan apabila belum ditemukan tanda seks sekunder pertama berupa pembesaran volume testis (volume testis masih <4 mL, yaitu 2 mL/2 mL) dan belum ada pertumbuhan rambut pubis (Tanner stage P1) pada usia ≥14 tahun (onset pubertas normal laki-laki adalah 9,5–13,5 tahun, sedangkan pada perempuan 8–10/13 tahun yang ditandai breast budding Tanner stage M2).\nPubertas terlambat diklasifikasikan menjadi hipogonadisme hipergonadotropik primer (seperti sindrom Klinefelter, sindrom Turner, radiasi/infeksi) dan hipogonadisme hipogonadotropik sekunder (seperti sindrom Kallmann, sindrom Prader-Willi, lesi hipofisis, atau gangguan nutrisi)."
+    "rationale": "Pada anak laki-laki, Pubertas Terlambat (Delayed Puberty) ditegakkan apabila belum ditemukan tanda seks sekunder pertama berupa pembesaran volume testis (volume testis masih <4 mL, yaitu 2 mL/2 mL) dan belum ada pertumbuhan rambut pubis (Tanner stage P1) pada usia ≥14 tahun (onset pubertas normal laki-laki adalah 9,5–13,5 tahun, sedangkan pada perempuan 8–10/13 tahun yang ditandai breast budding Tanner stage M2).\nPubertas terlambat diklasifikasikan menjadi hipogonadisme hipergonadotropik primer (seperti sindrom Klinefelter, sindrom Turner, radiasi/infeksi) dan hipogonadisme hipogonadotropik sekunder (seperti sindrom Kallmann, sindrom Prader-Willi, lesi hipofisis, atau gangguan nutrisi).\nAnalisis opsi lain:\n(1) Pubertas normal tidak sesuai karena tanda pubertas belum muncul pada usia 14 tahun.\n(2) Pubertas prekoks dan pubarke prematur adalah pubertas yang terlalu dini.\n(5) Constitutional delay of growth and puberty adalah penyebab tersering pubertas terlambat, tetapi penegakannya memerlukan riwayat keluarga dengan pola serupa dan usia tulang yang terlambat yang tidak disebutkan dalam soal.\nCatatan lintas paket: Soal yang sama muncul di PT 29 (no. 17) dengan jawaban yang sama (pubertas terlambat).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 29 (no. 17)."
   },
   {
     "id": 31,
@@ -445,7 +445,7 @@ const questions3 = [
       "E. ramus clitoridis"
     ],
     "answer": 0,
-    "rationale": "Prosedur blok saraf pudendus bilateral untuk mengurangi nyeri perineum pada kala II persalinan dilakukan dengan menyuntikkan anestesi lokal di dekat trunkus utama Nervus Pudendus yang berasal dari pleksus sakralis segmen S2, S3, dan S4 (sebelum saraf tersebut bercabang menjadi N. rectalis inferior / ramus analis inferior, N. perinealis, dan N. dorsalis clitoridis)."
+    "rationale": "Prosedur blok saraf pudendus bilateral untuk mengurangi nyeri perineum pada kala II persalinan dilakukan dengan menyuntikkan anestesi lokal di dekat trunkus utama Nervus Pudendus yang berasal dari pleksus sakralis segmen S2, S3, dan S4 (sebelum saraf tersebut bercabang menjadi N. rectalis inferior / ramus analis inferior, N. perinealis, dan N. dorsalis clitoridis).\nPembahasan lebih lengkap (dari PT 30, no. 19):\nBerdasarkan gambar ilustrasi anatomi prosedur Pudendal Nerve Block (Blok Saraf Pudendus transvaginal) pada slide pembahasan: Nervus Pudendus berasal dari ramus anterior saraf spinalis segmen sakral S2, S3, dan S4.\nSaraf utama ini keluar dari pelvis melalui foramen ischiadikum majus, melingkari bagian posterior Spina Ischiadica (ischial spine) dan ligamentum sakrospinosum, lalu masuk ke perineum melalui foramen ischiadikum minus di dalam Kanalis Pudendalis (Alcock's canal) sebelum akhirnya bercabang menjadi 3 cabang terminal (yaitu: [1] N. analis/rektalis inferior, [2] N. perinealis/labialis posterior, dan [3] N. dorsalis klitoridis).\nAgar seluruh daerah perineum, vulva, dan sepertiga bawah vagina terbius secara efektif saat persalinan Kala II maupun penjahitan episiotomi, jarum anestesi lokal (menggunakan terompet pengarah Iowa trumpet) diarahkan secara transvaginal dengan panduan jari telunjuk meraba Spina Ischiadica untuk menembus ligamentum sakrospinosum tepat di sebelah medial dan posterior spina ischiadica, guna memblokade batang utama Nervus Pudendus (N. pudenda utama dari S2, S3, dan S4, opsi A) sebelum saraf tersebut bercabang-cabang.\nAnalisis opsi lain:\n(2) N. klitoridis rami dorsalis,\n(3) ramus analis inferior,\n(4) ramus perinealis dan ramus klitoridis adalah cabang-cabang yang akan ikut terblok bila trunkus diblok, tetapi bukan target blok.\nCatatan lintas paket: Soal yang sama muncul di PT 29 (no. 104) dan PT 30 (no. 19) dengan jawaban yang sama (n. pudenda utama (dari S2, S3, dan S4)).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 30, PT 29 (no. 104)."
   },
   {
     "id": 33,
@@ -459,7 +459,7 @@ const questions3 = [
       "E. krim gentian violet"
     ],
     "answer": 1,
-    "rationale": "Lesi plak eritematosa basah (madidans) pada kondisi kulit lembap yang dikelilingi oleh lesi satelit dengan susunan korimbiformis (seperti induk ayam dikelilingi anak-anaknya) merupakan gambaran klasik Kandidiasis Kutis.\nSesuai PPK PERDOSKI, terapi topikal lini pertama untuk kandidiasis kutis adalah krim golongan imidazol seperti Mikonazol 2% krim atau Klotrimazol 1% krim (selama 14-28 hari), Nistatin krim, atau Ketokonazol 2% krim."
+    "rationale": "Lesi plak eritematosa basah (madidans) pada kondisi kulit lembap yang dikelilingi oleh lesi satelit dengan susunan korimbiformis (seperti induk ayam dikelilingi anak-anaknya) merupakan gambaran klasik Kandidiasis Kutis.\nSesuai PPK PERDOSKI, terapi topikal lini pertama untuk kandidiasis kutis adalah krim golongan imidazol seperti Mikonazol 2% krim atau Klotrimazol 1% krim (selama 14-28 hari), Nistatin krim, atau Ketokonazol 2% krim.\nAnalisis opsi lain:\n(1) Krim griseofulvin salah; griseofulvin dipakai secara oral untuk dermatofitosis, bukan untuk kandidiasis kutis.\n(2) Krim metronidazol salah; antibakteri dan antiprotozoa, tidak aktif terhadap Candida.\n(3) Krim nistatin salah menurut kunci file; nistatin memang aktif terhadap Candida tetapi pilihan lini pertama dalam pedoman adalah imidazol (mikonazol atau klotrimazol).\n(4) Krim gentian violet salah; antiseptik alternatif yang tidak menjadi pilihan lini pertama."
   },
   {
     "id": 34,
@@ -487,7 +487,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 1,
-    "rationale": "Pasien mengalami bangkitan kejang umum seluruh tubuh (gejala motorik prominen tonik-klonik) sebanyak 3 kali berturut-turut tanpa pemulihan kesadaran di antara bangkitan kejang, sehingga memenuhi kriteria diagnosis Status Epileptikus Konvulsivus.\nAnalisis pilihan lain (jenis bangkitan lain):\nMioklonik berupa kedutan/sentakan (jerking) singkat.\nTonik hanya berupa kekakuan/kontraksi otot, sedangkan Fokal terbatas pada satu bagian hemisfer."
+    "rationale": "Pasien mengalami bangkitan kejang umum seluruh tubuh (gejala motorik prominen tonik-klonik) sebanyak 3 kali berturut-turut tanpa pemulihan kesadaran di antara bangkitan kejang, sehingga memenuhi kriteria diagnosis Status Epileptikus Konvulsivus.\nAnalisis pilihan lain (jenis bangkitan lain):\nMioklonik berupa kedutan/sentakan (jerking) singkat.\nTonik hanya berupa kekakuan/kontraksi otot, sedangkan Fokal terbatas pada satu bagian hemisfer.\nAnalisis opsi lain:\n(1) Epilepsi mioklonik salah; berupa sentakan singkat dengan kesadaran umumnya terjaga.\n(2) Epilepsi tonik salah; berupa kekakuan otot tanpa fase klonik.\n(3) Status epileptikus nonkonvulsivus salah; manifestasi motorik minimal, sedangkan pasien mengalami kejang seluruh tubuh berulang."
   },
   {
     "id": 36,
@@ -501,7 +501,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 2,
-    "rationale": "Berdasarkan kriteria PPDGJ-III (F45.2), keyakinan atau preokupasi yang menetap bahwa dirinya menderita satu penyakit fisik yang serius (seperti penyakit jantung) meskipun hasil pemeriksaan fisik dan penunjang berulang menunjukkan hasil normal serta pasien menolak menerima penjelasan dokter disebut Gangguan Hipokondrik.\nSebagai perbandingan:\nGangguan somatisasi ditandai oleh keluhan fisik multipel yang berubah-ubah dari banyak sistem organ, sedangkan Gangguan psikosomatis adalah kondisi medis organik nyata yang gejalanya diperberat oleh stresor psikologis."
+    "rationale": "Berdasarkan kriteria PPDGJ-III (F45.2), keyakinan atau preokupasi yang menetap bahwa dirinya menderita satu penyakit fisik yang serius (seperti penyakit jantung) meskipun hasil pemeriksaan fisik dan penunjang berulang menunjukkan hasil normal serta pasien menolak menerima penjelasan dokter disebut Gangguan Hipokondrik.\nSebagai perbandingan:\nGangguan somatisasi ditandai oleh keluhan fisik multipel yang berubah-ubah dari banyak sistem organ, sedangkan Gangguan psikosomatis adalah kondisi medis organik nyata yang gejalanya diperberat oleh stresor psikologis.\nCatatan lintas paket: Soal yang sama muncul di PT 36 (no. 57) dengan jawaban yang sama (gangguan hipokondrik)."
   },
   {
     "id": 37,
@@ -515,7 +515,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 1,
-    "rationale": "Keluhan disuria dan duh tubuh uretra purulen (nanah) pascahubungan seksual berisiko disertai temuan pewarnaan Gram berupa bakteri diplokokus Gram-negatif intraseluler dan ekstraseluler (dengan PMN >5/LPB pada laki-laki atau >30/LPB pada perempuan) menegakkan diagnosis Uretritis Gonore (Neisseria gonorrhoeae)."
+    "rationale": "Keluhan disuria dan duh tubuh uretra purulen (nanah) pascahubungan seksual berisiko disertai temuan pewarnaan Gram berupa bakteri diplokokus Gram-negatif intraseluler dan ekstraseluler (dengan PMN >5/LPB pada laki-laki atau >30/LPB pada perempuan) menegakkan diagnosis Uretritis Gonore (Neisseria gonorrhoeae).\nAnalisis opsi lain:\n(1) Uretritis nonspesifik salah; pewarnaan Gram tidak menunjukkan diplokokus intrasel Gram-negatif.\n(2) Limfogranuloma venereum salah; disebabkan Chlamydia trachomatis serotipe L1 sampai L3 dengan ulkus kecil dan limfadenopati inguinal (bubo).\n(3) Sifilis salah; khas dengan ulkus tidak nyeri (chancre) dan tidak disertai duh purulen dengan diplokokus."
   },
   {
     "id": 38,
@@ -529,7 +529,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 3,
-    "rationale": "Pada penyelam pemula (yang sering menahan napas atau mengalami ventilasi inadekuat saat naik ke permukaan), penurunan tekanan lingkungan secara mendadak menyebabkan udara di dalam paru mengembang berlebih sesuai Hukum Boyle (barotrauma paru) hingga alveolus pecah (ruptur alveolus), sehingga udara bocor ke jaringan sekitar menimbulkan pneumotoraks, pneumomediastinum, dan emfisema subkutis di leher."
+    "rationale": "Pada penyelam pemula (yang sering menahan napas atau mengalami ventilasi inadekuat saat naik ke permukaan), penurunan tekanan lingkungan secara mendadak menyebabkan udara di dalam paru mengembang berlebih sesuai Hukum Boyle (barotrauma paru) hingga alveolus pecah (ruptur alveolus), sehingga udara bocor ke jaringan sekitar menimbulkan pneumotoraks, pneumomediastinum, dan emfisema subkutis di leher.\nAnalisis opsi lain:\n(1) Akumulasi nitrogen salah; merupakan mekanisme penyakit dekompresi atau narkosis nitrogen, bukan emfisema subkutis akibat barotrauma paru.\n(2) Tekanan oksigen yang menurun salah; menjelaskan hipoksia, bukan krepitasi leher akibat udara bocor.\n(3) Alveolus kolaps akibat tekanan paru meningkat salah; mekanismenya berlawanan, yaitu udara mengembang berlebihan hingga alveolus pecah."
   },
   {
     "id": 39,
@@ -543,7 +543,7 @@ const questions3 = [
       "E. Anemia defisiensi besi"
     ],
     "answer": 0,
-    "rationale": "Temuan klinis cepat lelah dan perdarahan mukosa (gusi berdarah) disertai gambaran laboratorium pansitopenia (anemia normositik normokromik, leukopenia, dan trombositopenia) pada pekerja pabrik industri cat disebabkan oleh paparan kronis senyawa benzena.\nMetabolit benzena (kuinon toksik dan radikal bebas) merusak DNA, memicu apoptosis sel progenitor awal, dan menyebabkan deplesi sel punca hematopoietik di sumsum tulang sehingga menimbulkan Anemia Aplastik."
+    "rationale": "Temuan klinis cepat lelah dan perdarahan mukosa (gusi berdarah) disertai gambaran laboratorium pansitopenia (anemia normositik normokromik, leukopenia, dan trombositopenia) pada pekerja pabrik industri cat disebabkan oleh paparan kronis senyawa benzena.\nMetabolit benzena (kuinon toksik dan radikal bebas) merusak DNA, memicu apoptosis sel progenitor awal, dan menyebabkan deplesi sel punca hematopoietik di sumsum tulang sehingga menimbulkan Anemia Aplastik.\nCatatan lintas paket: Soal yang sama muncul di PT 35 (no. 64) dan PT 36 (no. 36) dengan jawaban yang sama (anemia aplastik)."
   },
   {
     "id": 40,
@@ -571,7 +571,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 2,
-    "rationale": "Sesak napas episodik disertai bunyi mengi (wheezing) pada auskultasi paru dengan riwayat keluhan serupa saat masa remaja (SMP) merupakan gambaran klasik Asma Bronkial."
+    "rationale": "Sesak napas episodik disertai bunyi mengi (wheezing) pada auskultasi paru dengan riwayat keluhan serupa saat masa remaja (SMP) merupakan gambaran klasik Asma Bronkial.\nAnalisis opsi lain:\n(1) Pneumonia salah; disertai demam dan ronki, bukan sesak episodik dengan mengi.\n(2) Pneumotoraks salah; nyeri dada tiba-tiba dengan suara napas melemah dan perkusi hipersonor.\n(3) Tuberkulosis paru salah; batuk lama lebih dari 2 minggu disertai demam dan penurunan berat badan."
   },
   {
     "id": 42,
@@ -585,7 +585,7 @@ const questions3 = [
       "E. Campak"
     ],
     "answer": 0,
-    "rationale": "Berdasarkan jadwal imunisasi Kemenkes RI dan rekomendasi IDAI 2024, bayi berusia 10 bulan yang baru menyelesaikan imunisasi dasar hingga usia 6 bulan harus segera mendapatkan imunisasi kejar (catch-up) untuk jadwal usia 9 bulan yang terlewat, yaitu vaksin Campak-Rubela / Measles dan Rubella (MR)."
+    "rationale": "Berdasarkan jadwal imunisasi Kemenkes RI dan rekomendasi IDAI 2024, bayi berusia 10 bulan yang baru menyelesaikan imunisasi dasar hingga usia 6 bulan harus segera mendapatkan imunisasi kejar (catch-up) untuk jadwal usia 9 bulan yang terlewat, yaitu vaksin Campak-Rubela / Measles dan Rubella (MR).\nPembahasan lebih lengkap (dari PT 33, no. 21):\nBerdasarkan Jadwal Imunisasi Anak Kemenkes RI dan rekomendasi IDAI: rangkaian imunisasi dasar primer pada 6 bulan pertama meliputi HB-0 (saat lahir <24 jam), BCG dan OPV-1 (usia 1 bulan), DPT-HB-Hib 1 + OPV-2 + PCV-1 + RV-1 (usia 2 bulan), DPT-HB-Hib 2 + OPV-3 + PCV-2 + RV-2 (usia 3 bulan), serta DPT-HB-Hib 3 + OPV-4 + IPV-1 + RV-3 (usia 4 bulan).\nJadwal imunisasi dasar wajib berikutnya adalah pada usia 9 bulan, yaitu pemberian vaksin Campak-Rubela (Measles and Rubella / MR, karena program imunisasi nasional telah mengganti vaksin campak monovalen menjadi vaksin kombinasi MR).\nKarena bayi B saat ini berusia 10 bulan dan baru menyelesaikan imunisasi hingga usia 6 bulan, maka imunisasi kejar (catch-up) yang harus diberikan saat ini adalah Measles and Rubella (MR, opsi A).\nCatatan lintas paket: Soal yang sama muncul di PT 32 (no. 93) dan PT 33 (no. 21) dengan jawaban yang sama (measles dan Rubella).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 33."
   },
   {
     "id": 43,
@@ -599,7 +599,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 0,
-    "rationale": "Prevalensi (prevalence) mengukur proporsi seluruh individu yang menyandang suatu penyakit pada populasi dalam periode waktu tertentu, yang mencakup gabungan kasus baru/akut (incident cases) maupun kasus lama/kronis yang sudah ada sebelumnya (sedangkan ukuran yang hanya menghitung kasus baru saja disebut insidensi / incidence)."
+    "rationale": "Prevalensi (prevalence) mengukur proporsi seluruh individu yang menyandang suatu penyakit pada populasi dalam periode waktu tertentu, yang mencakup gabungan kasus baru/akut (incident cases) maupun kasus lama/kronis yang sudah ada sebelumnya (sedangkan ukuran yang hanya menghitung kasus baru saja disebut insidensi / incidence).\nAnalisis opsi lain:\n(1) Kasus baru 20% salah; ukuran kasus baru adalah insidensi, bukan prevalensi.\n(2) Kasus di populasi risiko rendah 20% salah; prevalensi dihitung terhadap seluruh populasi, bukan hanya kelompok risiko tertentu.\n(3) Kasus di populasi risiko tinggi 20% salah; alasan yang sama."
   },
   {
     "id": 44,
@@ -613,7 +613,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 2,
-    "rationale": "Berdasarkan Guideline-Directed Medical Therapy (GDMT) untuk penyakit jantung iskemik stabil dan pasca-infark miokard (post-MI / ACS) disertai gagal jantung, terapi lini pertama utama untuk mengontrol tekanan darah sekaligus menurunkan mortalitas adalah golongan Beta-blocker (seperti bisoprolol, carvedilol, atau metoprolol suksinat) bersama ACE inhibitor/ARB."
+    "rationale": "Berdasarkan Guideline-Directed Medical Therapy (GDMT) untuk penyakit jantung iskemik stabil dan pasca-infark miokard (post-MI / ACS) disertai gagal jantung, terapi lini pertama utama untuk mengontrol tekanan darah sekaligus menurunkan mortalitas adalah golongan Beta-blocker (seperti bisoprolol, carvedilol, atau metoprolol suksinat) bersama ACE inhibitor/ARB.\nAnalisis opsi lain:\n(1) ACE inhibitor salah menurut kunci file; ACE inhibitor juga bermanfaat pada pasca infark dan diabetes, tetapi kunci memilih beta blocker sebagai pilihan utama pada riwayat serangan jantung.\n(2) Antagonis kalsium salah; tidak menurunkan mortalitas pascainfark dan golongan non-dihidropiridin dihindari pada gangguan fungsi jantung."
   },
   {
     "id": 45,
@@ -627,7 +627,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 3,
-    "rationale": "Mata kanan hanya membutuhkan koreksi lensa sferis negatif (S -3.00) sehingga didiagnosis sebagai Miopia simpleks, sedangkan mata kiri membutuhkan gabungan lensa sferis negatif dan silindris negatif (S -1.50 C -0.75 x 180) sehingga didiagnosis sebagai Astigmatisma Miopia Kompositus (Compound Myopic Astigmatism)."
+    "rationale": "Mata kanan hanya membutuhkan koreksi lensa sferis negatif (S -3.00) sehingga didiagnosis sebagai Miopia simpleks, sedangkan mata kiri membutuhkan gabungan lensa sferis negatif dan silindris negatif (S -1.50 C -0.75 x 180) sehingga didiagnosis sebagai Astigmatisma Miopia Kompositus (Compound Myopic Astigmatism).\nAnalisis opsi lain:\n(1) Miopic astigmatism kiri kanan salah; mata kanan hanya membutuhkan lensa sferis tanpa silinder sehingga tidak astigmatisma.\n(2) Miopi kanan, simple astigmatism kiri salah; simple astigmatism hanya membutuhkan silinder tanpa sferis, sedangkan mata kiri membutuhkan sferis dan silinder.\n(3) Simple miopic astigmatism kanan, compound astigmatism kiri salah; mata kanan tidak memiliki komponen silinder."
   },
   {
     "id": 46,
@@ -655,7 +655,7 @@ const questions3 = [
       "E. Spontaneous bacterial peritonitis"
     ],
     "answer": 2,
-    "rationale": "Keluhan nyeri akut di regio epigastrium yang menembus/menjalar ke punggung disertai peningkatan kadar enzim amilase (480 U/L) dan lipase (550 U/L) lebih dari 3 kali batas atas nilai normal memenuhi kriteria diagnosis Pankreatitis Akut."
+    "rationale": "Keluhan nyeri akut di regio epigastrium yang menembus/menjalar ke punggung disertai peningkatan kadar enzim amilase (480 U/L) dan lipase (550 U/L) lebih dari 3 kali batas atas nilai normal memenuhi kriteria diagnosis Pankreatitis Akut.\nPembahasan lebih lengkap (dari PT 36, no. 119):\nBerdasarkan kriteria Atlanta (Revised Atlanta Classification), diagnosis Pankreatitis Akut ditegakkan apabila memenuhi minimal 2 dari 3 kriteria sebagai berikut.\n(1) Nyeri perut akut yang khas, yaitu nyeri epigastrium hebat yang bersifat konstan dan sering menjalar/menembus ke punggung (boring pain), membaik bila pasien duduk membungkuk ke depan (knee-chest position).\n(2) Peningkatan kadar enzim Lipase serum dan/atau Amilase serum ≥3 kali batas atas nilai normal (pada pasien ini amilase 480 U/L dan lipase 550 U/L, di mana lipase lebih spesifik untuk pankreas dan bertahan meningkat lebih lama di darah).\n(3) Temuan pencitraan yang khas untuk pankreatitis akut pada USG abdomen, CT scan abdomen dengan kontras, atau MRI.\nDua etiologi tersering pankreatitis akut adalah batu saluran empedu (gallstone pancreatitis, sering tercetus pascamakan berlemak) dan konsumsi alkohol kronis.\nCatatan lintas paket: Soal yang sama muncul di PT 36 (no. 119) dengan jawaban yang sama (pankreatitis akut).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 36."
   },
   {
     "id": 48,
@@ -669,7 +669,7 @@ const questions3 = [
       "E. Polineuropati"
     ],
     "answer": 0,
-    "rationale": "Gambaran 'onion bulb' (susunan lamela sel Schwann yang berlapis-lapis secara konsentris menyerupai bawang) terbentuk akibat proses dasar Demielinisasi berulang yang diikuti oleh upaya Remielinisasi yang gagal/abortif pada neuropati perifer kronis (pada catatan diskusi PT 37 disebutkan demielinisasi sebagai penyebab dasar yang memicu siklus tersebut dan remielinisasi sebagai pembentuk struktur konsentrisnya)."
+    "rationale": "Gambaran 'onion bulb' (susunan lamela sel Schwann yang berlapis-lapis secara konsentris menyerupai bawang) terbentuk akibat proses dasar Demielinisasi berulang yang diikuti oleh upaya Remielinisasi yang gagal/abortif pada neuropati perifer kronis (pada catatan diskusi PT 37 disebutkan demielinisasi sebagai penyebab dasar yang memicu siklus tersebut dan remielinisasi sebagai pembentuk struktur konsentrisnya).\nAnalisis opsi lain:\n(1) Wallerian degeneration salah; degenerasi akson bagian distal setelah cedera atau transeksi, bukan lamela konsentris sel Schwann.\n(2) Remielinisasi salah; bagian dari siklus perbaikan, tetapi proses dasar yang menimbulkan gambaran ini adalah demielinisasi berulang.\n(3) Degenerasi akson salah; kerusakan akson tidak membentuk lamela konsentris sel Schwann.\n(4) Polineuropati salah; istilah klinis untuk kerusakan banyak saraf tepi, bukan proses patologis pembentuk onion bulb."
   },
   {
     "id": 49,
@@ -683,7 +683,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 2,
-    "rationale": "Berdasarkan catatan pembahasan PT 37 untuk soal ini, peningkatan jumlah trombosit (trombositosis reaktif) pada pasien anemia terjadi melalui mekanisme stimulasi/pemicuan jalur Thrombopoietin (serta secara fisiologis dipicu juga oleh peningkatan eritropoietin akibat hipoksia anemia yang menstimulasi seri megakariosit)."
+    "rationale": "Berdasarkan catatan pembahasan PT 37 untuk soal ini, peningkatan jumlah trombosit (trombositosis reaktif) pada pasien anemia terjadi melalui mekanisme stimulasi/pemicuan jalur Thrombopoietin (serta secara fisiologis dipicu juga oleh peningkatan eritropoietin akibat hipoksia anemia yang menstimulasi seri megakariosit).\nAnalisis opsi lain:\n(1) Perbedaan pooling salah; tidak menjelaskan trombositosis reaktif pada anemia.\n(2) Memicu eritropoetin salah menurut kunci file; eritropoetin meningkat pada anemia, tetapi mekanisme trombositosis yang ditetapkan kunci adalah pemicuan trombopoietin."
   },
   {
     "id": 50,
@@ -697,7 +697,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 0,
-    "rationale": "Pil KB yang hanya mengandung progestin (progestin-only pill / minipil) memiliki keunggulan utama yaitu aman dan boleh digunakan oleh ibu menyusui karena tidak menekan produksi ASI.\nSebaliknya, kontrasepsi yang mengandung hormon estrogen tidak direkomendasikan pada ibu menyusui (terutama <6 bulan pascapersalinan) karena kadar estrogen yang tinggi menghambat kerja prolaktin dalam memproduksi ASI."
+    "rationale": "Pil KB yang hanya mengandung progestin (progestin-only pill / minipil) memiliki keunggulan utama yaitu aman dan boleh digunakan oleh ibu menyusui karena tidak menekan produksi ASI.\nSebaliknya, kontrasepsi yang mengandung hormon estrogen tidak direkomendasikan pada ibu menyusui (terutama <6 bulan pascapersalinan) karena kadar estrogen yang tinggi menghambat kerja prolaktin dalam memproduksi ASI.\nAnalisis opsi lain:\n(1) Merupakan pilihan KB jangka panjang salah; minipil diminum setiap hari pada jam yang sama, bukan kontrasepsi jangka panjang seperti implan atau AKDR.\n(2) Boleh digunakan setelah haid kembali normal salah; minipil tidak mensyaratkan menunggu haid normal pada ibu menyusui.\n(3) Boleh digunakan setelah anak memulai MPASI salah; tidak ada syarat menunggu MPASI, dan keunggulannya justru boleh dipakai selama menyusui."
   },
   {
     "id": 51,
@@ -725,7 +725,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 3,
-    "rationale": "Trias mata merah dengan penurunan visus mendadak (2/60), nyeri okular hebat menjalar ke kepala disertai mual-muntah dan melihat pelangi di sekitar lampu (halo), ditambah temuan fisik tekanan bola mata meningkat pada palpasi, injeksi konjungtiva dan siliar, edema kornea, serta bilik mata depan (BMD) dangkal merupakan tanda klasik Glaukoma Akut Sudut Tertutup."
+    "rationale": "Trias mata merah dengan penurunan visus mendadak (2/60), nyeri okular hebat menjalar ke kepala disertai mual-muntah dan melihat pelangi di sekitar lampu (halo), ditambah temuan fisik tekanan bola mata meningkat pada palpasi, injeksi konjungtiva dan siliar, edema kornea, serta bilik mata depan (BMD) dangkal merupakan tanda klasik Glaukoma Akut Sudut Tertutup.\nAnalisis opsi lain:\n(1) Neuritis optik salah; penurunan visus dengan nyeri pada gerak bola mata, tanpa peningkatan tekanan bola mata dan edema kornea.\n(2) Konjungtivitis salah; mata merah dengan visus umumnya baik, tanpa nyeri hebat, mual muntah, dan bilik mata depan dangkal.\n(3) Endoftalmitis salah; umumnya pascabedah atau trauma tembus dengan hipopion, bukan tekanan bola mata tinggi dengan bilik mata depan dangkal."
   },
   {
     "id": 53,
@@ -739,7 +739,7 @@ const questions3 = [
       "E. Hipertensi"
     ],
     "answer": 0,
-    "rationale": "Glibenclamide merupakan obat antihiperglikemik oral golongan Sulfonilurea generasi kedua yang bekerja memicu sekresi insulin secara langsung dari sel beta pankreas (insulin secretagogue) dengan waktu kerja panjang, sehingga menjadi faktor risiko utama terjadinya hipoglikemia berat (GDS 50 mg/dL), terlebih pada pasien lansia yang meminum dosis ganda."
+    "rationale": "Glibenclamide merupakan obat antihiperglikemik oral golongan Sulfonilurea generasi kedua yang bekerja memicu sekresi insulin secara langsung dari sel beta pankreas (insulin secretagogue) dengan waktu kerja panjang, sehingga menjadi faktor risiko utama terjadinya hipoglikemia berat (GDS 50 mg/dL), terlebih pada pasien lansia yang meminum dosis ganda.\nAnalisis opsi lain:\n(1) Obat biguanid salah; metformin jarang menimbulkan hipoglikemia bila dipakai tunggal, dan tidak termasuk obat yang dikonsumsi pasien.\n(2) Obat HMG-CoA reduktase salah; simvastatin tidak menimbulkan hipoglikemia.\n(3) Dislipidemia salah; merupakan penyakit penyerta, bukan faktor penyebab hipoglikemia.\n(4) Hipertensi salah; merupakan penyakit penyerta, bukan faktor penyebab hipoglikemia."
   },
   {
     "id": 54,
@@ -767,7 +767,7 @@ const questions3 = [
       "E. Hiperkalemia"
     ],
     "answer": 4,
-    "rationale": "Pasien mengalami Ketoasidosis Diabetikum (KAD) yang ditandai oleh penurunan kesadaran pada DM tidak terkontrol dan hasil AGDA asidosis metabolik (pH 7,25, HCO3 14 mmol/L, pCO2 27 mmHg).\nKondisi defisiensi insulin absolut/relatif serta asidosis metabolik ekstraseluler menyebabkan keluarnya ion kalium dari ruang intrasel ke ekstrasel (bertukar dengan ion H+), sehingga memicu Hiperkalemia pada pemeriksaan serum awal."
+    "rationale": "Pasien mengalami Ketoasidosis Diabetikum (KAD) yang ditandai oleh penurunan kesadaran pada DM tidak terkontrol dan hasil AGDA asidosis metabolik (pH 7,25, HCO3 14 mmol/L, pCO2 27 mmHg).\nKondisi defisiensi insulin absolut/relatif serta asidosis metabolik ekstraseluler menyebabkan keluarnya ion kalium dari ruang intrasel ke ekstrasel (bertukar dengan ion H+), sehingga memicu Hiperkalemia pada pemeriksaan serum awal.\nPembahasan lebih lengkap (dari PT 34, no. 47):\nPasien mengalami Ketoasidosis Diabetikum (KAD) pada diabetes melitus tidak terkontrol yang ditandai oleh penurunan kesadaran dan gangguan keseimbangan asam-basa berupa Asidosis Metabolik terkompensasi sebagian (pH 7,25 menurun <7,35, HCO3- 14 mmol/L menurun <22 mmol/L, dengan kompensasi hiperventilasi Kussmaul menurunkan pCO2 menjadi 29 mmHg <35 mmHg).\nKondisi ini secara khas menyebabkan kelainan elektrolit serum berupa Hiperkalemia ekstraseluler melalui dua mekanisme utama sebagai berikut.\n(1) Defisiensi hormon insulin: dalam keadaan normal insulin mengaktifkan pompa Na+/K+-ATPase untuk memasukkan kalium dari darah ke dalam sel, sehingga ketiadaan insulin pada KAD membuat kalium tertahan dan menumpuk di ruang ekstraseluler/intravaskular.\n(2) Pertukaran ion akibat Asidosis Metabolik: tingginya konsentrasi ion hidrogen (H+) di dalam darah memicu masuknya ion H+ ke dalam sel untuk didapar (buffering), dan demi menjaga netralitas muatan listrik membran, ion kalium (K+) dipaksa keluar dari dalam sel menuju aliran darah (hiperkalemia, meskipun cadangan kalium total tubuh sebenarnya mengalami deplesi akibat diuresis osmotik).\nCatatan lintas paket: Soal yang sama muncul di PT 34 (no. 47) dengan jawaban yang sama (hiperkalemia).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 34."
   },
   {
     "id": 56,
@@ -781,7 +781,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 0,
-    "rationale": "Riwayat trauma okular akibat tumbuh-tumbuhan/daun padi pada petani yang diikuti penurunan tajam penglihatan (visus 3/60 tidak membaik dengan pinhole) serta adanya lesi infiltrat/defek berwarna keabu-abuan pada kornea menegakkan diagnosis Ulkus Kornea (umumnya etiologi jamur/keratomikosis)."
+    "rationale": "Riwayat trauma okular akibat tumbuh-tumbuhan/daun padi pada petani yang diikuti penurunan tajam penglihatan (visus 3/60 tidak membaik dengan pinhole) serta adanya lesi infiltrat/defek berwarna keabu-abuan pada kornea menegakkan diagnosis Ulkus Kornea (umumnya etiologi jamur/keratomikosis).\nAnalisis opsi lain:\n(1) Glaukoma salah; nyeri hebat disertai mual muntah dan tekanan bola mata tinggi, tanpa riwayat trauma tumbuhan dan tanpa infiltrat kornea.\n(2) Konjungtivitis salah; visus umumnya baik dan tidak disertai infiltrat kornea.\n(3) Blefarospasme salah; berupa kontraksi involunter kelopak mata dan merupakan gejala, bukan diagnosis penyebab penurunan visus dengan lesi abu-abu."
   },
   {
     "id": 57,
@@ -795,7 +795,7 @@ const questions3 = [
       "E. Sphincter ani eksternus"
     ],
     "answer": 4,
-    "rationale": "Robekan atau trauma perineum pascapersalinan operatif pervaginam dengan ekstraksi cunam (forceps) yang menimbulkan inkontinensia alvi terisolasi (tanpa inkontinensia urin) disebabkan oleh kerusakan/disfungsi otot Sphincter ani eksternus (sedangkan cedera nervus pudendus akan menyebabkan inkontinensia alvi sekaligus inkontinensia urin)."
+    "rationale": "Robekan atau trauma perineum pascapersalinan operatif pervaginam dengan ekstraksi cunam (forceps) yang menimbulkan inkontinensia alvi terisolasi (tanpa inkontinensia urin) disebabkan oleh kerusakan/disfungsi otot Sphincter ani eksternus (sedangkan cedera nervus pudendus akan menyebabkan inkontinensia alvi sekaligus inkontinensia urin).\nPembahasan lebih lengkap (dari PT 36, no. 7):\nPersalinan pervaginam operatif dengan bantuan cunam (forceps) berisiko tinggi menyebabkan trauma/robekan perineum yang mencederai otot sfingter ani.\nKeluhan inkontinensia alvi yang dicetuskan saat peningkatan tekanan intraabdomen atau mengedan (seperti saat menggendong anak) tanpa disertai inkontinensia urin menunjukkan disfungsi pada otot Sphincter Ani Eksternus, yaitu otot lurik yang bekerja secara volunter menahan feses saat terjadi peningkatan tekanan intraabdomen.\nAnalisis opsi lain:\nCedera Nervus pudendus akan menyebabkan defisit sensorik perineum/nyeri yang disertai inkontinensia uri sekaligus inkontinensia alvi.\nOtot puborektalis berperan membentuk sudut anorektal dan terkait dengan kontinensia urin tipe stres, sedangkan Sphincter ani internus merupakan otot polos yang bekerja secara involunter mempertahankan tonus istirahat kanalis analis.\nCatatan lintas paket: Soal yang sama muncul di PT 34 (no. 48), PT 35 (no. 41), dan PT 36 (no. 7) dengan jawaban yang sama (sphincter ani eksternus).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 36."
   },
   {
     "id": 58,
@@ -809,7 +809,7 @@ const questions3 = [
       "E. Postmortem X-ray"
     ],
     "answer": 4,
-    "rationale": "Luka terbuka bulat berdiameter 5 mm yang dikelilingi kelim lecet dan kelim tato merupakan ciri khas luka tembak masuk jarak dekat.\nSebelum tindakan autopsi dilakukan, pemeriksaan penunjang standar yang paling tepat adalah Postmortem X-ray (foto Rontgen jenazah) untuk melokalisasi keberadaan dan posisi proyektil peluru di dalam tubuh korban."
+    "rationale": "Luka terbuka bulat berdiameter 5 mm yang dikelilingi kelim lecet dan kelim tato merupakan ciri khas luka tembak masuk jarak dekat.\nSebelum tindakan autopsi dilakukan, pemeriksaan penunjang standar yang paling tepat adalah Postmortem X-ray (foto Rontgen jenazah) untuk melokalisasi keberadaan dan posisi proyektil peluru di dalam tubuh korban.\nAnalisis opsi lain:\n(1) Postmortem CT-angiografi salah; memerlukan fasilitas dan kontras khusus dan lebih sesuai untuk menilai pembuluh darah, bukan skrining standar luka tembak.\n(2) Postmortem CT-scan salah; sangat informatif tetapi biayanya mahal dan tidak tersedia luas, sehingga bukan pemeriksaan standar yang paling tepat.\n(3) Postmortem USG salah; tidak memadai untuk melokalisasi anak peluru.\n(4) Postmortem MRI salah; tidak dianjurkan karena proyektil logam dapat bergerak di medan magnet.\nCatatan lintas paket: Soal yang sama muncul di PT 35 (no. 56) dengan jawaban yang sama (postmortem X-ray)."
   },
   {
     "id": 59,
@@ -837,7 +837,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 0,
-    "rationale": "Pada usia kehamilan 32 minggu, tinggi fundus uteri (TFU) hanya 25 cm (lebih kecil >3 cm dari usia kehamilan dalam minggu) dan tidak mengalami pertambahan ukuran sama sekali dibandingkan pemeriksaan 4 minggu sebelumnya, sehingga menegakkan diagnosis Pertumbuhan Janin Terhambat (PJT) atau Intrauterine Growth Restriction (IUGR)."
+    "rationale": "Pada usia kehamilan 32 minggu, tinggi fundus uteri (TFU) hanya 25 cm (lebih kecil >3 cm dari usia kehamilan dalam minggu) dan tidak mengalami pertambahan ukuran sama sekali dibandingkan pemeriksaan 4 minggu sebelumnya, sehingga menegakkan diagnosis Pertumbuhan Janin Terhambat (PJT) atau Intrauterine Growth Restriction (IUGR).\nAnalisis opsi lain:\n(1) Oligohidramnion salah; ditegakkan dengan pemeriksaan USG (indeks cairan amnion) dan tidak dapat disimpulkan dari TFU saja.\n(2) Malnutrisi salah; bukan diagnosis obstetri untuk kegagalan pertumbuhan TFU, melainkan salah satu faktor risiko pertumbuhan janin terhambat."
   },
   {
     "id": 61,
@@ -851,7 +851,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 0,
-    "rationale": "Keluhan tungkai bawah (kruris kanan) bengkak dan nyeri mendadak disertai Homan's sign positif (nyeri pada betis saat dorsofleksi pasif kaki) merupakan tanda klinis Trombosis Vena Dalam (Deep Vein Thrombosis / DVT) yang didasari oleh patofisiologi penyumbatan akut oleh trombus pada vena dalam."
+    "rationale": "Keluhan tungkai bawah (kruris kanan) bengkak dan nyeri mendadak disertai Homan's sign positif (nyeri pada betis saat dorsofleksi pasif kaki) merupakan tanda klinis Trombosis Vena Dalam (Deep Vein Thrombosis / DVT) yang didasari oleh patofisiologi penyumbatan akut oleh trombus pada vena dalam.\nAnalisis opsi lain:\n(1) Gangguan katup vena salah; menyebabkan insufisiensi vena kronis dengan edema bertahap dan varises, bukan bengkak nyeri akut dengan tanda Homan positif."
   },
   {
     "id": 62,
@@ -865,7 +865,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 0,
-    "rationale": "Riwayat trauma tumpul perineum akibat jatuh terduduk mengangkang (straddle injury) disertai perdarahan dari meatus uretra eksternum dan hematoma perineum berbentuk kupu-kupu (butterfly hematoma / butterfly sign positif akibat robekan fasia Buck) merupakan gambaran klasik Ruptur Uretra Anterior (sedangkan ruptur uretra posterior umumnya berkaitan dengan fraktur pelvis dan ditandai dengan floating prostate pada colok dubur)."
+    "rationale": "Riwayat trauma tumpul perineum akibat jatuh terduduk mengangkang (straddle injury) disertai perdarahan dari meatus uretra eksternum dan hematoma perineum berbentuk kupu-kupu (butterfly hematoma / butterfly sign positif akibat robekan fasia Buck) merupakan gambaran klasik Ruptur Uretra Anterior (sedangkan ruptur uretra posterior umumnya berkaitan dengan fraktur pelvis dan ditandai dengan floating prostate pada colok dubur).\nAnalisis opsi lain:\n(1) Ruptur uretra posterior salah; disertai fraktur pelvis dengan prostat letak tinggi, bukan straddle injury dengan butterfly hematoma.\n(2) Ruptur buli ekstraperitoneum salah; terkait fraktur pelvis dengan nyeri suprapubik, tanpa hematoma perineum berbentuk kupu-kupu.\n(3) Ruptur buli intraperitoneum salah; menimbulkan tanda peritonitis (nyeri perut difus), bukan hematoma perineum."
   },
   {
     "id": 63,
@@ -879,7 +879,7 @@ const questions3 = [
       "E. Stenosis katup aorta"
     ],
     "answer": 3,
-    "rationale": "Sela iga ke-2 linea parasternalis dekstra merupakan area auskultasi katup aorta.\nTerdengarnya bising jantung pada fase diastolik (murmur diastolik) dengan pungtum maksimum di lokasi tersebut disertai pelebaran batas jantung kiri (dilatasi/hipertrofi ventrikel kiri) menegakkan diagnosis Regurgitasi Katup Aorta (sedangkan stenosis katup aorta menimbulkan bising ejeksi sistolik di lokasi yang sama)."
+    "rationale": "Sela iga ke-2 linea parasternalis dekstra merupakan area auskultasi katup aorta.\nTerdengarnya bising jantung pada fase diastolik (murmur diastolik) dengan pungtum maksimum di lokasi tersebut disertai pelebaran batas jantung kiri (dilatasi/hipertrofi ventrikel kiri) menegakkan diagnosis Regurgitasi Katup Aorta (sedangkan stenosis katup aorta menimbulkan bising ejeksi sistolik di lokasi yang sama).\nPembahasan lebih lengkap (dari PT 25, no. 110):\nPerempuan 34 tahun dengan mudah lelah dan sesak saat aktivitas, batas jantung kiri melebar, dan bising diastolik derajat 5 sampai 6 dengan punctum maximum di sela iga 2 linea sternalis dekstra mengalami regurgitasi katup aorta. Slide pembahasan menampilkan peta area auskultasi (aorta di sela iga 2 kanan, pulmonal di sela iga 2 kiri, trikuspid di tepi sternum kiri bawah, dan mitral di apeks) serta gambar bising pada siklus jantung: stenosis aorta menghasilkan bising ejeksi sistolik (crescendo-decrescendo) dengan klik ejeksi, regurgitasi aorta menghasilkan bising diastolik decrescendo segera setelah S2, stenosis mitral menghasilkan opening snap dan bising diastolik, regurgitasi trikuspid menghasilkan bising pansistolik yang makin keras saat inspirasi. Mnemonik: ARMS dan PaRTS adalah bising diastolik (Aortic Regurgitation, Mitral Stenosis, Pulmonary Regurgitation, Tricuspid Stenosis). Bising diastolik di area aorta sesuai regurgitasi aorta, yang menimbulkan volume overload ventrikel kiri dengan dilatasi sehingga batas jantung kiri melebar.\nAnalisis opsi lain:\n(1) Regurgitasi mitral memberi bising pansistolik di apeks yang menjalar ke aksila.\n(2) Regurgitasi pulmonal memberi bising diastolik di sela iga 2 kiri.\n(3) Stenosis mitral memberi bising diastolik mid-diastolik di apeks dengan opening snap.\n(4) Stenosis aorta memberi bising ejeksi sistolik di sela iga 2 kanan.\nCatatan lintas paket: Soal yang sama muncul di PT 25 (no. 110), PT 26 (no. 63), PT 30 (no. 117), dan PT 34 (no. 66) dengan jawaban yang sama (regurgitasi katup aorta).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 25."
   },
   {
     "id": 64,
@@ -907,7 +907,7 @@ const questions3 = [
       "E. Ketuban pecah dini"
     ],
     "answer": 3,
-    "rationale": "Pasien mengalami ketuban pecah dini pada kehamilan cukup bulan (PROM, 38 minggu) yang telah berkomplikasi menjadi infeksi intraamnion atau Korioamnionitis, ditandai oleh demam maternal (38,2°C) ditambah kriteria Gibbs berupa takikardia maternal (nadi 120x/menit), takikardia janin (DJJ 166x/menit, >160x/menit), dan leukositosis maternal (18.000/mm³, >15.000/mm³)."
+    "rationale": "Pasien mengalami ketuban pecah dini pada kehamilan cukup bulan (PROM, 38 minggu) yang telah berkomplikasi menjadi infeksi intraamnion atau Korioamnionitis, ditandai oleh demam maternal (38,2°C) ditambah kriteria Gibbs berupa takikardia maternal (nadi 120x/menit), takikardia janin (DJJ 166x/menit, >160x/menit), dan leukositosis maternal (18.000/mm³, >15.000/mm³).\nPembahasan lebih lengkap (dari PT 33, no. 71):\nPasien mengalami pecahnya selaput ketuban sebelum inpartu pada usia kehamilan cukup bulan (38 minggu -> Premature Rupture of Membranes / PROM, sedangkan jika terjadi <37 minggu disebut PPROM) sejak 12 jam SMRS yang telah terkomplikasi oleh infeksi intraamnion akut yaitu Korioamnionitis (opsi D).\nBerdasarkan Kriteria Gibbs untuk penegakan diagnosis klinis Korioamnionitis: harus ditemukan demam maternal intrapartum ≥38,0°C (atau >37,8°C, pada pasien ini suhu 38,2°C) ditambah minimal 2 dari 5 tanda sebagai berikut.\n(1) Takikardia maternal >100x/menit (pada pasien ini nadi 120x/menit).\n(2) Takikardia janin >160x/menit (pada pasien ini DJJ 166x/menit).\n(3) Leukositosis maternal >15.000/mm3 (pada pasien ini leukosit 18.000/mm3).\n(4) Nyeri tekan fundus uteri.\n(5) Cairan ketuban purulen atau berbau busuk.\nKarena pasien sudah memenuhi demam + 3 kriteria Gibbs, maka diagnosis utamanya bukan lagi sekadar KPD biasa melainkan sudah berkomplikasi menjadi Korioamnionitis (yang membutuhkan antibiotik spektrum luas IV segera seperti Ampisilin + Gentamisin dan terminasi kehamilan).\nCatatan lintas paket: Soal yang sama muncul di PT 33 (no. 71) dengan jawaban yang sama (korioamnionitis).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 33."
   },
   {
     "id": 66,
@@ -921,7 +921,7 @@ const questions3 = [
       "E. Asma persisten sedang serangan berat"
     ],
     "answer": 1,
-    "rationale": "Berdasarkan kekerapan gejala harian/historis (hanya pernah sesak dalam 6 bulan yang lalu dan membaik dengan inhalasi), derajat penyakit dasar pasien termasuk Asma Intermiten, sedangkan pada serangan akut saat ini di IGD ditemukan retraksi otot bantu napas, mengi, dan desaturasi oksigen (SpO2 90%), sehingga diklasifikasikan sebagai Asma Intermiten Serangan Berat."
+    "rationale": "Berdasarkan kekerapan gejala harian/historis (hanya pernah sesak dalam 6 bulan yang lalu dan membaik dengan inhalasi), derajat penyakit dasar pasien termasuk Asma Intermiten, sedangkan pada serangan akut saat ini di IGD ditemukan retraksi otot bantu napas, mengi, dan desaturasi oksigen (SpO2 90%), sehingga diklasifikasikan sebagai Asma Intermiten Serangan Berat.\nAnalisis opsi lain:\n(1) Asma intermiten serangan ringan salah; retraksi dada, mengi, dan SpO2 90% menunjukkan serangan berat.\n(2) Asma persisten ringan serangan ringan sedang salah; gejala harian tidak ada dan serangan saat ini berat.\n(3) Asma persisten ringan serangan berat salah; frekuensi gejala dalam 6 bulan terakhir tidak memenuhi persisten.\n(4) Asma persisten sedang serangan berat salah; frekuensi gejala tidak memenuhi kriteria persisten sedang."
   },
   {
     "id": 67,
@@ -935,7 +935,7 @@ const questions3 = [
       "E. Katarak"
     ],
     "answer": 2,
-    "rationale": "Infeksi toksoplasmosis kongenital memiliki trias klasik (Sabin's Triad) sebagai berikut.\n(1) Hidrosefalus atau mikrosefali.\n(2) Kalsifikasi intrakranial difus.\n(3) Korioretinitis bilateral."
+    "rationale": "Infeksi toksoplasmosis kongenital memiliki trias klasik (Sabin's Triad) sebagai berikut.\n(1) Hidrosefalus atau mikrosefali.\n(2) Kalsifikasi intrakranial difus.\n(3) Korioretinitis bilateral.\nPembahasan lebih lengkap (dari PT 34, no. 62):\nInfeksi parasit Toxoplasma gondii transplasental selama kehamilan menyebabkan Toksoplasmosis Kongenital yang dikenal memiliki Trias Klasik Sabin (Sabin's Triad) sebagai berikut.\n(1) Korioretinitis bilateral (peradangan pada koroid dan retina di area makula dengan gambaran lesi kuning-keputihan berbatas hiperpigmentasi seperti lampu sorot di dalam kabut / headlight in the fog).\n(2) Hidrosefalus (atau mikrosefali akibat destruksi jaringan otak janin).\n(3) Kalsifikasi intrakranial difus yang tersebar di seluruh parenkim otak.\nSebagai perbandingan:\nDengan infeksi kongenital TORCH lainnya: Katarak Kongenital (opsi E) yang disertai Tuli Sensorineural (SNHL) dan kelainan jantung bawaan (terutama Patent Ductus Arteriosus / PDA) merupakan Trias Gregg yang khas untuk Sindrom Rubella Kongenital (sedangkan pada pasien di soal secara eksplisit disebutkan tidak ada kelainan jantung).\nCatatan lintas paket: Soal yang sama muncul di PT 32 (no. 63) dan PT 34 (no. 62) dengan jawaban yang sama (korioretinitis).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 34."
   },
   {
     "id": 68,
@@ -949,7 +949,7 @@ const questions3 = [
       "E. Trans Thoracal Needle aspiration (TTNA)"
     ],
     "answer": 1,
-    "rationale": "Pasien mengalami Efusi Pleura Masif kiri (ditandai sesak napas berat, hemitoraks kiri tertinggal, suara napas vesikuler melemah di sisi kiri, serta foto toraks tampak opasitas homogen di hemitoraks kiri yang mendorong mediastinum ke sisi kontralateral).\nTindakan gawat darurat yang harus segera dilakukan untuk mengevakuasi cairan dan membebaskan kompresi paru/mediastinum adalah Punksi Pleura (torakosentesis)."
+    "rationale": "Pasien mengalami Efusi Pleura Masif kiri (ditandai sesak napas berat, hemitoraks kiri tertinggal, suara napas vesikuler melemah di sisi kiri, serta foto toraks tampak opasitas homogen di hemitoraks kiri yang mendorong mediastinum ke sisi kontralateral).\nTindakan gawat darurat yang harus segera dilakukan untuk mengevakuasi cairan dan membebaskan kompresi paru/mediastinum adalah Punksi Pleura (torakosentesis).\nPembahasan lebih lengkap (dari PT 31, no. 66):\nPasien mengalami Efusi Pleura Masif Sinistra (atau hematotoraks/akumulasi cairan masif di rongga pleura kiri) yang ditandai oleh sesak napas progresif 1 minggu, gelisah, takipnea (RR 30x/menit), takikardia (nadi 110x/menit), gerak hemitoraks kiri tertinggal, suara napas vesikuler melemah di sisi kiri, dan gambaran Rontgen dada berupa opasitas/radioopak homogen di hemitoraks kiri.\nUntuk segera membebaskan penekanan cairan masif terhadap parenkim paru dan mediastinum guna mengatasi distres pernapasan akut, tindakan dekompresi/evakuasi cairan gawat darurat yang harus segera dikerjakan adalah Punksi Pleura (Torakosentesis terapeutik, opsi B, dilanjutkan pemasangan WSD bila cairan berulang/empiema/hematotoraks).\nAnalisis opsi lain:\nTrans-Thoracal Needle Aspiration (TTNA, opsi E) adalah prosedur biopsi jarum halus dengan tuntunan CT/USG untuk mengambil sampel sitologi massa tumor paru perifer, bukan untuk mengeluarkan cairan efusi pleura.\nCatatan lintas paket: Soal yang sama muncul di PT 30 (no. 74), PT 31 (no. 66), dan PT 34 (no. 65) dengan jawaban yang sama (punksi pleura).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 31."
   },
   {
     "id": 69,
@@ -991,7 +991,7 @@ const questions3 = [
       "E. MRI"
     ],
     "answer": 3,
-    "rationale": "Pasien mengalami peritonitis umum sekunder akibat perforasi usus pascademam tifoid.\nBerdasarkan pembahasan PT 37, foto polos abdomen tegak merupakan pencitraan awal untuk melihat udara bebas subdiafragma, namun modalitas pencitraan baku emas (gold standard) yang paling optimal untuk mengonfirmasi kondisi peritoneum dan sumber infeksi intraabdominal adalah CT scan abdomen."
+    "rationale": "Pasien mengalami peritonitis umum sekunder akibat perforasi usus pascademam tifoid.\nBerdasarkan pembahasan PT 37, foto polos abdomen tegak merupakan pencitraan awal untuk melihat udara bebas subdiafragma, namun modalitas pencitraan baku emas (gold standard) yang paling optimal untuk mengonfirmasi kondisi peritoneum dan sumber infeksi intraabdominal adalah CT scan abdomen.\nAnalisis opsi lain:\n(1) USG salah; bergantung pada operator dan kurang akurat untuk melihat udara bebas dan lokasi perforasi.\n(2) Foto polos perut salah; dipakai awal untuk melihat udara bebas, tetapi sensitivitasnya lebih rendah dibandingkan CT scan untuk konfirmasi dan lokasi perforasi.\n(3) BNO salah; sama dengan foto polos abdomen, hanya pemeriksaan awal.\n(4) MRI salah; waktu pemeriksaan lama dan tidak praktis pada pasien akut abdomen.\nCatatan lintas paket: Soal yang sama muncul di PT 35 (no. 20) dan PT 38 (no. 28) dengan jawaban yang sama (CT scan abdomen)."
   },
   {
     "id": 72,
@@ -1005,7 +1005,7 @@ const questions3 = [
       "E. Vit A 250.000 IU pada hari pertama & kedua"
     ],
     "answer": 3,
-    "rationale": "Pada pasien anak penderita campak (morbili) dengan komplikasi (pneumonia dan diare), diberikan suplementasi Vitamin A pada hari ke-1 dan ke-2 sesuai kelompok usia: usia <6 bulan diberikan 50.000 IU.\nUsia 6–11 bulan diberikan 100.000 IU, dan usia ≥1 tahun (anak berusia 5 tahun) diberikan 200.000 IU."
+    "rationale": "Pada pasien anak penderita campak (morbili) dengan komplikasi (pneumonia dan diare), diberikan suplementasi Vitamin A pada hari ke-1 dan ke-2 sesuai kelompok usia: usia <6 bulan diberikan 50.000 IU.\nUsia 6–11 bulan diberikan 100.000 IU, dan usia ≥1 tahun (anak berusia 5 tahun) diberikan 200.000 IU.\nAnalisis opsi lain:\n(1) Vitamin A 50.000 IU salah; dosis untuk bayi usia kurang dari 6 bulan.\n(2) Vitamin A 100.000 IU salah; dosis untuk usia 6 sampai 11 bulan.\n(3) Vitamin A 150.000 IU salah; bukan dosis standar pada campak.\n(4) Vitamin A 250.000 IU salah; bukan dosis standar pada campak."
   },
   {
     "id": 73,
@@ -1033,7 +1033,7 @@ const questions3 = [
       "E. Keganasan saluran empedu"
     ],
     "answer": 3,
-    "rationale": "Nyeri perut kanan atas yang bersifat kolik (hilang timbul), menjalar ke punggung/bahu kanan, dan dicetuskan setelah makan makanan berlemak (akibat kontraksi kandung empedu yang mendorong batu) tanpa disertai tanda inflamasi sistemik menetap maupun penurunan berat badan menegakkan diagnosis Kolesistolitiasis Simtomatik (kolik bilier)."
+    "rationale": "Nyeri perut kanan atas yang bersifat kolik (hilang timbul), menjalar ke punggung/bahu kanan, dan dicetuskan setelah makan makanan berlemak (akibat kontraksi kandung empedu yang mendorong batu) tanpa disertai tanda inflamasi sistemik menetap maupun penurunan berat badan menegakkan diagnosis Kolesistolitiasis Simtomatik (kolik bilier).\nPembahasan lebih lengkap (dari PT 25, no. 43):\nPerempuan 41 tahun dengan nyeri perut kanan atas yang hilang timbul, menjalar ke punggung, memberat setelah makan, dan riwayat sempat ikterus sesaat tanpa penurunan berat badan atau perubahan BAB dan BAK menunjukkan kolik bilier akibat kolesistolitiasis simtomatik. Slide pembahasan memuat gambaran perjalanan batu empedu (gallstone's journey): batu di kandung empedu menimbulkan kolik bilier, batu di duktus koledokus menimbulkan ikterus, kolangitis dengan trias Charcot, dan pankreatitis; serta faktor predisposisi batu empedu 4F (Fat, Forty, Female, Fertile). Pasien memiliki 4F (perempuan, 41 tahun, kemungkinan multipara), nyeri tipikal kolik yang dicetuskan makan (lemak) dan menjalar ke punggung. Menurut kunci file, diagnosisnya adalah kolesistolitiasis simtomatik.\nAnalisis opsi lain:\n(1) Gastritis menimbulkan nyeri epigastrium dengan mual tanpa pola kolik kuadran kanan atas yang menjalar ke punggung.\n(2) Batu common bile duct (koledokolitiasis) menimbulkan ikterus yang menetap atau intermiten dengan kolangitis; ikterus pada pasien hanya sesaat, tetapi alternatif ini memang dapat dipertimbangkan.\n(3) Keganasan saluran empedu menimbulkan ikterus progresif tanpa nyeri disertai penurunan berat badan.\n(4) Kolesistitis akut menimbulkan nyeri menetap lebih dari 6 jam dengan demam, leukositosis, dan tanda Murphy positif.\nCatatan lintas paket: Soal yang sama muncul di PT 25 (no. 43), PT 29 (no. 14), dan PT 31 (no. 109) dengan jawaban yang sama (kolesistolithiasis simtomatik).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 25."
   },
   {
     "id": 75,
@@ -1047,7 +1047,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 1,
-    "rationale": "Gejala saluran kemih bawah (LUTS: pancaran kencing terputus-putus/intermitensi, rasa tidak lampias, dan harus mengejan/straining) pada pria usia lanjut disertai temuan colok dubur berupa pembesaran prostat (batas/pole atas tidak teraba), tidak ada nyeri tekan (menyingkirkan prostatitis), dan kadar PSA normal ≤4 ng/mL (1,4 ng/mL, menyingkirkan kanker prostat) merupakan tanda khas Benign Prostatic Hyperplasia (BPH)."
+    "rationale": "Gejala saluran kemih bawah (LUTS: pancaran kencing terputus-putus/intermitensi, rasa tidak lampias, dan harus mengejan/straining) pada pria usia lanjut disertai temuan colok dubur berupa pembesaran prostat (batas/pole atas tidak teraba), tidak ada nyeri tekan (menyingkirkan prostatitis), dan kadar PSA normal ≤4 ng/mL (1,4 ng/mL, menyingkirkan kanker prostat) merupakan tanda khas Benign Prostatic Hyperplasia (BPH).\nAnalisis opsi lain:\n(1) Kanker prostat salah; prostat teraba keras berbenjol dan PSA umumnya tinggi, sedangkan di sini PSA 1,4 ng/mL.\n(2) Prostatitis salah; nyeri tekan, demam, dan disuria, tidak ada pada kasus ini.\n(3) Divertikulum buli salah; lesi struktural yang jarang dan tidak menjelaskan pembesaran prostat."
   },
   {
     "id": 76,
@@ -1075,7 +1075,7 @@ const questions3 = [
       "E. Parasetamol"
     ],
     "answer": 1,
-    "rationale": "Pasien mengeluhkan dahak yang kental/lengket sehingga sulit dikeluarkan (yang menyebabkan batuk tampak tidak produktif/kering) disertai temuan ronkhi kering minimal akibat sumbatan mukus di jalan napas, oleh karena itu terapi farmakologis simtomatis yang tepat untuk mengencerkan dan mempermudah pengeluaran dahak adalah Mukolitik."
+    "rationale": "Pasien mengeluhkan dahak yang kental/lengket sehingga sulit dikeluarkan (yang menyebabkan batuk tampak tidak produktif/kering) disertai temuan ronkhi kering minimal akibat sumbatan mukus di jalan napas, oleh karena itu terapi farmakologis simtomatis yang tepat untuk mengencerkan dan mempermudah pengeluaran dahak adalah Mukolitik.\nAnalisis opsi lain:\n(1) Antitusif salah; menekan refleks batuk sehingga dahak kental semakin sulit dikeluarkan.\n(2) SABA salah; untuk bronkospasme dengan mengi, sedangkan pasien tidak sesak dan tidak mengi.\n(3) Kortikosteroid salah; tidak ada indikasi inflamasi saluran napas yang berat.\n(4) Parasetamol salah; menurunkan demam dan nyeri, bukan terapi utama untuk batuk dengan dahak sulit keluar.\nCatatan lintas paket: Soal yang sama muncul di PT 36 (no. 11) dengan jawaban yang sama (mukolitik)."
   },
   {
     "id": 78,
@@ -1089,7 +1089,7 @@ const questions3 = [
       "E. Hipoperfusi ginjal akibat dehidrasi"
     ],
     "answer": 4,
-    "rationale": "Diare selama 5 hari menyebabkan kehilangan cairan tubuh (hipovolemia/dehidrasi) yang memicu penurunan aliran darah ke ginjal (hipoperfusi ginjal), sehingga menimbulkan Gagal Ginjal Akut (Acute Kidney Injury / AKI) tipe prarenal yang ditandai oleh oliguria/anuria (belum BAK 12 jam) serta peningkatan ureum dan kreatinin serum."
+    "rationale": "Diare selama 5 hari menyebabkan kehilangan cairan tubuh (hipovolemia/dehidrasi) yang memicu penurunan aliran darah ke ginjal (hipoperfusi ginjal), sehingga menimbulkan Gagal Ginjal Akut (Acute Kidney Injury / AKI) tipe prarenal yang ditandai oleh oliguria/anuria (belum BAK 12 jam) serta peningkatan ureum dan kreatinin serum.\nAnalisis opsi lain:\n(1) Obstruksi saluran urinari bawah salah; penyebab pascarenal akibat sumbatan, tanpa riwayat gangguan berkemih.\n(2) Glomerulonefritis imun kompleks salah; disertai hematuria, edema, dan hipertensi pascainfeksi.\n(3) Kerusakan akibat toksin salah; nekrosis tubular akut oleh obat atau toksin, tanpa paparan toksin pada kasus ini.\n(4) Kerusakan mikrovaskular akibat hipertensi maligna salah; tidak ada tekanan darah sangat tinggi."
   },
   {
     "id": 79,
@@ -1103,7 +1103,7 @@ const questions3 = [
       "E. Kompleks antigen-antibodi"
     ],
     "answer": 4,
-    "rationale": "Sindrom nefritik akut (hematuria makroskopik berupa BAK kemerahan tanpa nyeri, edema kelopak mata dan tungkai, serta oliguria) yang muncul 1-2 minggu setelah infeksi faringitis akut merupakan gambaran klasik Glomerulonefritis Akut Pascastreptokokus (GNAPS).\nMekanisme imunologis yang mendasari GNAPS adalah reaksi hipersensitivitas tipe III, yaitu pengendapan Kompleks Antigen-Antibodi (kompleks imun) di membran basal glomerulus ginjal yang memicu aktivasi komplemen dan kerusakan filtrasi glomerulus."
+    "rationale": "Sindrom nefritik akut (hematuria makroskopik berupa BAK kemerahan tanpa nyeri, edema kelopak mata dan tungkai, serta oliguria) yang muncul 1-2 minggu setelah infeksi faringitis akut merupakan gambaran klasik Glomerulonefritis Akut Pascastreptokokus (GNAPS).\nMekanisme imunologis yang mendasari GNAPS adalah reaksi hipersensitivitas tipe III, yaitu pengendapan Kompleks Antigen-Antibodi (kompleks imun) di membran basal glomerulus ginjal yang memicu aktivasi komplemen dan kerusakan filtrasi glomerulus.\nCatatan lintas paket: Soal yang sama muncul di PT 34 (no. 28) dengan jawaban yang sama (kompleks antigen-antibodi)."
   },
   {
     "id": 80,
@@ -1117,7 +1117,7 @@ const questions3 = [
       "E. (carbonated drink AND diabetes) OR (soda AND hyperglycemic)"
     ],
     "answer": 2,
-    "rationale": "Dalam penyusunan kueri pencarian PubMed, istilah yang bersinonim dalam satu komponen digabungkan dengan operator OR di dalam kurung, kemudian antar-komponen yang berbeda dihubungkan dengan operator AND: (carbonated drink OR soda) AND (diabetes OR hyperglycemic)."
+    "rationale": "Dalam penyusunan kueri pencarian PubMed, istilah yang bersinonim dalam satu komponen digabungkan dengan operator OR di dalam kurung, kemudian antar-komponen yang berbeda dihubungkan dengan operator AND: (carbonated drink OR soda) AND (diabetes OR hyperglycemic).\nPembahasan lebih lengkap (dari PT 27, no. 120):\nPencarian literatur di PubMed disusun berdasarkan komponen PICO: istilah bersinonim dalam satu komponen digabung dengan operator OR di dalam tanda kurung, sedangkan komponen yang berbeda dihubungkan dengan operator AND. Pada soal ini, pajanan (minuman bersoda) = (carbonated drink OR soda) dan luaran (diabetes melitus) = (diabetes OR hyperglycemic), sehingga kata kunci yang tepat adalah (carbonated drink OR soda) AND (diabetes OR hyperglycemic). Slide pembahasan PT 27 menampilkan contoh tabel PICO dengan kolom kata kunci, istilah pencarian, dan strategi pencarian (misalnya populasi: abdominal surgery OR surgery OR postoperative OR recovery, intervensi: chewing gum OR gum, luaran: postoperative ileus OR paralytic ileus OR ileus).\nAnalisis opsi lain:\n(1) Tanpa tanda kurung yang benar, operator AND dan OR tidak mengelompokkan sinonim per komponen.\n(2) Menggabungkan pajanan dengan diabetes melalui AND dan soda dengan hyperglycemic menyilang antarkomponen.\n(3) Semua AND terlalu sempit dan mengabaikan sinonim.\n(4) Tanda kurung yang salah menyebabkan carbonated drink OR hyperglycemic sembarang.\nCatatan lintas paket: Soal yang sama muncul di PT 27 (no. 120), PT 28 (no. 23), PT 29 (no. 108), PT 30 (no. 33), PT 31 (no. 7), PT 32 (no. 99), dan PT 33 (no. 61) dengan jawaban yang sama ((carbonated drink OR soda) AND (diabetes OR hyperglycemic)).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 27."
   },
   {
     "id": 81,
@@ -1131,7 +1131,7 @@ const questions3 = [
       "E. PDA"
     ],
     "answer": 1,
-    "rationale": "Keluhan gagal tumbuh dan menyusu terputus-putus pada bayi disertai bising pansistolik (pansystolic murmur) di sela iga (ICS) ke-4 linea parasternalis kiri akibat adanya celah/lubang antara ventrikel kiri dan ventrikel kanan (yang memiliki perbedaan tekanan sistolik signifikan) merupakan tanda khas Defek Septum Ventrikel (Ventricular Septal Defect / VSD)."
+    "rationale": "Keluhan gagal tumbuh dan menyusu terputus-putus pada bayi disertai bising pansistolik (pansystolic murmur) di sela iga (ICS) ke-4 linea parasternalis kiri akibat adanya celah/lubang antara ventrikel kiri dan ventrikel kanan (yang memiliki perbedaan tekanan sistolik signifikan) merupakan tanda khas Defek Septum Ventrikel (Ventricular Septal Defect / VSD).\nAnalisis opsi lain:\n(1) ASD salah; bising ejeksi sistolik di sela iga 2 kiri dengan split S2 menetap, bukan bising pansistolik di sela iga 4.\n(2) CAVSD salah; kelainan bantalan endokardium (sering pada sindrom Down) dengan gambaran klinis lebih berat.\n(3) AVSD salah; sama dengan CAVSD, tidak ada tanda yang mengarah ke sana.\n(4) PDA salah; bising kontinu (machinery) di sela iga 2 kiri infraklavikula."
   },
   {
     "id": 82,
@@ -1145,7 +1145,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 2,
-    "rationale": "Bangkitan kejang motorik umum (seluruh badan) yang terjadi berulang kali (dua kali atau lebih) tanpa adanya pemulihan kesadaran di antara episode kejang menegakkan diagnosis Status Epileptikus Konvulsivus (sedangkan tipe non-konvulsivus hanya menampilkan perubahan status mental/bingung tanpa kejang motorik yang nyata)."
+    "rationale": "Bangkitan kejang motorik umum (seluruh badan) yang terjadi berulang kali (dua kali atau lebih) tanpa adanya pemulihan kesadaran di antara episode kejang menegakkan diagnosis Status Epileptikus Konvulsivus (sedangkan tipe non-konvulsivus hanya menampilkan perubahan status mental/bingung tanpa kejang motorik yang nyata).\nAnalisis opsi lain:\n(1) Epilepsi mioklonik salah; sentakan singkat dengan kesadaran terjaga.\n(2) Epilepsi salah; kejang berulang tetapi pemulihan kesadaran di antara kejang tidak terjadi, sehingga memenuhi status epileptikus.\n(3) Status epileptikus nonkonvulsivus salah; tanpa kejang motorik, sedangkan pasien kejang seluruh badan."
   },
   {
     "id": 83,
@@ -1159,7 +1159,7 @@ const questions3 = [
       "E. Gagal Hati"
     ],
     "answer": 4,
-    "rationale": "Intoksikasi akut Parasetamol menyebabkan akumulasi metabolit reaktif toksik N-acetyl-p-benzoquinone imine (NAPQI) di hati karena cadangan glutation hepatik habis terkuras.\nNAPQI berikatan dengan protein seluler hepatosit sehingga memicu stres oksidatif, nekrosis hepatoseluler masif, dan Gagal Hati Akut."
+    "rationale": "Intoksikasi akut Parasetamol menyebabkan akumulasi metabolit reaktif toksik N-acetyl-p-benzoquinone imine (NAPQI) di hati karena cadangan glutation hepatik habis terkuras.\nNAPQI berikatan dengan protein seluler hepatosit sehingga memicu stres oksidatif, nekrosis hepatoseluler masif, dan Gagal Hati Akut.\nPembahasan lebih lengkap (dari PT 34, no. 16):\nKonsumsi Parasetamol (Asetaminofen) dalam dosis besar sekaligus (dosis hepatotoksik dewasa >4.000 mg/hari atau >7,5–10 gram pada keracunan akut / >150 mg/kgBB) menyebabkan Drug-Induced Liver Injury (DILI) yang berujung pada nekrosis hepatoseluler masif dan Gagal Hati Akut (Fulminant Hepatic Failure).\nDalam kondisi normal, >90% parasetamol dimetabolisme di hati melalui konjugasi glukuronidasi dan sulfasi menjadi metabolit nontoksik, sedangkan sekitar 5–10% dioksidasi oleh enzim sitokrom P450 (CYP2E1) menjadi metabolit radikal reaktif N-acetyl-p-benzoquinone imine (NAPQI) yang segera didetoksifikasi oleh Glutation (GSH).\nPada overdosis masif, jalur konjugasi jenuh dan cadangan Glutation hati habis terkuras, sehingga NAPQI menumpuk dan berikatan kovalen dengan makromolekul hepatosit yang menyebabkan kematian sel hati (antidotum spesifik untuk mengisi kembali cadangan glutation adalah N-Asetilsistein / NAC).\nCatatan lintas paket: Soal yang sama muncul di PT 34 (no. 16) dengan jawaban yang sama (gagal Hati).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 34."
   },
   {
     "id": 84,
@@ -1173,7 +1173,7 @@ const questions3 = [
       "E. Divertikulitis"
     ],
     "answer": 1,
-    "rationale": "Keluhan BAB berdarah merah segar yang menetes di akhir defekasi tanpa disertai rasa nyeri tajam maupun penurunan berat badan, dengan faktor risiko konstipasi dan mengedan, merupakan manifestasi khas Hemoroid Interna (pelebaran pleksus venosus hemoroidalis superior di atas linea dentata, berbeda dengan fisura ani yang merupakan robekan mukosa anus dengan keluhan nyeri tajam hebat saat BAB)."
+    "rationale": "Keluhan BAB berdarah merah segar yang menetes di akhir defekasi tanpa disertai rasa nyeri tajam maupun penurunan berat badan, dengan faktor risiko konstipasi dan mengedan, merupakan manifestasi khas Hemoroid Interna (pelebaran pleksus venosus hemoroidalis superior di atas linea dentata, berbeda dengan fisura ani yang merupakan robekan mukosa anus dengan keluhan nyeri tajam hebat saat BAB).\nAnalisis opsi lain:\n(1) Tumor salah; disertai penurunan berat badan dan perubahan kebiasaan buang air besar, tidak ada pada kasus ini.\n(2) Fistula ani salah; nyeri perianal dengan keluar nanah, bukan darah segar menetes.\n(3) Fisura ani salah; nyeri hebat saat defekasi, bukan perdarahan tanpa nyeri.\n(4) Divertikulitis salah; nyeri perut kiri bawah dengan demam."
   },
   {
     "id": 85,
@@ -1187,7 +1187,7 @@ const questions3 = [
       "E. MRI dengan kontras"
     ],
     "answer": 0,
-    "rationale": "Gejala nyeri menelan hebat, drooling, demam, deviasi uvula ke sisi kontralateral, serta pembengkakan peritonsil yang fluktuatif (lunak dan pucat) menegakkan diagnosis Abses Peritonsil (Quinsy).\nTindakan diagnostik penunjang sekaligus terapeutik langsung untuk mengonfirmasi keberadaan pus adalah melakukan punksi/aspirasi pus menggunakan jarum pada daerah yang paling lunak/fluktuatif (sedangkan CT scan leher baru diindikasikan bila dicurigai adanya perluasan abses ke ruang leher dalam/kelenjar getah bening leher)."
+    "rationale": "Gejala nyeri menelan hebat, drooling, demam, deviasi uvula ke sisi kontralateral, serta pembengkakan peritonsil yang fluktuatif (lunak dan pucat) menegakkan diagnosis Abses Peritonsil (Quinsy).\nTindakan diagnostik penunjang sekaligus terapeutik langsung untuk mengonfirmasi keberadaan pus adalah melakukan punksi/aspirasi pus menggunakan jarum pada daerah yang paling lunak/fluktuatif (sedangkan CT scan leher baru diindikasikan bila dicurigai adanya perluasan abses ke ruang leher dalam/kelenjar getah bening leher).\nAnalisis opsi lain:\n(1) Rontgen jaringan lunak AP-lateral leher berguna untuk abses retrofaring atau benda asing, bukan untuk konfirmasi abses peritonsil.\n(2) USG leher dengan Doppler tidak menjadi standar untuk mengonfirmasi pus peritonsil.\n(3) CT scan dengan kontras dipertimbangkan bila dicurigai perluasan ke ruang leher dalam atau komplikasi, bukan pemeriksaan awal.\n(4) MRI dengan kontras tidak diperlukan pada kasus akut ini.\nCatatan lintas paket: Soal yang sama muncul di PT 28 (no. 3) dengan jawaban yang sama (aspirasi pus pada daerah yang paling lunak).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 28 (no. 3)."
   },
   {
     "id": 86,
@@ -1201,7 +1201,7 @@ const questions3 = [
       "E. Prevalens"
     ],
     "answer": 2,
-    "rationale": "Berdasarkan tabel matriks Evidence-Based Medicine (EBM), pertanyaan klinis yang mengevaluasi perjalanan penyakit atau risiko timbulnya luaran/komplikasi di masa mendatang (survival rate, complications) pada pasien yang sudah sakit (Diseased) berdasarkan faktor-faktor penyulit/prognostik seperti usia lanjut, komorbiditas, dan derajat invasi penyakit merupakan pertanyaan klinis jenis Prognosis."
+    "rationale": "Berdasarkan tabel matriks Evidence-Based Medicine (EBM), pertanyaan klinis yang mengevaluasi perjalanan penyakit atau risiko timbulnya luaran/komplikasi di masa mendatang (survival rate, complications) pada pasien yang sudah sakit (Diseased) berdasarkan faktor-faktor penyulit/prognostik seperti usia lanjut, komorbiditas, dan derajat invasi penyakit merupakan pertanyaan klinis jenis Prognosis.\nPembahasan lebih lengkap (dari PT 25, no. 90):\nPada vignette dokter sudah menetapkan pilihan operasi (karena penyembuhan lebih baik dibandingkan antijamur jangka panjang), lalu pasien dan keluarga menanyakan kemungkinan komplikasi yang akan timbul bila dioperasi dengan mempertimbangkan usia lanjut, penyakit penyerta, dan jenis jamur invasif. Pertanyaan tersebut menanyakan perjalanan penyakit atau luaran di masa mendatang pada pasien dengan faktor-faktor tertentu, yaitu pertanyaan prognosis. Slide pembahasan menguraikan penentuan jenis pertanyaan klinis (PICO): terapi (efek terapi dalam memperbaiki fungsi atau menghindari kejadian tak diinginkan), etiologi atau harm (efek agen yang berpotensi membahayakan), diagnosis (daya suatu tes membedakan sakit dan tidak sakit), dan prognosis (memperkirakan perjalanan penyakit pasien di masa mendatang); tabel PICOT memuat prognosis dengan populasi, faktor prognostik, pembanding, luaran (terjadinya atau tidak terjadinya kondisi), dan kerangka waktu.\nAnalisis opsi lain:\n(1) Diagnosis menilai tes penunjang.\n(2) Prevalens menilai frekuensi penyakit pada populasi.\n(3) Etiologi atau harm menilai agen penyebab atau yang membahayakan.\n(4) Intervensi (terapi) menilai efektivitas pilihan terapi; keputusan memilih operasi sudah diambil sebelum pertanyaan ini muncul.\nCatatan lintas paket: Soal yang sama muncul di PT 25 (no. 90), PT 27 (no. 52), PT 29 (no. 7), PT 30 (no. 114), PT 31 (no. 106), dan PT 33 (no. 107) dengan jawaban yang sama (prognosis).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 25."
   },
   {
     "id": 87,
@@ -1215,7 +1215,7 @@ const questions3 = [
       "E. Aktivasi komplemen"
     ],
     "answer": 1,
-    "rationale": "Reaksi anafilaksis merupakan reaksi hipersensitivitas tipe I yang diperantarai oleh ikatan silang (crosslinking) alergen spesifik dengan antibodi IgE yang terakumulasi pada reseptor berafinitas tinggi di permukaan sel mast dan basofil, sehingga memicu degranulasi cepat mediator kimiawi seperti histamin, triptase, leukotrien, dan prostaglandin."
+    "rationale": "Reaksi anafilaksis merupakan reaksi hipersensitivitas tipe I yang diperantarai oleh ikatan silang (crosslinking) alergen spesifik dengan antibodi IgE yang terakumulasi pada reseptor berafinitas tinggi di permukaan sel mast dan basofil, sehingga memicu degranulasi cepat mediator kimiawi seperti histamin, triptase, leukotrien, dan prostaglandin.\nPembahasan lebih lengkap (dari PT 34, no. 36):\nUji cukit/intradermal kulit (skin test) sebelum injeksi antibiotik bertujuan mendeteksi keberadaan antibodi IgE spesifik terhadap obat tersebut yang terikat di permukaan sel mast kulit.\nReaksi anafilaksis merupakan reaksi Hipersensitivitas Tipe I (tipe cepat / immediate / atopi) yang diperantarai oleh ikatan silang alergen/obat dengan antibodi IgE yang terakumulasi di permukaan sel mast dan basofil, sehingga memicu degranulasi histamin dan mediator vasoaktif lainnya.\nRangkuman 4 Tipe Reaksi Hipersensitivitas Gell & Coombs sebagai berikut.\n(1) Tipe I (IgE-mediated / Sel Mast): onset sangat cepat (hitungan menit), contohnya reaksi anafilaksis, angioedema, urtikaria akut, rinitis alergi, dan asma alergik.\n(2) Tipe II (Antibody-mediated / Sitotoksik IgG atau IgM): antibodi berikatan langsung dengan antigen permukaan sel target dan menghancurkan sel tersebut (melalui komplemen/MAC atau ADCC), contohnya Anemia Hemolitik Autoimun (AIHA), reaksi transfusi darah ABO/Rh, eritroblastosis fetalis, dan Goodpasture syndrome.\n(3) Tipe III (Immune Complex-mediated): antibodi berikatan dengan antigen terlarut/bebas di sirkulasi membentuk kompleks antigen-antibodi yang kemudian mengendap di dinding pembuluh darah/glomerulus, mengaktifkan komplemen, dan memanggil neutrofil yang merusak jaringan, contohnya SLE, Glomerulonefritis Akut Pascastreptokokus (GNAPS), reaksi Arthus, dan serum sickness.\n(4) Tipe IV (Cell-mediated / Delayed-Type Hypersensitivity oleh Limfosit T): tidak melibatkan antibodi melainkan aktivasi sel T (CD4+ Th1 dan CD8+ sitotoksik), membutuhkan waktu 48–72 jam pascapajanan kedua, contohnya Dermatitis Kontak Alergi (DKA), reaksi uji tuberkulin (Mantoux), dan penolakan transplantasi organ.\nAnalisis opsi lain:\n(1) Peningkatan limfosit T sitotoksik adalah mekanisme hipersensitivitas tipe IV.\n(2) IgG tinggi di sirkulasi berkaitan dengan hipersensitivitas tipe II.\n(3) Aktivasi komplemen terjadi pada reaksi tipe II atau III.\n(4) Kompleks imun yang banyak di sirkulasi adalah hipersensitivitas tipe III.\nCatatan lintas paket: Soal yang sama muncul di PT 28 (no. 69), PT 34 (no. 36), dan PT 36 (no. 63) dengan jawaban yang sama (akumulasi IgE di permukaan sel mast).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 34, PT 28 (no. 69)."
   },
   {
     "id": 88,
@@ -1229,7 +1229,7 @@ const questions3 = [
       "E. Tampon roll"
     ],
     "answer": 3,
-    "rationale": "Perdarahan dari Pleksus Kiesselbach di septum nasi anterior merupakan Epistaksis Anterior.\nAlur tatalaksana epistaksis anterior meliputi: penekanan cuping hidung (metode Trotter) selama 15-20 menit dengan posisi duduk menunduk, pemberian dekongestan topikal (oksimetazolin) untuk identifikasi sumber perdarahan, kauterisasi (perak nitrat/elektrik), dan apabila perdarahan masih berlanjut dipasang Tampon Anterior yang diolesi salep antibiotik selama 2x24 jam."
+    "rationale": "Perdarahan dari Pleksus Kiesselbach di septum nasi anterior merupakan Epistaksis Anterior.\nAlur tatalaksana epistaksis anterior meliputi: penekanan cuping hidung (metode Trotter) selama 15-20 menit dengan posisi duduk menunduk, pemberian dekongestan topikal (oksimetazolin) untuk identifikasi sumber perdarahan, kauterisasi (perak nitrat/elektrik), dan apabila perdarahan masih berlanjut dipasang Tampon Anterior yang diolesi salep antibiotik selama 2x24 jam.\nCatatan lintas paket: Soal yang sama muncul di PT 35 (no. 55) dan PT 36 (no. 23) dengan jawaban yang sama (tampon anterior)."
   },
   {
     "id": 89,
@@ -1285,7 +1285,7 @@ const questions3 = [
       "E. Dari cincin inguinal sebelah dalam untuk menutup ductus ejaculatorius"
     ],
     "answer": 3,
-    "rationale": "Lokasi pemotongan dan ligasi vas deferens (vasektomi) yang paling ideal secara anatomis adalah pada bagian vas deferens pars skrotalis, yaitu di antara bagian lurus epididimis dan cincin inguinalis superfisial (eksterna), karena posisinya paling mudah diakses dan dipalpasi di dalam kantong skrotum."
+    "rationale": "Lokasi pemotongan dan ligasi vas deferens (vasektomi) yang paling ideal secara anatomis adalah pada bagian vas deferens pars skrotalis, yaitu di antara bagian lurus epididimis dan cincin inguinalis superfisial (eksterna), karena posisinya paling mudah diakses dan dipalpasi di dalam kantong skrotum.\nAnalisis opsi lain:\n(1) Di atas epididimis salah; tidak menunjuk segmen standar yang mudah dipalpasi dan dijangkau melalui kulit skrotum.\n(2) Dalam cincin inguinal salah; bagian ini terletak di dalam kanalis inguinalis sehingga tidak dapat dijangkau pada vasektomi perkutan atau skrotal.\n(3) Pada atau tepat di bawah kaput epididimis salah; dekat epididimis sehingga berisiko mencederai epididimis dan bukan segmen yang dianjurkan.\n(4) Dari cincin inguinal dalam untuk menutup duktus ejakulatorius salah; duktus ejakulatorius berada di dalam prostat dan tidak dipotong pada vasektomi.\nCatatan lintas paket: Soal yang sama muncul di PT 35 (no. 69) dengan jawaban yang sama (antara epididimis dan cincin inguinalis superfisial)."
   },
   {
     "id": 93,
@@ -1327,7 +1327,7 @@ const questions3 = [
       "E. Levofloksasin"
     ],
     "answer": 2,
-    "rationale": "Demam akut, ikterik, gagal ginjal akut (ureum/kreatinin meningkat), dan nyeri tekan gastroknemius pada pekerja tempat pembuangan sampah merupakan gambaran klinis Leptospirosis Berat (Weil's disease).\nSesuai pedoman nasional, pilihan antibiotik intravena untuk kasus leptospirosis derajat sedang-berat adalah Seftriakson IV (1 gram/24 jam selama 7 hari) atau Penisilin G IV (1,5 juta unit/6 jam selama 7 hari)."
+    "rationale": "Demam akut, ikterik, gagal ginjal akut (ureum/kreatinin meningkat), dan nyeri tekan gastroknemius pada pekerja tempat pembuangan sampah merupakan gambaran klinis Leptospirosis Berat (Weil's disease).\nSesuai pedoman nasional, pilihan antibiotik intravena untuk kasus leptospirosis derajat sedang-berat adalah Seftriakson IV (1 gram/24 jam selama 7 hari) atau Penisilin G IV (1,5 juta unit/6 jam selama 7 hari).\nPembahasan lebih lengkap (dari PT 36, no. 19):\nDemam akut disertai menggigil, ikterus (sklera dan tubuh kuning), penurunan kesadaran (sopor), oliguria dengan peningkatan ureum dan kreatinin (gagal ginjal akut), injeksi konjungtiva (conjunctival suffusion), serta nyeri tekan otot betis (m. gastroknemius) pada pekerja tempat pembuangan sampah menegakkan diagnosis Leptospirosis Berat (Weil's Disease).\nTatalaksana antibiotik untuk Leptospirosis Berat diberikan secara intravena selama 7 hari berupa Penisilin G 1,5 juta unit IV tiap 6-8 jam, Seftriakson (Ceftriaxone) 1 gram/hari IV, Sefotaksim 1 gram IV tiap 6 jam, Ampisilin 1 gram IV tiap 6 jam, atau Eritromisin 4x500 mg IV selama 5 hari.\nSebagai perbandingan:\nUntuk Leptospirosis Ringan diberikan antibiotik oral selama 7 hari berupa Doksisiklin 2x100 mg, Amoksisilin 4x500 mg, Ampisilin 4x500-750 mg, atau Azitromisin 1 gram hari pertama diikuti 1x500 mg selama 2 hari.\nCatatan lintas paket: Soal yang sama muncul di PT 35 (no. 52) dan PT 36 (no. 19) dengan jawaban yang sama (ceftriakson).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 36."
   },
   {
     "id": 96,
@@ -1341,7 +1341,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 0,
-    "rationale": "Empati kognitif (*cognitive empathy* / *perspective-taking*) adalah kemampuan intelektual atau rasional untuk mengenali, memahami, dan memvalidasi cara pandang, pikiran, serta perspektif orang lain tanpa harus ikut terbawa larut secara emosional (*emotional contagion*), sehingga dokter dapat memberikan dukungan serta terapi secara objektif dan rasional."
+    "rationale": "Empati kognitif (*cognitive empathy* / *perspective-taking*) adalah kemampuan intelektual atau rasional untuk mengenali, memahami, dan memvalidasi cara pandang, pikiran, serta perspektif orang lain tanpa harus ikut terbawa larut secara emosional (*emotional contagion*), sehingga dokter dapat memberikan dukungan serta terapi secara objektif dan rasional.\nAnalisis opsi lain:\n(1) Menghindari empati emosional secara total salah; empati kognitif tetap menghargai perasaan pasien, hanya tidak larut secara emosional.\n(2) Ikut menangis bersama pasien salah; merupakan empati afektif.\n(3) Memberikan saran tanpa mendengarkan salah; mengabaikan upaya memahami sudut pandang pasien."
   },
   {
     "id": 97,
@@ -1355,7 +1355,7 @@ const questions3 = [
       "E. Miringitis bulosa"
     ],
     "answer": 1,
-    "rationale": "Keluar sekret telinga kronis yang disertai bau busuk menyengat dan adanya kolesteatoma (sering kali ditandai perforasi atik/marginalis) merupakan tanda patognomonik Otitis Media Supuratif Kronis (OMSK) Tipe Maligna (tubotimpanik dengan kolesteatoma yang berisiko tinggi menimbulkan komplikasi intrakranial)."
+    "rationale": "Keluar sekret telinga kronis yang disertai bau busuk menyengat dan adanya kolesteatoma (sering kali ditandai perforasi atik/marginalis) merupakan tanda patognomonik Otitis Media Supuratif Kronis (OMSK) Tipe Maligna (tubotimpanik dengan kolesteatoma yang berisiko tinggi menimbulkan komplikasi intrakranial).\nAnalisis opsi lain:\n(1) OMA fase perforasi salah; berlangsung akut disertai nyeri telinga dan demam sebelum perforasi, tanpa kolesteatoma.\n(2) OMSK tipe benigna salah; perforasi sentral tanpa kolesteatoma dengan sekret tidak berbau busuk.\n(3) Otitis eksterna difusa salah; nyeri saat daun telinga ditarik dengan liang telinga bengkak.\n(4) Miringitis bulosa salah; bula pada membran timpani dengan nyeri telinga hebat."
   },
   {
     "id": 98,
@@ -1383,7 +1383,7 @@ const questions3 = [
       "E. Anemia aplastik"
     ],
     "answer": 2,
-    "rationale": "Peningkatan hitung retikulosit (retikulositosis / indeks produksi retikulosit meningkat) pada gambaran darah tepi dengan morfologi anemia normositik normokromik dan tanda hemolisis ringan (sklera ikterik akibat peningkatan bilirubin indirek dari destruksi eritrosit) menegakkan diagnosis Anemia Hemolitik (di mana sumsum tulang berusaha mengkompensasi penghancuran sel darah merah dengan memproduksi eritrosit baru secara masif)."
+    "rationale": "Peningkatan hitung retikulosit (retikulositosis / indeks produksi retikulosit meningkat) pada gambaran darah tepi dengan morfologi anemia normositik normokromik dan tanda hemolisis ringan (sklera ikterik akibat peningkatan bilirubin indirek dari destruksi eritrosit) menegakkan diagnosis Anemia Hemolitik (di mana sumsum tulang berusaha mengkompensasi penghancuran sel darah merah dengan memproduksi eritrosit baru secara masif).\nAnalisis opsi lain:\n(1) Anemia defisiensi besi salah; mikrositik hipokrom dengan retikulosit rendah atau normal.\n(2) Anemia defisiensi B12 salah; makrositik dengan retikulosit rendah.\n(3) Talasemia minor salah; mikrositik hipokrom dengan sel target.\n(4) Anemia aplastik salah; pansitopenia dengan retikulosit rendah."
   },
   {
     "id": 100,
@@ -1397,7 +1397,7 @@ const questions3 = [
       "E. Cedera dasar panggul melemahkan sfingter uretra"
     ],
     "answer": 4,
-    "rationale": "Pasien mengalami Stress Urinary Incontinence (SUI) yang dipicu oleh peningkatan tekanan intraabdomen (batuk, bersin, tertawa).\nPatofisiologi utamanya adalah kelemahan atau cedera pada otot-otot dasar panggul dan kompleks penopang uretra (termasuk kompleks sfingter uretra/urethrovaginal sphincter) akibat riwayat persalinan pervaginam dan tindakan episiotomi, sehingga gagal menopang uretra saat terjadi tekanan intraabdomen mendadak."
+    "rationale": "Pasien mengalami Stress Urinary Incontinence (SUI) yang dipicu oleh peningkatan tekanan intraabdomen (batuk, bersin, tertawa).\nPatofisiologi utamanya adalah kelemahan atau cedera pada otot-otot dasar panggul dan kompleks penopang uretra (termasuk kompleks sfingter uretra/urethrovaginal sphincter) akibat riwayat persalinan pervaginam dan tindakan episiotomi, sehingga gagal menopang uretra saat terjadi tekanan intraabdomen mendadak.\nAnalisis opsi lain:\n(1) Kadar estrogen rendah menyebabkan atrofi salah; menimbulkan gejala atrofi vagina dan urgensi, bukan kebocoran saat tekanan abdomen naik.\n(2) Cedera saraf pudendal melemahkan otot sfingter uretra eksternal salah; menurut kunci file mekanisme utama pada kasus ini adalah cedera dasar panggul yang melemahkan sfingter uretra.\n(3) Kandung kemih berkontraksi secara involunter salah; mekanisme inkontinensia urgensi atau kandung kemih hiperaktif.\n(4) Peningkatan tekanan intra-abdomen meningkatkan kebocoran uretra salah; merupakan pemicu kebocoran, bukan patofisiologi dasar kelemahan penutup uretra.\nCatatan lintas paket: Soal yang sama muncul di PT 35 (no. 104) dengan jawaban yang sama (cedera dasar panggul melemahkan sfingter uretra)."
   },
   {
     "id": 101,
@@ -1411,7 +1411,7 @@ const questions3 = [
       "E. Kista kelenjar Skene"
     ],
     "answer": 2,
-    "rationale": "Benjolan nyeri di daerah labia yang membesar progresif dalam 1 minggu terakhir disertai tanda peradangan dan nyeri tekan (VAS 3-4) merupakan gambaran khas Abses Bartholin (infeksi purulen pada kista/kelenjar Bartholin)."
+    "rationale": "Benjolan nyeri di daerah labia yang membesar progresif dalam 1 minggu terakhir disertai tanda peradangan dan nyeri tekan (VAS 3-4) merupakan gambaran khas Abses Bartholin (infeksi purulen pada kista/kelenjar Bartholin).\nPembahasan lebih lengkap (dari PT 32, no. 98):\nBenjolan di daerah kemaluan (vestibulum posterolateral / labium minus arah jam 5 dan jam 7) yang membesar secara akut dalam 1 minggu terakhir dan disertai rasa NYERI (VAS 3–4) serta riwayat keputihan sebelumnya menegakkan diagnosis Abses Kelenjar Bartholin (opsi C, pada file kedua berada di Nomor 55).\nPerbedaan utama Kista Bartholin vs Abses Bartholin: Kista Bartholin (opsi B) merupakan sumbatan duktus non-infeksius yang bersifat tidak nyeri (asimtomatik bila kecil), sedangkan apabila kista tersebut mengalami infeksi sekunder polimikrobial (seperti N. gonorrhoeae, C. trachomatis, atau Escherichia coli dari keputihan) hingga membentuk pus dan menimbulkan nyeri, maka diagnosisnya menjadi Abses Bartholin.\nCatatan lintas paket: Soal yang sama muncul di PT 32 (no. 98) dengan jawaban yang sama (abses Bartholin).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 32."
   },
   {
     "id": 102,
@@ -1425,7 +1425,7 @@ const questions3 = [
       "E. G1, Hamil post term, Belum jelas inpartu"
     ],
     "answer": 1,
-    "rationale": "Usia kehamilan 42 minggu dikategorikan sebagai kehamilan post-term (lewat waktu), sedangkan temuan pemeriksaan dalam berupa pembukaan serviks 1 cm (rentang fase laten Kala I adalah pembukaan 0-3 cm) disertai adanya kontraksi uterus minimal 2 kali dalam 10 menit menegakkan diagnosis inpartu fase laten, sehingga diagnosis lengkapnya adalah G1, Hamil post term, Inpartu fase laten."
+    "rationale": "Usia kehamilan 42 minggu dikategorikan sebagai kehamilan post-term (lewat waktu), sedangkan temuan pemeriksaan dalam berupa pembukaan serviks 1 cm (rentang fase laten Kala I adalah pembukaan 0-3 cm) disertai adanya kontraksi uterus minimal 2 kali dalam 10 menit menegakkan diagnosis inpartu fase laten, sehingga diagnosis lengkapnya adalah G1, Hamil post term, Inpartu fase laten.\nPembahasan lebih lengkap (dari PT 33, no. 88):\nPenentuan usia kehamilan berdasarkan pemeriksaan USG trimester pertama (usia kehamilan 12 minggu, melalui pengukuran Crown-Rump Length / CRL) merupakan baku emas penentuan usia gestasi yang paling akurat bila pasien lupa HPHT, karena saat ini usianya telah mencapai 42 minggu lengkap (≥42 minggu), maka kehamilan dikategorikan sebagai Hamil Post-term (lewat waktu, sedangkan aterm adalah 37 minggu sampai 41 minggu 6 hari).\nSelanjutnya, karena pasien sudah memiliki kontraksi uterus reguler (his 2 kali dalam 10 menit selama 25 detik) yang disertai adanya dilatasi/pembukaan serviks sebesar 1 cm, maka pasien sudah masuk dalam proses persalinan (Inpartu) Kala I Fase Laten (pembukaan 1–3 cm / <4 cm, sedangkan Fase Aktif dimulai pada pembukaan ≥4 cm, dan 'belum jelas inpartu' atau false labor/Braxton Hicks hanya berlaku bila kontraksi tidak teratur tanpa adanya pembukaan serviks).\nDengan demikian, diagnosis yang tepat adalah G1, Hamil post term, Inpartu fase laten (opsi B).\nCatatan lintas paket: Soal yang sama muncul di PT 31 (no. 43), PT 33 (no. 88), PT 34 (no. 59), dan PT 35 (no. 66) dengan jawaban yang sama (G1, Hamil post term, Inpartu fase laten).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 33."
   },
   {
     "id": 103,
@@ -1439,7 +1439,7 @@ const questions3 = [
       "E. Varicella zoster virus"
     ],
     "answer": 4,
-    "rationale": "Lesi kulit polimorfik (papul, vesikel, krusta yang muncul bersamaan) dengan distribusi sentrifugal/sentripetal terutama di badan, wajah, dan ekstremitas pascademam prodromal merupakan gambaran klinis khas Varisela (cacar air) akibat infeksi Varicella zoster virus (VZV)."
+    "rationale": "Lesi kulit polimorfik (papul, vesikel, krusta yang muncul bersamaan) dengan distribusi sentrifugal/sentripetal terutama di badan, wajah, dan ekstremitas pascademam prodromal merupakan gambaran klinis khas Varisela (cacar air) akibat infeksi Varicella zoster virus (VZV).\nAnalisis opsi lain:\n(1) HSV tipe 1 salah; vesikel berkelompok pada mukokutan (misalnya bibir) dan tidak menyebar luas dengan lesi berbagai stadium.\n(2) HSV tipe 2 salah; vesikel berkelompok di genital.\n(3) Poxvirus salah; molluskum kontagiosum berupa papul berumbilikasi tanpa demam dan vesikel.\n(4) Measles salah; ruam makulopapular dengan koplik spot, bukan vesikel."
   },
   {
     "id": 104,
@@ -1453,7 +1453,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 0,
-    "rationale": "Konjungtivitis atau infeksi mata akut yang didapat perawat poliklinik mata akibat paparan penularan dari pasien di tempat kerja digolongkan sebagai penyakit yang berhubungan dengan kerja (*work-related disease*), di mana pekerjaan dapat memperberat atau memicu kerentanan tanpa menjadi agen penyebab tunggal yang spesifik mutlak."
+    "rationale": "Konjungtivitis atau infeksi mata akut yang didapat perawat poliklinik mata akibat paparan penularan dari pasien di tempat kerja digolongkan sebagai penyakit yang berhubungan dengan kerja (*work-related disease*), di mana pekerjaan dapat memperberat atau memicu kerentanan tanpa menjadi agen penyebab tunggal yang spesifik mutlak.\nAnalisis opsi lain:\n(1) Penyakit akibat kerja salah; memerlukan pajanan spesifik di tempat kerja sebagai penyebab yang jelas, sedangkan di sini penyebab tidak spesifik.\n(2) Penyakit akibat hubungan kerja salah menurut kunci file; kunci memilih kategori penyakit yang berhubungan dengan kerja karena faktor pekerjaan hanya mungkin berperan, bukan penyebab satu-satunya.\n(3) Kecelakaan kerja salah; kejadian mendadak yang tidak diharapkan dan tidak sesuai dengan keluhan bertahap tanpa trauma."
   },
   {
     "id": 105,
@@ -1467,7 +1467,7 @@ const questions3 = [
       "E. Ketokonazol 1x100 mg p.o selama 7 hari"
     ],
     "answer": 0,
-    "rationale": "Kasus abses/kista Bartholin dengan nyeri tekan di labia dan riwayat keputihan ditatalaksana dengan pemberian antibiotik empiris lini pertama seperti Amoksisilin-klavulanat 3x625 mg per oral selama 7 hari (atau Kotrimoksazol) disertai evaluasi drainase/marsupialisasi bila terbentuk abses fluktuatif."
+    "rationale": "Kasus abses/kista Bartholin dengan nyeri tekan di labia dan riwayat keputihan ditatalaksana dengan pemberian antibiotik empiris lini pertama seperti Amoksisilin-klavulanat 3x625 mg per oral selama 7 hari (atau Kotrimoksazol) disertai evaluasi drainase/marsupialisasi bila terbentuk abses fluktuatif.\nAnalisis opsi lain:\n(1) Flukonazol 150 mg dosis tunggal salah; terapi kandidiasis vulvovaginal, bukan abses.\n(2) Asam trikloroasetat 80% topikal salah; terapi kondiloma akuminata, bukan abses kelenjar Bartholin.\n(3) Seftriakson 1 g intravena dosis tunggal salah; terapi gonore tanpa komplikasi, sedangkan abses Bartholin ditangani dengan antibiotik spektrum polimikroba dan drainase.\n(4) Ketokonazol 100 mg salah; antijamur yang tidak sesuai untuk abses bakterial.\nCatatan lintas paket: Soal yang sama muncul di PT 35 (no. 111) dengan jawaban yang sama (amoksisilin klavulanat 3x 625mg p.o selama 7 hari)."
   },
   {
     "id": 106,
@@ -1481,7 +1481,7 @@ const questions3 = [
       "E. Lorazepam 0,1 mg/kgBB intravena"
     ],
     "answer": 1,
-    "rationale": "Berdasarkan Pedoman Pelayanan Medis (PPM) IDAI untuk penanganan kejang pada neonatus (asfiksia perinatal / Ensefalopati Hipo-Iskemik), tatalaksana farmakologis lini pertama untuk menghentikan kejang neonatus adalah pemberian Fenobarbital dengan dosis 20 mg/kgBB secara intravena (IV) pelan dalam waktu 10-15 menit."
+    "rationale": "Berdasarkan Pedoman Pelayanan Medis (PPM) IDAI untuk penanganan kejang pada neonatus (asfiksia perinatal / Ensefalopati Hipo-Iskemik), tatalaksana farmakologis lini pertama untuk menghentikan kejang neonatus adalah pemberian Fenobarbital dengan dosis 20 mg/kgBB secara intravena (IV) pelan dalam waktu 10-15 menit.\nAnalisis opsi lain:\n(1) Fenitoin 20 mg/kgBB intravena salah; lini kedua setelah fenobarbital pada kejang neonatus.\n(2) Midazolam 0,2 mg/kgBB intravena salah; alternatif bila fenobarbital dan fenitoin tidak efektif.\n(3) Diazepam 1 mg intravena salah menurut kunci file ini; diazepam tidak menjadi pilihan lini pertama kejang neonatus karena risiko depresi napas (pada PT 27 soal serupa berkunci diazepam, lihat catatan lintas paket).\n(4) Lorazepam 0,1 mg/kgBB intravena salah; alternatif lini berikutnya.\nCatatan lintas paket: Konflik kunci: soal yang sama di PT 36 (no. 120) berkunci fenobarbital 20 mg/kgBB intravena dalam 10-15 menit (sama dengan paket ini), tetapi di PT 27 (no. 101) berkunci diazepam 1 mg IV."
   },
   {
     "id": 107,
@@ -1495,7 +1495,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 0,
-    "rationale": "Pencegahan primer (*primary prevention*) bertujuan mencegah timbulnya penyakit sebelum proses patologis dimulai, contohnya adalah pemberian Vaksinasi HPV pada anak perempuan usia sekolah (sebelum aktif secara seksual), sedangkan Pap smear dan pemeriksaan IVA termasuk dalam pencegahan sekunder (*secondary prevention*) melalui deteksi dini."
+    "rationale": "Pencegahan primer (*primary prevention*) bertujuan mencegah timbulnya penyakit sebelum proses patologis dimulai, contohnya adalah pemberian Vaksinasi HPV pada anak perempuan usia sekolah (sebelum aktif secara seksual), sedangkan Pap smear dan pemeriksaan IVA termasuk dalam pencegahan sekunder (*secondary prevention*) melalui deteksi dini.\nAnalisis opsi lain:\n(1) Pap smear dan IVA rutin salah; skrining untuk deteksi dini, termasuk pencegahan sekunder.\n(2) Histerektomi profilaksis salah; bukan strategi pencegahan kanker serviks pada populasi umum.\n(3) Skrining DNA HPV massal salah; termasuk pencegahan sekunder (deteksi dini)."
   },
   {
     "id": 108,
@@ -1509,7 +1509,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 3,
-    "rationale": "Sel parietal lambung yang mensekresikan asam lambung (HCl) terkonsentrasi sangat banyak di dalam kelenjar oksintik yang terletak di lapisan lamina propria pada regio korpus dan fundus gaster."
+    "rationale": "Sel parietal lambung yang mensekresikan asam lambung (HCl) terkonsentrasi sangat banyak di dalam kelenjar oksintik yang terletak di lapisan lamina propria pada regio korpus dan fundus gaster.\nAnalisis opsi lain:\n(1) Mukosa subfundus salah; bukan lokasi utama kelenjar penghasil asam.\n(2) Lamina propria pilorus salah; didominasi sel G penghasil gastrin dan sel mukus, bukan sel parietal.\n(3) Mukosa kardia salah; didominasi kelenjar mukus kardia.\nCatatan: PT 34 (no. 3) berkunci lamina propria korpus gaster, sedangkan di sini kunci memuat korpus dan fundus gaster; keduanya konsisten karena sel parietal terkonsentrasi di kelenjar oksintik korpus dan fundus.\nCatatan lintas paket: Konflik kunci: soal yang sama di PT 34 (no. 3) berkunci di lamina propria korpus gaster, sedangkan paket ini berkunci di lamina propria korpus dan fundus gaster."
   },
   {
     "id": 109,
@@ -1523,7 +1523,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 0,
-    "rationale": "Serangan monoartritis akut pada sendi dengan tanda inflamasi klasik disertai kadar asam urat serum sangat tinggi (12 mg/dL) menegakkan diagnosis Gout Artritis Akut, yang patofisiologi utamanya ditandai oleh deposisi kristal Monosodium Urat (MSU) di dalam rongga cairan sinovial dan jaringan sekitar sendi yang memicu reaksi inflamasi akut dimediasi neutrofil."
+    "rationale": "Serangan monoartritis akut pada sendi dengan tanda inflamasi klasik disertai kadar asam urat serum sangat tinggi (12 mg/dL) menegakkan diagnosis Gout Artritis Akut, yang patofisiologi utamanya ditandai oleh deposisi kristal Monosodium Urat (MSU) di dalam rongga cairan sinovial dan jaringan sekitar sendi yang memicu reaksi inflamasi akut dimediasi neutrofil.\nAnalisis opsi lain:\n(1) Deposisi kristal kalsium pirofosfat salah; patofisiologi pseudogout, dengan kadar asam urat serum tidak setinggi ini.\n(2) Degenerasi kartilago sendi salah; patofisiologi osteoartritis, bukan serangan akut dengan hiperurisemia.\n(3) Infeksi purulen cairan sinovial salah; artritis septik disertai demam dan tanda sepsis serta leukositosis sinovial."
   },
   {
     "id": 110,
@@ -1537,7 +1537,7 @@ const questions3 = [
       "E. Eklamsia"
     ],
     "answer": 3,
-    "rationale": "Ibu hamil dengan hipertensi berat (160/110 mmHg) disertai komplikasi hemolisis (peningkatan LDH 700 U/L, penurunan Hb), peningkatan enzim hati (SGOT/SGPT meningkat), dan trombositopenia berat (trombosit 50.000/µL) memenuhi seluruh kriteria diagnostik untuk Sindrom HELLP (Hemolysis, Elevated Liver enzymes, Low Platelet count)."
+    "rationale": "Ibu hamil dengan hipertensi berat (160/110 mmHg) disertai komplikasi hemolisis (peningkatan LDH 700 U/L, penurunan Hb), peningkatan enzim hati (SGOT/SGPT meningkat), dan trombositopenia berat (trombosit 50.000/µL) memenuhi seluruh kriteria diagnostik untuk Sindrom HELLP (Hemolysis, Elevated Liver enzymes, Low Platelet count).\nPembahasan lebih lengkap (dari PT 27, no. 5):\nPerempuan hamil 38 minggu dengan tekanan darah 160/110 mmHg dan proteinuria disertai Hb 10 g/dL, trombosit 30.000/uL, SGOT 123 U/L, SGPT 100 U/L, dan LDH 700 U/L memenuhi kriteria sindrom HELLP (hemolysis, elevated liver enzymes, low platelets): hemolisis (LDH meningkat, Hb rendah), peningkatan enzim hati (AST/ALT di atas 70 IU/L), dan trombositopenia (di bawah 100.000/uL). HELLP dapat terjadi tanpa gejala klinis seperti nyeri ulu hati atau sakit kepala, sehingga ketiadaan keluhan tidak menyingkirkannya. Slide pembahasan PT 27 menampilkan tabel klasifikasi hipertensi dalam kehamilan (preeklamsia, preeklamsia berat, superimposed preeklamsia, hipertensi gestasional, hipertensi kronik, eklamsia) serta kriteria HELLP.\nAnalisis opsi lain:\n(1) Hipertensi kronik terjadi sebelum usia kehamilan 20 minggu atau menetap lebih dari 12 minggu pascapersalinan.\n(2) Eklamsia memerlukan kejang atau penurunan kesadaran, yang tidak ada pada pasien.\n(3) Hipertensi dalam kehamilan (gestasional) tidak disertai proteinuria dan gangguan organ.\n(4) Preeklamsia tampilan berat tidak menjelaskan trias hemolisis, peningkatan enzim hati, dan trombositopenia sekaligus, sehingga HELLP adalah diagnosis yang lebih spesifik.\nCatatan lintas paket: Soal yang sama muncul di PT 27 (no. 5) dan PT 29 (no. 80) dengan jawaban yang sama (sindrom HELLP).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 27."
   },
   {
     "id": 111,
@@ -1551,7 +1551,7 @@ const questions3 = [
       "E. Aktivitas guanylyl cyclase"
     ],
     "answer": 0,
-    "rationale": "Ketika cahaya mengenai retina, isomerisasi cis-retinal menjadi all-trans-retinal mengaktifkan rodopsin yang kemudian mengaktifkan protein G fototransduksi, sehingga aktivitas Transdusin meningkat (memicu penutupan kanal Na+/Ca2+, hiperpolarisasi sel, dan penurunan pelepasan neurotransmiter)."
+    "rationale": "Ketika cahaya mengenai retina, isomerisasi cis-retinal menjadi all-trans-retinal mengaktifkan rodopsin yang kemudian mengaktifkan protein G fototransduksi, sehingga aktivitas Transdusin meningkat (memicu penutupan kanal Na+/Ca2+, hiperpolarisasi sel, dan penurunan pelepasan neurotransmiter).\nPembahasan lebih lengkap (dari PT 32, no. 85):\nBerdasarkan diagram biokimia Kaskade Fototransduksi Retina (Phototransduction) pada kedua file pembahasan (pada file kedua berada di Nomor 57): ketika partikel cahaya (foton) menyinari sel fotoreseptor retina (sel batang/rod dan sel kerucut/cone), terjadi 6 tahapan berurutan sebagai berikut.\n(1) Foton cahaya diserap oleh pigmen Rhodopsin di membran cakram segmen luar fotoreseptor, menyebabkan fotoisomerisasi gugus kromofor vitamin A dari bentuk 11-cis-retinal menjadi all-trans-retinal.\n(2) Perubahan konfigurasi ini mengaktifkan bagian protein opsin menjadi Metarhodopsin II (Rhodopsin aktif), yang kemudian mengaktifkan protein G intraseluler spesifik fotoreseptor yang bernama Transducin (subunit alfa Transducin melepaskan GDP dan mengikat GTP -> sehingga PROTEIN yang aktivitasnya meningkat saat terkena cahaya adalah Aktivitas Transducin, opsi A).\n(3) Kompleks alfa-Transducin-GTP mengaktifkan enzim cGMP Phosphodiesterase (PDE6).\n(4) Enzim PDE menghidrolisis/memecah cGMP menjadi GMP sehingga konsentrasi cGMP intraseluler turun drastis.\n(5) Penurunan cGMP menyebabkan kanal kation (Na+ dan Ca2+) yang bergantung pada cGMP (cGMP-gated sodium/calcium channels) MENUTUP, sehingga influks Na+ dan Ca2+ berhenti sementara efluks K+ terus berlangsung -> memicu Hiperpolarisasi membran sel fotoreseptor (potensial membran turun dari -40 mV menjadi -70 mV) dan penurunan konsentrasi kalsium intraseluler (opsi D salah).\n(6) Hiperpolarisasi dan penurunan Ca2+ ini menyebabkan penurunan pelepasan neurotransmiter inhibitorik Glutamat ke celah sinaps (opsi B salah karena jumlah neurotransmiter justru menurun dan neurotransmiter glutamat adalah asam amino, bukan protein, sedangkan all-trans-retinal pada opsi C memang meningkat konsentrasinya namun merupakan molekul aldehida turunan vitamin A/retinoid, BUKAN suatu protein).\nCatatan lintas paket: Soal yang sama muncul di PT 32 (no. 85) dengan jawaban yang sama (aktivitas transdusin).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 32."
   },
   {
     "id": 112,
@@ -1565,7 +1565,7 @@ const questions3 = [
       "E. Nistatin ovula"
     ],
     "answer": 0,
-    "rationale": "Keputihan berbau amis dengan temuan clue cells pada pewarnaan mikroskopis menegakkan diagnosis Vaginosis Bakterialis, dengan tatalaksana lini pertama pilihan adalah Metronidazol oral (2x500 mg selama 7 hari atau dosis tunggal 2 gram) atau Klindamisin oral."
+    "rationale": "Keputihan berbau amis dengan temuan clue cells pada pewarnaan mikroskopis menegakkan diagnosis Vaginosis Bakterialis, dengan tatalaksana lini pertama pilihan adalah Metronidazol oral (2x500 mg selama 7 hari atau dosis tunggal 2 gram) atau Klindamisin oral.\nAnalisis opsi lain:\n(1) Ketokonazol 2x200 mg salah; antijamur untuk kandidiasis, bukan vaginosis bakterialis.\n(2) Seftriakson 250 mg IM salah; terapi gonore.\n(3) Doksisiklin 2x100 mg salah; terapi infeksi klamidia.\n(4) Nistatin ovula salah; terapi kandidiasis vaginalis."
   },
   {
     "id": 113,
@@ -1579,7 +1579,7 @@ const questions3 = [
       "E. -"
     ],
     "answer": 3,
-    "rationale": "Pasien gagal jantung yang mengalami keluhan sesak napas saat istirahat (disertai ortopnea dan edema tungkai) diklasifikasikan ke dalam NYHA Functional Class IV."
+    "rationale": "Pasien gagal jantung yang mengalami keluhan sesak napas saat istirahat (disertai ortopnea dan edema tungkai) diklasifikasikan ke dalam NYHA Functional Class IV.\nPembahasan lebih lengkap (dari PT 34, no. 106):\nBerdasarkan tabel klasifikasi derajat fungsional gagal jantung New York Heart Association (NYHA), rinciannya sebagai berikut.\n(1) NYHA Class I: Tidak ada keterbatasan aktivitas fisik.\nAktivitas fisik sehari-hari yang biasa tidak menimbulkan kelelahan berlebih, palpitasi, atau sesak napas (kapasitas ≥7 METs).\n(2) NYHA Class II: Keterbatasan ringan aktivitas fisik.\nPasien merasa nyaman saat istirahat, tetapi aktivitas fisik sehari-hari yang biasa (seperti naik >1 lantai tangga atau jalan cepat) sudah menimbulkan lelah, palpitasi, atau sesak napas (kapasitas 5–7 METs).\n(3) NYHA Class III: Keterbatasan nyata/bermakna aktivitas fisik.\nPasien masih nyaman saat istirahat, tetapi aktivitas fisik yang lebih ringan dari aktivitas biasa (seperti berjalan datar jarak pendek, mandi, atau berpakaian) sudah menimbulkan keluhan sesak napas (kapasitas 2–5 METs).\n(4) NYHA Class IV: Tidak mampu melakukan aktivitas fisik apa pun tanpa keluhan.\nGejala gagal jantung (sesak napas) sudah muncul meskipun saat ISTIRAHAT (symptoms at rest), dan bila melakukan aktivitas sedikit saja keluhan semakin memberat (kapasitas ≤2 METs).\nAnalisis opsi lain:\n(1) Kelas III-IV bukan kategori baku NYHA.\n(2) Kelas III masih nyaman saat istirahat.\n(3) Kelas II hanya bergejala pada aktivitas biasa.\n(4) Kelas I tanpa gejala pada aktivitas biasa.\nCatatan lintas paket: Soal yang sama muncul di PT 25 (no. 14), PT 25 (no. 56), PT 34 (no. 106), PT 35 (no. 47), dan PT 35 (no. 50) dengan jawaban yang sama (NYHA Functional Class IV).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 34, PT 25 (no. 14)."
   },
   {
     "id": 114,
@@ -1593,7 +1593,7 @@ const questions3 = [
       "E. Pityriasis rosea"
     ],
     "answer": 1,
-    "rationale": "Plak eritematosa dengan skuama kasar yang tampak kekuningan dan berminyak (*greasy scales*) pada area seboroik tubuh (kulit kepala/dandruff, dada, dan punggung atas) merupakan gambaran khas Dermatitis Seboroik."
+    "rationale": "Plak eritematosa dengan skuama kasar yang tampak kekuningan dan berminyak (*greasy scales*) pada area seboroik tubuh (kulit kepala/dandruff, dada, dan punggung atas) merupakan gambaran khas Dermatitis Seboroik.\nAnalisis opsi lain:\n(1) Eritroderma salah; eritema difus pada lebih dari 90 persen luas tubuh dengan skuama halus.\n(2) Psoriasis vulgaris salah; plak eritematosa berbatas tegas dengan skuama putih berlapis seperti mika.\n(3) Eritrasma salah; makula cokelat di lipatan tubuh dengan fluoresensi merah koral pada lampu Wood.\n(4) Pitiriasis rosea salah; lesi herald patch diikuti lesi oval dengan skuama collarette mengikuti garis kulit."
   },
   {
     "id": 115,
@@ -1621,7 +1621,7 @@ const questions3 = [
       "E. Terdapat konsolidasi parenkim paru"
     ],
     "answer": 3,
-    "rationale": "Sesak napas akut mendadak pada dada kiri dengan temuan fisik hemitoraks kiri tertinggal, fremitus melemah, perkusi hipersonor, dan suara napas menghilang menandakan Pneumotoraks Spontan.\nPatofisiologinya adalah terkumpulnya udara secara patologis di dalam rongga pleura kiri yang menekan jaringan paru (kolaps) serta mendorong mediastinum ke arah kontralateral."
+    "rationale": "Sesak napas akut mendadak pada dada kiri dengan temuan fisik hemitoraks kiri tertinggal, fremitus melemah, perkusi hipersonor, dan suara napas menghilang menandakan Pneumotoraks Spontan.\nPatofisiologinya adalah terkumpulnya udara secara patologis di dalam rongga pleura kiri yang menekan jaringan paru (kolaps) serta mendorong mediastinum ke arah kontralateral.\nAnalisis opsi lain:\n(1) Penebalan pleura yang membatasi pengembangan dada salah; menimbulkan pekak atau redup pada perkusi.\n(2) Penekanan paru akibat akumulasi cairan di rongga pleura salah; efusi pleura menimbulkan perkusi redup, bukan hipersonor.\n(3) Pengembangan paru berlebihan yang menekan jantung salah; gambaran hiperinflasi tidak mengakibatkan hemitoraks tertinggal sepihak yang mendadak.\n(4) Konsolidasi parenkim paru salah; perkusi redup dengan fremitus meningkat dan suara napas bronkial.\nCatatan lintas paket: Soal yang sama muncul di PT 29 (no. 110), PT 30 (no. 93), PT 31 (no. 78), dan PT 33 (no. 8) dengan jawaban yang sama (terdapat udara di dalam rongga toraks kiri yang menekan paru dan mendorong mediastinum ke sisi kontralateral)."
   },
   {
     "id": 117,
@@ -1635,7 +1635,7 @@ const questions3 = [
       "E. Penggunaan povidone iodine mouthwash dibandingkan dengan terapi standar"
     ],
     "answer": 1,
-    "rationale": "Dalam formulasi pertanyaan klinis terapi berbasis PICO untuk skenario tersebut, komponen intervensi (I) dan kontrol (C) yang tepat adalah penggunaan povidone iodine mouthwash sebagai tambahan (adjuvan) pada terapi standar dibandingkan dengan kelompok kontrol yang hanya menerima terapi standar saja."
+    "rationale": "Dalam formulasi pertanyaan klinis terapi berbasis PICO untuk skenario tersebut, komponen intervensi (I) dan kontrol (C) yang tepat adalah penggunaan povidone iodine mouthwash sebagai tambahan (adjuvan) pada terapi standar dibandingkan dengan kelompok kontrol yang hanya menerima terapi standar saja.\nAnalisis opsi lain:\n(1) Penggunaan povidone iodine dibandingkan penggunaannya sebelum dan setelah infeksi salah; bukan rancangan perbandingan intervensi pada pasien yang sudah terinfeksi.\n(2) Dibandingkan plasebo salah; pembanding yang tepat adalah terapi standar saja karena povidone iodine dinilai sebagai tambahan.\n(3) Dibandingkan obat kumur lain tanpa terapi standar di kedua kelompok salah; pertanyaan tidak membandingkan antar obat kumur dan menghilangkan terapi standar.\n(4) Dibandingkan dengan terapi standar tanpa menyebut sifat tambahan salah; tidak menegaskan bahwa intervensi diberikan sebagai pelengkap terapi standar.\nCatatan lintas paket: Soal yang sama muncul di PT 35 (no. 10) dengan jawaban yang sama (penggunaan povidone iodine mouthwash sebagai tambahan untuk terapi standar dibandingkan dengan terapi standar saja)."
   },
   {
     "id": 118,
@@ -1649,7 +1649,7 @@ const questions3 = [
       "E. Sistem metabolik"
     ],
     "answer": 4,
-    "rationale": "Dalam penalaran klinis kausal anatomis untuk nyeri dada akut, sistem organ yang relevan meliputi kardiovaskular, pulmoner, gastrointestinal, dan muskuloskeletal, sedangkan sistem metabolik tidak memiliki kausalitas anatomis langsung sebagai penyebab utama nyeri tekan dada akut."
+    "rationale": "Dalam penalaran klinis kausal anatomis untuk nyeri dada akut, sistem organ yang relevan meliputi kardiovaskular, pulmoner, gastrointestinal, dan muskuloskeletal, sedangkan sistem metabolik tidak memiliki kausalitas anatomis langsung sebagai penyebab utama nyeri tekan dada akut.\nPembahasan lebih lengkap (dari PT 30, no. 71):\nPerhatikan perbandingan kunci jawaban antara dokumen `PT 37` & `PT 34` dengan catatan pada `PT 30` ini sebagai berikut.\n(1) Berdasarkan kunci resmi pada `PT 37` (Nomor 118) dan `PT 34` (Nomor 9): dalam penalaran klinis kausal untuk keluhan nyeri dan rasa tertekan akut di dada (2 jam), sistem organ anatomis di rongga toraks yang relevan sebagai penyebab langsung adalah sistem jantung dan pembuluh darah (iskemia miokard, perikarditis), sistem paru dan pernapasan (emboli paru, pleuritis, pneumotoraks), sistem muskuloskeletal dinding dada (kostokondritis, spasme otot interkostal), serta sistem gastrointestinal atas (esofagitis refluks/GERD, spasme esofagus), sedangkan yang TIDAK relevan memiliki kausalitas anatomis langsung terhadap nyeri dada akut pada pasien yang belum pernah sakit sebelumnya adalah Sistem Metabolik (opsi E).\n(2) Namun, pada catatan pembahasan `PT 30` (Nomor 71), penulis slide sempat menandai opsi D (Sistem gastrointestinal) karena menganggap di soal tidak ada petunjuk mual/nyeri ulu hati sedangkan kelainan metabolik seperti tiroid masih mungkin bikin berdebar/panik.\nUntuk ujian, opsi E (Sistem metabolik) adalah kunci standar yang terkonfirmasi pada PT 34 dan PT 37, dengan opsi D sebagai catatan alternatif dari file PT 30.\nCatatan lintas paket: Soal yang sama muncul di PT 30 (no. 71), PT 34 (no. 9), dan PT 35 (no. 68) dengan jawaban yang sama (sistem metabolik).\nCatatan sumber: Penjabaran pembahasan dilengkapi dari PT 30."
   },
   {
     "id": 119,
@@ -1663,7 +1663,7 @@ const questions3 = [
       "E. Krim mometason furoat 0,1%"
     ],
     "answer": 0,
-    "rationale": "Plak hiperpigmentasi dengan likenifikasi tebal dan skuama kering kronis akibat garukan berulang pada area kulit tebal (seperti punggung kaki) menegakkan diagnosis Liken Simpleks Kronikus.\nKarena lesi bersifat sangat tebal dan hiperkeratotik, tatalaksana topikal lini pertama yang memerlukan efek antiinflamasi dan antipruritus kuat pada area kulit tebal adalah kortikosteroid potensi sangat tinggi (superpotent), yaitu Salep Klobetasol Propionat 0,05%."
+    "rationale": "Plak hiperpigmentasi dengan likenifikasi tebal dan skuama kering kronis akibat garukan berulang pada area kulit tebal (seperti punggung kaki) menegakkan diagnosis Liken Simpleks Kronikus.\nKarena lesi bersifat sangat tebal dan hiperkeratotik, tatalaksana topikal lini pertama yang memerlukan efek antiinflamasi dan antipruritus kuat pada area kulit tebal adalah kortikosteroid potensi sangat tinggi (superpotent), yaitu Salep Klobetasol Propionat 0,05%.\nCatatan lintas paket: Soal yang sama muncul di PT 33 (no. 37), PT 34 (no. 57), dan PT 36 (no. 64) dengan jawaban yang sama (salep klobetasol propionat 0,05%)."
   },
   {
     "id": 120,
@@ -1677,6 +1677,6 @@ const questions3 = [
       "E. Apathy"
     ],
     "answer": 0,
-    "rationale": "Kemampuan intelektual untuk memahami dunia dan perspektif orang lain secara rasional tanpa ikut terseret dalam gelombang emosi personal pasien disebut sebagai *Cognitive empathy* (empati kognitif)."
+    "rationale": "Kemampuan intelektual untuk memahami dunia dan perspektif orang lain secara rasional tanpa ikut terseret dalam gelombang emosi personal pasien disebut sebagai *Cognitive empathy* (empati kognitif).\nAnalisis opsi lain:\n(1) Emotional empathy salah; ikut merasakan emosi pasien, bukan sekadar memahami perspektif.\n(2) Compassionate empathy salah; empati yang disertai dorongan bertindak membantu, sedangkan kasus menekankan pemahaman perspektif.\n(3) Sympathy salah; rasa kasihan terhadap penderitaan tanpa memahami sudut pandang.\n(4) Apathy salah; sikap tidak peduli."
   }
 ];
