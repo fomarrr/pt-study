@@ -58,7 +58,7 @@ const questions11 = [
   {
     "id": 5,
     "topic": "Forensik, Medikolegal & IKM",
-    "question": "Sebuah uji diagnosis dilakukan untuk mendeteksi virus influenza dengan alat non invasif pada 1340 pasien. Data dipublikasi di sebuah jurnal penyakit infeksi dan anda sedang melakukan telaah kritis. (Pada soal asli terdapat tabel data hasil uji diagnostik.) Apakah penilaian yang tepat berdasarkan data di atas?",
+    "question": "Sebuah uji diagnosis dilakukan untuk mendeteksi virus influenza dengan alat non invasif pada 1340 pasien. Data dipublikasi di sebuah jurnal penyakit infeksi dan anda sedang melakukan telaah kritis.\n\nTabel hasil uji diagnostik (1340 pasien); pada berkas sumber tabelnya tidak terlihat, tetapi dari pilihan jawaban dapat disimpulkan nilainya:\nUji positif: virus influenza ada = 580 (positif benar); virus influenza tidak ada = 150 (positif palsu)\nUji negatif: virus influenza ada = 140 (negatif palsu); virus influenza tidak ada = 450 (negatif benar)\n\nApakah penilaian yang tepat berdasarkan data di atas?",
     "options": [
       "A. Test non invasif tersebut bisa dipakai sebagai skrining influenza",
       "B. Negative predictive value 450/(150+450)",
@@ -170,7 +170,7 @@ const questions11 = [
   {
     "id": 13,
     "topic": "Respirasi & Pulmonologi",
-    "question": "Seorang laki-laki berusia 65 tahun datang ke poliklinik dengan keluhan nyeri dada kanan sejak 2 bulan yang lalu. Nafsu makan menurun, berat badan menurun 5 kg dalam 1 bulan. Pasien seorang perokok berat. Hasil pemeriksaan fisik dalam batas normal. Hasil pemeriksaan foto toraks seperti berikut ini. (Pada soal asli terdapat foto toraks.) Apakah diagnosis yang paling sesuai?",
+    "question": "Seorang laki-laki berusia 65 tahun datang ke poliklinik dengan keluhan nyeri dada kanan sejak 2 bulan yang lalu. Nafsu makan menurun, berat badan menurun 5 kg dalam 1 bulan. Pasien seorang perokok berat. Hasil pemeriksaan fisik dalam batas normal. Hasil pemeriksaan foto toraks seperti berikut ini.\n\n[Gambar (pada soal asli berupa foto toraks): siluet mediastinum/jantung tampak lebar dan padat di tengah, kedua paru relatif lusen dengan corakan bronkovaskular; kesan bayangan opak berbatas tidak tegas (massa/lesi desak ruang) di lapang paru tanpa konsolidasi lobar, tanpa kavitas besar, dan tanpa air-fluid level. Resolusi foto kecil.]\n\nApakah diagnosis yang paling sesuai?",
     "options": [
       "A. Tuberkulosis paru",
       "B. Mikosis paru",
@@ -198,7 +198,7 @@ const questions11 = [
   {
     "id": 15,
     "topic": "THT-KL",
-    "question": "Seorang anak laki-laki berusia 5 tahun diantar ibunya ke IGD RS karena demam sejak 2 hari lalu. Pasien tidak mau makan karena nyeri saat menelan. Riwayat imunisasi tidak lengkap. Pada pemeriksaan orofaring terlihat tonsil diselubungi oleh selaput putih kotor. Terdapat pembesaran kelenjar getah bening leher yang cukup besar. Pada pemeriksaan laboratorium leukosit 20.000/uL. (Pada soal asli terdapat foto orofaring.) Apakah diagnosis yang paling mungkin?",
+    "question": "Seorang anak laki-laki berusia 5 tahun diantar ibunya ke IGD RS karena demam sejak 2 hari lalu. Pasien tidak mau makan karena nyeri saat menelan. Riwayat imunisasi tidak lengkap. Pada pemeriksaan orofaring terlihat tonsil diselubungi oleh selaput putih kotor. Terdapat pembesaran kelenjar getah bening leher yang cukup besar. Pada pemeriksaan laboratorium leukosit 20.000/uL.\n\n[Gambar (pada soal asli berupa foto orofaring): mulut terbuka, lidah ditekan spatula; tonsil membesar dan diselubungi selaput putih kekuningan/keabu-abuan yang menempel, mukosa sekitar hiperemis.]\n\nApakah diagnosis yang paling mungkin?",
     "options": [
       "A. Difteri",
       "B. Abses tonsil",
@@ -366,7 +366,7 @@ const questions11 = [
   {
     "id": 27,
     "topic": "Endokrin & Metabolik",
-    "question": "Seorang laki-laki, 68 tahun, datang ke poliklinik dengan keluhan benjolan pada leher sebelah kanan sejak 3 bulan yang lalu. Benjolan tidak terasa nyeri dan terlihat seperti bergerak saat menelan. Pada pemeriksaan fisik umum, tanda-tanda vital berada dalam batas normal. Pada pemeriksaan fisik paru, jantung, abdomen dan ekstremitas tidak ditemukan kelainan. Pada pemeriksaan status lokalis coli, ditemukan benjolan berjumlah 1 buah pada regio coli dextra, berukuran 1,5 x 1,5 x 1 cm, batas tegas, permukaan rata, dapat digerakkan dari dasar, tidak nyeri serta bergerak saat menelan. Pasien membawa hasil TSHs 2.0 (N 1-4). Pada pemeriksaan USG didapatkan nodul tiroid dextra ukuran 1.2x0.8x1.2 hipoekoik dengan mikrokalsifikasi dan peningkatan vaskularisasi perifer. Hasil PA terlampir. (Pada soal asli terdapat gambar hasil PA.) Apakah pengelolaan lanjutan yang sebaiknya dilakukan pada pasien ini?",
+    "question": "Seorang laki-laki, 68 tahun, datang ke poliklinik dengan keluhan benjolan pada leher sebelah kanan sejak 3 bulan yang lalu. Benjolan tidak terasa nyeri dan terlihat seperti bergerak saat menelan. Pada pemeriksaan fisik umum, tanda-tanda vital berada dalam batas normal. Pada pemeriksaan fisik paru, jantung, abdomen dan ekstremitas tidak ditemukan kelainan. Pada pemeriksaan status lokalis coli, ditemukan benjolan berjumlah 1 buah pada regio coli dextra, berukuran 1,5 x 1,5 x 1 cm, batas tegas, permukaan rata, dapat digerakkan dari dasar, tidak nyeri serta bergerak saat menelan. Pasien membawa hasil TSHs 2.0 (N 1-4). Pada pemeriksaan USG didapatkan nodul tiroid dextra ukuran 1.2x0.8x1.2 hipoekoik dengan mikrokalsifikasi dan peningkatan vaskularisasi perifer. Hasil PA terlampir.\n\n[Gambar (pada soal asli berupa foto histopatologi tiroid): struktur papiler dengan inti sel besar berkaca (\"ground-glass\"/\"Orphan Annie\") dan lekukan inti, sesuai karsinoma papiler tiroid.]\n\nApakah pengelolaan lanjutan yang sebaiknya dilakukan pada pasien ini?",
     "options": [
       "A. FNAB ulang",
       "B. Radioablasi Non Toksik",
@@ -968,7 +968,7 @@ const questions11 = [
   {
     "id": 71,
     "topic": "Infeksi Tropis & Imunologi",
-    "question": "Seorang laki-laki berusia 34 tahun dirujuk dari puskesmas ke instalasi gawat darurat RS karena penurunan kesadaran sejak 1 hari. Sebelumnya pasien demam tinggi dan sesak. Terdapat riwayat kontak dengan unggas mati 1 minggu sebelum masuk rumah sakit. Pasien dengan kesadaran apatis, suhu 39°C, frekuensi napas 35 kali/menit, ronki basah halus di seluruh lapangan paru dan gagal napas akut. Gambaran foto toraks seperti berikut ini. (Pada soal asli terdapat foto toraks.) Apakah tatalaksana yang paling tepat?",
+    "question": "Seorang laki-laki berusia 34 tahun dirujuk dari puskesmas ke instalasi gawat darurat RS karena penurunan kesadaran sejak 1 hari. Sebelumnya pasien demam tinggi dan sesak. Terdapat riwayat kontak dengan unggas mati 1 minggu sebelum masuk rumah sakit. Pasien dengan kesadaran apatis, suhu 39°C, frekuensi napas 35 kali/menit, ronki basah halus di seluruh lapangan paru dan gagal napas akut. Gambaran foto toraks seperti berikut ini.\n\n[Gambar (pada soal asli berupa foto toraks): infiltrat/konsolidasi alveolar difus di kedua lapang paru (kesan pneumonia berat/ARDS pada kasus flu burung); jantung tidak membesar. Resolusi gambar sumber terbatas.]\n\nApakah tatalaksana yang paling tepat?",
     "options": [
       "A. Lamivudine",
       "B. Zidovudine",
@@ -1080,7 +1080,7 @@ const questions11 = [
   {
     "id": 80,
     "topic": "Muskuloskeletal & Bedah",
-    "question": "Seorang laki-laki berusia 21 tahun datang dengan keluhan nyeri tungkai kanan sejak 1 hari yang lalu. Tidak ada riwayat trauma yang jelas, pasien sedang mengangkat ember air saat tiba-tiba mendengar bunyi “krek” pada tungkai kanannya disertai nyeri. Pada pemeriksaan fisik ditemukan keterbatasan gerak tungkai kanan. Pemeriksaan radiografi yang dilakukan memperlihatkan hasil sebagai berikut. (Pada soal asli terdapat foto radiografi.) Apakah diagnosis yang paling sesuai untuk kasus tersebut?",
+    "question": "Seorang laki-laki berusia 21 tahun datang dengan keluhan nyeri tungkai kanan sejak 1 hari yang lalu. Tidak ada riwayat trauma yang jelas, pasien sedang mengangkat ember air saat tiba-tiba mendengar bunyi “krek” pada tungkai kanannya disertai nyeri. Pada pemeriksaan fisik ditemukan keterbatasan gerak tungkai kanan. Pemeriksaan radiografi yang dilakukan memperlihatkan hasil sebagai berikut.\n\n[Gambar (pada soal asli berupa foto radiografi tungkai/lutut kanan proyeksi AP dan lateral): tampak zona pemadatan/penekanan trabekula (sklerotik) dan kolaps korteks pada metafisis tanpa celah garis fraktur yang memisahkan dua fragmen; tidak ada pergeseran fragmen, tidak ada dislokasi sendi, dan tidak ada lesi litik. Resolusi gambar sumber terbatas.]\n\nApakah diagnosis yang paling sesuai untuk kasus tersebut?",
     "options": [
       "A. Fraktur intra artikular",
       "B. Fraktur inkomplit",
@@ -1514,7 +1514,7 @@ const questions11 = [
   {
     "id": 116,
     "topic": "Forensik, Medikolegal & IKM",
-    "question": "Seorang peneliti ingin meneliti efektivitas obat diabetes baru dibandingkan dengan obat lama dan merekrut pasien diabetes sebagai subjek penelitian. Peneliti melakukan randomisasi pada subjek menjadi kelompok yang mengonsumsi obat baru dan mengonsumsi obat lama. Penelitian dilakukan dengan uji tersamar ganda. Enam bulan setelah pengobatan dilakukan pemeriksaan kontrol gula darah. (Pada soal asli terdapat tabel hasil kontrol gula darah pada kelompok obat baru dan obat lama.) Apakah uji statistik yang digunakan untuk mengetahui perbedaan efektivitas obat baru dibandingkan obat lama?",
+    "question": "Seorang peneliti ingin meneliti efektivitas obat diabetes baru dibandingkan dengan obat lama dan merekrut pasien diabetes sebagai subjek penelitian. Peneliti melakukan randomisasi pada subjek menjadi kelompok yang mengonsumsi obat baru dan mengonsumsi obat lama. Penelitian dilakukan dengan uji tersamar ganda. Enam bulan setelah pengobatan dilakukan pemeriksaan kontrol gula darah.\n\nTabel hasil kontrol gula darah (Test | positif | negatif):\nObat baru | 340 | 80\nObat lama | 330 | 60\n\nApakah uji statistik yang digunakan untuk mengetahui perbedaan efektivitas obat baru dibandingkan obat lama?",
     "options": [
       "A. McNemar Test",
       "B. Independent T Test",
@@ -1542,7 +1542,7 @@ const questions11 = [
   {
     "id": 118,
     "topic": "Infeksi Tropis & Imunologi",
-    "question": "Seorang anak perempuan, berusia 1 tahun dibawa ibunya ke Puskesmas dengan kelainan lahir tidak memiliki anus. Pasien dioperasi dan dibuat lubang usus ke perut. Dalam perawatan hari ke-10 di RS keluar cacing berwarna kuning dengan panjang ± 10 cm. Foto terlampir. (Pada soal asli terdapat foto cacing berwarna kuning dalam wadah.) Apa diagnosis pada anak tersebut?",
+    "question": "Seorang anak perempuan, berusia 1 tahun dibawa ibunya ke Puskesmas dengan kelainan lahir tidak memiliki anus. Pasien dioperasi dan dibuat lubang usus ke perut. Dalam perawatan hari ke-10 di RS keluar cacing berwarna kuning dengan panjang ± 10 cm. Foto terlampir.\n\n[Gambar (pada soal asli berupa foto cacing dalam wadah bening): cacing bulat panjang (sekitar 10 cm), silindris, berwarna kuning kemerahan/krem, licin, kedua ujung meruncing; tampak melingkar di dalam cawan.]\n\nApa diagnosis pada anak tersebut?",
     "options": [
       "A. Nekatoriasis",
       "B. Askariasis",

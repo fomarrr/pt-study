@@ -268,7 +268,7 @@ const questions10 = [
   {
     "id": 20,
     "topic": "Kardiologi & Vaskular",
-    "question": "Laki-laki, 56 tahun, datang ke IGD dengan keluhan nyeri dada sejak 4 jam sebelum masuk rumah sakit (SMRS). Nyeri dada kiri dirasakan seperti tertekan benda berat, muncul setelah pasien beraktivitas, membaik dengan istirahat. Pasien memiliki riwayat diabetes selama 10 tahun. Pada pemeriksaan fisik, didapatkan pasien sadar, tekanan darah 163/108 mmHg, laju pernapasan 22x/menit, suhu 36 C. Saturasi oksigen 98% tanpa oksigen tambahan. Tidak didapatkan peningkatan JVP, ronki, murmur, pulsus defisit, ataupun edema. Pasien segera dilakukan pemeriksaan EKG, dan didapatkan gambaran sebagai berikut. (Pada soal asli terdapat gambar EKG 12 sadapan: irama sinus, tampak elevasi segmen ST pada sadapan V2.) Apakah penyebab keluhan nyeri dada pada pasien?",
+    "question": "Laki-laki, 56 tahun, datang ke IGD dengan keluhan nyeri dada sejak 4 jam sebelum masuk rumah sakit (SMRS). Nyeri dada kiri dirasakan seperti tertekan benda berat, muncul setelah pasien beraktivitas, membaik dengan istirahat. Pasien memiliki riwayat diabetes selama 10 tahun. Pada pemeriksaan fisik, didapatkan pasien sadar, tekanan darah 163/108 mmHg, laju pernapasan 22x/menit, suhu 36 C. Saturasi oksigen 98% tanpa oksigen tambahan. Tidak didapatkan peningkatan JVP, ronki, murmur, pulsus defisit, ataupun edema. Pasien segera dilakukan pemeriksaan EKG, dan didapatkan gambaran sebagai berikut.\n\n[Gambar (pada soal asli berupa EKG 12 sadapan): irama sinus teratur dengan elevasi segmen ST pada sadapan V2 (kesan STEMI anterior); gelombang P dan QRS tampak normal.]\n\nApakah penyebab keluhan nyeri dada pada pasien?",
     "options": [
       "A. Ketidakseimbangan supply dan demand oksigen akibat sumbatan total pembuluh koroner",
       "B. Spasme pembuluh koroner berulang akibat sumbatan sebagian pembuluh koroner",
@@ -646,7 +646,7 @@ const questions10 = [
   {
     "id": 47,
     "topic": "Kardiologi & Vaskular",
-    "question": "Seorang pasien perempuan 54 tahun, datang ke poliklinik untuk medical check up. Pasien tidak ada keluhan dan pada pemeriksaan fisik tidak didapatkan kelainan. Pasien datang kepada Anda membawa hasil EKG seperti berikut. (Pada soal asli terdapat gambar EKG 12 sadapan: irama sinus teratur dengan gelombang P, kompleks QRS, dan gelombang T normal.) Berdasarkan gambaran EKG tersebut, darimanakah asal impuls listrik pada pasien ini?",
+    "question": "Seorang pasien perempuan 54 tahun, datang ke poliklinik untuk medical check up. Pasien tidak ada keluhan dan pada pemeriksaan fisik tidak didapatkan kelainan. Pasien datang kepada Anda membawa hasil EKG seperti berikut.\n\n[Gambar (pada soal asli berupa EKG 12 sadapan): irama teratur, tiap kompleks QRS sempit didahului gelombang P positif di sadapan II dengan interval PR normal, gelombang T normal, laju sekitar 60-100x/menit (irama sinus normal).]\n\nBerdasarkan gambaran EKG tersebut, darimanakah asal impuls listrik pada pasien ini?",
     "options": [
       "A. SA node",
       "B. HIS bundle",
@@ -688,7 +688,7 @@ const questions10 = [
   {
     "id": 50,
     "topic": "Respirasi & Pulmonologi",
-    "question": "Seorang laki-laki berusia 65 tahun datang ke poliklinik dengan keluhan nyeri dada kanan sejak 2 bulan yang lalu. Pasien juga mengeluhkan nafsu makan dan berat badan menurun 5 kg dalam 1 bulan. Pasien seorang perokok berat. Hasil pemeriksaan fisik dalam batas normal. Foto torak seperti di bawah ini. (Pada soal asli terdapat foto toraks.) Apakah diagnosis yang paling sesuai?",
+    "question": "Seorang laki-laki berusia 65 tahun datang ke poliklinik dengan keluhan nyeri dada kanan sejak 2 bulan yang lalu. Pasien juga mengeluhkan nafsu makan dan berat badan menurun 5 kg dalam 1 bulan. Pasien seorang perokok berat. Hasil pemeriksaan fisik dalam batas normal. Foto torak seperti di bawah ini.\n\n[Gambar (pada soal asli berupa foto toraks PA): siluet jantung normal; kesan bayangan opak berbatas tidak tegas (massa/lesi desak ruang) di lapang paru kanan tanpa konsolidasi lobar, tanpa air-fluid level, dan tanpa infiltrat difus. Resolusi foto kecil.]\n\nApakah diagnosis yang paling sesuai?",
     "options": [
       "A. Tuberkulosis paru",
       "B. Mikosis paru",
@@ -744,7 +744,7 @@ const questions10 = [
   {
     "id": 54,
     "topic": "Nefrologi & Urologi",
-    "question": "Seorang laki-laki berusia 23 tahun dibawa keluarganya ke IGD RS dengan keluhan tidak bisa berkemih sejak 4 jam SMRS. Pasien mengeluh nyeri hebat di perut bagian bawah. Enam jam yang lalu pasien mengalami kecelakaan, selangkangan terbentur sadel motor. Pasien langsung bisa mengendarai motor pulang ke rumah. Dari pemeriksaan fisik didapatkan tanda vital dan status generalis di batas normal. Pada pemeriksaan fisik urologi, didapatkan buli teraba penuh dan darah di orifisium urethra eksterna (meatal bleeding). Dilakukan pemeriksaan penunjang dengan hasil sesuai gambar: (Pada soal asli terdapat gambar uretrografi retrograd: kontras tampak keluar (ekstravasasi) dari uretra.) Apakah diagnosis yang paling sesuai untuk kasus tersebut?",
+    "question": "Seorang laki-laki berusia 23 tahun dibawa keluarganya ke IGD RS dengan keluhan tidak bisa berkemih sejak 4 jam SMRS. Pasien mengeluh nyeri hebat di perut bagian bawah. Enam jam yang lalu pasien mengalami kecelakaan, selangkangan terbentur sadel motor. Pasien langsung bisa mengendarai motor pulang ke rumah. Dari pemeriksaan fisik didapatkan tanda vital dan status generalis di batas normal. Pada pemeriksaan fisik urologi, didapatkan buli teraba penuh dan darah di orifisium urethra eksterna (meatal bleeding). Dilakukan pemeriksaan penunjang dengan hasil sesuai gambar:\n\n[Gambar (pada soal asli berupa foto uretrografi retrograd): kontras keluar dari lumen uretra (ekstravasasi) pada uretra bulbosa/anterior; buli-buli dan uretra posterior tampak utuh.]\n\nApakah diagnosis yang paling sesuai untuk kasus tersebut?",
     "options": [
       "A. Ruptur buli",
       "B. Striktur urethra",
@@ -1640,7 +1640,7 @@ const questions10 = [
   {
     "id": 118,
     "topic": "Kardiologi & Vaskular",
-    "question": "Seorang laki-laki berusia 50 tahun dibawa ke IGD karena pingsan sejak 30 menit yang lalu. Sebelumnya pasien sempat mengeluhkan berdebar-debar dan keringat dingin. Pada pemeriksaan fisik didapatkan tekanan darah 70x/palpasi, frekuensi nadi 168x/menit (lemah), frekuensi nafas 24x/menit. Pada pemeriksaan EKG didapatkan gambaran berikut. (Pada soal asli terdapat gambar EKG: takikardia kompleks lebar yang sangat cepat dan tidak teratur, dengan amplitudo dan arah kompleks QRS yang berubah-ubah sehingga tampak seperti berputar di sekitar garis isoelektrik.) Apakah interpretasi EKG tersebut?",
+    "question": "Seorang laki-laki berusia 50 tahun dibawa ke IGD karena pingsan sejak 30 menit yang lalu. Sebelumnya pasien sempat mengeluhkan berdebar-debar dan keringat dingin. Pada pemeriksaan fisik didapatkan tekanan darah 70x/palpasi, frekuensi nadi 168x/menit (lemah), frekuensi nafas 24x/menit. Pada pemeriksaan EKG didapatkan gambaran berikut.\n\n[Gambar (pada soal asli berupa rekaman EKG): takikardia kompleks QRS lebar yang sangat cepat dan tidak teratur dengan amplitudo dan arah yang berubah-ubah bergelombang (\"berputar\" di sekitar garis dasar), tanpa gelombang P yang jelas, sesuai torsades de pointes.]\n\nApakah interpretasi EKG tersebut?",
     "options": [
       "A. Ventricular fibrillation",
       "B. Torsades de pointes",

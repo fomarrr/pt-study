@@ -366,7 +366,7 @@ const questions12 = [
   {
     "id": 27,
     "topic": "Kardiologi & Vaskular",
-    "question": "Seorang anak perempuan, usia 3 tahun, dibawa ke puskesmas dengan riwayat biru sejak lahir yang memberat bila pasien menangis. Pasien juga dilaporkan oleh orangtuanya sering jongkok bila sedang bermain dengan teman-temannya. Pada pemeriksaan ﬁsik didapatkan ujung-ujung jari kebiruan dan tampak jari tabuh. Pada auskultasi didapatkan bising ejeksi sistolik pada daerah sternal kiri atas. Pemeriksaan foto toraks menunjukan hasil sebagai berikut: (Pada soal asli terdapat foto toraks anak yang menunjukkan jantung berbentuk sepatu (boot-shaped heart).)",
+    "question": "Seorang anak perempuan, usia 3 tahun, dibawa ke puskesmas dengan riwayat biru sejak lahir yang memberat bila pasien menangis. Pasien juga dilaporkan oleh orangtuanya sering jongkok bila sedang bermain dengan teman-temannya. Pada pemeriksaan ﬁsik didapatkan ujung-ujung jari kebiruan dan tampak jari tabuh. Pada auskultasi didapatkan bising ejeksi sistolik pada daerah sternal kiri atas. Pemeriksaan foto toraks menunjukan hasil sebagai berikut:\n\n[Gambar (pada soal asli berupa foto toraks anak): siluet jantung berbentuk sepatu (boot-shaped heart): apeks jantung terangkat dan membulat, segmen pulmonal cekung/tidak menonjol, corakan vaskular paru berkurang (oligemia).]",
     "options": [
       "A. Trunkus arteriosus",
       "B. Ductus arteriosus persisten",
@@ -478,7 +478,7 @@ const questions12 = [
   {
     "id": 35,
     "topic": "Kardiologi & Vaskular",
-    "question": "Seorang laki-laki, 47 tahun, datang ke UGD dengan keluhan sesak napas yang makin memberat sejak 1 minggu sebelumnya. Sesak dirasakan saat beraktivitas ringan dan bila berbaring dengan 1 bantal. Pasien memiliki riwayat hipertensi sejak 3 tahun terahkir, akan tetapi tidak teratur minum obat. Pemeriksaan ﬁsik menunjukan hasil: kesadaran kompos mentis, tekanan darah 145/98 mmHg, frekuensi nadi 96 x/min, frekuensi napas 24 x/min, saturasi oksigen perifer 95%, ronki basah halus pada bagian basal kedua paru dan tampak edema tungkai bilateral. Foto thoraks menunjukan hasil berikut (Pada soal asli terdapat foto toraks yang menunjukkan kardiomegali dengan gambaran kongesti paru.)",
+    "question": "Seorang laki-laki, 47 tahun, datang ke UGD dengan keluhan sesak napas yang makin memberat sejak 1 minggu sebelumnya. Sesak dirasakan saat beraktivitas ringan dan bila berbaring dengan 1 bantal. Pasien memiliki riwayat hipertensi sejak 3 tahun terahkir, akan tetapi tidak teratur minum obat. Pemeriksaan ﬁsik menunjukan hasil: kesadaran kompos mentis, tekanan darah 145/98 mmHg, frekuensi nadi 96 x/min, frekuensi napas 24 x/min, saturasi oksigen perifer 95%, ronki basah halus pada bagian basal kedua paru dan tampak edema tungkai bilateral. Foto thoraks menunjukan hasil berikut\n\n[Gambar (pada soal asli berupa foto toraks): jantung membesar (kardiomegali), tampak corakan vaskular paru meningkat dan kongesti pada hilus (distribusi perihilus seperti sayap kelelawar), tanpa konsolidasi lobar.]",
     "options": [
       "A. Gagal jantung kronik",
       "B. Bronkopneumonia",
@@ -1052,7 +1052,7 @@ const questions12 = [
   {
     "id": 80,
     "topic": "Kardiologi & Vaskular",
-    "question": "Seorang laki-laki, 58 tahun, datang ke poliklinik dengan keluhan nyeri dada sejak 4 bulan lalu. Nyeri dada terasa berat dan timbul saat beraktivitas seperti naik tangga 1 lantai; nyeri berkurang bila istirahat. Tidak ada mual, muntah, batuk, ataupun sesak. Pada pemeriksaan fisik: TD 170/80 mmHg, nadi 90x/menit, JVP tidak meningkat, jantung dan paru dalam batas normal, tidak ada nyeri epigastrium, dan kaki tidak edema. Bagaimana klasifikasi hipertensi pada kasus ini? (Pada soal asli, tabel klasifikasi tekanan darah klinik ditampilkan dalam bentuk gambar.)",
+    "question": "Seorang laki-laki, 58 tahun, datang ke poliklinik dengan keluhan nyeri dada sejak 4 bulan lalu. Nyeri dada terasa berat dan timbul saat beraktivitas seperti naik tangga 1 lantai; nyeri berkurang bila istirahat. Tidak ada mual, muntah, batuk, ataupun sesak. Pada pemeriksaan fisik: TD 170/80 mmHg, nadi 90x/menit, JVP tidak meningkat, jantung dan paru dalam batas normal, tidak ada nyeri epigastrium, dan kaki tidak edema. Bagaimana klasifikasi hipertensi pada kasus ini?\n\nKlasifikasi tekanan darah klinik (dalam soal asli berupa tabel gambar):\nKategori | Sistolik (mmHg) | Diastolik (mmHg)\nOptimal | <120 | dan <80\nNormal | 120-129 | dan/atau 80-84\nNormal tinggi | 130-139 | dan/atau 85-89\nHipertensi derajat 1 | 140-159 | dan/atau 90-99\nHipertensi derajat 2 | 160-179 | dan/atau 100-109\nHipertensi derajat 3 | >=180 | dan/atau >=110",
     "options": [
       "A. Derajat III",
       "B. Derajat I",
@@ -1094,7 +1094,7 @@ const questions12 = [
   {
     "id": 83,
     "topic": "Respirasi & Pulmonologi",
-    "question": "Laki-laki, 40 tahun, datang ke UGD RS dengan keluhan sesak napas hebat yang tiba-tiba sejak 1 jam yang lalu, disertai nyeri dada. Pada pemeriksaan fisik kesadaran apatis, nadi 110x/menit, RR 30x/menit; dada tampak asimetris (dada kiri tertinggal saat pernapasan), perkusi hipersonor, dan auskultasi vesikular melemah di dada kiri. (Pada soal asli terdapat foto toraks yang menunjukkan garis pleura viseral tipis di sisi kiri tanpa gambaran paru perifer dari garis tersebut.) Apakah diagnosis yang paling tepat pada kasus tersebut?",
+    "question": "Laki-laki, 40 tahun, datang ke UGD RS dengan keluhan sesak napas hebat yang tiba-tiba sejak 1 jam yang lalu, disertai nyeri dada. Pada pemeriksaan fisik kesadaran apatis, nadi 110x/menit, RR 30x/menit; dada tampak asimetris (dada kiri tertinggal saat pernapasan), perkusi hipersonor, dan auskultasi vesikular melemah di dada kiri.\n\n[Gambar (pada soal asli berupa foto toraks): tampak garis tipis pleura viseral di sisi kiri; di luar (lateral) garis tersebut tidak ada gambaran corakan paru (hiperlusen), paru kiri kolaps ke arah hilus.]\n\nApakah diagnosis yang paling tepat pada kasus tersebut?",
     "options": [
       "A. Pneumonia",
       "B. Efusi pleura",
@@ -1514,7 +1514,7 @@ const questions12 = [
   {
     "id": 117,
     "topic": "Kardiologi & Vaskular",
-    "question": "Seorang laki-laki berusia 63 tahun datang ke UGD RS dengan keluhan berdebar-debar sejak 3 jam sebelumnya. Keluhan dirasakan terus-menerus dan disertai nyeri dada yang makin berat dan sesak napas. Pasien memiliki riwayat sakit jantung sejak 2 tahun terakhir, akan tetapi tidak teratur minum obat karena sudah tidak ada keluhan. Pemeriksaan ﬁsis menunjukkan hasil: Kesadaran kompos mentis, TD 73/51 mmHg, HR 190x/menit, RR 22 x/menit, akral dingin, tidak ada edema. Pemeriksaan EKG menunjukkan hasil: (Pada soal asli terdapat rekaman EKG 12 sadapan yang menunjukkan takikardia kompleks lebar yang teratur.) Apakah tindakan yang harus segera dilakukan pada pasien tersebut?",
+    "question": "Seorang laki-laki berusia 63 tahun datang ke UGD RS dengan keluhan berdebar-debar sejak 3 jam sebelumnya. Keluhan dirasakan terus-menerus dan disertai nyeri dada yang makin berat dan sesak napas. Pasien memiliki riwayat sakit jantung sejak 2 tahun terakhir, akan tetapi tidak teratur minum obat karena sudah tidak ada keluhan. Pemeriksaan ﬁsis menunjukkan hasil: Kesadaran kompos mentis, TD 73/51 mmHg, HR 190x/menit, RR 22 x/menit, akral dingin, tidak ada edema. Pemeriksaan EKG menunjukkan hasil:\n\n[Gambar (pada soal asli berupa EKG 12 sadapan): takikardia kompleks QRS lebar yang teratur, laju sekitar 190x/menit, bentuk seragam tanpa gelombang P jelas (VT monomorfik).]\n\nApakah tindakan yang harus segera dilakukan pada pasien tersebut?",
     "options": [
       "A. Pemberian amiodaron IV",
       "B. Intervensi koroner perkutan primer (PCI primer)",
@@ -1542,7 +1542,7 @@ const questions12 = [
   {
     "id": 119,
     "topic": "Nefrologi & Urologi",
-    "question": "Seorang laki laki berusia 23 tahun dibawa keluarganya ke IGD dengan keluhan tidak bisa berkemih sejak empat jam SMRS. Pasien mengeluh nyeri hebat di perut bagian bawah. Enam jam yang lalu pasien mengalami kecelakaan, selangkangan terbentur sadel motor. Pasien langsung bisa mengendaraI motor pulang ke rumah. Dari pemeriksaan ﬁsik didapatkan tanda vital dan status generalis i batas normal. Pada pemeriksaan ﬁsik Urologi, didapatkan bully terlalu penuh, dan darah di oriﬁsium uretra eksternal (meatal bleeding). Dilakukan pemeriksaan Penunjang dengan hasil sesuai gambar: (Pada soal asli terdapat foto uretrografi yang menunjukkan ekstravasasi kontras di sekitar uretra.) Apakah diagnosis pada pasien di atas?",
+    "question": "Seorang laki laki berusia 23 tahun dibawa keluarganya ke IGD dengan keluhan tidak bisa berkemih sejak empat jam SMRS. Pasien mengeluh nyeri hebat di perut bagian bawah. Enam jam yang lalu pasien mengalami kecelakaan, selangkangan terbentur sadel motor. Pasien langsung bisa mengendaraI motor pulang ke rumah. Dari pemeriksaan ﬁsik didapatkan tanda vital dan status generalis i batas normal. Pada pemeriksaan ﬁsik Urologi, didapatkan bully terlalu penuh, dan darah di oriﬁsium uretra eksternal (meatal bleeding). Dilakukan pemeriksaan Penunjang dengan hasil sesuai gambar:\n\n[Gambar (pada soal asli berupa foto uretrografi retrograd): kontras tampak keluar dari lumen uretra bulbosa (uretra anterior) ke jaringan sekitarnya (ekstravasasi); uretra posterior dan buli-buli tidak tampak kerusakan.]\n\nApakah diagnosis pada pasien di atas?",
     "options": [
       "A. Ruptur urethra posterior",
       "B. Ruptur buli dan urethra",
