@@ -1,10 +1,16 @@
 // pt-vote.js — voting jawaban + diskusi anonim per soal (Firebase Auth anonim + Firestore)
 // Pakai: <script type="module" src="pt-vote.js"></script>
 // lalu dari kode app: PTVote.mount(elemen, { qid, options, myAnswer, key })
+//
+// Versi hemat kuota (Spark: 50.000 baca & 20.000 tulis per hari):
+// - Diskusi selalu dimuat segar setiap soal dibuka (prioritas).
+// - Vote hanya dikirim bila pilihan berubah (diingat per perangkat), bukan setiap soal dibuka.
+// - Jumlah vote di-cache 10 menit per soal; vote sendiri langsung diperhitungkan di tampilan.
+// - Diskusi dan jumlah vote dimuat terpisah: bila salah satu gagal (mis. kuota habis), yang lain tetap tampil.
 import { initializeApp } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-app.js";
 import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js";
 import {
-  getFirestore, doc, getDoc, setDoc, addDoc, collection, query, where, limit,
+  getFirestore, doc, setDoc, addDoc, collection, query, where, limit,
   getDocs, getCountFromServer, serverTimestamp
 } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-firestore.js";
 
@@ -27,8 +33,25 @@ const ready = new Promise((resolve, reject) => {
 });
 
 const LETTERS = ["A", "B", "C", "D", "E", "F"];
+const COUNT_TTL = 10 * 60 * 1000; // jumlah vote di-cache 10 menit per soal
 const cleanId = s => String(s).replace(/[\/\s]+/g, "-").slice(0, 120);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+/* ---------- penyimpanan lokal (aman bila diblokir) ---------- */
+const store = {
+  get(k) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : null; } catch (e) { return null; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* abaikan */ } }
+};
+const sentKey = (uid, qid) => `ptv:v:${uid}:${qid}`;   // vote terakhir yang sudah terkirim dari perangkat ini
+const countKey = qid => `ptv:c:${qid}`;                // { t, c:{A:n,...} }
+
+function errText(e) {
+  const code = (e && (e.code || e.message)) || "";
+  if (/resource-exhausted|quota/i.test(code)) return "kuota harian Firebase sedang habis. Coba lagi setelah pukul 15.00 WIB.";
+  if (/unauthorized-domain/i.test(code)) return "domain situs belum diizinkan di Firebase (Authorized domains).";
+  if (/permission-denied/i.test(code)) return "ditolak oleh aturan Firestore (permission-denied).";
+  return `belum bisa dimuat (${esc(code || "koneksi")}). Cek koneksi lalu buka soal lagi.`;
+}
 
 function timeAgo(ts) {
   if (!ts || !ts.toDate) return "baru saja";
@@ -72,7 +95,7 @@ const css = `
 .ptv-row small{opacity:.6;font-size:12px}
 .ptv-send{font:inherit;font-weight:700;cursor:pointer;border:0;border-radius:8px;padding:7px 14px;background:var(--ptv-accent);color:#fff}
 .ptv-send:disabled{opacity:.5;cursor:default}
-.ptv-err{color:#e5484d;font-size:12px}
+.ptv-err{color:#e5484d;font-size:12px;margin:4px 0 0}
 `;
 function injectCss() {
   if (document.getElementById("ptv-style")) return;
@@ -80,23 +103,42 @@ function injectCss() {
 }
 
 /* ---------- data ---------- */
-async function counts(qid, opts) {
+// Jumlah vote: 1 baca per opsi; dipakai dari cache bila belum 10 menit
+async function fetchCounts(qid, opts) {
   const res = await Promise.all(opts.map(o =>
     getCountFromServer(query(collection(db, "votes"), where("q", "==", qid), where("opt", "==", o)))
       .then(r => r.data().count)));
-  return Object.fromEntries(opts.map((o, i) => [o, res[i]]));
+  const c = Object.fromEntries(opts.map((o, i) => [o, res[i]]));
+  store.set(countKey(qid), { t: Date.now(), c });
+  return c;
 }
-async function myVote(qid) {
-  const u = await ready;
-  const d = await getDoc(doc(db, "votes", qid + "_" + u.uid));
-  return d.exists() ? d.data().opt : null;
+function cachedCounts(qid) {
+  const x = store.get(countKey(qid));
+  return x && x.c ? x : null;
 }
+function bumpCachedCounts(qid, prev, next) {
+  const x = cachedCounts(qid); if (!x) return;
+  if (prev && x.c[prev] > 0) x.c[prev]--;
+  if (next) x.c[next] = (x.c[next] || 0) + 1;
+  store.set(countKey(qid), x);
+}
+
+// Kirim vote hanya bila berbeda dari vote terakhir yang sudah terkirim dari perangkat ini.
 async function vote(qid, opt) {
   qid = cleanId(qid);
   opt = String(opt).toUpperCase();
-  if (!LETTERS.includes(opt)) return;
+  if (!LETTERS.includes(opt)) return false;
   const u = await ready;
+  const prev = store.get(sentKey(u.uid, qid));
+  if (prev === opt) return false;
   await setDoc(doc(db, "votes", qid + "_" + u.uid), { q: qid, opt, uid: u.uid, t: serverTimestamp() });
+  store.set(sentKey(u.uid, qid), opt);
+  bumpCachedCounts(qid, prev, opt);
+  return true;
+}
+async function sentVote(qid) {
+  const u = await ready;
+  return store.get(sentKey(u.uid, qid));
 }
 async function loadComments(qid) {
   const snap = await getDocs(query(collection(db, "comments"), where("q", "==", qid), limit(200)));
@@ -114,69 +156,38 @@ async function mount(el, cfg) {
   const qid = cleanId(cfg.qid);
   const opts = (cfg.options && cfg.options.length ? cfg.options : LETTERS.slice(0, 5)).map(o => String(o).toUpperCase());
   const key = cfg.key != null ? String(cfg.key).toUpperCase() : null;
-  el.innerHTML = `<div class="ptv"><p class="ptv-h">Pilihan teman-teman <small>memuat…</small></p></div>`;
-  const box = el.firstElementChild;
 
-  let mine = null, c = {};
-  try {
-    if (cfg.myAnswer) { mine = String(cfg.myAnswer).toUpperCase(); await vote(qid, mine); }
-    else mine = await myVote(qid);
-    c = await counts(qid, opts);
-  } catch (e) {
-    box.innerHTML = `<p class="ptv-err">Vote belum bisa dimuat (${esc(e.code || e.message)}). Cek koneksi lalu buka soal lagi.</p>`;
-    console.error("[PTVote]", e); return;
-  }
-
-  const renderBars = () => {
-    const total = opts.reduce((s, o) => s + (c[o] || 0), 0);
-    box.querySelector(".ptv-h small").textContent = total ? `${total} orang` : "belum ada vote";
-    box.querySelector(".ptv-bars").innerHTML = opts.map(o => {
-      const n = c[o] || 0, p = total ? Math.round(n / total * 100) : 0;
-      return `<button type="button" class="ptv-bar ${o === mine ? "mine" : ""}" data-o="${o}" aria-pressed="${o === mine}">
-        <i class="ptv-fill" style="width:${p}%"></i>
-        <span class="ptv-l">${o}</span>
-        ${o === mine ? `<span class="ptv-tag">pilihanmu</span>` : ""}
-        ${o === key ? `<span class="ptv-tag">kunci file</span>` : ""}
-        <span class="ptv-p">${p}% <small style="opacity:.6;font-weight:500">(${n})</small></span></button>`;
-    }).join("");
-  };
-
-  box.innerHTML = `
-    <p class="ptv-h">Pilihan teman-teman <small></small></p>
-    <div class="ptv-bars"></div>
-    <p class="ptv-note">Anonim. Ketuk opsi untuk vote atau ganti pilihan. Terbanyak belum tentu benar.</p>
-    <div class="ptv-c">
-      <p class="ptv-h">Diskusi <small class="ptv-cn"></small></p>
-      <div class="ptv-list"></div>
-      <form class="ptv-form">
-        <textarea maxlength="500" placeholder="Tulis alasan atau sumbermu (anonim)…" aria-label="Tulis komentar"></textarea>
-        <div class="ptv-row"><small class="ptv-left">500 karakter</small><button class="ptv-send" type="submit">Kirim</button></div>
-      </form>
+  el.innerHTML = `
+    <div class="ptv">
+      <div class="ptv-v">
+        <p class="ptv-h">Pilihan teman-teman <small class="ptv-tot">memuat…</small></p>
+        <div class="ptv-bars"></div>
+        <p class="ptv-note">Anonim. Ketuk opsi untuk vote atau ganti pilihan. Terbanyak belum tentu benar.</p>
+      </div>
+      <div class="ptv-c">
+        <p class="ptv-h">Diskusi <small class="ptv-cn">memuat…</small></p>
+        <div class="ptv-list"></div>
+        <form class="ptv-form">
+          <textarea maxlength="500" placeholder="Tulis alasan atau sumbermu (anonim)…" aria-label="Tulis komentar"></textarea>
+          <div class="ptv-row"><small class="ptv-left">500 karakter</small><button class="ptv-send" type="submit">Kirim</button></div>
+        </form>
+      </div>
     </div>`;
-  renderBars();
+  const box = el.firstElementChild;
+  const alive = () => box.isConnected; // soal sudah diganti -> kotak lama berhenti diperbarui
 
-  box.querySelector(".ptv-bars").addEventListener("click", async e => {
-    const b = e.target.closest(".ptv-bar"); if (!b) return;
-    const o = b.dataset.o; if (o === mine) return;
-    const prev = mine;
-    if (prev) c[prev] = Math.max(0, (c[prev] || 1) - 1);
-    c[o] = (c[o] || 0) + 1; mine = o; renderBars();
-    try { await vote(qid, o); } catch (err) {
-      console.error("[PTVote]", err);
-      c[o]--; if (prev) c[prev]++; mine = prev; renderBars();
-    }
-  });
-
+  /* --- Diskusi (prioritas): selalu dimuat segar setiap soal dibuka --- */
   const list = box.querySelector(".ptv-list"), cn = box.querySelector(".ptv-cn");
+  let comments = [];
   const renderComments = arr => {
     cn.textContent = arr.length ? `${arr.length} komentar` : "";
     list.innerHTML = arr.length
       ? arr.map(x => `<div class="ptv-item">${esc(x.text)}<small>${timeAgo(x.t)}</small></div>`).join("")
       : `<p class="ptv-note" style="margin:0">Belum ada diskusi. Jadi yang pertama.</p>`;
   };
-  let comments = [];
-  loadComments(qid).then(a => { comments = a; renderComments(a); })
-    .catch(err => { list.innerHTML = `<p class="ptv-err">Diskusi belum bisa dimuat.</p>`; console.error("[PTVote]", err); });
+  loadComments(qid)
+    .then(a => { if (!alive()) return; comments = a; renderComments(a); })
+    .catch(err => { console.error("[PTVote]", err); if (!alive()) return; cn.textContent = ""; list.innerHTML = `<p class="ptv-err">Diskusi ${errText(err)}</p>`; });
 
   const form = box.querySelector(".ptv-form"), ta = form.querySelector("textarea"),
         send = form.querySelector(".ptv-send"), left = form.querySelector(".ptv-left");
@@ -191,8 +202,57 @@ async function mount(el, cfg) {
       ta.value = ""; left.textContent = "500 karakter";
     } catch (err) {
       console.error("[PTVote]", err);
-      left.textContent = "Gagal terkirim, coba lagi.";
+      left.textContent = /resource-exhausted|quota/i.test((err && err.code) || "") ? "Kuota harian habis, coba lagi nanti." : "Gagal terkirim, coba lagi.";
     } finally { send.disabled = false; send.textContent = "Kirim"; }
+  });
+
+  /* --- Vote: tulis hanya bila berubah; hitungan dari cache bila masih baru --- */
+  const voteSec = box.querySelector(".ptv-v"), bars = box.querySelector(".ptv-bars"), tot = box.querySelector(".ptv-tot");
+  let mine = null, c = null;
+  const renderBars = () => {
+    if (!c) return;
+    const total = opts.reduce((s, o) => s + (c[o] || 0), 0);
+    tot.textContent = total ? `${total} orang` : "belum ada vote";
+    bars.innerHTML = opts.map(o => {
+      const n = c[o] || 0, p = total ? Math.round(n / total * 100) : 0;
+      return `<button type="button" class="ptv-bar ${o === mine ? "mine" : ""}" data-o="${o}" aria-pressed="${o === mine}">
+        <i class="ptv-fill" style="width:${p}%"></i>
+        <span class="ptv-l">${o}</span>
+        ${o === mine ? `<span class="ptv-tag">pilihanmu</span>` : ""}
+        ${o === key ? `<span class="ptv-tag">kunci file</span>` : ""}
+        <span class="ptv-p">${p}% <small style="opacity:.6;font-weight:500">(${n})</small></span></button>`;
+    }).join("");
+  };
+  const showVoteErr = err => {
+    console.error("[PTVote]", err);
+    const old = voteSec.querySelector(".ptv-err"); if (old) old.remove();
+    voteSec.insertAdjacentHTML("beforeend", `<p class="ptv-err">Vote ${errText(err)}</p>`);
+  };
+
+  (async () => {
+    try {
+      // jawaban di app hanya dipakai sebagai vote pertama; bila sudah pernah vote (atau ganti lewat tombol), pakai vote itu
+      mine = await sentVote(qid);
+      if (!mine && cfg.myAnswer) { mine = String(cfg.myAnswer).toUpperCase(); await vote(qid, mine); }
+    } catch (err) { if (alive()) showVoteErr(err); }
+    if (!alive()) return;
+    const cached = cachedCounts(qid);
+    if (cached) { c = cached.c; renderBars(); }        // tampilkan yang tersimpan dulu (juga berguna saat kuota habis)
+    if (!cached || Date.now() - cached.t > COUNT_TTL) {
+      try { c = await fetchCounts(qid, opts); if (alive()) renderBars(); }
+      catch (err) { if (!alive()) return; if (!c) tot.textContent = ""; showVoteErr(err); }
+    }
+  })();
+
+  bars.addEventListener("click", async e => {
+    const b = e.target.closest(".ptv-bar"); if (!b || !c) return;
+    const o = b.dataset.o; if (o === mine) return;
+    const prevMine = mine, before = { ...c };
+    if (prevMine) c[prevMine] = Math.max(0, (c[prevMine] || 1) - 1);
+    c[o] = (c[o] || 0) + 1; mine = o; renderBars();
+    try { await vote(qid, o); } catch (err) {
+      c = before; mine = prevMine; renderBars(); showVoteErr(err);
+    }
   });
 }
 
